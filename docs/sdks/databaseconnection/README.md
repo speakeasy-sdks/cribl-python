@@ -1,0 +1,51 @@
+# database_connection
+
+### Available Operations
+
+* [post](#post) - Create DatabaseConnectionConfig
+
+## post
+
+Create DatabaseConnectionConfig
+
+### Example Usage
+
+```python
+import cribl
+from cribl.models import shared
+
+s = cribl.Cribl(
+    security=shared.Security(
+        bearer_auth="",
+    ),
+)
+
+req = shared.DatabaseConnectionConfig(
+    auth_type='a',
+    config_obj='dolor',
+    connection_string='occaecati',
+    connection_timeout=539813,
+    database_type=shared.DatabaseConnectionType(),
+    description='beatae',
+    id='d4c700b6-07f3-4c93-873b-9da3f2ceda7e',
+    request_timeout=185348,
+    tags='consectetur',
+)
+
+res = s.database_connection.post(req)
+
+if res.database_connection_configs is not None:
+    # handle response
+```
+
+### Parameters
+
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [shared.DatabaseConnectionConfig](../../models/shared/databaseconnectionconfig.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+
+
+### Response
+
+**[operations.PostDatabaseConnectionResponse](../../models/operations/postdatabaseconnectionresponse.md)**
+

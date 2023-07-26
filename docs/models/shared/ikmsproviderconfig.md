@@ -1,0 +1,17 @@
+# IKMSProviderConfig
+
+IKMSProviderConfig object
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `enable_health_check`                                                         | *bool*                                                                        | :heavy_check_mark:                                                            | N/A                                                                           |
+| `engine`                                                                      | [Optional[VaultKMSEngineConfig]](../../models/shared/vaultkmsengineconfig.md) | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `health_check_endpoint`                                                       | *Optional[str]*                                                               | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `namespace`                                                                   | *Optional[str]*                                                               | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `provider`                                                                    | [SecretProvider](../../models/shared/secretprovider.md)                       | :heavy_check_mark:                                                            | N/A                                                                           |
+| `secret_dir`                                                                  | *Optional[str]*                                                               | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `service`                                                                     | [Optional[IAWSKMSServiceConfig]](../../models/shared/iawskmsserviceconfig.md) | :heavy_minus_sign:                                                            | N/A                                                                           |
+| `url`                                                                         | *Optional[str]*                                                               | :heavy_minus_sign:                                                            | N/A                                                                           |

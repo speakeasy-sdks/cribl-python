@@ -1,0 +1,18 @@
+# SavedQuery
+
+New SavedQuery object
+
+
+## Fields
+
+| Field                                                                     | Type                                                                      | Required                                                                  | Description                                                               |
+| ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- | ------------------------------------------------------------------------- |
+| `description`                                                             | *Optional[str]*                                                           | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `earliest`                                                                | *Optional[str]*                                                           | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `id`                                                                      | *str*                                                                     | :heavy_check_mark:                                                        | N/A                                                                       |
+| `latest`                                                                  | *Optional[str]*                                                           | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `name`                                                                    | *str*                                                                     | :heavy_check_mark:                                                        | N/A                                                                       |
+| `query`                                                                   | *str*                                                                     | :heavy_check_mark:                                                        | N/A                                                                       |
+| `sample_rate`                                                             | *Optional[int]*                                                           | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `schedule`                                                                | [Optional[SavedQuerySchedule]](../../models/shared/savedqueryschedule.md) | :heavy_minus_sign:                                                        | N/A                                                                       |
+| `user`                                                                    | *Optional[str]*                                                           | :heavy_minus_sign:                                                        | N/A                                                                       |
