@@ -1,0 +1,15 @@
+# DockerInfo
+
+
+## Fields
+
+| Field                                                                   | Type                                                                    | Required                                                                | Description                                                             |
+| ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- | ----------------------------------------------------------------------- |
+| `config`                                                                | dict[str, *Any*]                                                        | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `graph_driver`                                                          | [Optional[DockerGraphDriver]](../../models/shared/dockergraphdriver.md) | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `log_path`                                                              | *Optional[str]*                                                         | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `mounts`                                                                | list[[DockerMount](../../models/shared/dockermount.md)]                 | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `network_settings`                                                      | dict[str, *Any*]                                                        | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `path`                                                                  | *Optional[str]*                                                         | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `state`                                                                 | dict[str, *Any*]                                                        | :heavy_minus_sign:                                                      | N/A                                                                     |
+| `stats`                                                                 | dict[str, *Any*]                                                        | :heavy_minus_sign:                                                      | N/A                                                                     |
