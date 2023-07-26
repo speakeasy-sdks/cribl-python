@@ -1,4 +1,15 @@
-# cribl
+<div align="center">
+    <img src="https://github.com/speakeasy-sdks/cribl-demo-go/assets/68016351/3c85f178-5ab2-4679-b0a7-c31ecdcce367" width="350px">
+    <h1>Cribl Python SDK</h1>
+   <p></p>
+   <a href="https://docs.cribl.io/api/"><img src="https://img.shields.io/static/v1?label=Docs&message=API Ref&color=000&style=for-the-badge" /></a>
+<!--    <a href="https://github.com/speakeasy-sdks/cribl-python/actions"><img src="https://img.shields.io/github/actions/workflow/status/speakeasy-sdks/cribl-python/speakeasy_sdk_generation.yml?style=for-the-badge" /></a> -->
+  <a href="https://opensource.org/licenses/MIT"><img src="https://img.shields.io/badge/License-MIT-blue.svg?style=for-the-badge" /></a>
+  <a href="https://github.com/speakeasy-sdks/cribl-python/releases"><img src="https://img.shields.io/github/v/release/speakeasy-sdks/cribl-demo-go?sort=semver&style=for-the-badge" /></a>
+</div>
+
+## Authentication
+Please fetch a Bearer token for the Cribl Cloud free tier [here](https://docs.cribl.io/stream/api-tutorials/#criblcloud-free-tier)
 
 <!-- Start SDK Installation -->
 ## SDK Installation
