@@ -11,5 +11,5 @@ python:
   version: 0.0.1
   author: speakeask-sdks
   description: Python SDK for Cribl API
-  maxMethodParams: 0
+  maxMethodParams: 4
   packageName: cribl
