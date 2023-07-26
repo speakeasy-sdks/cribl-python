@@ -1,0 +1,17 @@
+# Container
+
+
+## Fields
+
+| Field                                                             | Type                                                              | Required                                                          | Description                                                       |
+| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
+| `containerd`                                                      | [Optional[ContainerdInfo]](../../models/shared/containerdinfo.md) | :heavy_minus_sign:                                                | N/A                                                               |
+| `created`                                                         | *int*                                                             | :heavy_check_mark:                                                | N/A                                                               |
+| `docker`                                                          | [Optional[DockerInfo]](../../models/shared/dockerinfo.md)         | :heavy_minus_sign:                                                | N/A                                                               |
+| `id`                                                              | *str*                                                             | :heavy_check_mark:                                                | N/A                                                               |
+| `image`                                                           | *str*                                                             | :heavy_check_mark:                                                | N/A                                                               |
+| `ips`                                                             | list[*str*]                                                       | :heavy_minus_sign:                                                | N/A                                                               |
+| `name`                                                            | *str*                                                             | :heavy_check_mark:                                                | N/A                                                               |
+| `ports`                                                           | list[[ContainerPort](../../models/shared/containerport.md)]       | :heavy_minus_sign:                                                | N/A                                                               |
+| `status`                                                          | *str*                                                             | :heavy_check_mark:                                                | N/A                                                               |
+| `type`                                                            | [ContainerType](../../models/shared/containertype.md)             | :heavy_check_mark:                                                | N/A                                                               |

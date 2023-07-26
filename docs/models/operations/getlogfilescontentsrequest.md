@@ -1,0 +1,14 @@
+# GetLogFilesContentsRequest
+
+
+## Fields
+
+| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
+| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
+| `et`                                                                          | *Optional[int]*                                                               | :heavy_minus_sign:                                                            | Epoch timestamp of the earliest event (includes rolled files present on disk) |
+| `files`                                                                       | *Optional[str]*                                                               | :heavy_minus_sign:                                                            | query string[] optional file or files to query                                |
+| `filter`                                                                      | *Optional[str]*                                                               | :heavy_minus_sign:                                                            | Filter                                                                        |
+| `group_id`                                                                    | *Optional[str]*                                                               | :heavy_minus_sign:                                                            | id of the group to query                                                      |
+| `limit`                                                                       | *Optional[int]*                                                               | :heavy_minus_sign:                                                            | Maximum number of log lines to retrieve starting from offset.                 |
+| `lt`                                                                          | *Optional[int]*                                                               | :heavy_minus_sign:                                                            | Epoch timestamp of the latest event (includes rolled files present on disk)   |
+| `type`                                                                        | *str*                                                                         | :heavy_check_mark:                                                            | type of logs request single multi group                                       |

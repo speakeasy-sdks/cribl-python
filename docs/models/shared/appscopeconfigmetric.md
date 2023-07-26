@@ -1,0 +1,11 @@
+# AppscopeConfigMetric
+
+
+## Fields
+
+| Field                                                                           | Type                                                                            | Required                                                                        | Description                                                                     |
+| ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- | ------------------------------------------------------------------------------- |
+| `enable`                                                                        | *bool*                                                                          | :heavy_check_mark:                                                              | N/A                                                                             |
+| `format`                                                                        | [AppscopeConfigMetricFormat](../../models/shared/appscopeconfigmetricformat.md) | :heavy_check_mark:                                                              | N/A                                                                             |
+| `transport`                                                                     | [AppscopeTransport](../../models/shared/appscopetransport.md)                   | :heavy_check_mark:                                                              | N/A                                                                             |
+| `watch`                                                                         | list[*str*]                                                                     | :heavy_check_mark:                                                              | N/A                                                                             |

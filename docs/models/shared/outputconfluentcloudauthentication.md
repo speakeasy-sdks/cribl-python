@@ -1,0 +1,11 @@
+# OutputConfluentCloudAuthentication
+
+Authentication parameters to use when connecting to brokers. Using TLS is highly recommended.
+
+
+## Fields
+
+| Field                                                                                                                               | Type                                                                                                                                | Required                                                                                                                            | Description                                                                                                                         |
+| ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------------------------------------------------------- |
+| `disabled`                                                                                                                          | *bool*                                                                                                                              | :heavy_check_mark:                                                                                                                  | Enable Authentication                                                                                                               |
+| `mechanism`                                                                                                                         | [Optional[OutputConfluentCloudAuthenticationSASLMechanism]](../../models/shared/outputconfluentcloudauthenticationsaslmechanism.md) | :heavy_minus_sign:                                                                                                                  | SASL authentication mechanism to use.                                                                                               |
