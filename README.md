@@ -14,10 +14,10 @@ Please fetch a Bearer token for the Cribl Cloud free tier [here](https://docs.cr
 <!-- Start SDK Installation -->
 ## SDK Installation
 
-This is SDK is not yet published to PYPI so please check out 
+This is SDK is not yet published to PYPI so please clone repo and then run
 
 ```bash
-pip install cribl
+pip install -e /path/to/clone/cribl-python
 ```
 <!-- End SDK Installation -->
 
