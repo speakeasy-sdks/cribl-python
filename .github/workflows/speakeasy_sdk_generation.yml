@@ -22,7 +22,7 @@ jobs:
       mode: direct
       openapi_doc_auth_header: x-api-key
       openapi_docs: |
-        - https://raw.githubusercontent.com/speakeasy-sdks/cribl-go/main/openapi.yaml
+        - ./openapi.yaml
       publish_python: true
       speakeasy_version: latest
     secrets:
