@@ -1,0 +1,15 @@
+configVersion: 1.0.0
+generation:
+  comments:
+    disableComments: false
+    omitDescriptionIfSummaryPresent: false
+  baseServerURL: ""
+  sdkClassName: cribl
+  singleTagPerOp: false
+  tagNamespacingDisabled: false
+python:
+  version: 0.0.1
+  author: speakeask-sdks
+  description: Python SDK for Cribl API
+  maxMethodParams: 0
+  packageName: cribl
