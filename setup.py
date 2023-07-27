@@ -10,7 +10,7 @@ except FileNotFoundError:
 
 setuptools.setup(
     name="cribl",
-    version="1.0.0",
+    version="1.0.1",
     author="speakeask-sdks",
     description="Python SDK for Cribl API",
     long_description=long_description,
