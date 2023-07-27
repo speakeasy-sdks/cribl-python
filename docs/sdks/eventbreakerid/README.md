@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.event_breaker_id.get('deserunt')
+res = s.event_breaker_id.get(id='deserunt')
 
 if res.event_breaker_rulesets is not None:
     # handle response
