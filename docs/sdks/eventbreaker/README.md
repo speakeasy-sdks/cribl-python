@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.event_breaker.delete('voluptatibus')
+res = s.event_breaker.delete(id='voluptatibus')
 
 if res.event_breaker_rulesets is not None:
     # handle response
@@ -280,7 +280,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.event_breaker.update('nostrum', shared.EventBreakerRuleset(
+res = s.event_breaker.update(id='nostrum', event_breaker_ruleset=shared.EventBreakerRuleset(
     description='est',
     id='cfbe2fd5-7075-4779-a917-7deac646ecb5',
     lib=shared.EventBreakerRulesetLibrary.CUSTOM,
