@@ -68,7 +68,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.role.delete('illum')
+res = s.role.delete(id='illum')
 
 if res.roles is not None:
     # handle response
@@ -103,7 +103,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.role.get('reiciendis')
+res = s.role.get(id='reiciendis')
 
 if res.roles is not None:
     # handle response
@@ -138,7 +138,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.role.update('placeat', shared.Role(
+res = s.role.update(id='placeat', role=shared.Role(
     id='2032b6c8-7992-43b7-a135-84f7ae12c689',
     policy=[
         'tenetur',
