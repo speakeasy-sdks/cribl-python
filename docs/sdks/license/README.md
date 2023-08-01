@@ -76,7 +76,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.license.delete('dignissimos')
+res = s.license.delete(id='dignissimos')
 
 if res.license is not None:
     # handle response
@@ -111,7 +111,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.license.get('laboriosam')
+res = s.license.get(id='laboriosam')
 
 if res.license is not None:
     # handle response
