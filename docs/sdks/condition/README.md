@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.condition.get('modi')
+res = s.condition.get(id='modi')
 
 if res.conditions is not None:
     # handle response
