@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_query.get('similique')
+res = s.saved_query.get(id='similique')
 
 if res.saved_query is not None:
     # handle response
