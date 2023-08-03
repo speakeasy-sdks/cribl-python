@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.user_properties.update('excepturi', shared.UserProfile(
+res = s.user_properties.update(id='excepturi', user_profile=shared.UserProfile(
     disabled=False,
     email='Novella70@yahoo.com',
     first='illo',

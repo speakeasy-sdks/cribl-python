@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.logger_config.delete('ipsa')
+res = s.logger_config.delete(id='ipsa')
 
 if res.logger_config is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.logger_config.get('excepturi')
+res = s.logger_config.get(id='excepturi')
 
 if res.logger_config is not None:
     # handle response
@@ -93,7 +93,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.logger_config.update('a', shared.LoggerConfig(
+res = s.logger_config.update(id='a', logger_config=shared.LoggerConfig(
     channels=[
         shared.LoggerEntry(
             can_delete=False,
