@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.stage_distributed_package.post('quos', 'atque')
+res = s.stage_distributed_package.post(group='quos', upgrade_percentage='atque')
 
 if res.cribl_package is not None:
     # handle response

@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_job.delete('impedit')
+res = s.saved_job.delete(id='impedit')
 
 if res.saved_jobs is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_job.get('recusandae')
+res = s.saved_job.get(id='recusandae')
 
 if res.saved_jobs is not None:
     # handle response
@@ -93,7 +93,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_job.update('voluptate', shared.SavedJobExecutor(
+res = s.saved_job.update(id='voluptate', request_body=shared.SavedJobExecutor(
     environment='est',
     executor=shared.SavedJobExecutorExecutor(
         conf=shared.SavedJobExecutorExecutorExecutorSpecificSettings(),

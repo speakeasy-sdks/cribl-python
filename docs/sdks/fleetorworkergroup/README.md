@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.fleet_or_worker_group.deploy('voluptatem', shared.DeployRequest(
+res = s.fleet_or_worker_group.deploy(id='voluptatem', deploy_request=shared.DeployRequest(
     version='ad',
 ))
 
