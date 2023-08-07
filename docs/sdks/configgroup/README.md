@@ -89,7 +89,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.config_group.delete('ducimus')
+res = s.config_group.delete(id='ducimus')
 
 if res.config_group is not None:
     # handle response
@@ -124,7 +124,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.config_group.get('natus', 'occaecati')
+res = s.config_group.get(id='natus', fields_='occaecati')
 
 if res.config_group is not None:
     # handle response
@@ -160,7 +160,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.config_group.update('suscipit', shared.ConfigGroup(
+res = s.config_group.update(id='suscipit', config_group=shared.ConfigGroup(
     config_version='adipisci',
     description='quasi',
     estimated_ingest_rate=169025,

@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_rulesets.delete('quia')
+res = s.mapping_rulesets.delete(id='quia')
 
 if res.mapping_rulesets is not None:
     # handle response
@@ -87,7 +87,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_rulesets.update('officiis', shared.MappingRuleset(
+res = s.mapping_rulesets.update(id='officiis', mapping_ruleset=shared.MappingRuleset(
     active=False,
     conf=shared.MappingRulesetConf(
         functions=[
