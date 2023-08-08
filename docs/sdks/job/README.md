@@ -27,7 +27,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job.cancel('voluptatibus')
+res = s.job.cancel(id='voluptatibus')
 
 if res.job_cancel is not None:
     # handle response
@@ -62,7 +62,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job.delete('molestias')
+res = s.job.delete(id='molestias')
 
 if res.job_delete is not None:
     # handle response
@@ -97,7 +97,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job.get('officia')
+res = s.job.get(id='officia')
 
 if res.job_infos is not None:
     # handle response
@@ -132,7 +132,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job.pause_job('libero')
+res = s.job.pause_job(id='libero')
 
 if res.job_pause is not None:
     # handle response
@@ -167,7 +167,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job.prevent('totam')
+res = s.job.prevent(id='totam')
 
 if res.job_infos is not None:
     # handle response
@@ -202,7 +202,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job.resume('sequi')
+res = s.job.resume(id='sequi')
 
 if res.job_resume is not None:
     # handle response

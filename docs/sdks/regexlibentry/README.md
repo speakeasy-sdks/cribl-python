@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.regex_lib_entry.delete('facere')
+res = s.regex_lib_entry.delete(id='facere')
 
 if res.regex_lib_entries is not None:
     # handle response
@@ -101,7 +101,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.regex_lib_entry.update('iusto', shared.RegexLibEntry(
+res = s.regex_lib_entry.update(id='iusto', regex_lib_entry=shared.RegexLibEntry(
     description='sapiente',
     id='73bc845e-320a-4319-b4ba-df947c9a867b',
     lib='optio',

@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.changed_files.get('ullam', 'in')
+res = s.changed_files.get(id='ullam', group='in')
 
 if res.changed_files is not None:
     # handle response
