@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.bytes.get('perspiciatis', 446394)
+res = s.bytes.get(path='perspiciatis', bytes_requested=446394)
 
 if res.sample_files is not None:
     # handle response
