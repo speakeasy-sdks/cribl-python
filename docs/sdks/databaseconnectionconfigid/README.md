@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.database_connection_config_id.delete('modi')
+res = s.database_connection_config_id.delete(id='modi')
 
 if res.database_connection_configs is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.database_connection_config_id.get('nam')
+res = s.database_connection_config_id.get(id='nam')
 
 if res.database_connection_configs is not None:
     # handle response
@@ -93,7 +93,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.database_connection_config_id.update('vero', shared.DatabaseConnectionConfig(
+res = s.database_connection_config_id.update(id='vero', database_connection_config=shared.DatabaseConnectionConfig(
     auth_type='voluptatem',
     config_obj='ipsam',
     connection_string='vel',
