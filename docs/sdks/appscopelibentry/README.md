@@ -870,7 +870,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.appscope_lib_entry.delete('voluptatibus')
+res = s.appscope_lib_entry.delete(id='voluptatibus')
 
 if res.appscope_lib_entry is not None:
     # handle response
@@ -905,7 +905,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.appscope_lib_entry.get('quisquam')
+res = s.appscope_lib_entry.get(id='quisquam')
 
 if res.appscope_lib_entry is not None:
     # handle response
@@ -940,7 +940,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.appscope_lib_entry.update('vero', shared.AppscopeLibEntry(
+res = s.appscope_lib_entry.update(id='vero', appscope_lib_entry=shared.AppscopeLibEntry(
     config=shared.AppscopeConfigWithCustom(
         cribl=shared.AppscopeConfigWithCustomCribl(
             authtoken='omnis',

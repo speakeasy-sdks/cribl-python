@@ -72,7 +72,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.notification_target.delete('ad')
+res = s.notification_target.delete(id='ad')
 
 if res.notification_targets is not None:
     # handle response
@@ -107,7 +107,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.notification_target.get('reiciendis')
+res = s.notification_target.get(id='reiciendis')
 
 if res.notification_targets is not None:
     # handle response
@@ -142,7 +142,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.notification_target.update('sequi', shared.NotificationTargetNotificationsLog(
+res = s.notification_target.update(id='sequi', request_body=shared.NotificationTargetNotificationsLog(
     id='abd905a9-72e0-4567-a822-7b2d309470bf',
     logs_dir='quam',
     system_fields=[
