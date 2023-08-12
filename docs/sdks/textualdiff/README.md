@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.textual_diff.get('culpa', 'nihil')
+res = s.textual_diff.get(commit='culpa', group='nihil')
 
 if res.textual_diff is not None:
     # handle response

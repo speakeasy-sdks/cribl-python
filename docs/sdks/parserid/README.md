@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.parser_id.delete('nostrum')
+res = s.parser_id.delete(id='nostrum')
 
 if res.parser_lib_entries is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.parser_id.get('sequi')
+res = s.parser_id.get(id='sequi')
 
 if res.parser_lib_entries is not None:
     # handle response
@@ -93,7 +93,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.parser_id.update('voluptatum', {
+res = s.parser_id.update(id='voluptatum', request_body={
     "error": 'nobis',
 })
 
