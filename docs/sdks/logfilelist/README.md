@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.log_file_list.get('maxime', 9375, 'eaque', 'architecto')
+res = s.log_file_list.get(allow='maxime', depth=9375, mode='eaque', path='architecto')
 
 if res.edge_files is not None:
     # handle response

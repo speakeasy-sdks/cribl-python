@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.cluis.get('nam', 'earum')
+res = s.cluis.get(query='nam', context='earum')
 
 if res.clui_items is not None:
     # handle response

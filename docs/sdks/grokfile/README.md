@@ -65,7 +65,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.grok_file.delete('fugiat')
+res = s.grok_file.delete(id='fugiat')
 
 if res.grok_file is not None:
     # handle response
@@ -100,7 +100,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.grok_file.get('nostrum')
+res = s.grok_file.get(id='nostrum')
 
 if res.grok_file is not None:
     # handle response
@@ -135,7 +135,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.grok_file.update('molestiae', shared.GrokFile(
+res = s.grok_file.update(id='molestiae', grok_file=shared.GrokFile(
     content='veniam',
     id='f1400e76-4ad7-4334-ac1b-781b36a08088',
     size=832239,

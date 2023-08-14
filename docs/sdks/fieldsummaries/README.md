@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.field_summaries.get('enim')
+res = s.field_summaries.get(id='enim')
 
 if res.field_summaries is not None:
     # handle response
