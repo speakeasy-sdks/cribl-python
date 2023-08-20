@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.groups.get('saepe', 'delectus')
+res = s.groups.get(fields_='saepe', product='delectus')
 
 if res.config_groups is not None:
     # handle response
