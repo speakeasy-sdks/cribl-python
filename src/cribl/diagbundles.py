@@ -3,7 +3,12 @@
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
 from cribl.models import errors, operations
+from enum import Enum
 from typing import Optional
+
+class GetAcceptEnum(str, Enum):
+    APPLICATION_JSON = "application/json"
+    APPLICATION_TAR_PLUS_GZIP = "application/tar+gzip"
 
 class DiagBundles:
     sdk_configuration: SDKConfiguration
@@ -12,13 +17,16 @@ class DiagBundles:
         self.sdk_configuration = sdk_config
         
     
-    def get(self) -> operations.GetDiagBundlesResponse:
+    def get(self, accept_header_override: Optional[GetAcceptEnum] = None) -> operations.GetDiagBundlesResponse:
         r"""Get list of existing diag bundles"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/master/bundles'
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/tar+gzip;q=0'
+        if accept_header_override is not None:
+            headers['Accept'] = accept_header_override.value
+        else:
+            headers['Accept'] = 'application/json;q=1, application/tar+gzip;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.security_client

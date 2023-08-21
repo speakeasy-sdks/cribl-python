@@ -71,7 +71,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.delete('minus')
+res = s.key_metadata_entity.delete(id='minus')
 
 if res.key_metadata_entities is not None:
     # handle response
@@ -106,7 +106,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.get('ab')
+res = s.key_metadata_entity.get(id='ab')
 
 if res.key_metadata_entities is not None:
     # handle response
@@ -141,7 +141,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.update('beatae', shared.KeyMetadataEntity(
+res = s.key_metadata_entity.update(id='beatae', key_metadata_entity=shared.KeyMetadataEntity(
     algorithm=shared.KeyMetadataEntityEncryptionAlgorithm.AES_256_GCM,
     cipher_key='nisi',
     created=786954,
