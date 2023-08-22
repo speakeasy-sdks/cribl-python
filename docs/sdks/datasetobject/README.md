@@ -60,7 +60,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.dataset_object.delete('iure')
+res = s.dataset_object.delete(id='iure')
 
 if res.dataset is not None:
     # handle response
@@ -95,7 +95,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.dataset_object.get('odit')
+res = s.dataset_object.get(id='odit')
 
 if res.dataset is not None:
     # handle response
@@ -130,7 +130,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.dataset_object.update('voluptatibus', 'vel')
+res = s.dataset_object.update(id='voluptatibus', request_body='vel')
 
 if res.dataset is not None:
     # handle response

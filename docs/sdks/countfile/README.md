@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.count_file.get('voluptatem')
+res = s.count_file.get(group='voluptatem')
 
 if res.count_file is not None:
     # handle response

@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pipeline_id.delete('voluptates')
+res = s.pipeline_id.delete(id='voluptates')
 
 if res.pipelines is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pipeline_id.get('possimus')
+res = s.pipeline_id.get(id='possimus')
 
 if res.pipelines is not None:
     # handle response
@@ -93,7 +93,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pipeline_id.update('fugit', shared.Pipeline(
+res = s.pipeline_id.update(id='fugit', pipeline=shared.Pipeline(
     conf=shared.PipelineConf(
         async_func_timeout=27946,
         description='repudiandae',
