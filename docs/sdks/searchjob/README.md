@@ -763,7 +763,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.search_job.delete('corporis')
+res = s.search_job.delete(id='corporis')
 
 if res.search_job is not None:
     # handle response
@@ -798,7 +798,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.search_job.get('impedit')
+res = s.search_job.get(id='impedit')
 
 if res.search_job is not None:
     # handle response
@@ -833,7 +833,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.search_job.update('eveniet', shared.SearchJob(
+res = s.search_job.update(id='eveniet', search_job=shared.SearchJob(
     chart_config=shared.ChartConfig(
         axis=shared.ChartConfigAxis(
             x_axis='cum',
