@@ -51,7 +51,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.user_object.update('amet', shared.User(
+res = s.user_object.update(id='amet', user=shared.User(
     current_password='quis',
     disabled=False,
     email='Belle.Kulas@hotmail.com',

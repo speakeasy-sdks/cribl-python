@@ -3,7 +3,12 @@
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
 from cribl.models import errors, operations, shared
+from enum import Enum
 from typing import Optional
+
+class GetAcceptEnum(str, Enum):
+    APPLICATION_JSON = "application/json"
+    APPLICATION_TAR_PLUS_GZIP = "application/tar+gzip"
 
 class DiagBundle:
     sdk_configuration: SDKConfiguration
@@ -25,7 +30,7 @@ class DiagBundle:
         url = base_url + '/system/diag'
         headers = {}
         query_params = utils.get_query_params(operations.DeleteDiagBundleRequest, request)
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.security_client
@@ -54,13 +59,16 @@ class DiagBundle:
         return res
 
     
-    def get(self) -> operations.GetDiagBundleResponse:
+    def get(self, accept_header_override: Optional[GetAcceptEnum] = None) -> operations.GetDiagBundleResponse:
         r"""Returns a diag bundle as a tar.gz archive"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/system/diag/download'
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/tar+gzip;q=0'
+        if accept_header_override is not None:
+            headers['Accept'] = accept_header_override.value
+        else:
+            headers['Accept'] = 'application/json;q=1, application/tar+gzip;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.security_client
@@ -99,7 +107,7 @@ class DiagBundle:
         req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.security_client
