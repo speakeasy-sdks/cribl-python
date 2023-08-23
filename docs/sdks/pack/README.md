@@ -77,7 +77,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pack.export('ipsam', 'minima', 'tempora')
+res = s.pack.export(id='ipsam', mode='minima', filename='tempora')
 
 if res.pack_infos is not None:
     # handle response
@@ -152,7 +152,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pack.uninstall('vel')
+res = s.pack.uninstall(id='vel')
 
 if res.pack_infos is not None:
     # handle response
@@ -187,7 +187,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pack.upgrade('cum', 'id', 'possimus', 'fugit')
+res = s.pack.upgrade(id='cum', minor='id', source='possimus', spec='fugit')
 
 if res.pack_infos is not None:
     # handle response
@@ -225,7 +225,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pack.upload('ipsam')
+res = s.pack.upload(filename='ipsam')
 
 if res.pack_infos is not None:
     # handle response

@@ -72,7 +72,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.bulletin_message.delete('occaecati')
+res = s.bulletin_message.delete(id='occaecati')
 
 if res.bulletin_message is not None:
     # handle response
@@ -107,7 +107,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.bulletin_message.get('officiis')
+res = s.bulletin_message.get(id='officiis')
 
 if res.bulletin_message is not None:
     # handle response
