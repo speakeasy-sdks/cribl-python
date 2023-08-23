@@ -65,7 +65,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.profiler.delete('omnis')
+res = s.profiler.delete(id='omnis')
 
 if res.profiler_item is not None:
     # handle response
@@ -100,7 +100,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.profiler.get('neque')
+res = s.profiler.get(id='neque')
 
 if res.profiler_item is not None:
     # handle response
@@ -135,7 +135,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.profiler.update('corporis', shared.ProfilerItem(
+res = s.profiler.update(id='corporis', profiler_item=shared.ProfilerItem(
     create_time=797527,
     id='2c9e81f3-0be3-4e43-a02d-721657650664',
     size=94122,

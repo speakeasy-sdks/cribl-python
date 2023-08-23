@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.process_running_detail.get('necessitatibus')
+res = s.process_running_detail.get(pid='necessitatibus')
 
 if res.processes is not None:
     # handle response

@@ -81,7 +81,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_ruleset.delete('quo')
+res = s.mapping_ruleset.delete(id='quo')
 
 if res.mapping_rulesets is not None:
     # handle response
@@ -116,7 +116,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_ruleset.get('incidunt')
+res = s.mapping_ruleset.get(id='incidunt')
 
 if res.mapping_rulesets is not None:
     # handle response
@@ -151,7 +151,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_ruleset.update('quod', shared.MappingRuleset(
+res = s.mapping_ruleset.update(id='quod', mapping_ruleset=shared.MappingRuleset(
     active=False,
     conf=shared.MappingRulesetConf(
         functions=[
