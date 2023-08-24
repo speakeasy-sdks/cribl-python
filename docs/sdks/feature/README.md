@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.feature.get('aspernatur')
+res = s.feature.get(id='aspernatur')
 
 if res.features_entry is not None:
     # handle response

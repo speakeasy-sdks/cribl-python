@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.search_job_metrics.get('architecto')
+res = s.search_job_metrics.get(id='architecto')
 
 if res.geth_search_job_metrics_200_application_json_string is not None:
     # handle response
