@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.data_sample_id.delete('nemo')
+res = s.data_sample_id.delete(id='nemo')
 
 if res.data_samples is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.data_sample_id.get('quos')
+res = s.data_sample_id.get(id='quos')
 
 if res.data_samples is not None:
     # handle response
@@ -93,7 +93,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.data_sample_id.update('eius', {
+res = s.data_sample_id.update(id='eius', request_body={
     "ducimus": 'nesciunt',
 })
 

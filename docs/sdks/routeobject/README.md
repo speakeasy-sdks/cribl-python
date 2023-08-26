@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.route_object.update('aspernatur', shared.Routes(
+res = s.route_object.update(id='aspernatur', routes=shared.Routes(
     comments=[
         {
             "dicta": 'inventore',

@@ -66,7 +66,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.schema.delete('deserunt')
+res = s.schema.delete(id='deserunt')
 
 if res.schema_lib_entry is not None:
     # handle response
@@ -101,7 +101,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.schema.get('fugit')
+res = s.schema.get(id='fugit')
 
 if res.schema_lib_entry is not None:
     # handle response
@@ -175,7 +175,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.schema.update('impedit', {
+res = s.schema.update(id='impedit', request_body={
     "deleniti": 'quasi',
     "maiores": 'voluptatem',
     "aliquid": 'laudantium',

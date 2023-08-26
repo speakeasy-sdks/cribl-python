@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.diag_bundle.delete('quibusdam')
+res = s.diag_bundle.delete(path='quibusdam')
 
 if res.remove_diag_response is not None:
     # handle response
