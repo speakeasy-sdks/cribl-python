@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.edge_listing.get('architecto')
+res = s.edge_listing.get(path='architecto')
 
 if res.filesystem_entries is not None:
     # handle response
