@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.output_id.delete('voluptatum')
+res = s.output_id.delete(id='voluptatum')
 
 if res.outputs is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.output_id.get('iusto')
+res = s.output_id.get(id='iusto')
 
 if res.outputs is not None:
     # handle response
@@ -93,7 +93,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.output_id.update('quod', shared.OutputDlS3(
+res = s.output_id.update(id='quod', request_body=shared.OutputDlS3(
     add_id_to_stage_path=False,
     assume_role_arn='voluptas',
     assume_role_external_id='non',
