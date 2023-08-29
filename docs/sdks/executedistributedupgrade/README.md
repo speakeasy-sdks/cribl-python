@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.execute_distributed_upgrade.post('fugiat', shared.DistributedUpgradeRequest(
+res = s.execute_distributed_upgrade.post(group='fugiat', distributed_upgrade_request=shared.DistributedUpgradeRequest(
     package_urls=[
         shared.DistributedUpgradeRequestPackageUrls(
             package_hash_url='officiis',

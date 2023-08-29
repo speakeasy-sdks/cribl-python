@@ -22,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.request_auth.get('aliquid', 'eum')
+res = s.request_auth.get(relay_state='aliquid', saml_response='eum')
 
 if res.success is not None:
     # handle response

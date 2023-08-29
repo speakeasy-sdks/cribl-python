@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.working_tree.get('tempora')
+res = s.working_tree.get(group='tempora')
 
 if res.git_status_results is not None:
     # handle response

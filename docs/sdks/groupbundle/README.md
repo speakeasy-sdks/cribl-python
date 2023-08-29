@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.group_bundle.get('quae', shared.DeployRequest(
+res = s.group_bundle.get(id='quae', deploy_request=shared.DeployRequest(
     version='eaque',
 ))
 
