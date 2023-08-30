@@ -3,7 +3,12 @@
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
 from cribl.models import errors, operations
+from enum import Enum
 from typing import Optional
+
+class GetAcceptEnum(str, Enum):
+    APPLICATION_JSON = "application/json"
+    APPLICATION_X_NDJSON = "application/x-ndjson"
 
 class JobResults:
     sdk_configuration: SDKConfiguration
@@ -12,7 +17,7 @@ class JobResults:
         self.sdk_configuration = sdk_config
         
     
-    def get(self, id: str) -> operations.GetJobResultsResponse:
+    def get(self, id: str, accept_header_override: Optional[GetAcceptEnum] = None) -> operations.GetJobResultsResponse:
         r"""Get results for a discover job by instance id
         Get results for a discover job by instance id
         """
@@ -24,7 +29,10 @@ class JobResults:
         
         url = utils.generate_url(operations.GetJobResultsRequest, base_url, '/jobs/{id}/results/', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/x-ndjson;q=0'
+        if accept_header_override is not None:
+            headers['Accept'] = accept_header_override.value
+        else:
+            headers['Accept'] = 'application/json;q=1, application/x-ndjson;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.security_client
