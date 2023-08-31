@@ -71,7 +71,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.certificate.delete('alias')
+res = s.certificate.delete(id='alias')
 
 if res.certificate is not None:
     # handle response
@@ -106,7 +106,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.certificate.get('maiores')
+res = s.certificate.get(id='maiores')
 
 if res.certificate is not None:
     # handle response
@@ -141,7 +141,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.certificate.update('reiciendis', shared.Certificate(
+res = s.certificate.update(id='reiciendis', certificate=shared.Certificate(
     ca='dolores',
     cert='id',
     description='minima',
