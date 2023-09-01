@@ -67,7 +67,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.dataset.delete('voluptate')
+res = s.dataset.delete(id='voluptate')
 
 if res.dataset_provider_type is not None:
     # handle response
@@ -102,7 +102,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.dataset.get('sequi')
+res = s.dataset.get(id='sequi')
 
 if res.dataset_provider_type is not None:
     # handle response
@@ -137,7 +137,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.dataset.update('dignissimos', shared.DatasetProviderType(
+res = s.dataset.update(id='dignissimos', dataset_provider_type=shared.DatasetProviderType(
     description='neque',
     id=shared.ProviderType.INVALID,
     locality=shared.OriginConfig(
