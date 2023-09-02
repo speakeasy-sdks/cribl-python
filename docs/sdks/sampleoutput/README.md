@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.sample_output.post('sint', shared.OutputTestRequest(
+res = s.sample_output.post(id='sint', output_test_request=shared.OutputTestRequest(
     events=[
         shared.CriblEvent(
             raw='qui',
