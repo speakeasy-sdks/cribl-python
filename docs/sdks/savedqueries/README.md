@@ -75,7 +75,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_queries.delete('omnis')
+res = s.saved_queries.delete(id='omnis')
 
 if res.saved_query is not None:
     # handle response
@@ -139,7 +139,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_queries.update('ipsa', shared.SavedQuery(
+res = s.saved_queries.update(id='ipsa', saved_query=shared.SavedQuery(
     description='aliquam',
     earliest='dolor',
     id='9d222465-6946-4240-b084-f7ab37cef022',
