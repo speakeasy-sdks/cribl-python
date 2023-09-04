@@ -22,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.worker_edge_nodes.get('unde', 365473, 213405, 'rerum')
+res = s.worker_edge_nodes.get(filter_exp='unde', limit=365473, offset=213405, sort_exp='rerum')
 
 if res.master_worker_entries is not None:
     # handle response
