@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.schema_id.delete('unde')
+res = s.schema_id.delete(id='unde')
 
 if res.schema_lib_entries is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.schema_id.get('corrupti')
+res = s.schema_id.get(id='corrupti')
 
 if res.schema_lib_entries is not None:
     # handle response
@@ -93,7 +93,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.schema_id.update('quae', {
+res = s.schema_id.update(id='quae', request_body={
     "ea": 'libero',
     "nam": 'amet',
     "adipisci": 'minus',
