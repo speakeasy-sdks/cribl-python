@@ -64,7 +64,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.script.delete('nam')
+res = s.script.delete(id='nam')
 
 if res.script_lib_entry is not None:
     # handle response
@@ -99,7 +99,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.script.get('voluptatibus')
+res = s.script.get(id='voluptatibus')
 
 if res.script_lib_entry is not None:
     # handle response
@@ -134,7 +134,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.script.update('magnam', {
+res = s.script.update(id='magnam', request_body={
     "ducimus": 'itaque',
 })
 
