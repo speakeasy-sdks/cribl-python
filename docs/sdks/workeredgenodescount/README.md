@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.worker_edge_nodes_count.get('ut')
+res = s.worker_edge_nodes_count.get(filter_exp='quis')
 
 if res.worker_edge_nodes is not None:
     # handle response

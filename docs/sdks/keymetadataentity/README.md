@@ -25,14 +25,14 @@ s = cribl.Cribl(
 
 req = shared.KeyMetadataEntity(
     algorithm=shared.KeyMetadataEntityEncryptionAlgorithm.AES_256_CBC,
-    cipher_key='numquam',
-    created=947822,
-    description='adipisci',
-    expires=728559,
-    key_id='in',
-    keyclass=329651,
+    cipher_key='recusandae',
+    created=456520,
+    description='provident',
+    expires=337477,
+    key_id='eum',
+    keyclass=970494,
     kms=shared.KeyMetadataEntityKMSForThisKey.LOCAL,
-    plain_key='ex',
+    plain_key='provident',
     use_iv=False,
 )
 
@@ -71,7 +71,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.delete('minus')
+res = s.key_metadata_entity.delete(id='aspernatur')
 
 if res.key_metadata_entities is not None:
     # handle response
@@ -106,7 +106,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.get('ab')
+res = s.key_metadata_entity.get(id='ullam')
 
 if res.key_metadata_entities is not None:
     # handle response
@@ -141,16 +141,16 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.update('beatae', shared.KeyMetadataEntity(
+res = s.key_metadata_entity.update(id='quasi', key_metadata_entity=shared.KeyMetadataEntity(
     algorithm=shared.KeyMetadataEntityEncryptionAlgorithm.AES_256_GCM,
-    cipher_key='nisi',
-    created=786954,
-    description='dolor',
-    expires=496548,
-    key_id='fuga',
-    keyclass=326903,
+    cipher_key='nostrum',
+    created=652309,
+    description='provident',
+    expires=821719,
+    key_id='animi',
+    keyclass=402767,
     kms=shared.KeyMetadataEntityKMSForThisKey.LOCAL,
-    plain_key='architecto',
+    plain_key='aliquid',
     use_iv=False,
 ))
 

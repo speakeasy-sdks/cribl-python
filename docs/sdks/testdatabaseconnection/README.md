@@ -21,12 +21,12 @@ s = cribl.Cribl(
 )
 
 req = shared.DatabaseConnectionTest(
-    auth_type='corporis',
-    config_obj='vel',
-    connection_string='accusamus',
-    connection_timeout=521782,
-    database_type='ipsam',
-    text_secret='at',
+    auth_type='quod',
+    config_obj='voluptatibus',
+    connection_string='voluptas',
+    connection_timeout=247767,
+    database_type='ullam',
+    text_secret='laborum',
 )
 
 res = s.test_database_connection.post(req)

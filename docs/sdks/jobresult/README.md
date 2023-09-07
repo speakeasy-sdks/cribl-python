@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job_result.get('explicabo', 'ipsam', 583193)
+res = s.job_result.get(group='dolorum', id='nesciunt', max_files=63207)
 
 if res.job_result is not None:
     # handle response

@@ -25,23 +25,11 @@ req = shared.MappingRuleset(
     conf=shared.MappingRulesetConf(
         functions=[
             {
-                "dignissimos": 'libero',
-                "illo": 'ab',
-            },
-            {
-                "accusamus": 'saepe',
-                "tempore": 'veniam',
-            },
-            {
-                "reiciendis": 'earum',
-            },
-            {
-                "praesentium": 'nemo',
-                "repellat": 'quisquam',
+                "beatae": 'dignissimos',
             },
         ],
     ),
-    id='37814d4c-98e0-4c2b-b89e-b75dad636c60',
+    id='fe35b60e-b1ea-4426-955b-a3c28744ed53',
 )
 
 res = s.fleet_mapping.create(req)

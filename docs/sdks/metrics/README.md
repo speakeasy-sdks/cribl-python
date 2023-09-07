@@ -22,50 +22,44 @@ s = cribl.Cribl(
 )
 
 req = shared.GetNamesOpts(
-    dim_key_filter='similique',
-    dim_value_filter='ea',
-    earliest=657301,
+    dim_key_filter='nemo',
+    dim_value_filter='soluta',
+    earliest=726227,
     filter_expr=shared.Expression(
-        max_cache=296128,
+        max_cache=526907,
         cache=shared.Map(
             op=shared.MapOp(),
         ),
         declared_variables=[
-            'dignissimos',
-            'esse',
-            'animi',
-            'laudantium',
+            'dolorum',
         ],
         is_safe=False,
-        modified_expression='esse',
+        modified_expression='odio',
         opt=shared.ExpressionOptions(
             allow_internal=False,
             args=[
-                'earum',
-                'velit',
-                'officiis',
-                'eius',
+                'fugit',
             ],
             ast_traverse_callback=shared.TraverseCallback(),
-            context='rerum',
+            context='alias',
             disallow_assign=False,
-            max_num_of_allowed_iterations=930111,
+            max_num_of_allowed_iterations=168042,
             partial_eval=shared.PartialEvalRewrite(
                 field_filter=shared.PartialEvalFieldFilter(),
-                null_obj='dignissimos',
+                null_obj='vel',
             ),
             replace_identifiers=False,
             replace_literals=False,
             unprotected=False,
         ),
-        original_expression='ipsam',
-        partial_expression='explicabo',
+        original_expression='quae',
+        partial_expression='quae',
         referenced_cribl_export=False,
-        replace_identifiers_expression='impedit',
-        replace_literal_expression='aliquid',
+        replace_identifiers_expression='modi',
+        replace_literal_expression='neque',
     ),
-    max_values=339843,
-    metric_name_filter='facilis',
+    max_values=348357,
+    metric_name_filter='itaque',
 )
 
 res = s.metrics.post(req)
@@ -103,11 +97,11 @@ s = cribl.Cribl(
 )
 
 req = operations.QueryMetricsRequest(
-    earliest=218128,
-    filter_expr='ut',
-    latest=308819,
-    metric_name_filter='architecto',
-    num_buckets=506966,
+    earliest=88248,
+    filter_expr='ipsum',
+    latest=602229,
+    metric_name_filter='nulla',
+    num_buckets=714376,
 )
 
 res = s.metrics.query(req)
