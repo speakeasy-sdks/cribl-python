@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.sample_content.get('corrupti')
+res = s.sample_content.get(id='fuga')
 
 if res.sample_contents is not None:
     # handle response

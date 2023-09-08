@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.global_variable_id.delete('atque')
+res = s.global_variable_id.delete(id='maiores')
 
 if res.global_vars is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.global_variable_id.get('beatae')
+res = s.global_variable_id.get(id='incidunt')
 
 if res.global_vars is not None:
     # handle response
@@ -93,13 +93,13 @@ s = cribl.Cribl(
 )
 
 
-res = s.global_variable_id.update('at', shared.GlobalVar(
-    description='labore',
-    id='c700b607-f3c9-43c7-bb9d-a3f2ceda7e23',
-    lib='repellat',
-    tags='explicabo',
-    type=shared.GlobalVarType.STRING,
-    value='exercitationem',
+res = s.global_variable_id.update(id='sed', global_var=shared.GlobalVar(
+    description='provident',
+    id='4e3698f4-47f6-403e-8b44-5e80ca55efd2',
+    lib='aperiam',
+    tags='saepe',
+    type=shared.GlobalVarType.NUMBER,
+    value='veniam',
 ))
 
 if res.global_vars is not None:

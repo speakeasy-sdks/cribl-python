@@ -1,7 +1,5 @@
 # OutputStatuses
 
-a list of OutputStatus objects
-
 
 ## Fields
 

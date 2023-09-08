@@ -1,7 +1,5 @@
 # RegexLibEntry
 
-New RegexLibEntry object
-
 
 ## Fields
 

@@ -1,7 +1,5 @@
 # SavedJobs
 
-a list of SavedJob objects
-
 
 ## Fields
 

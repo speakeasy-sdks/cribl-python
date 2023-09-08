@@ -1,7 +1,5 @@
 # DatasetProviderType
 
-New DatasetProviderType object
-
 
 ## Fields
 

@@ -1,7 +1,5 @@
 # BulletinMessage
 
-New BulletinMessage object
-
 
 ## Fields
 

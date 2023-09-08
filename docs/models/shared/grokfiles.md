@@ -1,7 +1,5 @@
 # GrokFiles
 
-a list of GrokFile objects
-
 
 ## Fields
 
