@@ -1,7 +1,5 @@
 # SampleContents
 
-a list of SampleContent objects
-
 
 ## Fields
 

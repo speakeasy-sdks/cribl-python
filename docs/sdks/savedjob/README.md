@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_job.delete('impedit')
+res = s.saved_job.delete(id='eaque')
 
 if res.saved_jobs is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_job.get('recusandae')
+res = s.saved_job.get(id='architecto')
 
 if res.saved_jobs is not None:
     # handle response
@@ -93,46 +93,40 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_job.update('voluptate', shared.SavedJobExecutor(
-    environment='est',
-    executor=shared.SavedJobExecutorExecutor(
-        conf=shared.SavedJobExecutorExecutorExecutorSpecificSettings(),
-        store_task_results=False,
-        type='et',
-    ),
-    id='bd8fb7a0-a116-4ce7-a3d4-097fa30e9af7',
+res = s.saved_job.update(id='similique', request_body=shared.SavedJobScheduledSearch(
+    environment='blanditiis',
+    id='02e2ec09-ff8f-40f8-96ff-3477c13e902c',
     remove_fields=[
-        'ipsam',
+        'beatae',
     ],
     resume_on_boot=False,
-    schedule=shared.SavedJobExecutorSchedule(
-        cron_schedule='libero',
+    saved_query_id='incidunt',
+    schedule=shared.SavedJobScheduledSearchSchedule(
+        cron_schedule='dicta',
         enabled=False,
-        max_concurrent_runs=153942,
-        resume_missed='omnis',
-        run=shared.SavedJobExecutorScheduleRunSettings(
-            earliest=120646,
-            expression='qui',
-            job_timeout='explicabo',
-            latest=6203,
-            log_level=shared.SavedJobExecutorScheduleRunSettingsLogLevel.WARN,
-            max_task_reschedule=9284,
-            max_task_size='fugiat',
-            min_task_size='voluptatum',
-            mode='velit',
+        max_concurrent_runs=139133,
+        resume_missed='corporis',
+        run=shared.SavedJobScheduledSearchScheduleRunSettings(
+            earliest=701441,
+            expression='alias',
+            job_timeout='error',
+            latest=424854,
+            log_level=shared.SavedJobScheduledSearchScheduleRunSettingsLogLevel.ERROR,
+            max_task_reschedule=664197,
+            max_task_size='laboriosam',
+            min_task_size='ex',
+            mode='quas',
             reschedule_dropped_tasks=False,
-            time_range_type='hic',
+            time_range_type='veritatis',
             timestamp_timezone='ullam',
         ),
         skippable=False,
     ),
     streamtags=[
-        'itaque',
-        'distinctio',
-        'iusto',
+        'quae',
     ],
-    ttl='dignissimos',
-    type=shared.SavedJobExecutorJobType.EXECUTOR,
+    ttl='similique',
+    type=shared.SavedJobScheduledSearchJobType.COLLECTION,
 ))
 
 if res.saved_jobs is not None:

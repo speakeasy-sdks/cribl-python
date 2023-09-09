@@ -1,7 +1,5 @@
 # CluiItems
 
-a list of CluiItem objects
-
 
 ## Fields
 

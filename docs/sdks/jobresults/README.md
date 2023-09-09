@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job_results.get('optio')
+res = s.job_results.get(id='recusandae')
 
 if res.get_job_results_200_application_x_ndjson_binary_string is not None:
     # handle response
