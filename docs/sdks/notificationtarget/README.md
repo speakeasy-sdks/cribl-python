@@ -23,18 +23,13 @@ s = cribl.Cribl(
     ),
 )
 
-req = shared.NotificationTargetPagerDuty(
-    class_='dolor',
-    component='expedita',
-    group='libero',
-    id='91c8d975-e0e8-4419-98f8-4f144f3e07ed',
-    routing_key='quisquam',
-    severity=shared.NotificationTargetPagerDutySeverity.CRITICAL,
+req = shared.NotificationTargetNotificationsLog(
+    id='2259b1ab-da8c-4070-a108-4cb0672d1ad8',
+    logs_dir='molestiae',
     system_fields=[
-        'dolorum',
-        'deserunt',
+        'provident',
     ],
-    type=shared.NotificationTargetPagerDutyType.PAGER_DUTY,
+    type=shared.NotificationTargetNotificationsLogType.NOTIFICATIONS_LOG,
 )
 
 res = s.notification_target.create(req)
@@ -72,7 +67,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.notification_target.delete('ad')
+res = s.notification_target.delete(id='accusamus')
 
 if res.notification_targets is not None:
     # handle response
@@ -107,7 +102,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.notification_target.get('reiciendis')
+res = s.notification_target.get(id='necessitatibus')
 
 if res.notification_targets is not None:
     # handle response
@@ -142,15 +137,20 @@ s = cribl.Cribl(
 )
 
 
-res = s.notification_target.update('sequi', shared.NotificationTargetNotificationsLog(
-    id='abd905a9-72e0-4567-a822-7b2d309470bf',
-    logs_dir='quam',
-    system_fields=[
-        'aliquam',
-        'delectus',
-        'culpa',
+res = s.notification_target.update(id='tempore', request_body=shared.NotificationTargetRouter(
+    id='665b85ef-bd02-4bae-8be2-d782259e3ea4',
+    rules=[
+        shared.NotificationTargetRouterRules(
+            description='quidem',
+            filter='quis',
+            final=False,
+            output='beatae',
+        ),
     ],
-    type=shared.NotificationTargetNotificationsLogType.NOTIFICATIONS_LOG,
+    system_fields=[
+        'unde',
+    ],
+    type=shared.NotificationTargetRouterType.ROUTER,
 ))
 
 if res.notification_targets is not None:

@@ -1,7 +1,5 @@
 # Conditions
 
-a list of Condition objects
-
 
 ## Fields
 

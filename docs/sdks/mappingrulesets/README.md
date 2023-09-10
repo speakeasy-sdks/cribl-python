@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_rulesets.delete('quia')
+res = s.mapping_rulesets.delete(id='iusto')
 
 if res.mapping_rulesets is not None:
     # handle response
@@ -87,31 +87,16 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_rulesets.update('officiis', shared.MappingRuleset(
+res = s.mapping_rulesets.update(id='sit', mapping_ruleset=shared.MappingRuleset(
     active=False,
     conf=shared.MappingRulesetConf(
         functions=[
             {
-                "quis": 'enim',
-                "eum": 'nemo',
-                "illum": 'nesciunt',
-                "sit": 'odio',
-            },
-            {
-                "asperiores": 'recusandae',
-                "voluptates": 'praesentium',
-                "dicta": 'fugit',
-                "sit": 'aliquid',
-            },
-            {
-                "sed": 'deleniti',
-                "sunt": 'nesciunt',
-                "delectus": 'laborum',
-                "aliquam": 'deserunt',
+                "doloremque": 'consequatur',
             },
         ],
     ),
-    id='41c480d3-f213-42af-8310-2d514f4cc6f1',
+    id='ae6b6bc9-b8f7-459e-ac55-a9741d311352',
 ))
 
 if res.mapping_rulesets is not None:

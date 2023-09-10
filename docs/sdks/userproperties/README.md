@@ -21,19 +21,17 @@ s = cribl.Cribl(
 )
 
 
-res = s.user_properties.update('excepturi', shared.UserProfile(
+res = s.user_properties.update(id='laudantium', user_profile=shared.UserProfile(
     disabled=False,
-    email='Novella70@yahoo.com',
-    first='illo',
-    id='dd3bbce2-47b7-4684-aff5-0126d71cffbd',
-    last='aut',
-    password='itaque',
+    email='Luis19@hotmail.com',
+    first='beatae',
+    id='7747dc91-5ad2-4caf-9dd6-723dc0f5ae2f',
+    last='neque',
+    password='officia',
     roles=[
-        'molestiae',
-        'quaerat',
-        'distinctio',
+        'suscipit',
     ],
-    username='Jewell6',
+    username='Martine2',
 ))
 
 if res.user_profiles is not None:

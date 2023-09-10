@@ -22,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.ui_state.get('laudantium')
+res = s.ui_state.get(key='animi')
 
 if res.ui_states is not None:
     # handle response
@@ -57,12 +57,12 @@ s = cribl.Cribl(
 )
 
 
-res = s.ui_state.update('dolorem', shared.UIStatePatch(
+res = s.ui_state.update(key='recusandae', ui_state_patch=shared.UIStatePatch(
     args={
-        "officiis": 'mollitia',
+        "corporis": 'non',
     },
     op=shared.UIStatePatchOp.PUSH_RECENT,
-    value='fugiat',
+    value='distinctio',
 ))
 
 if res.ui_states is not None:

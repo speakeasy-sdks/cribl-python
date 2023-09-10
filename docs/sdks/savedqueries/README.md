@@ -24,20 +24,20 @@ s = cribl.Cribl(
 )
 
 req = shared.SavedQuery(
-    description='ab',
-    earliest='magnam',
-    id='db6be5a6-8599-48e2-aae2-0da16fc2b271',
-    latest='deserunt',
-    name='Vickie Marvin',
-    query='molestiae',
-    sample_rate=933840,
+    description='deserunt',
+    earliest='corporis',
+    id='3e5ae6e0-ac18-44c2-b9c2-47c88373a40e',
+    latest='architecto',
+    name='Micheal Cassin',
+    query='odit',
+    sample_rate=936845,
     schedule=shared.SavedQuerySchedule(
-        cron_schedule='rem',
+        cron_schedule='veniam',
         enabled=False,
-        keep_last_n=366327,
-        tz='non',
+        keep_last_n=373106,
+        tz='eaque',
     ),
-    user='recusandae',
+    user='exercitationem',
 )
 
 res = s.saved_queries.create(req)
@@ -75,7 +75,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_queries.delete('omnis')
+res = s.saved_queries.delete(id='veniam')
 
 if res.saved_query is not None:
     # handle response
@@ -139,21 +139,21 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_queries.update('ipsa', shared.SavedQuery(
-    description='aliquam',
-    earliest='dolor',
-    id='9d222465-6946-4240-b084-f7ab37cef022',
-    latest='consequuntur',
-    name='Jean Mayert',
-    query='quidem',
-    sample_rate=350202,
+res = s.saved_queries.update(id='nihil', saved_query=shared.SavedQuery(
+    description='ad',
+    earliest='nisi',
+    id='f5d56d0b-d0af-42df-a13d-b4f62cba3f89',
+    latest='non',
+    name='Iris Torp',
+    query='doloremque',
+    sample_rate=711871,
     schedule=shared.SavedQuerySchedule(
-        cron_schedule='veniam',
+        cron_schedule='corrupti',
         enabled=False,
-        keep_last_n=267988,
-        tz='quasi',
+        keep_last_n=53733,
+        tz='deserunt',
     ),
-    user='quae',
+    user='aliquid',
 ))
 
 if res.saved_query is not None:

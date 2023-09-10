@@ -21,25 +21,17 @@ s = cribl.Cribl(
 )
 
 
-res = s.execute_distributed_upgrade.post('fugiat', shared.DistributedUpgradeRequest(
+res = s.execute_distributed_upgrade.post(group='reiciendis', distributed_upgrade_request=shared.DistributedUpgradeRequest(
     package_urls=[
         shared.DistributedUpgradeRequestPackageUrls(
-            package_hash_url='officiis',
-            package_url='ducimus',
-        ),
-        shared.DistributedUpgradeRequestPackageUrls(
-            package_hash_url='dolor',
-            package_url='dicta',
-        ),
-        shared.DistributedUpgradeRequestPackageUrls(
-            package_hash_url='error',
-            package_url='porro',
+            package_hash_url='quidem',
+            package_url='saepe',
         ),
     ],
-    upgrade_mode=shared.DistributedUpgradeRequestUpgradeMode.ROLLING,
-    upgrade_percentage=491591,
-    worker_retries=458970,
-    worker_retry_delay=854115,
+    upgrade_mode=shared.DistributedUpgradeRequestUpgradeMode.REGULAR,
+    upgrade_percentage=296556,
+    worker_retries=121059,
+    worker_retry_delay=992012,
 ))
 
 if res.cribl_package is not None:

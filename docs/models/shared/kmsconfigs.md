@@ -1,7 +1,5 @@
 # KMSConfigs
 
-a list of IKMSProviderConfig objects
-
 
 ## Fields
 

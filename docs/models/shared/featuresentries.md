@@ -1,7 +1,5 @@
 # FeaturesEntries
 
-a list of FeaturesEntry objects
-
 
 ## Fields
 

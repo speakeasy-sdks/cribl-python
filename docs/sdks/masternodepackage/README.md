@@ -23,16 +23,8 @@ s = cribl.Cribl(
 req = shared.UpgradeMasterRequest(
     packages=[
         shared.UpgradeMasterRequestPackages(
-            package_hash_url='expedita',
-            package_url='hic',
-        ),
-        shared.UpgradeMasterRequestPackages(
-            package_hash_url='excepturi',
-            package_url='aliquid',
-        ),
-        shared.UpgradeMasterRequestPackages(
-            package_hash_url='sed',
-            package_url='beatae',
+            package_hash_url='iste',
+            package_url='ex',
         ),
     ],
 )

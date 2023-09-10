@@ -1,7 +1,5 @@
 # Executors
 
-a list of Executor objects
-
 
 ## Fields
 
