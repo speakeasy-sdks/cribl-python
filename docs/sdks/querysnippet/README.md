@@ -22,11 +22,10 @@ s = cribl.Cribl(
 
 req = shared.PreviewRequestBody(
     events=[
-        'doloremque',
-        'assumenda',
+        'veritatis',
     ],
     options=shared.PreviewOptions(),
-    query='provident',
+    query='quae',
 )
 
 res = s.query_snippet.apply(req)

@@ -1,7 +1,5 @@
 # DataSamples
 
-a list of DataSample objects
-
 
 ## Fields
 

@@ -1,7 +1,5 @@
 # JobRun
 
-a list of string objects
-
 
 ## Fields
 

@@ -21,8 +21,7 @@ s = cribl.Cribl(
 )
 
 req = {
-    "voluptate": 'eius',
-    "expedita": 'aperiam',
+    "debitis": 'labore',
 }
 
 res = s.parser_object.post(req)

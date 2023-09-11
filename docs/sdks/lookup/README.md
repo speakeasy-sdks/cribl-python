@@ -25,11 +25,11 @@ s = cribl.Cribl(
 )
 
 req = operations.CreateLookupRequestBody2(
-    content='soluta',
-    description='dolorum',
-    id='3f8941ae-bc0b-480a-a924-d3b2ecfcc8f8',
-    size=614770,
-    tags='corporis',
+    content='sequi',
+    description='doloribus',
+    id='ec9578a6-4584-4273-a841-8d162309fb09',
+    size=178580,
+    tags='occaecati',
 )
 
 res = s.lookup.create(req)
@@ -67,7 +67,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.lookup.delete('accusantium')
+res = s.lookup.delete(id='iste')
 
 if res.lookup_file is not None:
     # handle response
@@ -102,7 +102,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.lookup.get('illo')
+res = s.lookup.get(id='magni')
 
 if res.lookup_file is not None:
     # handle response
@@ -137,12 +137,12 @@ s = cribl.Cribl(
 )
 
 
-res = s.lookup.update('aut', operations.UpdateLookupRequestBody2(
-    content='nostrum',
-    description='at',
-    id='d3d6fa18-04e5-44c8-af16-8a363c8873e4',
-    size=503449,
-    tags='numquam',
+res = s.lookup.update(id='inventore', request_body=operations.UpdateLookupRequestBody2(
+    content='accusamus',
+    description='voluptatibus',
+    id='b9f58c4d-86e6-48e4-be05-6013f59da757',
+    size=667715,
+    tags='quis',
 ))
 
 if res.lookup_file is not None:
@@ -179,7 +179,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.lookup.upload('sequi')
+res = s.lookup.upload(filename='sint')
 
 if res.lookup_file_info_response is not None:
     # handle response

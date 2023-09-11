@@ -1,7 +1,5 @@
 # ProcessEntries
 
-a list of ProcessEntry objects
-
 
 ## Fields
 

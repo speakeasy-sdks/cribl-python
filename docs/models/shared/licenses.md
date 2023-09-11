@@ -1,7 +1,5 @@
 # Licenses
 
-a list of License objects
-
 
 ## Fields
 

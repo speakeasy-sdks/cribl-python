@@ -1,7 +1,5 @@
 # GitStatusResults
 
-a list of GitStatusResult objects
-
 
 ## Fields
 

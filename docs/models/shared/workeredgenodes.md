@@ -1,7 +1,5 @@
 # WorkerEdgeNodes
 
-a list of number objects
-
 
 ## Fields
 

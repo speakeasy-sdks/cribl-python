@@ -1,7 +1,5 @@
 # LookupFiles
 
-a list of LookupFile objects
-
 
 ## Fields
 

@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.search_timeline.get('magnam')
+res = s.search_timeline.get(id='quam')
 
 if res.search_timeline is not None:
     # handle response
