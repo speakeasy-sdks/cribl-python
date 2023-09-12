@@ -23,27 +23,27 @@ s = cribl.Cribl(
 req = shared.MetricsAggOpts(
     aggs=shared.AggregationMgrOptions(
         aggregations=[
-            'alias',
+            'mollitia',
         ],
         cumulative=False,
-        flush_event_limit=910073,
-        flush_mem_limit=941668,
-        hostname='altruistic-doorpost.biz',
-        idle_time_limit_seconds=185897,
-        lag_tolerance_seconds=895912,
+        flush_event_limit=333965,
+        flush_mem_limit=29100,
+        hostname='splendid-track.com',
+        idle_time_limit_seconds=542457,
+        lag_tolerance_seconds=442036,
         metrics_mode=False,
-        prefix='harum',
+        prefix='asperiores',
         preserve_split_by_structure=False,
-        search_agg_mode='explicabo',
+        search_agg_mode='totam',
         split_bys=[
-            'aliquid',
+            'suscipit',
         ],
         sufficient_stats_only=False,
-        time_window_seconds=264649,
+        time_window_seconds=693957,
     ),
     always_bounds=False,
     metrics=shared.MetricsStore(),
-    where='optio',
+    where='maxime',
 )
 
 res = s.internal_system_metrics.post(req)

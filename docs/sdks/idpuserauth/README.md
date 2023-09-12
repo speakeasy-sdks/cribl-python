@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.idp_user_auth.logout('officia', 'sed')
+res = s.idp_user_auth.logout(relay_state='fuga', saml_response='praesentium')
 
 if res.success is not None:
     # handle response

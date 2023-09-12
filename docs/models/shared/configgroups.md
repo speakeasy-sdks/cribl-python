@@ -1,7 +1,5 @@
 # ConfigGroups
 
-a list of ConfigGroup objects
-
 
 ## Fields
 

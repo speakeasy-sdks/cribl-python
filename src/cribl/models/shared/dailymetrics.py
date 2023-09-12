@@ -12,7 +12,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class DailyMetrics:
-    r"""a list of DailyUsageMetrics objects"""
     count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
     r"""number of items present in the items array"""
     items: Optional[list[shared_dailyusagemetrics.DailyUsageMetrics]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})

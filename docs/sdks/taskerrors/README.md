@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.task_errors.get('sunt', 'asperiores')
+res = s.task_errors.get(group='voluptatum', id='iusto')
 
 if res.task_errors is not None:
     # handle response

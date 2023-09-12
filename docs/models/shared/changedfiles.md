@@ -1,7 +1,5 @@
 # ChangedFiles
 
-a list of GitFilesResponse objects
-
 
 ## Fields
 

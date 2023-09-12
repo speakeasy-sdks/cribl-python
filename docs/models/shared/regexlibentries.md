@@ -1,7 +1,5 @@
 # RegexLibEntries
 
-a list of RegexLibEntry objects
-
 
 ## Fields
 

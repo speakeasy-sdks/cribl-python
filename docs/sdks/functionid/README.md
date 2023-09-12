@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.function_id.get('quae')
+res = s.function_id.get(id='quas')
 
 if res.functions is not None:
     # handle response

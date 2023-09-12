@@ -1,7 +1,5 @@
 # GlobalVar
 
-New Global Variable object
-
 
 ## Fields
 

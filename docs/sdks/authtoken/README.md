@@ -21,8 +21,8 @@ s = cribl.Cribl(
 )
 
 req = shared.LoginInfo(
-    password='et',
-    username='Jairo.Farrell53',
+    password='sunt',
+    username='Orrin_Stanton41',
 )
 
 res = s.auth_token.login(req)

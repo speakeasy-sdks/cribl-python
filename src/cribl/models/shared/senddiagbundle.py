@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class SendDiagBundle:
-    r"""SendDiagBundle object"""
     include_metrics: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includeMetrics'), 'exclude': lambda f: f is None }})
     r"""Toggle to No to exclude metrics from the diag bundle."""
     max_include_jobs: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxIncludeJobs'), 'exclude': lambda f: f is None }})
