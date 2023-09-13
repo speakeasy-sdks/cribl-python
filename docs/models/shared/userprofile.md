@@ -1,7 +1,5 @@
 # UserProfile
 
-UserProfile object
-
 
 ## Fields
 

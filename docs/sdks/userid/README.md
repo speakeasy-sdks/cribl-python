@@ -22,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.user_id.delete('impedit')
+res = s.user_id.delete(id='in')
 
 if res.users is not None:
     # handle response
@@ -57,7 +57,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.user_id.get('facilis')
+res = s.user_id.get(id='quisquam')
 
 if res.users is not None:
     # handle response

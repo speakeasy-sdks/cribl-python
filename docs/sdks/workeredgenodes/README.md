@@ -22,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.worker_edge_nodes.get('unde', 365473, 213405, 'rerum')
+res = s.worker_edge_nodes.get(filter_exp='laudantium', limit=481704, offset=546868, sort_exp='molestiae')
 
 if res.master_worker_entries is not None:
     # handle response

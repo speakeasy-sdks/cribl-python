@@ -53,19 +53,19 @@ s = cribl.Cribl(
 req = shared.IKMSProviderConfig(
     enable_health_check=False,
     engine=shared.VaultKMSEngineConfig(
-        mount='quidem',
-        secret_path='nesciunt',
+        mount='quaerat',
+        secret_path='molestiae',
         type=shared.VaultKMSEngineConfigType.KV2,
     ),
-    health_check_endpoint='commodi',
-    namespace='sapiente',
-    provider=shared.SecretProvider.LOCAL,
-    secret_dir='veniam',
+    health_check_endpoint='ex',
+    namespace='ut',
+    provider=shared.SecretProvider.VAULT,
+    secret_dir='adipisci',
     service=shared.IAWSKMSServiceConfig(
         kms_key_arn='debitis',
-        region='officia',
+        region='laudantium',
     ),
-    url='sint',
+    url='eum',
 )
 
 res = s.kms_config.update(req)

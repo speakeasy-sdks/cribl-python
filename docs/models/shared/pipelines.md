@@ -1,7 +1,5 @@
 # Pipelines
 
-a list of Pipeline objects
-
 
 ## Fields
 

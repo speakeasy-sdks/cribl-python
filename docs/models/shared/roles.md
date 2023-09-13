@@ -1,7 +1,5 @@
 # Roles
 
-a list of Role objects
-
 
 ## Fields
 

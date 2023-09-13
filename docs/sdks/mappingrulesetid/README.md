@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_ruleset_id.get('doloribus')
+res = s.mapping_ruleset_id.get(id='dolor')
 
 if res.mapping_rulesets is not None:
     # handle response
