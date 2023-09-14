@@ -1,7 +1,5 @@
 # SystemSettings
 
-a list of SystemSettings objects
-
 
 ## Fields
 

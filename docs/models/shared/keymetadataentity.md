@@ -1,7 +1,5 @@
 # KeyMetadataEntity
 
-New KeyMetadataEntity object
-
 
 ## Fields
 

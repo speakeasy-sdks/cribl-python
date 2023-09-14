@@ -22,34 +22,32 @@ s = cribl.Cribl(
 
 req = shared.Pipeline(
     conf=shared.PipelineConf(
-        async_func_timeout=959143,
-        description='officiis',
+        async_func_timeout=231701,
+        description='vero',
         functions=[
             shared.PipelineFunctionConf(
                 conf=shared.PipelineFunctionConfFunctionSpecificConfigs(),
-                description='fuga',
+                description='tenetur',
                 disabled=False,
-                filter='pariatur',
+                filter='dignissimos',
                 final=False,
-                group_id='debitis',
-                id='008e6f8c-5f35-40d8-8db5-a34181430104',
+                group_id='hic',
+                id='bc7abd74-dd39-4c0f-9d2c-ff7c70a45626',
             ),
         ],
         groups={
-            "ab": shared.PipelineConfGroups(
-                description='laudantium',
+            "possimus": shared.PipelineConfGroups(
+                description='magnam',
                 disabled=False,
-                name='Rosa Stiedemann',
+                name='Mrs. Vicki Langosh',
             ),
         },
-        output='ipsa',
+        output='quasi',
         streamtags=[
-            'eveniet',
-            'impedit',
-            'officiis',
+            'ex',
         ],
     ),
-    id='7e253b66-8451-4c6c-ae20-5e16deab3fec',
+    id='d9f5fce6-c556-4146-83e2-50fb008c42e1',
 )
 
 res = s.create_pipeline.post(req)

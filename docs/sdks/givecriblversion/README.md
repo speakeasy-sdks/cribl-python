@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.give_cribl_version.post('amet')
+res = s.give_cribl_version.post(version='hic')
 
 if res.cribl is not None:
     # handle response

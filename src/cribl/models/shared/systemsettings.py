@@ -155,7 +155,6 @@ class SystemSettingsWorkers:
 
 @dataclasses.dataclass
 class SystemSettings:
-    r"""a list of SystemSettings objects"""
     api: SystemSettingsAPI = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('api') }})
     auth: shared_authconfig.AuthConfig = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('auth') }})
     backups: SystemSettingsBackups = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('backups') }})

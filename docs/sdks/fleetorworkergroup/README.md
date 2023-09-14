@@ -21,8 +21,8 @@ s = cribl.Cribl(
 )
 
 
-res = s.fleet_or_worker_group.deploy('voluptatem', shared.DeployRequest(
-    version='ad',
+res = s.fleet_or_worker_group.deploy(id='cum', deploy_request=shared.DeployRequest(
+    version='blanditiis',
 ))
 
 if res.config_group is not None:

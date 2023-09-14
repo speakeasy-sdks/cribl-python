@@ -1,7 +1,5 @@
 # BulletinMessages
 
-a list of BulletinMessage objects
-
 
 ## Fields
 
