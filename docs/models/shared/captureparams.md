@@ -1,7 +1,5 @@
 # CaptureParams
 
-CaptureParams object
-
 
 ## Fields
 

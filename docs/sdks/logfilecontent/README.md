@@ -21,12 +21,12 @@ s = cribl.Cribl(
 )
 
 req = operations.GetLogFileContentRequest(
-    end_offset=697330,
-    et=932080,
-    filter='laboriosam',
-    id='949fb2bb-4eca-4e6c-bd5d-b3adebd5daea',
-    limit=276337,
-    lt=802356,
+    end_offset=862063,
+    et=8931,
+    filter='quasi',
+    id='17996312-fde0-4477-9778-ff61d0174763',
+    limit=399812,
+    lt=58870,
 )
 
 res = s.log_file_content.get(req)

@@ -1,7 +1,5 @@
 # AuthConfigs
 
-a list of AuthConfig objects
-
 
 ## Fields
 

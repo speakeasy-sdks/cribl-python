@@ -1,7 +1,5 @@
 # AuthPolicyEntries
 
-a list of AuthPolicyEntry objects
-
 
 ## Fields
 

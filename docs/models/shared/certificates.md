@@ -1,7 +1,5 @@
 # Certificates
 
-a list of Certificate objects
-
 
 ## Fields
 

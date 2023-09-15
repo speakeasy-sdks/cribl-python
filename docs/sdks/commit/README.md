@@ -22,8 +22,8 @@ s = cribl.Cribl(
 
 req = shared.GitCommitParams(
     effective=False,
-    group='laborum',
-    message='placeat',
+    group='minima',
+    message='repellendus',
 )
 
 res = s.commit.create(req)

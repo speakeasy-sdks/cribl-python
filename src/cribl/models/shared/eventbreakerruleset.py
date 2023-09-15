@@ -103,7 +103,6 @@ class EventBreakerRulesetRules:
 
 @dataclasses.dataclass
 class EventBreakerRuleset:
-    r"""New Event Breaker Ruleset object"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""Brief description of this ruleset. Optional."""
