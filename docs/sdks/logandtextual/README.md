@@ -1,4 +1,4 @@
-# logand_textual
+# LogandTextual
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.logand_textual.get('necessitatibus', 'impedit')
+res = s.logand_textual.get(commit='debitis', group='voluptatem')
 
 if res.textual_diff is not None:
     # handle response
