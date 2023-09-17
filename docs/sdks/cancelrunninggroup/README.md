@@ -1,4 +1,4 @@
-# cancel_running_group
+# CancelRunningGroup
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.cancel_running_group.post('adipisci')
+res = s.cancel_running_group.post(group='recusandae')
 
 if res.cancel_running_group is not None:
     # handle response

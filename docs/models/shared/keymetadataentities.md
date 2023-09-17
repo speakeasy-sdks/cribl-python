@@ -1,7 +1,5 @@
 # KeyMetadataEntities
 
-a list of KeyMetadataEntity objects
-
 
 ## Fields
 

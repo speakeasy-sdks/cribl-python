@@ -1,7 +1,5 @@
 # AuthToken
 
-Authentication token
-
 
 ## Fields
 

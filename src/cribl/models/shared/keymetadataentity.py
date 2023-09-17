@@ -19,7 +19,6 @@ class KeyMetadataEntityKMSForThisKey(str, Enum):
 
 @dataclasses.dataclass
 class KeyMetadataEntity:
-    r"""New KeyMetadataEntity object"""
     algorithm: KeyMetadataEntityEncryptionAlgorithm = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('algorithm') }})
     keyclass: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('keyclass') }})
     key_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('keyId') }})

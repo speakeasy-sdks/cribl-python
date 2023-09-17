@@ -1,4 +1,4 @@
-# restart_cribl_settings
+# RestartCriblSettings
 
 ### Available Operations
 

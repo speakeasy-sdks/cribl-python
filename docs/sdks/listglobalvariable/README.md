@@ -1,4 +1,4 @@
-# list_global_variable
+# ListGlobalVariable
 
 ### Available Operations
 

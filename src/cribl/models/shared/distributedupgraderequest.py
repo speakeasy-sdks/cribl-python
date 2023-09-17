@@ -28,7 +28,6 @@ class DistributedUpgradeRequestUpgradeMode(str, Enum):
 
 @dataclasses.dataclass
 class DistributedUpgradeRequest:
-    r"""distributedUpgrade object"""
     package_urls: Optional[list[DistributedUpgradeRequestPackageUrls]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packageUrls'), 'exclude': lambda f: f is None }})
     r"""Provide your own URLs or local paths for platform-specific Cribl packages."""
     upgrade_mode: Optional[DistributedUpgradeRequestUpgradeMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upgradeMode'), 'exclude': lambda f: f is None }})

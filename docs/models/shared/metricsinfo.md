@@ -1,7 +1,5 @@
 # MetricsInfo
 
-a list of MetricNameInfo objects
-
 
 ## Fields
 

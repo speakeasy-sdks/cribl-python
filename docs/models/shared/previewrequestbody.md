@@ -1,7 +1,5 @@
 # PreviewRequestBody
 
-PreviewRequestBody object
-
 
 ## Fields
 

@@ -1,7 +1,5 @@
 # RemoveDiagResponse
 
-a list of any objects
-
 
 ## Fields
 
