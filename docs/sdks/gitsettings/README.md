@@ -1,4 +1,4 @@
-# git_settings
+# GitSettings
 
 ### Available Operations
 

@@ -29,7 +29,6 @@ class SearchJobCompatibilityChecks:
 
 @dataclasses.dataclass
 class SearchJob:
-    r"""New SearchJob object"""
     group: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     query: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('query') }})

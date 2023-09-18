@@ -1,4 +1,4 @@
-# object_function
+# ObjectFunction
 
 ### Available Operations
 

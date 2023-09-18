@@ -1,7 +1,5 @@
 # JobResult
 
-a list of any objects
-
 
 ## Fields
 

@@ -22,7 +22,6 @@ class GlobalVarType(str, Enum):
 
 @dataclasses.dataclass
 class GlobalVar:
-    r"""New Global Variable object"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Global variable name."""
     type: GlobalVarType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})

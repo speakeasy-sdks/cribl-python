@@ -1,7 +1,5 @@
 # MetricsAggOpts
 
-MetricsAggOpts object
-
 
 ## Fields
 

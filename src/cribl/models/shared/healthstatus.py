@@ -15,7 +15,6 @@ class HealthStatusStatus(str, Enum):
 
 @dataclasses.dataclass
 class HealthStatus:
-    r"""Healthy"""
     status: HealthStatusStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
 

@@ -1,7 +1,5 @@
 # UIStatePatch
 
-UI State Patch object
-
 
 ## Fields
 

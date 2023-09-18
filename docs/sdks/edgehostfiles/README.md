@@ -1,4 +1,4 @@
-# edge_host_files
+# EdgeHostFiles
 
 ### Available Operations
 

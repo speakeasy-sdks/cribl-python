@@ -1,4 +1,4 @@
-# search_doc
+# SearchDoc
 
 ### Available Operations
 

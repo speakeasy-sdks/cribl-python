@@ -10,7 +10,6 @@ from dataclasses_json import Undefined, dataclass_json
 
 @dataclasses.dataclass
 class CrudEntityBase:
-    r"""CrudEntityBase object"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     
 

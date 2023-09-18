@@ -1,4 +1,4 @@
-# policy_rules
+# PolicyRules
 
 ### Available Operations
 

@@ -1,4 +1,4 @@
-# output_status
+# OutputStatus
 
 ### Available Operations
 

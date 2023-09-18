@@ -1,4 +1,4 @@
-# search_logs
+# SearchLogs
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.search_logs.get('minima')
+res = s.search_logs.get(id='sapiente')
 
 if res.search_logs is not None:
     # handle response
