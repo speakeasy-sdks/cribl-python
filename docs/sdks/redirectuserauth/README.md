@@ -1,4 +1,4 @@
-# redirect_user_auth
+# RedirectUserAuth
 
 ### Available Operations
 

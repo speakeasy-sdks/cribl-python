@@ -1,4 +1,4 @@
-# route_object
+# RouteObject
 
 ### Available Operations
 
@@ -21,53 +21,23 @@ s = cribl.Cribl(
 )
 
 
-res = s.route_object.update('aspernatur', shared.Routes(
+res = s.route_object.update(id='nemo', routes=shared.Routes(
     comments=[
         {
-            "dicta": 'inventore',
-            "ullam": 'iusto',
-            "inventore": 'voluptate',
-            "sed": 'dolorem',
-        },
-        {
-            "exercitationem": 'amet',
-        },
-        {
-            "voluptate": 'pariatur',
-            "minus": 'a',
-        },
-        {
-            "totam": 'cupiditate',
-            "at": 'doloribus',
-            "omnis": 'quam',
+            "illum": 'facilis',
         },
     ],
     groups={
-        "voluptates": shared.RoutesGroups(
-            description='sequi',
+        "non": shared.RoutesGroups(
+            description='mollitia',
             disabled=False,
-            name='Gertrude Kautzer',
-        ),
-        "aperiam": shared.RoutesGroups(
-            description='perspiciatis',
-            disabled=False,
-            name='Kellie Miller',
+            name='Clay Reichel',
         ),
     },
-    id='ddc5f111-dea1-4026-9541-a4d190feb217',
+    id='daea4c50-6a8a-4a94-8026-44cf5e9d9a45',
     routes=[
         {
-            "distinctio": 'placeat',
-        },
-        {
-            "eligendi": 'sit',
-            "possimus": 'distinctio',
-            "distinctio": 'assumenda',
-            "illum": 'soluta',
-        },
-        {
-            "laudantium": 'tempora',
-            "esse": 'doloremque',
+            "esse": 'corrupti',
         },
     ],
 ))

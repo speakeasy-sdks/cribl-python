@@ -1,7 +1,5 @@
 # NotificationTargets
 
-a list of NotificationTarget objects
-
 
 ## Fields
 

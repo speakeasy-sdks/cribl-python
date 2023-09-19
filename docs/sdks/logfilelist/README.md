@@ -1,4 +1,4 @@
-# log_file_list
+# LogFileList
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.log_file_list.get('maxime', 9375, 'eaque', 'architecto')
+res = s.log_file_list.get(allow='omnis', depth=85233, mode='rerum', path='est')
 
 if res.edge_files is not None:
     # handle response

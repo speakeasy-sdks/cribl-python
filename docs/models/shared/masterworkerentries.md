@@ -1,7 +1,5 @@
 # MasterWorkerEntries
 
-a list of MasterWorkerEntry objects
-
 
 ## Fields
 

@@ -1,4 +1,4 @@
-# list_cribl_version
+# ListCriblVersion
 
 ### Available Operations
 

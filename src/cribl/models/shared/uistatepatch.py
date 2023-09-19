@@ -16,7 +16,6 @@ class UIStatePatchOp(str, Enum):
 
 @dataclasses.dataclass
 class UIStatePatch:
-    r"""UI State Patch object"""
     op: UIStatePatchOp = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('op') }})
     value: Any = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     args: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('args'), 'exclude': lambda f: f is None }})

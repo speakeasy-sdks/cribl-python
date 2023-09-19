@@ -1,7 +1,5 @@
 # SchemaLibEntries
 
-a list of Schema objects
-
 
 ## Fields
 

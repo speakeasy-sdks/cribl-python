@@ -1,7 +1,5 @@
 # SearchJobs
 
-a list of SearchJob objects
-
 
 ## Fields
 

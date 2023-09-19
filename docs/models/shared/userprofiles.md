@@ -1,7 +1,5 @@
 # UserProfiles
 
-a list of UserProfile objects
-
 
 ## Fields
 

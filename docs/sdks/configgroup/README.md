@@ -1,4 +1,4 @@
-# config_group
+# ConfigGroup
 
 ### Available Operations
 
@@ -24,33 +24,33 @@ s = cribl.Cribl(
 )
 
 req = shared.ConfigGroup(
-    config_version='voluptatibus',
-    description='molestias',
-    estimated_ingest_rate=889794,
+    config_version='similique',
+    description='alias',
+    estimated_ingest_rate=872651,
     git=shared.ConfigGroupGit(
-        commit='sapiente',
-        local_changes=764562,
+        commit='quaerat',
+        local_changes=273542,
         log=[
             shared.Commit(
-                author_email='rerum',
-                author_name='tempora',
-                date_='quis',
-                hash='inventore',
-                message='fugit',
-                short='cumque',
+                author_email='vel',
+                author_name='quod',
+                date_='officiis',
+                hash='qui',
+                message='dolorum',
+                short='a',
             ),
         ],
     ),
-    id='1032648d-c2f6-4151-99eb-fd0e9fe6c632',
-    inherits='cumque',
+    id='7a73cf3b-e453-4f87-8b32-6b5a73429cdb',
+    inherits='dicta',
     is_fleet=False,
     is_search=False,
-    name='Philip O'Kon',
+    name='Felix Gorczany',
     on_prem=False,
     provisioned=False,
-    source_group_id='consequatur',
-    tags='quasi',
-    worker_count=90233,
+    source_group_id='distinctio',
+    tags='facilis',
+    worker_count=396060,
     worker_remote_access=False,
 )
 
@@ -89,7 +89,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.config_group.delete('ducimus')
+res = s.config_group.delete(id='quam')
 
 if res.config_group is not None:
     # handle response
@@ -124,7 +124,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.config_group.get('natus', 'occaecati')
+res = s.config_group.get(id='molestias', fields_='temporibus')
 
 if res.config_group is not None:
     # handle response
@@ -160,58 +160,34 @@ s = cribl.Cribl(
 )
 
 
-res = s.config_group.update('suscipit', shared.ConfigGroup(
-    config_version='adipisci',
-    description='quasi',
-    estimated_ingest_rate=169025,
+res = s.config_group.update(id='qui', config_group=shared.ConfigGroup(
+    config_version='neque',
+    description='fugit',
+    estimated_ingest_rate=164959,
     git=shared.ConfigGroupGit(
-        commit='doloribus',
-        local_changes=859581,
+        commit='odio',
+        local_changes=124833,
         log=[
             shared.Commit(
-                author_email='ipsa',
-                author_name='tempora',
-                date_='nihil',
-                hash='molestiae',
-                message='dicta',
-                short='iusto',
-            ),
-            shared.Commit(
-                author_email='esse',
-                author_name='praesentium',
-                date_='maiores',
-                hash='reiciendis',
-                message='vel',
-                short='architecto',
-            ),
-            shared.Commit(
-                author_email='fugiat',
-                author_name='doloremque',
-                date_='dicta',
-                hash='odio',
-                message='tempora',
-                short='esse',
-            ),
-            shared.Commit(
-                author_email='ex',
-                author_name='consectetur',
-                date_='aliquid',
-                hash='ipsa',
-                message='laborum',
-                short='sunt',
+                author_email='ullam',
+                author_name='nam',
+                date_='hic',
+                hash='voluptatem',
+                message='cumque',
+                short='soluta',
             ),
         ],
     ),
-    id='5db6a660-659a-41ad-aaab-5851d6c645b0',
-    inherits='molestias',
+    id='b1e31b8b-90f3-4443-a110-8e0adcf4b921',
+    inherits='laudantium',
     is_fleet=False,
     is_search=False,
-    name='Gene Brekke',
+    name='Toni Wolff',
     on_prem=False,
     provisioned=False,
-    source_group_id='veritatis',
-    tags='rerum',
-    worker_count=665678,
+    source_group_id='omnis',
+    tags='quis',
+    worker_count=218403,
     worker_remote_access=False,
 ))
 
