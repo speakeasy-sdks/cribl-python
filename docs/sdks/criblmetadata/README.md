@@ -1,4 +1,4 @@
-# cribl_metadata
+# CriblMetadata
 
 ### Available Operations
 

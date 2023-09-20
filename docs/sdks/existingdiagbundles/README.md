@@ -1,4 +1,4 @@
-# existing_diag_bundles
+# ExistingDiagBundles
 
 ### Available Operations
 

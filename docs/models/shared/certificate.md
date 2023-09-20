@@ -1,7 +1,5 @@
 # Certificate
 
-New Certificate object
-
 
 ## Fields
 

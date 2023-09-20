@@ -1,4 +1,4 @@
-# changelog_view_state
+# ChangelogViewState
 
 ### Available Operations
 

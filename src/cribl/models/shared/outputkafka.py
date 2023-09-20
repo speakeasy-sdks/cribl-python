@@ -71,12 +71,12 @@ class OutputKafkaKafkaSchemaRegistryAuthenticationTLSSettingsClientSide:
 
 @dataclasses.dataclass
 class OutputKafkaKafkaSchemaRegistryAuthentication:
-    disabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled') }})
-    r"""Enable Schema Registry"""
     default_key_schema_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultKeySchemaId'), 'exclude': lambda f: f is None }})
     r"""Used when __keySchemaIdOut is not present, to transform key values, leave blank if key transformation is not required by default."""
     default_value_schema_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultValueSchemaId'), 'exclude': lambda f: f is None }})
     r"""Used when __valueSchemaIdOut is not present, to transform _raw, leave blank if value transformation is not required by default."""
+    disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
+    r"""Enable Schema Registry"""
     schema_registry_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schemaRegistryURL'), 'exclude': lambda f: f is None }})
     r"""URL for access to the Confluent Schema Registry, i.e.: http://localhost:8081"""
     tls: Optional[OutputKafkaKafkaSchemaRegistryAuthenticationTLSSettingsClientSide] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tls'), 'exclude': lambda f: f is None }})
@@ -118,7 +118,7 @@ class OutputKafkaAuthenticationSASLMechanism(str, Enum):
 @dataclasses.dataclass
 class OutputKafkaAuthentication:
     r"""Authentication parameters to use when connecting to brokers. Using TLS is highly recommended."""
-    disabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled') }})
+    disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
     r"""Enable Authentication"""
     mechanism: Optional[OutputKafkaAuthenticationSASLMechanism] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mechanism'), 'exclude': lambda f: f is None }})
     r"""SASL authentication mechanism to use."""

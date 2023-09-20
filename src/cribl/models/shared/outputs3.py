@@ -105,8 +105,6 @@ class OutputS3:
     r"""Name of the destination S3 bucket. Must be a JavaScript expression (which can evaluate to a constant value), enclosed in quotes or backticks. Can be evaluated only at init time. E.g., referencing a Global Variable: `myBucket-${C.vars.myVar}`."""
     dest_path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destPath') }})
     r"""Prefix to append to files before uploading. Must be a JavaScript expression (which can evaluate to a constant value), enclosed in quotes or backticks. Can be evaluated only at init time. E.g., referencing a Global Variable: `myKeyPrefix-${C.vars.myVar}`."""
-    stage_path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stagePath') }})
-    r"""Filesystem location in which to buffer files, before compressing and moving to final destination. Use performant stable storage."""
     add_id_to_stage_path: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('addIdToStagePath'), 'exclude': lambda f: f is None }})
     r"""Append output's ID to staging location."""
     assume_role_arn: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assumeRoleArn'), 'exclude': lambda f: f is None }})
@@ -182,6 +180,8 @@ class OutputS3:
     signature_version: Optional[OutputS3SignatureVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('signatureVersion'), 'exclude': lambda f: f is None }})
     r"""Signature version to use for signing S3 requests."""
     spacer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('spacer'), 'exclude': lambda f: f is None }})
+    stage_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stagePath'), 'exclude': lambda f: f is None }})
+    r"""Filesystem location in which to buffer files, before compressing and moving to final destination. Use performant stable storage."""
     storage_class: Optional[OutputS3StorageClass] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('storageClass'), 'exclude': lambda f: f is None }})
     r"""Storage class to select for uploaded objects."""
     streamtags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('streamtags'), 'exclude': lambda f: f is None }})

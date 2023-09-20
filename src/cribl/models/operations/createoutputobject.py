@@ -32,10 +32,10 @@ class CreateOutputObjectRequestBody402FailedRequestLoggingMode(str, Enum):
 
 @dataclasses.dataclass
 class CreateOutputObjectRequestBody402Labels:
-    name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    r"""Name of the label."""
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""Value of the label."""
+    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
+    r"""Name of the label."""
     
 
 
@@ -216,10 +216,10 @@ class CreateOutputObjectRequestBody401FailedRequestLoggingMode(str, Enum):
 
 @dataclasses.dataclass
 class CreateOutputObjectRequestBody401Labels:
-    name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    r"""Name of the label."""
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""Value of the label."""
+    name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})
+    r"""Name of the label."""
     
 
 

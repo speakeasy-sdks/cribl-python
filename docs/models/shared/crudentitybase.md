@@ -1,7 +1,5 @@
 # CrudEntityBase
 
-CrudEntityBase object
-
 
 ## Fields
 

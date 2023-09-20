@@ -1,4 +1,4 @@
-# job
+# Job
 
 ### Available Operations
 
@@ -27,7 +27,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job.cancel('voluptatibus')
+res = s.job.cancel(id='et')
 
 if res.job_cancel is not None:
     # handle response
@@ -62,7 +62,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job.delete('molestias')
+res = s.job.delete(id='esse')
 
 if res.job_delete is not None:
     # handle response
@@ -97,7 +97,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job.get('officia')
+res = s.job.get(id='amet')
 
 if res.job_infos is not None:
     # handle response
@@ -132,7 +132,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job.pause_job('libero')
+res = s.job.pause_job(id='assumenda')
 
 if res.job_pause is not None:
     # handle response
@@ -167,7 +167,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job.prevent('totam')
+res = s.job.prevent(id='ea')
 
 if res.job_infos is not None:
     # handle response
@@ -202,7 +202,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job.resume('sequi')
+res = s.job.resume(id='atque')
 
 if res.job_resume is not None:
     # handle response
@@ -237,48 +237,42 @@ s = cribl.Cribl(
 )
 
 req = shared.SavedJobExecutor(
-    environment='ea',
+    environment='officiis',
     executor=shared.SavedJobExecutorExecutor(
         conf=shared.SavedJobExecutorExecutorExecutorSpecificSettings(),
         store_task_results=False,
-        type='impedit',
+        type='officiis',
     ),
-    id='723ffda9-e06b-4ee4-825c-1fc0e115c80b',
+    id='e9526f8d-986e-4881-aad4-f0e1012563f9',
     remove_fields=[
-        'a',
-        'iste',
-        'dicta',
-        'quos',
+        'magnam',
     ],
     resume_on_boot=False,
     schedule=shared.SavedJobExecutorSchedule(
-        cron_schedule='ullam',
+        cron_schedule='saepe',
         enabled=False,
-        max_concurrent_runs=295950,
-        resume_missed='modi',
+        max_concurrent_runs=160467,
+        resume_missed='occaecati',
         run=shared.SavedJobExecutorScheduleRunSettings(
-            earliest=929292,
-            expression='maxime',
-            job_timeout='modi',
-            latest=163558,
+            earliest=886305,
+            expression='perspiciatis',
+            job_timeout='in',
+            latest=238043,
             log_level=shared.SavedJobExecutorScheduleRunSettingsLogLevel.SILLY,
-            max_task_reschedule=876840,
-            max_task_size='doloribus',
-            min_task_size='impedit',
-            mode='porro',
+            max_task_reschedule=580887,
+            max_task_size='consequuntur',
+            min_task_size='fugit',
+            mode='id',
             reschedule_dropped_tasks=False,
-            time_range_type='accusamus',
-            timestamp_timezone='totam',
+            time_range_type='quis',
+            timestamp_timezone='reprehenderit',
         ),
         skippable=False,
     ),
     streamtags=[
-        'ab',
-        'sint',
-        'nihil',
-        'esse',
+        'error',
     ],
-    ttl='iure',
+    ttl='illo',
     type=shared.SavedJobExecutorJobType.EXECUTOR,
 )
 

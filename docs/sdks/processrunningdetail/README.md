@@ -1,4 +1,4 @@
-# process_running_detail
+# ProcessRunningDetail
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.process_running_detail.get('necessitatibus')
+res = s.process_running_detail.get(pid='explicabo')
 
 if res.processes is not None:
     # handle response

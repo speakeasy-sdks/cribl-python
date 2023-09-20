@@ -1,7 +1,5 @@
 # SearchLogs
 
-a list of string objects
-
 
 ## Fields
 

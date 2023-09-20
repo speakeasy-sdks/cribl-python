@@ -1,7 +1,5 @@
 # JobDelete
 
-a list of any objects
-
 
 ## Fields
 

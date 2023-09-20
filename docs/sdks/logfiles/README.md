@@ -1,4 +1,4 @@
-# log_files
+# LogFiles
 
 ### Available Operations
 

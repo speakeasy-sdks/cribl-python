@@ -1,7 +1,5 @@
 # GitSettingsResponse
 
-a list of GitSettings objects
-
 
 ## Fields
 

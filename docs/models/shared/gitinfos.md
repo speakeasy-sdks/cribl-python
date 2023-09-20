@@ -1,7 +1,5 @@
 # GitInfos
 
-a list of GitInfo objects
-
 
 ## Fields
 

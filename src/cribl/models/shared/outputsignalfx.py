@@ -60,8 +60,6 @@ class OutputSignalfxType(str, Enum):
 
 @dataclasses.dataclass
 class OutputSignalfx:
-    realm: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('realm') }})
-    r"""SignalFx realm name, e.g. \\"us0\\" """
     type: OutputSignalfxType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     auth_type: Optional[OutputSignalfxAuthenticationMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authType'), 'exclude': lambda f: f is None }})
     r"""Enter a token directly, or provide a secret referencing a token"""
@@ -100,6 +98,8 @@ class OutputSignalfx:
     r"""The location for the persistent queue files. To this field's value, the system will append: /<worker-id>/<output-id>."""
     pq_strict_ordering: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqStrictOrdering'), 'exclude': lambda f: f is None }})
     r"""Toggle this off to forward new events to receiver(s) before queue is flushed. Otherwise, default drain behavior is FIFO (first in, first out)."""
+    realm: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('realm'), 'exclude': lambda f: f is None }})
+    r"""SignalFx realm name, e.g. \\"us0\\" """
     reject_unauthorized: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rejectUnauthorized'), 'exclude': lambda f: f is None }})
     r"""Reject certs that are not authorized by a CA in the CA certificate path, or by another trusted CA (e.g., the system's CA). Defaults to Yes."""
     safe_headers: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('safeHeaders'), 'exclude': lambda f: f is None }})

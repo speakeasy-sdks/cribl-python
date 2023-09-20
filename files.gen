@@ -2569,3 +2569,4 @@ docs/models/shared/security.md
 docs/models/errors/error.md
 docs/models/errors/healthstatus.md
 docs/models/errors/success.md
+.gitattributes
