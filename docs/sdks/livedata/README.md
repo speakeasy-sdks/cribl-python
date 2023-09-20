@@ -1,4 +1,4 @@
-# live_data
+# LiveData
 
 ### Available Operations
 
@@ -21,12 +21,12 @@ s = cribl.Cribl(
 )
 
 req = shared.CaptureParams(
-    filter='odio',
-    level=616941,
-    max_events=588152,
-    step_duration=739508,
-    worker_id='doloribus',
-    worker_threshold=703966,
+    filter='fugit',
+    level=764995,
+    max_events=684935,
+    step_duration=189062,
+    worker_id='animi',
+    worker_threshold=898760,
 )
 
 res = s.live_data.post(req)

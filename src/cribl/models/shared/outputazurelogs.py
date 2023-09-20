@@ -60,8 +60,6 @@ class OutputAzureLogsType(str, Enum):
 
 @dataclasses.dataclass
 class OutputAzureLogs:
-    log_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logType') }})
-    r"""The Log Type of events sent to this LogAnalytics workspace. Defaults to `Cribl`. Use only letters, numbers, and `_` characters, and can't exceed 100 characters. Can be overwritten by event field __logType."""
     type: OutputAzureLogsType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     api_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiUrl'), 'exclude': lambda f: f is None }})
     r"""Enter the DNS name of the Log API endpoint that sends log data to a Log Analytics workspace in Azure Monitor. Defaults to .ods.opinsights.azure.com. @{product} will add a prefix and suffix around this DNS name to construct a URI in this format: <https://<Workspace_ID><your_DNS_name>/api/logs?api-version=<API version>."""
@@ -83,6 +81,8 @@ class OutputAzureLogs:
     r"""Unique ID for this output"""
     keypair_secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('keypairSecret'), 'exclude': lambda f: f is None }})
     r"""Select (or create) a stored secret that references your access key and secret key."""
+    log_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logType'), 'exclude': lambda f: f is None }})
+    r"""The Log Type of events sent to this LogAnalytics workspace. Defaults to `Cribl`. Use only letters, numbers, and `_` characters, and can't exceed 100 characters. Can be overwritten by event field __logType."""
     max_payload_events: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxPayloadEvents'), 'exclude': lambda f: f is None }})
     r"""Max number of events to include in the request body. Default is 0 (unlimited)."""
     max_payload_size_kb: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxPayloadSizeKB'), 'exclude': lambda f: f is None }})

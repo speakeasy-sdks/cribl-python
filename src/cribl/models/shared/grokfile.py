@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class GrokFile:
-    r"""New GrokFile object"""
     content: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('content') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     size: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size') }})

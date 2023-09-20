@@ -1,4 +1,4 @@
-# request_user_auth
+# RequestUserAuth
 
 ### Available Operations
 
@@ -21,8 +21,8 @@ s = cribl.Cribl(
 )
 
 req = shared.LogoutRequest(
-    relay_state='quos',
-    saml_response='illo',
+    relay_state='accusamus',
+    saml_response='totam',
 )
 
 res = s.request_user_auth.logout(req)

@@ -43,12 +43,12 @@ class RunnableJobCollectionInputMetadata:
 
 @dataclasses.dataclass
 class RunnableJobCollectionInputPreprocess:
-    disabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled') }})
-    r"""Enable Custom Command"""
     args: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('args'), 'exclude': lambda f: f is None }})
     r"""Arguments"""
     command: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('command'), 'exclude': lambda f: f is None }})
     r"""Command to feed the data through (via stdin) and process its output (stdout)"""
+    disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
+    r"""Enable Custom Command"""
     
 
 
@@ -113,8 +113,6 @@ class RunnableJobCollectionRunMode(str, Enum):
 
 @dataclasses.dataclass
 class RunnableJobCollectionRun:
-    mode: RunnableJobCollectionRunMode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode') }})
-    r"""Job run mode. Preview will either return up to N matching results, or will run until capture time T is reached. Discovery will gather the list of files to turn into streaming tasks, without running the data collection job. Full Run will run the collection job."""
     capture: Optional[RunnableJobCollectionRunCaptureSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('capture'), 'exclude': lambda f: f is None }})
     discover_to_routes: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('discoverToRoutes'), 'exclude': lambda f: f is None }})
     r"""If true, send discover results to routes"""
@@ -134,6 +132,8 @@ class RunnableJobCollectionRun:
     r"""Limits the bundle size for files above the Lower task bundle size. E.g., bundle five 2MB files into one 10MB task bundle. Files greater than this size will be assigned to individual tasks."""
     min_task_size: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('minTaskSize'), 'exclude': lambda f: f is None }})
     r"""Limits the bundle size for small tasks. E.g., bundle five 200KB files into one 1M task."""
+    mode: Optional[RunnableJobCollectionRunMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode'), 'exclude': lambda f: f is None }})
+    r"""Job run mode. Preview will either return up to N matching results, or will run until capture time T is reached. Discovery will gather the list of files to turn into streaming tasks, without running the data collection job. Full Run will run the collection job."""
     reschedule_dropped_tasks: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rescheduleDroppedTasks'), 'exclude': lambda f: f is None }})
     r"""Reschedule tasks that failed with non-fatal errors."""
     time_range_type: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timeRangeType'), 'exclude': lambda f: f is None }})

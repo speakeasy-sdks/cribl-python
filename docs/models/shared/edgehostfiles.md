@@ -1,7 +1,5 @@
 # EdgeHostFiles
 
-a list of EdgeFileInspectResponse objects
-
 
 ## Fields
 

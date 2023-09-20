@@ -1,4 +1,4 @@
-# changed_files
+# ChangedFiles
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.changed_files.get('ullam', 'in')
+res = s.changed_files.get(id='ad', group='saepe')
 
 if res.changed_files is not None:
     # handle response

@@ -43,12 +43,12 @@ class SavedJobCollectionInputMetadata:
 
 @dataclasses.dataclass
 class SavedJobCollectionInputPreprocess:
-    disabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled') }})
-    r"""Enable Custom Command"""
     args: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('args'), 'exclude': lambda f: f is None }})
     r"""Arguments"""
     command: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('command'), 'exclude': lambda f: f is None }})
     r"""Command to feed the data through (via stdin) and process its output (stdout)"""
+    disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
+    r"""Enable Custom Command"""
     
 
 

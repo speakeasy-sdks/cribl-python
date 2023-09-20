@@ -12,7 +12,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class FieldSummaries:
-    r"""FieldSummaries object"""
     fields_: list[shared_field.Field] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields') }})
     total_event_count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('totalEventCount') }})
     partial: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partial'), 'exclude': lambda f: f is None }})

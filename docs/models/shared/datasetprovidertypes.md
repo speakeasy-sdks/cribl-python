@@ -1,7 +1,5 @@
 # DatasetProviderTypes
 
-a list of DatasetProviderType objects
-
 
 ## Fields
 

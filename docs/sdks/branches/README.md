@@ -1,4 +1,4 @@
-# branches
+# Branches
 
 ### Available Operations
 

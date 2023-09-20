@@ -1,4 +1,4 @@
-# pipeline_id
+# PipelineID
 
 ### Available Operations
 
@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pipeline_id.delete('voluptates')
+res = s.pipeline_id.delete(id='rerum')
 
 if res.pipelines is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pipeline_id.get('possimus')
+res = s.pipeline_id.get(id='eos')
 
 if res.pipelines is not None:
     # handle response
@@ -93,49 +93,34 @@ s = cribl.Cribl(
 )
 
 
-res = s.pipeline_id.update('fugit', shared.Pipeline(
+res = s.pipeline_id.update(id='reprehenderit', pipeline=shared.Pipeline(
     conf=shared.PipelineConf(
-        async_func_timeout=27946,
-        description='repudiandae',
+        async_func_timeout=345506,
+        description='neque',
         functions=[
             shared.PipelineFunctionConf(
                 conf=shared.PipelineFunctionConfFunctionSpecificConfigs(),
-                description='ea',
+                description='iusto',
                 disabled=False,
-                filter='eos',
+                filter='est',
                 final=False,
-                group_id='aliquam',
-                id='8fff639a-910a-4bdc-ab62-676696e1ec00',
-            ),
-            shared.PipelineFunctionConf(
-                conf=shared.PipelineFunctionConfFunctionSpecificConfigs(),
-                description='qui',
-                disabled=False,
-                filter='consequuntur',
-                final=False,
-                group_id='vitae',
-                id='b335d89a-cb3e-4cfd-a8d0-c549ef030049',
+                group_id='rem',
+                id='cd9e7319-c177-4d52-9f77-b114eeb52ff7',
             ),
         ],
         groups={
-            "atque": shared.PipelineConfGroups(
-                description='officia',
+            "praesentium": shared.PipelineConfGroups(
+                description='nemo',
                 disabled=False,
-                name='Alice Wilkinson DDS',
-            ),
-            "a": shared.PipelineConfGroups(
-                description='qui',
-                disabled=False,
-                name='Lucy Lind',
+                name='Devin Donnelly',
             ),
         },
-        output='voluptate',
+        output='illo',
         streamtags=[
-            'quod',
-            'vitae',
+            'labore',
         ],
     ),
-    id='ffc71dca-163f-42a3-880a-97ff334cddf8',
+    id='d4c98e0c-2bb8-49eb-b5da-d636c600503d',
 ))
 
 if res.pipelines is not None:

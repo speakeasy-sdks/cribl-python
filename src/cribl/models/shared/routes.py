@@ -24,7 +24,6 @@ class RoutesGroups:
 
 @dataclasses.dataclass
 class Routes:
-    r"""a list of Routes objects"""
     routes: list[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('routes') }})
     r"""Pipeline routing rules"""
     comments: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('comments'), 'exclude': lambda f: f is None }})

@@ -13,7 +13,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class DatasetProviderType:
-    r"""New DatasetProviderType object"""
     id: shared_providertype.ProviderType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     locality: Optional[shared_originconfig.OriginConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('locality'), 'exclude': lambda f: f is None }})

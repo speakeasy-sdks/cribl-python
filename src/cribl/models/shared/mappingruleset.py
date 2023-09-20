@@ -21,7 +21,6 @@ class MappingRulesetConf:
 
 @dataclasses.dataclass
 class MappingRuleset:
-    r"""New MappingRuleset object"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Ruleset ID"""
     active: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('active'), 'exclude': lambda f: f is None }})
