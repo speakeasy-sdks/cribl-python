@@ -101,8 +101,6 @@ class OutputMinio:
     r"""Root directory to prepend to path before uploading. Enter a constant, or a JS expression enclosed in quotes or backticks."""
     endpoint: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('endpoint') }})
     r"""MinIO service url (e.g. http://minioHost:9000)"""
-    stage_path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stagePath') }})
-    r"""Filesystem location in which to buffer files, before compressing and moving to final destination. Use performant stable storage."""
     add_id_to_stage_path: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('addIdToStagePath'), 'exclude': lambda f: f is None }})
     r"""Append output's ID to staging location."""
     aws_api_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsApiKey'), 'exclude': lambda f: f is None }})
@@ -168,6 +166,8 @@ class OutputMinio:
     signature_version: Optional[OutputMinioSignatureVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('signatureVersion'), 'exclude': lambda f: f is None }})
     r"""Signature version to use for signing MinIO requests."""
     spacer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('spacer'), 'exclude': lambda f: f is None }})
+    stage_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stagePath'), 'exclude': lambda f: f is None }})
+    r"""Filesystem location in which to buffer files, before compressing and moving to final destination. Use performant stable storage."""
     storage_class: Optional[OutputMinioStorageClass] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('storageClass'), 'exclude': lambda f: f is None }})
     r"""Storage class to select for uploaded objects."""
     streamtags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('streamtags'), 'exclude': lambda f: f is None }})

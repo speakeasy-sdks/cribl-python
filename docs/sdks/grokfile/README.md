@@ -1,4 +1,4 @@
-# grok_file
+# GrokFile
 
 ### Available Operations
 
@@ -24,10 +24,10 @@ s = cribl.Cribl(
 )
 
 req = shared.GrokFile(
-    content='nihil',
-    id='411faf4b-7544-4e47-ae80-2857a5b40463',
-    size=652125,
-    tags='dignissimos',
+    content='in',
+    id='e1858b6a-89fb-4e3a-9aa8-e4824d0ab407',
+    size=372679,
+    tags='sit',
 )
 
 res = s.grok_file.create(req)
@@ -65,7 +65,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.grok_file.delete('fugiat')
+res = s.grok_file.delete(id='voluptatum')
 
 if res.grok_file is not None:
     # handle response
@@ -100,7 +100,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.grok_file.get('nostrum')
+res = s.grok_file.get(id='quas')
 
 if res.grok_file is not None:
     # handle response
@@ -135,11 +135,11 @@ s = cribl.Cribl(
 )
 
 
-res = s.grok_file.update('molestiae', shared.GrokFile(
-    content='veniam',
-    id='f1400e76-4ad7-4334-ac1b-781b36a08088',
-    size=832239,
-    tags='veritatis',
+res = s.grok_file.update(id='repudiandae', grok_file=shared.GrokFile(
+    content='corporis',
+    id='1862065e-904f-43b1-994b-8abf603a79f9',
+    size=833819,
+    tags='delectus',
 ))
 
 if res.grok_file is not None:

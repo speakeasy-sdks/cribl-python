@@ -1,7 +1,5 @@
 # PolicyRule
 
-New PolicyRule object
-
 
 ## Fields
 

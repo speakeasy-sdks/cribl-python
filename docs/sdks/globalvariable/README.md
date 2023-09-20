@@ -1,4 +1,4 @@
-# global_variable
+# GlobalVariable
 
 ### Available Operations
 
@@ -21,12 +21,12 @@ s = cribl.Cribl(
 )
 
 req = shared.GlobalVar(
-    description='illum',
-    id='8bb31180-f739-4ae9-a057-eb809e281033',
-    lib='sunt',
-    tags='a',
-    type=shared.GlobalVarType.NUMBER,
-    value='occaecati',
+    description='nesciunt',
+    id='a8d8f5c0-b2f2-4fb7-b194-a276b26916fe',
+    lib='illo',
+    tags='reiciendis',
+    type=shared.GlobalVarType.STRING,
+    value='corrupti',
 )
 
 res = s.global_variable.post(req)

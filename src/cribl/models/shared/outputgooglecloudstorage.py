@@ -117,12 +117,8 @@ class OutputGoogleCloudStorage:
     r"""Name of the destination Bucket. This value can be a constant or a JavaScript expression that can only be evaluated at init time. E.g. referencing a Global Variable: `myBucket-${C.vars.myVar}`."""
     dest_path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destPath') }})
     r"""Prefix to append to files before uploading. Must be a JavaScript expression (which can evaluate to a constant value), enclosed in quotes or backticks. Can be evaluated only at init time. E.g., referencing a Global Variable: `myKeyPrefix-${C.vars.myVar}`."""
-    endpoint: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('endpoint') }})
-    r"""Google Cloud Storage service endpoint."""
     region: OutputGoogleCloudStorageRegion = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('region') }})
     r"""Region where the bucket is located."""
-    stage_path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stagePath') }})
-    r"""Filesystem location in which to buffer files, before compressing and moving to final destination. Use performant stable storage."""
     add_id_to_stage_path: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('addIdToStagePath'), 'exclude': lambda f: f is None }})
     r"""Append output's ID to staging location."""
     aws_api_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsApiKey'), 'exclude': lambda f: f is None }})
@@ -138,6 +134,8 @@ class OutputGoogleCloudStorage:
     r"""Choose data compression format to apply before moving files to final destination."""
     empty_dir_cleanup_sec: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emptyDirCleanupSec'), 'exclude': lambda f: f is None }})
     r"""How often (secs) to clean-up empty directories when 'Remove Staging Dirs' is enabled."""
+    endpoint: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('endpoint'), 'exclude': lambda f: f is None }})
+    r"""Google Cloud Storage service endpoint."""
     environment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('environment'), 'exclude': lambda f: f is None }})
     r"""Optionally, enable this config only on a specified Git branch. If empty, will be enabled everywhere."""
     file_name_suffix: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fileNameSuffix'), 'exclude': lambda f: f is None }})
@@ -181,6 +179,8 @@ class OutputGoogleCloudStorage:
     signature_version: Optional[OutputGoogleCloudStorageSignatureVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('signatureVersion'), 'exclude': lambda f: f is None }})
     r"""Signature version to use for signing Google Cloud Storage requests."""
     spacer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('spacer'), 'exclude': lambda f: f is None }})
+    stage_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stagePath'), 'exclude': lambda f: f is None }})
+    r"""Filesystem location in which to buffer files, before compressing and moving to final destination. Use performant stable storage."""
     storage_class: Optional[OutputGoogleCloudStorageStorageClass] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('storageClass'), 'exclude': lambda f: f is None }})
     r"""Storage class to select for uploaded objects."""
     streamtags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('streamtags'), 'exclude': lambda f: f is None }})

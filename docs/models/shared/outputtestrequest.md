@@ -1,7 +1,5 @@
 # OutputTestRequest
 
-OutputTestRequest object
-
 
 ## Fields
 

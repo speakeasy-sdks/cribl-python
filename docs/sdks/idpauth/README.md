@@ -1,4 +1,4 @@
-# idp_auth
+# IDPAuth
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.idp_auth.get('mollitia', 'nulla')
+res = s.idp_auth.get(code='reprehenderit', state='facere')
 
 if res.success is not None:
     # handle response

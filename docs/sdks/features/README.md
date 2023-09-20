@@ -1,4 +1,4 @@
-# features
+# Features
 
 ### Available Operations
 

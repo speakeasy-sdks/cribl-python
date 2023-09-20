@@ -1,7 +1,5 @@
 # ProfilerItems
 
-a list of ProfilerItem objects
-
 
 ## Fields
 

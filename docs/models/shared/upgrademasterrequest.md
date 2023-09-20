@@ -1,7 +1,5 @@
 # UpgradeMasterRequest
 
-upgradeMaster object
-
 
 ## Fields
 
