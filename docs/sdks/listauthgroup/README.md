@@ -1,4 +1,4 @@
-# list_auth_group
+# ListAuthGroup
 
 ### Available Operations
 

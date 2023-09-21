@@ -1,4 +1,4 @@
-# latest_pq
+# LatestPQ
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.latest_pq.get('qui')
+res = s.latest_pq.get(id='accusantium')
 
 if res.get_latest_pq_200_application_json_object is not None:
     # handle response

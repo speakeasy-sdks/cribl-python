@@ -13,7 +13,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class AppscopeLibEntry:
-    r"""New AppscopeLibEntry object"""
     config: shared_appscopeconfigwithcustom.AppscopeConfigWithCustom = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config') }})
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})

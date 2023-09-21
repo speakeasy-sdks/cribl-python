@@ -1,4 +1,4 @@
-# conditions
+# Conditions
 
 ### Available Operations
 

@@ -1,7 +1,5 @@
 # DistributedSummaries
 
-a list of DistributedSummary objects
-
 
 ## Fields
 

@@ -1,4 +1,4 @@
-# search_limits
+# SearchLimits
 
 ### Available Operations
 

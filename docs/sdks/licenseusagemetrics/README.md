@@ -1,4 +1,4 @@
-# license_usage_metrics
+# LicenseUsageMetrics
 
 ### Available Operations
 

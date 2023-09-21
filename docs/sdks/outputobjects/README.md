@@ -1,4 +1,4 @@
-# output_objects
+# OutputObjects
 
 ### Available Operations
 

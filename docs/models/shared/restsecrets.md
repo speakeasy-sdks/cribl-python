@@ -1,7 +1,5 @@
 # RestSecrets
 
-a list of RestSecret objects
-
 
 ## Fields
 

@@ -1,4 +1,4 @@
-# license
+# License
 
 ### Available Operations
 
@@ -23,21 +23,20 @@ s = cribl.Cribl(
 )
 
 req = shared.License(
-    cls=shared.LicenseCls.TRIAL,
-    email='Dovie.Fisher@gmail.com',
-    exp=349898,
-    f_ph=709701,
-    f_phg=706411,
-    guid='impedit',
-    iat=24577,
-    id='5a23a45c-efc5-4fde-90a0-ce2169e51001',
-    iss='provident',
-    license='cumque',
+    cls=shared.LicenseCls.FREE,
+    email='Felipe_King63@hotmail.com',
+    exp=672041,
+    f_ph=813054,
+    f_phg=266697,
+    guid='voluptatibus',
+    iat=564064,
+    id='efc1b451-2c10-4326-88dc-2f615199ebfd',
+    iss='eaque',
+    license='earum',
     limits={
-        "quibusdam": 'quod',
-        "nemo": 'recusandae',
+        "perspiciatis": 'maiores',
     },
-    quota=246772,
+    quota=891801,
     title='Mrs.',
 )
 
@@ -76,7 +75,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.license.delete('dignissimos')
+res = s.license.delete(id='porro')
 
 if res.license is not None:
     # handle response
@@ -111,7 +110,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.license.get('laboriosam')
+res = s.license.get(id='suscipit')
 
 if res.license is not None:
     # handle response

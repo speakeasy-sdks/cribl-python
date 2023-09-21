@@ -1,4 +1,4 @@
-# route_list_id
+# RouteListID
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.route_list_id.get('laudantium')
+res = s.route_list_id.get(id='illum')
 
 if res.routes is not None:
     # handle response

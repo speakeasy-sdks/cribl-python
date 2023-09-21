@@ -1,4 +1,4 @@
-# sample_output
+# SampleOutput
 
 ### Available Operations
 
@@ -21,14 +21,8 @@ s = cribl.Cribl(
 )
 
 
-res = s.sample_output.post('sint', shared.OutputTestRequest(
+res = s.sample_output.post(id='maxime', output_test_request=shared.OutputTestRequest(
     events=[
-        shared.CriblEvent(
-            raw='qui',
-        ),
-        shared.CriblEvent(
-            raw='accusantium',
-        ),
         shared.CriblEvent(
             raw='consequatur',
         ),

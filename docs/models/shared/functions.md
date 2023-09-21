@@ -1,7 +1,5 @@
 # Functions
 
-a list of Function objects
-
 
 ## Fields
 

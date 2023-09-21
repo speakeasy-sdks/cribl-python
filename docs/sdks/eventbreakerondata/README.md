@@ -1,4 +1,4 @@
-# event_breaker_on_data
+# EventBreakerOnData
 
 ### Available Operations
 
@@ -23,50 +23,42 @@ s = cribl.Cribl(
 req = shared.DatatypePreviewRequestBody(
     event_breaker_rule=shared.EventBreakerRule(
         clean_fields=False,
-        condition='doloremque',
-        delimiter='quis',
-        delimiter_regex='veniam',
+        condition='porro',
+        delimiter='quod',
+        delimiter_regex='labore',
         disabled=False,
-        escape_char='libero',
-        event_breaker_regex='architecto',
+        escape_char='ab',
+        event_breaker_regex='adipisci',
         fields_=[
             shared.EventBreakerRuleFields(
-                name='Sheri Schuppe',
-                value='itaque',
-            ),
-            shared.EventBreakerRuleFields(
-                name='Ollie Harris',
-                value='laudantium',
-            ),
-            shared.EventBreakerRuleFields(
-                name='Freda Farrell I',
-                value='facilis',
+                name='Orlando Homenick',
+                value='est',
             ),
         ],
-        fields_line_regex='tempore',
-        header_line_regex='nisi',
-        json_array_field='voluptatibus',
+        fields_line_regex='recusandae',
+        header_line_regex='totam',
+        json_array_field='fugiat',
         json_extract_all=False,
-        json_time_field='quaerat',
-        max_event_bytes=503748,
-        name='Charlie Harvey',
-        null_field_val='minus',
-        parser='facere',
+        json_time_field='vel',
+        max_event_bytes=497678,
+        name='Cecil Grant',
+        null_field_val='cum',
+        parser='commodi',
         parser_enabled=False,
-        quote_char='facilis',
-        time_field='ipsum',
+        quote_char='in',
+        time_field='corporis',
         timestamp=shared.EventBreakerRuleTimestamp(
-            format='ad',
-            length=973819,
-            type=shared.EventBreakerRuleTimestampType.CURRENT,
+            format='reiciendis',
+            length=828657,
+            type=shared.EventBreakerRuleTimestampType.FORMAT,
         ),
-        timestamp_anchor_regex='consequuntur',
-        timestamp_earliest='debitis',
-        timestamp_latest='labore',
-        timestamp_timezone='rerum',
+        timestamp_anchor_regex='recusandae',
+        timestamp_earliest='aliquid',
+        timestamp_latest='aperiam',
+        timestamp_timezone='cum',
         type=shared.EventBreakerRuleType.JSON,
     ),
-    input='reprehenderit',
+    input='in',
 )
 
 res = s.event_breaker_on_data.post(req)

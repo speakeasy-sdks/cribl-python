@@ -1,4 +1,4 @@
-# list_schema
+# ListSchema
 
 ### Available Operations
 

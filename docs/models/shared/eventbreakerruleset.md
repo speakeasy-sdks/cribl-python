@@ -1,7 +1,5 @@
 # EventBreakerRuleset
 
-New Event Breaker Ruleset object
-
 
 ## Fields
 
