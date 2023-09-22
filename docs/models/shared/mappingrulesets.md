@@ -1,7 +1,5 @@
 # MappingRulesets
 
-a list of MappingRuleset objects
-
 
 ## Fields
 

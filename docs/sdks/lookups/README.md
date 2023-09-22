@@ -1,4 +1,4 @@
-# lookups
+# Lookups
 
 ### Available Operations
 

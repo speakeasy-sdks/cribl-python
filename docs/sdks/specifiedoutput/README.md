@@ -1,4 +1,4 @@
-# specified_output
+# SpecifiedOutput
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.specified_output.get('vitae')
+res = s.specified_output.get(id='enim')
 
 if res.get_specified_output_200_application_json_object is not None:
     # handle response

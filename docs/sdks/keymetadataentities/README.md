@@ -1,4 +1,4 @@
-# key_metadata_entities
+# KeyMetadataEntities
 
 ### Available Operations
 

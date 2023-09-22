@@ -24,7 +24,7 @@ class OutputSplunkLbHostsTLS(str, Enum):
 class OutputSplunkLbHosts:
     host: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('host') }})
     r"""The hostname of the receiver."""
-    port: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('port') }})
+    port: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('port'), 'exclude': lambda f: f is None }})
     r"""The port to connect to on the provided host."""
     servername: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('servername'), 'exclude': lambda f: f is None }})
     r"""Servername to use if establishing a TLS connection. If not specified, defaults to connection host (iff not an IP); otherwise, to the global TLS settings."""
@@ -48,14 +48,14 @@ class OutputSplunkLbIndexerDiscoveryConfigs:
     r"""List of configurations to set up indexer discovery in Splunk Indexer clustering environment."""
     master_uri: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('masterUri') }})
     r"""Full URI of Splunk cluster Manager (scheme://host:port). E.g.: https://managerAddress:8089"""
-    refresh_interval_sec: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('refreshIntervalSec') }})
-    r"""Time interval in seconds between two consecutive indexer list fetches from cluster Manager."""
-    site: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('site') }})
-    r"""Clustering site of the indexers from where indexers need to be discovered. In case of single site cluster, it defaults to 'default' site."""
     auth_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authToken'), 'exclude': lambda f: f is None }})
     r"""Authentication token required to authenticate to cluster Manager for indexer discovery."""
     auth_type: Optional[OutputSplunkLbIndexerDiscoveryConfigsAuthenticationMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authType'), 'exclude': lambda f: f is None }})
     r"""Enter a token directly, or provide a secret referencing a token"""
+    refresh_interval_sec: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('refreshIntervalSec'), 'exclude': lambda f: f is None }})
+    r"""Time interval in seconds between two consecutive indexer list fetches from cluster Manager."""
+    site: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('site'), 'exclude': lambda f: f is None }})
+    r"""Clustering site of the indexers from where indexers need to be discovered. In case of single site cluster, it defaults to 'default' site."""
     text_secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('textSecret'), 'exclude': lambda f: f is None }})
     r"""Select (or create) a stored text secret"""
     

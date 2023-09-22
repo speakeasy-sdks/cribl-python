@@ -65,7 +65,7 @@ class OutputHumioHecType(str, Enum):
 
 @dataclasses.dataclass
 class OutputHumioHecUrls:
-    url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url') }})
+    url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('url'), 'exclude': lambda f: f is None }})
     r"""URL to a CrowdStrike Falcon LogScale endpoint to send events to, e.g., https://cloud.us.humio.com/api/v1/ingest/hec for JSON and https://cloud.us.humio.com/api/v1/ingest/hec/raw for raw"""
     weight: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('weight'), 'exclude': lambda f: f is None }})
     r"""The weight to use for load-balancing purposes."""
@@ -77,8 +77,6 @@ class OutputHumioHecUrls:
 
 @dataclasses.dataclass
 class OutputHumioHec:
-    format: OutputHumioHecRequestFormat = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format') }})
-    r"""Send data in JSON format to the api/v1/ingest/hec endpoint , or raw 1-request-per-line to the api/v1/ingest/hec/raw endpoint ."""
     type: OutputHumioHecType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     auth_type: Optional[OutputHumioHecAuthenticationMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authType'), 'exclude': lambda f: f is None }})
     r"""Enter a token directly, or provide a secret referencing a token"""
@@ -98,6 +96,8 @@ class OutputHumioHec:
     r"""Determines which data should be logged when a request fails. Defaults to None.  All headers are redacted by default, except those listed under `Safe Headers`."""
     flush_period_sec: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flushPeriodSec'), 'exclude': lambda f: f is None }})
     r"""Maximum time between requests. Small values could cause the payload size to be smaller than the configured Max body size."""
+    format: Optional[OutputHumioHecRequestFormat] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format'), 'exclude': lambda f: f is None }})
+    r"""Send data in JSON format to the api/v1/ingest/hec endpoint , or raw 1-request-per-line to the api/v1/ingest/hec/raw endpoint ."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Unique ID for this output"""
     load_balanced: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('loadBalanced'), 'exclude': lambda f: f is None }})

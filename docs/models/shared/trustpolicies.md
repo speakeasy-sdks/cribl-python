@@ -1,7 +1,5 @@
 # TrustPolicies
 
-a list of TrustPolicy objects
-
 
 ## Fields
 

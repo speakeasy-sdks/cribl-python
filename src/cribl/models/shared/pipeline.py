@@ -44,7 +44,6 @@ class PipelineConf:
 
 @dataclasses.dataclass
 class Pipeline:
-    r"""New Pipeline object"""
     conf: PipelineConf = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('conf') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Pipeline ID"""

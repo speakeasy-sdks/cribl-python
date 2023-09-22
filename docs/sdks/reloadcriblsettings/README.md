@@ -1,4 +1,4 @@
-# reload_cribl_settings
+# ReloadCriblSettings
 
 ### Available Operations
 

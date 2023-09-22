@@ -1,4 +1,4 @@
-# search_jobs
+# SearchJobs
 
 ### Available Operations
 

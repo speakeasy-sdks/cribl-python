@@ -1,7 +1,5 @@
 # SampleFiles
 
-a list of SampleFile objects
-
 
 ## Fields
 

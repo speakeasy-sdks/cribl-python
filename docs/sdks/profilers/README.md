@@ -1,4 +1,4 @@
-# profilers
+# Profilers
 
 ### Available Operations
 

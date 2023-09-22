@@ -19,15 +19,14 @@ class KeyMetadataEntityKMSForThisKey(str, Enum):
 
 @dataclasses.dataclass
 class KeyMetadataEntity:
-    r"""New KeyMetadataEntity object"""
-    algorithm: KeyMetadataEntityEncryptionAlgorithm = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('algorithm') }})
-    keyclass: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('keyclass') }})
     key_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('keyId') }})
-    kms: KeyMetadataEntityKMSForThisKey = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('kms') }})
+    algorithm: Optional[KeyMetadataEntityEncryptionAlgorithm] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('algorithm'), 'exclude': lambda f: f is None }})
     cipher_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cipherKey'), 'exclude': lambda f: f is None }})
     created: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created'), 'exclude': lambda f: f is None }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     expires: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('expires'), 'exclude': lambda f: f is None }})
+    keyclass: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('keyclass'), 'exclude': lambda f: f is None }})
+    kms: Optional[KeyMetadataEntityKMSForThisKey] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('kms'), 'exclude': lambda f: f is None }})
     plain_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('plainKey'), 'exclude': lambda f: f is None }})
     use_iv: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('useIV'), 'exclude': lambda f: f is None }})
     r"""Seed encryption with a [nonce](https://en.wikipedia.org/wiki/Cryptographic_nonce) to make the key more random and unique. Must be toggled on with the aes-256-gcm algorithm."""

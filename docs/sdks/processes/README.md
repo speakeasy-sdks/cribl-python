@@ -1,4 +1,4 @@
-# processes
+# Processes
 
 ### Available Operations
 
