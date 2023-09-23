@@ -1,4 +1,4 @@
-# previous_cribl_package
+# PreviousCriblPackage
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.previous_cribl_package.get('molestias')
+res = s.previous_cribl_package.get(file='cum')
 
 if res.cribl_package is not None:
     # handle response

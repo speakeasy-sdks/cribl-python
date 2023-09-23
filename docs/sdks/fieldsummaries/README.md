@@ -1,4 +1,4 @@
-# field_summaries
+# FieldSummaries
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.field_summaries.get('enim')
+res = s.field_summaries.get(id='amet')
 
 if res.field_summaries is not None:
     # handle response

@@ -1,4 +1,4 @@
-# lookup
+# Lookup
 
 ### Available Operations
 
@@ -16,7 +16,7 @@ Create LookupFile
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import shared
 
 s = cribl.Cribl(
     security=shared.Security(
@@ -24,13 +24,7 @@ s = cribl.Cribl(
     ),
 )
 
-req = operations.CreateLookupRequestBody2(
-    content='soluta',
-    description='dolorum',
-    id='3f8941ae-bc0b-480a-a924-d3b2ecfcc8f8',
-    size=614770,
-    tags='corporis',
-)
+req = 'harum'
 
 res = s.lookup.create(req)
 
@@ -67,7 +61,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.lookup.delete('accusantium')
+res = s.lookup.delete(id='sequi')
 
 if res.lookup_file is not None:
     # handle response
@@ -102,7 +96,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.lookup.get('illo')
+res = s.lookup.get(id='doloribus')
 
 if res.lookup_file is not None:
     # handle response
@@ -137,13 +131,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.lookup.update('aut', operations.UpdateLookupRequestBody2(
-    content='nostrum',
-    description='at',
-    id='d3d6fa18-04e5-44c8-af16-8a363c8873e4',
-    size=503449,
-    tags='numquam',
-))
+res = s.lookup.update(id='repudiandae', request_body='optio')
 
 if res.lookup_file is not None:
     # handle response
@@ -179,7 +167,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.lookup.upload('sequi')
+res = s.lookup.upload(filename='occaecati')
 
 if res.lookup_file_info_response is not None:
     # handle response

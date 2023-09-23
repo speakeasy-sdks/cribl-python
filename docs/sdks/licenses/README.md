@@ -1,4 +1,4 @@
-# licenses
+# Licenses
 
 ### Available Operations
 

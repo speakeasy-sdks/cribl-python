@@ -1,4 +1,4 @@
-# rest_secrets
+# RestSecrets
 
 ### Available Operations
 

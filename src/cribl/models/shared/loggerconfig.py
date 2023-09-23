@@ -12,7 +12,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class LoggerConfig:
-    r"""a list of LoggerConfig objects"""
     channels: list[shared_loggerentry.LoggerEntry] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('channels') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     redact_fields: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('redactFields') }})

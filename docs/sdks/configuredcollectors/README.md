@@ -1,4 +1,4 @@
-# configured_collectors
+# ConfiguredCollectors
 
 ### Available Operations
 

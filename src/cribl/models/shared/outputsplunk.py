@@ -95,8 +95,6 @@ class OutputSplunkType(str, Enum):
 class OutputSplunk:
     host: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('host') }})
     r"""The hostname of the receiver"""
-    port: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('port') }})
-    r"""The port to connect to on the provided host"""
     auth_token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authToken'), 'exclude': lambda f: f is None }})
     r"""Shared secret token to use when establishing a connection to a Splunk indexer."""
     auth_type: Optional[OutputSplunkAuthenticationMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authType'), 'exclude': lambda f: f is None }})
@@ -121,6 +119,8 @@ class OutputSplunk:
     r"""Whether to block, drop, or queue events when all receivers are exerting backpressure."""
     pipeline: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pipeline'), 'exclude': lambda f: f is None }})
     r"""Pipeline to process data before sending out to this output."""
+    port: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('port'), 'exclude': lambda f: f is None }})
+    r"""The port to connect to on the provided host"""
     pq_compress: Optional[OutputSplunkCompression] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqCompress'), 'exclude': lambda f: f is None }})
     r"""Codec to use to compress the persisted data."""
     pq_controls: Optional[OutputSplunkPqControls] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqControls'), 'exclude': lambda f: f is None }})

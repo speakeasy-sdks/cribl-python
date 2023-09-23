@@ -1,7 +1,5 @@
 # Role
 
-New Role object
-
 
 ## Fields
 

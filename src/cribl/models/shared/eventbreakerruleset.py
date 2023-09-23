@@ -51,9 +51,9 @@ class EventBreakerRulesetRulesTimestampFormatTimestampType(str, Enum):
 @dataclasses.dataclass
 class EventBreakerRulesetRulesTimestampFormat:
     r"""Auto, manual format (strptime) or current time."""
-    type: EventBreakerRulesetRulesTimestampFormatTimestampType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     format: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format'), 'exclude': lambda f: f is None }})
     length: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('length'), 'exclude': lambda f: f is None }})
+    type: Optional[EventBreakerRulesetRulesTimestampFormatTimestampType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 
 
@@ -71,15 +71,11 @@ class EventBreakerRulesetRulesEventBreakerType(str, Enum):
 
 @dataclasses.dataclass
 class EventBreakerRulesetRules:
-    condition: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition') }})
-    r"""Filter expression (JS) that matches data to apply rule to. To test your sample, use the maximize icon on the right."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     timestamp: EventBreakerRulesetRulesTimestampFormat = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestamp') }})
     r"""Auto, manual format (strptime) or current time."""
-    timestamp_anchor_regex: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestampAnchorRegex') }})
-    r"""Regex to match before attempting timestamp extraction. Use $ (end of string anchor) to not perform extraction."""
-    type: EventBreakerRulesetRulesEventBreakerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    r"""Event Breaker Type"""
+    condition: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition'), 'exclude': lambda f: f is None }})
+    r"""Filter expression (JS) that matches data to apply rule to. To test your sample, use the maximize icon on the right."""
     definitions: Optional[EventBreakerRulesetRulesDefinitions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('definitions'), 'exclude': lambda f: f is None }})
     disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
     r"""Allows breaker rule to be enabled or disabled, default is enabled."""
@@ -89,12 +85,16 @@ class EventBreakerRulesetRules:
     r"""The maximum number of bytes that an event can be before being flushed to the pipelines"""
     parser_enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parserEnabled'), 'exclude': lambda f: f is None }})
     r"""Parser."""
+    timestamp_anchor_regex: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestampAnchorRegex'), 'exclude': lambda f: f is None }})
+    r"""Regex to match before attempting timestamp extraction. Use $ (end of string anchor) to not perform extraction."""
     timestamp_earliest: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestampEarliest'), 'exclude': lambda f: f is None }})
     r"""The earliest timestamp value allowed relative to now. E.g., -42years. Parsed values prior to this date will be set to current time."""
     timestamp_latest: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestampLatest'), 'exclude': lambda f: f is None }})
     r"""The latest timestamp value allowed relative to now. E.g., +42days. Parsed values after this date will be set to current time."""
     timestamp_timezone: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestampTimezone'), 'exclude': lambda f: f is None }})
     r"""Timezone to assign to timestamps without timezone info."""
+    type: Optional[EventBreakerRulesetRulesEventBreakerType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    r"""Event Breaker Type"""
     
 
 
@@ -103,7 +103,6 @@ class EventBreakerRulesetRules:
 
 @dataclasses.dataclass
 class EventBreakerRuleset:
-    r"""New Event Breaker Ruleset object"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""Brief description of this ruleset. Optional."""

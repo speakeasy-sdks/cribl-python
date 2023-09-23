@@ -1,7 +1,5 @@
 # Datasets
 
-a list of Dataset objects
-
 
 ## Fields
 

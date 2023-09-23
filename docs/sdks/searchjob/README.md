@@ -1,4 +1,4 @@
-# search_job
+# SearchJob
 
 ### Available Operations
 
@@ -26,646 +26,141 @@ s = cribl.Cribl(
 req = shared.SearchJob(
     chart_config=shared.ChartConfig(
         axis=shared.ChartConfigAxis(
-            x_axis='numquam',
+            x_axis='nihil',
             y_axis=[
-                'eligendi',
-                'sapiente',
-                'alias',
-                'impedit',
+                'ad',
             ],
         ),
         legend=shared.Legend(),
         series=[
             shared.ChartSeries(
-                color='aspernatur',
+                color='nisi',
                 data=[
                     {
-                        "voluptatum": 'reiciendis',
-                        "vitae": 'ullam',
-                    },
-                    {
-                        "consequuntur": 'voluptas',
-                        "ratione": 'excepturi',
-                    },
-                    {
-                        "est": 'perferendis',
-                        "quibusdam": 'impedit',
-                        "ducimus": 'nisi',
+                        "tenetur": 'quis',
                     },
                 ],
-                data_expression='nisi',
+                data_expression='quibusdam',
                 data_filter={
-                    "fugit": 'dolore',
+                    "nemo": 'suscipit',
                 },
-                name='Ms. Wilbert Ratke',
-                type=shared.ChartType(),
-            ),
-            shared.ChartSeries(
-                color='totam',
-                data=[
-                    {
-                        "inventore": 'consequuntur',
-                        "repellendus": 'sit',
-                        "dolores": 'enim',
-                    },
-                    {
-                        "perspiciatis": 'magni',
-                    },
-                    {
-                        "alias": 'quidem',
-                        "deleniti": 'possimus',
-                    },
-                    {
-                        "odio": 'fugit',
-                        "aspernatur": 'at',
-                    },
-                ],
-                data_expression='illum',
-                data_filter={
-                    "sint": 'exercitationem',
-                    "cum": 'voluptatum',
-                    "facilis": 'placeat',
-                },
-                name='Ernest Grimes',
+                name='Paul Powlowski MD',
                 type=shared.ChartType(),
             ),
         ],
         settings=shared.Settings(
-            color='cupiditate',
-            color_palette=365676,
-            type='natus',
+            color='sapiente',
+            color_palette=152364,
+            type='possimus',
         ),
         single_value=shared.SingleValue(
-            color='nisi',
-            decimals=588542,
-            label='amet',
-            prefix='dolor',
-            suffix='nostrum',
-            type='qui',
+            color='repellat',
+            decimals=921060,
+            label='architecto',
+            prefix='adipisci',
+            suffix='pariatur',
+            type='harum',
         ),
         x_axis=shared.Axis(
             axis_label=shared.AxisLabel(
                 formatter=shared.AxisLabelFormatter(),
                 formatter_data=[
-                    477352,
-                    292571,
-                    356343,
-                    245990,
+                    294266,
                 ],
             ),
-            type='adipisci',
+            type='voluptatibus',
         ),
     ),
     compatibility_checks=shared.SearchJobCompatibilityChecks(
         datatypes=False,
     ),
-    correlation_id='cupiditate',
+    correlation_id='iure',
     cpu_metrics=shared.CPUTimeMetric(
-        total_cpu_seconds=581269,
-        total_exec_cpu_seconds=258036,
+        total_cpu_seconds=127087,
+        total_exec_cpu_seconds=795457,
     ),
     datatype_overrides=shared.DatatypeOverrides(
         breaker_rulesets=[
             shared.EventBreakerRuleset(
-                description='molestiae',
-                id='8de3b6e9-389f-45ab-b7f6-62550a28382a',
+                description='soluta',
+                id='a3f8941a-ebc0-4b80-a692-4d3b2ecfcc8f',
                 lib=shared.EventBreakerRulesetLibrary.CUSTOM,
-                min_raw_length=754784,
+                min_raw_length=532326,
                 rules=[
                     shared.EventBreakerRulesetRules(
-                        condition='deleniti',
+                        condition='iste',
                         definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='dolor',
-                            field_filter_expr='est',
+                            dst_field='corporis',
+                            field_filter_expr='accusantium',
                             fields_=[
-                                'possimus',
-                                'odit',
-                                'consectetur',
-                                'inventore',
+                                'illo',
                             ],
                             keep=[
-                                'facilis',
-                                'facilis',
-                            ],
-                            remove=[
-                                'nisi',
-                                'ipsam',
-                                'voluptatem',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Ms. Eva Upton',
-                                value='veniam',
-                            ),
-                        ],
-                        max_event_bytes=695408,
-                        name='Franklin Nolan',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='molestias',
-                            length=102019,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.CURRENT,
-                        ),
-                        timestamp_anchor_regex='quisquam',
-                        timestamp_earliest='praesentium',
-                        timestamp_latest='facilis',
-                        timestamp_timezone='assumenda',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.CSV,
-                    ),
-                    shared.EventBreakerRulesetRules(
-                        condition='maiores',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='ipsum',
-                            field_filter_expr='commodi',
-                            fields_=[
-                                'fugit',
-                            ],
-                            keep=[
-                                'ex',
-                                'neque',
-                                'quod',
-                            ],
-                            remove=[
-                                'alias',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Bryant Ondricka',
-                                value='aperiam',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Constance Gislason',
-                                value='deleniti',
-                            ),
-                        ],
-                        max_event_bytes=638219,
-                        name='Pablo Fahey',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='sit',
-                            length=561399,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.FORMAT,
-                        ),
-                        timestamp_anchor_regex='expedita',
-                        timestamp_earliest='voluptas',
-                        timestamp_latest='maiores',
-                        timestamp_timezone='ea',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.JSON_ARRAY,
-                    ),
-                ],
-                tags='delectus',
-            ),
-            shared.EventBreakerRuleset(
-                description='accusamus',
-                id='f020e9f4-43b4-4257-b992-c8dbda6a61ef',
-                lib=shared.EventBreakerRulesetLibrary.CUSTOM,
-                min_raw_length=661764,
-                rules=[
-                    shared.EventBreakerRulesetRules(
-                        condition='inventore',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='iste',
-                            field_filter_expr='atque',
-                            fields_=[
-                                'ullam',
-                            ],
-                            keep=[
-                                'doloribus',
-                                'pariatur',
                                 'aut',
                             ],
                             remove=[
-                                'iste',
-                                'eveniet',
-                                'nam',
+                                'doloribus',
                             ],
                         ),
                         disabled=False,
                         fields_=[
                             shared.EventBreakerRulesetRulesFields(
-                                name='Allison Wiza',
-                                value='dolorem',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Randal Aufderhar',
-                                value='aliquid',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Helen Stanton',
-                                value='dicta',
+                                name='Lynette Senger',
+                                value='vel',
                             ),
                         ],
-                        max_event_bytes=538877,
-                        name='Jean Schamberger',
+                        max_event_bytes=960813,
+                        name='Mrs. Eric Lueilwitz',
                         parser_enabled=False,
                         timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='culpa',
-                            length=837739,
+                            format='ad',
+                            length=305047,
                             type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.CURRENT,
                         ),
-                        timestamp_anchor_regex='ad',
-                        timestamp_earliest='cupiditate',
-                        timestamp_latest='suscipit',
-                        timestamp_timezone='reiciendis',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.TIMESTAMP,
-                    ),
-                ],
-                tags='delectus',
-            ),
-            shared.EventBreakerRuleset(
-                description='ab',
-                id='ad837ae8-0c1c-419c-95ba-998678fa3f69',
-                lib=shared.EventBreakerRulesetLibrary.CUSTOM,
-                min_raw_length=418787,
-                rules=[
-                    shared.EventBreakerRulesetRules(
-                        condition='cupiditate',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='ab',
-                            field_filter_expr='fuga',
-                            fields_=[
-                                'dolor',
-                                'voluptatum',
-                                'molestias',
-                                'quod',
-                            ],
-                            keep=[
-                                'eaque',
-                                'consectetur',
-                                'autem',
-                                'vitae',
-                            ],
-                            remove=[
-                                'incidunt',
-                                'modi',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Adrian Muller',
-                                value='animi',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Silvia Wintheiser',
-                                value='exercitationem',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Katie Bauch',
-                                value='debitis',
-                            ),
-                        ],
-                        max_event_bytes=951411,
-                        name='Conrad Zulauf',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='aliquam',
-                            length=71751,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.AUTO,
-                        ),
-                        timestamp_anchor_regex='sed',
-                        timestamp_earliest='necessitatibus',
-                        timestamp_latest='possimus',
-                        timestamp_timezone='dignissimos',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.CSV,
-                    ),
-                    shared.EventBreakerRulesetRules(
-                        condition='explicabo',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='ullam',
-                            field_filter_expr='non',
-                            fields_=[
-                                'incidunt',
-                                'quod',
-                                'sunt',
-                                'ullam',
-                            ],
-                            keep=[
-                                'illum',
-                                'voluptates',
-                            ],
-                            remove=[
-                                'est',
-                                'in',
-                                'illo',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Lucia Gorczany',
-                                value='est',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Leland Wisoky',
-                                value='quam',
-                            ),
-                        ],
-                        max_event_bytes=686690,
-                        name='Emanuel McKenzie',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='culpa',
-                            length=855647,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.AUTO,
-                        ),
-                        timestamp_anchor_regex='atque',
-                        timestamp_earliest='ad',
-                        timestamp_latest='sapiente',
-                        timestamp_timezone='voluptates',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.JSON,
-                    ),
-                    shared.EventBreakerRulesetRules(
-                        condition='nesciunt',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='ab',
-                            field_filter_expr='quibusdam',
-                            fields_=[
-                                'quidem',
-                                'delectus',
-                            ],
-                            keep=[
-                                'cumque',
-                                'voluptatum',
-                            ],
-                            remove=[
-                                'atque',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Andres Larson',
-                                value='eaque',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Archie Jaskolski',
-                                value='minus',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Verna Gislason',
-                                value='repudiandae',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Sergio Tremblay',
-                                value='amet',
-                            ),
-                        ],
-                        max_event_bytes=279679,
-                        name='Tracy Witting',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='in',
-                            length=609864,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.CURRENT,
-                        ),
-                        timestamp_anchor_regex='tenetur',
-                        timestamp_earliest='recusandae',
-                        timestamp_latest='expedita',
-                        timestamp_timezone='iusto',
+                        timestamp_anchor_regex='quas',
+                        timestamp_earliest='consequuntur',
+                        timestamp_latest='maiores',
+                        timestamp_timezone='inventore',
                         type=shared.EventBreakerRulesetRulesEventBreakerType.JSON_ARRAY,
                     ),
                 ],
-                tags='harum',
-            ),
-            shared.EventBreakerRuleset(
-                description='ad',
-                id='c38d4baf-91e5-406e-b890-a54b475f16f5',
-                lib=shared.EventBreakerRulesetLibrary.CUSTOM,
-                min_raw_length=405161,
-                rules=[
-                    shared.EventBreakerRulesetRules(
-                        condition='nesciunt',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='corrupti',
-                            field_filter_expr='nostrum',
-                            fields_=[
-                                'sequi',
-                                'maxime',
-                                'numquam',
-                            ],
-                            keep=[
-                                'eligendi',
-                                'autem',
-                                'adipisci',
-                            ],
-                            remove=[
-                                'rerum',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Terence Considine',
-                                value='eveniet',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Guy Will',
-                                value='repellendus',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Mr. Virgil Greenfelder',
-                                value='nisi',
-                            ),
-                        ],
-                        max_event_bytes=245849,
-                        name='Rudolph Weimann IV',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='atque',
-                            length=243941,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.FORMAT,
-                        ),
-                        timestamp_anchor_regex='nam',
-                        timestamp_earliest='aperiam',
-                        timestamp_latest='vitae',
-                        timestamp_timezone='mollitia',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.CSV,
-                    ),
-                    shared.EventBreakerRulesetRules(
-                        condition='at',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='quibusdam',
-                            field_filter_expr='quam',
-                            fields_=[
-                                'rem',
-                                'vel',
-                                'eos',
-                            ],
-                            keep=[
-                                'sunt',
-                                'blanditiis',
-                            ],
-                            remove=[
-                                'accusamus',
-                                'distinctio',
-                                'incidunt',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Allan Feest',
-                                value='accusantium',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Ms. Kim Zboncak',
-                                value='tempore',
-                            ),
-                        ],
-                        max_event_bytes=992244,
-                        name='Marilyn Hilll',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='labore',
-                            length=84438,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.AUTO,
-                        ),
-                        timestamp_anchor_regex='magni',
-                        timestamp_earliest='itaque',
-                        timestamp_latest='error',
-                        timestamp_timezone='expedita',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.HEADER,
-                    ),
-                    shared.EventBreakerRulesetRules(
-                        condition='placeat',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='temporibus',
-                            field_filter_expr='voluptate',
-                            fields_=[
-                                'minima',
-                                'odit',
-                                'odit',
-                                'eius',
-                            ],
-                            keep=[
-                                'vel',
-                                'dolorum',
-                                'alias',
-                            ],
-                            remove=[
-                                'ab',
-                                'sunt',
-                                'amet',
-                                'cum',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Kyle Koch',
-                                value='minima',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Rolando Brakus',
-                                value='in',
-                            ),
-                        ],
-                        max_event_bytes=995671,
-                        name='Blanca Greenfelder',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='repudiandae',
-                            length=273349,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.CURRENT,
-                        ),
-                        timestamp_anchor_regex='suscipit',
-                        timestamp_earliest='illum',
-                        timestamp_latest='iusto',
-                        timestamp_timezone='aliquid',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.HEADER,
-                    ),
-                    shared.EventBreakerRulesetRules(
-                        condition='aliquid',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='repellat',
-                            field_filter_expr='sapiente',
-                            fields_=[
-                                'eligendi',
-                            ],
-                            keep=[
-                                'nihil',
-                                'eius',
-                            ],
-                            remove=[
-                                'corporis',
-                                'perferendis',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Stacy Kovacek',
-                                value='magnam',
-                            ),
-                        ],
-                        max_event_bytes=981817,
-                        name='Jean Welch',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='consequatur',
-                            length=516739,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.AUTO,
-                        ),
-                        timestamp_anchor_regex='quo',
-                        timestamp_earliest='dolor',
-                        timestamp_latest='sunt',
-                        timestamp_timezone='omnis',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.JSON_ARRAY,
-                    ),
-                ],
-                tags='officiis',
+                tags='laudantium',
             ),
         ],
         disable_breakers=False,
     ),
-    earliest_epoch=118236,
+    earliest_epoch=665872,
     error_state_config=shared.SearchJobErrorStateConfig(
         coordinated=False,
         error_messages=[
-            'consectetur',
-            'deserunt',
-            'odit',
+            'dolor',
         ],
     ),
-    group='incidunt',
-    id='5467f948-74c2-4d5c-8497-2233e66bd8fe',
-    latest_epoch=357867,
-    num_events_after=830909,
-    num_events_before=12917,
-    query='voluptatem',
-    sample_rate=727789,
+    group='aliquid',
+    id='3c8873e4-8438-40b1-b6b8-ca275a60a04c',
+    latest_epoch=303292,
+    num_events_after=613702,
+    num_events_before=355889,
+    query='eligendi',
+    sample_rate=810302,
     search_config=shared.SearchConfig(
         datasets=[
-            'odio',
-            'omnis',
-            'officiis',
+            'voluptas',
         ],
         has_send_operator=False,
         ordered_field_names=[
-            'magni',
-            'sit',
-            'velit',
-            'voluptatum',
+            'occaecati',
         ],
         search_terms=[
             shared.SearchTerm(
                 is_case_sensitive=False,
-                term='neque',
-            ),
-            shared.SearchTerm(
-                is_case_sensitive=False,
-                term='aspernatur',
+                term='unde',
             ),
         ],
         sort_fields=[
             shared.SortByField(
                 direction=shared.SortByFieldDirection.ASCENDING,
-                field_name='cupiditate',
+                field_name='nihil',
                 null_position=shared.SortByFieldNullPosition.NULLS_FIRST,
             ),
         ],
@@ -674,58 +169,43 @@ req = shared.SearchJob(
     ),
     search_parameter_declarations=[
         shared.SearchParameter(
-            default_value='quod',
-            name='Joe Bartell',
-            type=shared.SearchParameterType.STRING,
-        ),
-        shared.SearchParameter(
-            default_value='aperiam',
-            name='Sheila Brekke',
-            type=shared.SearchParameterType.STRING,
-        ),
-        shared.SearchParameter(
-            default_value='debitis',
-            name='Cynthia Gottlieb',
-            type=shared.SearchParameterType.NUMBER,
-        ),
-        shared.SearchParameter(
-            default_value='ullam',
-            name='Rogelio Kihn',
+            default_value='libero',
+            name='Miss Joyce Runolfsson',
             type=shared.SearchParameterType.BOOLEAN,
         ),
     ],
-    search_parameter_values='ut',
-    status=shared.SearchJobStatus.NEW,
+    search_parameter_values='beatae',
+    status=shared.SearchJobStatus.CANCELED,
     table_config=shared.TableViewSettings(
         column_filter_settings=shared.ColumnFilterSettings(
-            contains='nihil',
+            contains='delectus',
         ),
         column_format_settings=shared.ColumnFormatSettings(
-            palette='quam',
-            precision='assumenda',
-            prefix='consequatur',
-            suffix='cumque',
+            palette='labore',
+            precision='expedita',
+            prefix='corrupti',
+            suffix='rem',
         ),
         column_order_settings=shared.ColumnOrderSettings(
-            order='placeat',
+            order='atque',
         ),
         column_sort_settings=shared.ColumnSortSettings(
-            sort='adipisci',
+            sort='officiis',
         ),
-        row_number_column_width=950486,
+        row_number_column_width=739633,
         show_column_totals=False,
         show_column_totals_pinned=False,
         show_row_numbers=False,
         show_row_totals=False,
         show_row_totals_pinned=False,
-        view_mode=shared.TableViewSettingsViewMode.EVENT,
+        view_mode=shared.TableViewSettingsViewMode.TABLE,
     ),
-    target_event_time=35107,
-    time_completed=548473,
-    time_created=933847,
-    time_started=938015,
+    target_event_time=956871,
+    time_completed=775427,
+    time_created=277990,
+    time_started=797293,
     type=shared.SearchJobType.SCHEDULED,
-    user='dicta',
+    user='porro',
 )
 
 res = s.search_job.create(req)
@@ -763,7 +243,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.search_job.delete('corporis')
+res = s.search_job.delete(id='id')
 
 if res.search_job is not None:
     # handle response
@@ -798,7 +278,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.search_job.get('impedit')
+res = s.search_job.get(id='excepturi')
 
 if res.search_job is not None:
     # handle response
@@ -833,595 +313,144 @@ s = cribl.Cribl(
 )
 
 
-res = s.search_job.update('eveniet', shared.SearchJob(
+res = s.search_job.update(id='occaecati', search_job=shared.SearchJob(
     chart_config=shared.ChartConfig(
         axis=shared.ChartConfigAxis(
-            x_axis='cum',
+            x_axis='libero',
             y_axis=[
-                'illum',
-                'ea',
+                'quo',
             ],
         ),
         legend=shared.Legend(),
         series=[
             shared.ChartSeries(
-                color='quasi',
+                color='esse',
                 data=[
                     {
-                        "necessitatibus": 'voluptatem',
-                        "maiores": 'odio',
-                        "veniam": 'fuga',
-                    },
-                    {
-                        "possimus": 'tenetur',
-                        "sed": 'deserunt',
-                        "eligendi": 'id',
-                        "distinctio": 'corporis',
-                    },
-                    {
-                        "soluta": 'cupiditate',
-                        "unde": 'et',
-                        "quisquam": 'unde',
-                    },
-                    {
-                        "suscipit": 'facere',
+                        "hic": 'maxime',
                     },
                 ],
-                data_expression='pariatur',
+                data_expression='accusantium',
                 data_filter={
-                    "quaerat": 'corrupti',
-                    "sint": 'eius',
-                    "vel": 'quasi',
+                    "soluta": 'fugit',
                 },
-                name='Darren Funk DDS',
-                type=shared.ChartType(),
-            ),
-            shared.ChartSeries(
-                color='nobis',
-                data=[
-                    {
-                        "possimus": 'provident',
-                        "veniam": 'sit',
-                    },
-                    {
-                        "a": 'consequatur',
-                    },
-                    {
-                        "id": 'error',
-                        "ratione": 'perferendis',
-                        "distinctio": 'voluptas',
-                        "sint": 'maiores',
-                    },
-                    {
-                        "fuga": 'cumque',
-                        "consequuntur": 'maiores',
-                    },
-                ],
-                data_expression='esse',
-                data_filter={
-                    "delectus": 'quos',
-                },
-                name='Miss Jon Bailey I',
-                type=shared.ChartType(),
-            ),
-            shared.ChartSeries(
-                color='occaecati',
-                data=[
-                    {
-                        "ex": 'doloremque',
-                    },
-                ],
-                data_expression='quas',
-                data_filter={
-                    "perferendis": 'esse',
-                },
-                name='Nelson Langosh',
-                type=shared.ChartType(),
-            ),
-            shared.ChartSeries(
-                color='autem',
-                data=[
-                    {
-                        "quos": 'consectetur',
-                    },
-                    {
-                        "tenetur": 'necessitatibus',
-                        "perspiciatis": 'suscipit',
-                        "ullam": 'unde',
-                    },
-                ],
-                data_expression='debitis',
-                data_filter={
-                    "magnam": 'doloremque',
-                    "accusamus": 'quod',
-                    "sunt": 'voluptas',
-                },
-                name='Cameron Wehner',
+                name='Mr. Guillermo Walter',
                 type=shared.ChartType(),
             ),
         ],
         settings=shared.Settings(
-            color='rerum',
-            color_palette=17548,
-            type='nam',
+            color='iusto',
+            color_palette=219860,
+            type='voluptates',
         ),
         single_value=shared.SingleValue(
-            color='ullam',
-            decimals=191571,
-            label='eos',
-            prefix='id',
-            suffix='modi',
-            type='illum',
+            color='tempora',
+            decimals=169935,
+            label='rerum',
+            prefix='doloremque',
+            suffix='voluptatem',
+            type='eum',
         ),
         x_axis=shared.Axis(
             axis_label=shared.AxisLabel(
                 formatter=shared.AxisLabelFormatter(),
                 formatter_data=[
-                    235567,
-                    443098,
-                    758184,
+                    873320,
                 ],
             ),
-            type='cum',
+            type='eum',
         ),
     ),
     compatibility_checks=shared.SearchJobCompatibilityChecks(
         datatypes=False,
     ),
-    correlation_id='culpa',
+    correlation_id='reprehenderit',
     cpu_metrics=shared.CPUTimeMetric(
-        total_cpu_seconds=637037,
-        total_exec_cpu_seconds=955126,
+        total_cpu_seconds=531195,
+        total_exec_cpu_seconds=502393,
     ),
     datatype_overrides=shared.DatatypeOverrides(
         breaker_rulesets=[
             shared.EventBreakerRuleset(
-                description='eius',
-                id='52c4842c-9b2a-4d32-9afe-81a88f444457',
+                description='nihil',
+                id='8ba8581a-5820-48c5-8fef-a9c95f2eac55',
                 lib=shared.EventBreakerRulesetLibrary.CUSTOM,
-                min_raw_length=190850,
+                min_raw_length=430235,
                 rules=[
                     shared.EventBreakerRulesetRules(
-                        condition='saepe',
+                        condition='nemo',
                         definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='quod',
-                            field_filter_expr='nulla',
+                            dst_field='illum',
+                            field_filter_expr='nesciunt',
                             fields_=[
-                                'quam',
-                                'consectetur',
+                                'sit',
                             ],
                             keep=[
-                                'nesciunt',
-                                'earum',
+                                'odio',
                             ],
                             remove=[
-                                'dolor',
-                                'placeat',
+                                'minus',
                             ],
                         ),
                         disabled=False,
                         fields_=[
                             shared.EventBreakerRulesetRulesFields(
-                                name='Cynthia Morissette',
-                                value='unde',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Orlando Jacobson',
-                                value='at',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Ollie Reichert',
-                                value='quam',
+                                name='Rolando Veum Sr.',
+                                value='sit',
                             ),
                         ],
-                        max_event_bytes=579242,
-                        name='Trevor Carter',
+                        max_event_bytes=396234,
+                        name='Mrs. Louis Lind',
                         parser_enabled=False,
                         timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='odio',
-                            length=518338,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.AUTO,
-                        ),
-                        timestamp_anchor_regex='eos',
-                        timestamp_earliest='harum',
-                        timestamp_latest='voluptatibus',
-                        timestamp_timezone='omnis',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.JSON_ARRAY,
-                    ),
-                    shared.EventBreakerRulesetRules(
-                        condition='quos',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='natus',
-                            field_filter_expr='aliquam',
-                            fields_=[
-                                'nisi',
-                                'praesentium',
-                                'eum',
-                                'vitae',
-                            ],
-                            keep=[
-                                'possimus',
-                                'libero',
-                                'ullam',
-                            ],
-                            remove=[
-                                'maiores',
-                                'iste',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Hope Kuhic DDS',
-                                value='occaecati',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Terence Leffler',
-                                value='veniam',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Jacqueline Prohaska',
-                                value='quod',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Ms. Joanne Halvorson',
-                                value='illo',
-                            ),
-                        ],
-                        max_event_bytes=954946,
-                        name='Nellie Jones',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='nostrum',
-                            length=406037,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.AUTO,
-                        ),
-                        timestamp_anchor_regex='voluptate',
-                        timestamp_earliest='molestias',
-                        timestamp_latest='voluptatibus',
-                        timestamp_timezone='ipsum',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.CSV,
-                    ),
-                    shared.EventBreakerRulesetRules(
-                        condition='quidem',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='odit',
-                            field_filter_expr='molestiae',
-                            fields_=[
-                                'quia',
-                                'inventore',
-                                'doloribus',
-                                'praesentium',
-                            ],
-                            keep=[
-                                'consequuntur',
-                                'laboriosam',
-                            ],
-                            remove=[
-                                'reprehenderit',
-                                'soluta',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Lucia Schoen',
-                                value='cupiditate',
-                            ),
-                        ],
-                        max_event_bytes=942840,
-                        name='Nina Kshlerin',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='ad',
-                            length=167613,
+                            format='laborum',
+                            length=303421,
                             type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.FORMAT,
                         ),
-                        timestamp_anchor_regex='minus',
-                        timestamp_earliest='aliquid',
-                        timestamp_latest='quam',
-                        timestamp_timezone='ea',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.JSON,
-                    ),
-                    shared.EventBreakerRulesetRules(
-                        condition='architecto',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='fuga',
-                            field_filter_expr='totam',
-                            fields_=[
-                                'quasi',
-                            ],
-                            keep=[
-                                'officiis',
-                            ],
-                            remove=[
-                                'quae',
-                                'dolore',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Mario Runolfsson DDS',
-                                value='cumque',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Jesus Corkery',
-                                value='facilis',
-                            ),
-                        ],
-                        max_event_bytes=792555,
-                        name='Dr. Edmund Mohr',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='est',
-                            length=716024,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.CURRENT,
-                        ),
-                        timestamp_anchor_regex='nulla',
-                        timestamp_earliest='totam',
-                        timestamp_latest='praesentium',
-                        timestamp_timezone='officiis',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.JSON_ARRAY,
-                    ),
-                ],
-                tags='vitae',
-            ),
-            shared.EventBreakerRuleset(
-                description='delectus',
-                id='6c48252d-7771-4e7f-9074-009ef8d29de1',
-                lib=shared.EventBreakerRulesetLibrary.CUSTOM,
-                min_raw_length=813582,
-                rules=[
-                    shared.EventBreakerRulesetRules(
-                        condition='ducimus',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='aut',
-                            field_filter_expr='provident',
-                            fields_=[
-                                'tempore',
-                                'ullam',
-                            ],
-                            keep=[
-                                'mollitia',
-                                'ipsa',
-                                'quos',
-                                'quo',
-                            ],
-                            remove=[
-                                'in',
-                                'doloribus',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Erma Kuhic',
-                                value='quia',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Ms. Eileen Thompson',
-                                value='laborum',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Lamar Schinner',
-                                value='illo',
-                            ),
-                        ],
-                        max_event_bytes=584292,
-                        name='Suzanne Mante II',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='doloremque',
-                            length=738325,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.FORMAT,
-                        ),
-                        timestamp_anchor_regex='eius',
-                        timestamp_earliest='maiores',
-                        timestamp_latest='delectus',
-                        timestamp_timezone='quos',
+                        timestamp_anchor_regex='modi',
+                        timestamp_earliest='sunt',
+                        timestamp_latest='impedit',
+                        timestamp_timezone='eius',
                         type=shared.EventBreakerRulesetRulesEventBreakerType.HEADER,
                     ),
-                    shared.EventBreakerRulesetRules(
-                        condition='officiis',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='ab',
-                            field_filter_expr='voluptate',
-                            fields_=[
-                                'itaque',
-                            ],
-                            keep=[
-                                'voluptatem',
-                                'dolor',
-                                'distinctio',
-                                'quaerat',
-                            ],
-                            remove=[
-                                'neque',
-                                'nihil',
-                                'recusandae',
-                                'numquam',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Clayton Homenick',
-                                value='enim',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Cora Jenkins',
-                                value='nesciunt',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Lynda Padberg',
-                                value='porro',
-                            ),
-                        ],
-                        max_event_bytes=734292,
-                        name='Ella Lang',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='expedita',
-                            length=447878,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.AUTO,
-                        ),
-                        timestamp_anchor_regex='delectus',
-                        timestamp_earliest='blanditiis',
-                        timestamp_latest='minus',
-                        timestamp_timezone='tenetur',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.TIMESTAMP,
-                    ),
-                    shared.EventBreakerRulesetRules(
-                        condition='exercitationem',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='a',
-                            field_filter_expr='tempore',
-                            fields_=[
-                                'earum',
-                                'occaecati',
-                            ],
-                            keep=[
-                                'quidem',
-                            ],
-                            remove=[
-                                'laborum',
-                                'molestias',
-                                'a',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Mabel Greenfelder',
-                                value='aspernatur',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Ms. Stanley Doyle',
-                                value='soluta',
-                            ),
-                        ],
-                        max_event_bytes=15205,
-                        name='Grace Kerluke',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='voluptates',
-                            length=467109,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.AUTO,
-                        ),
-                        timestamp_anchor_regex='eligendi',
-                        timestamp_earliest='fuga',
-                        timestamp_latest='consequatur',
-                        timestamp_timezone='sit',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.JSON_ARRAY,
-                    ),
-                    shared.EventBreakerRulesetRules(
-                        condition='earum',
-                        definitions=shared.EventBreakerRulesetRulesDefinitions(
-                            dst_field='quis',
-                            field_filter_expr='dolorem',
-                            fields_=[
-                                'sed',
-                                'quo',
-                                'et',
-                            ],
-                            keep=[
-                                'est',
-                            ],
-                            remove=[
-                                'veniam',
-                            ],
-                        ),
-                        disabled=False,
-                        fields_=[
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Felipe Wunsch DVM',
-                                value='excepturi',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Jamie Collins',
-                                value='at',
-                            ),
-                            shared.EventBreakerRulesetRulesFields(
-                                name='Neal McLaughlin',
-                                value='soluta',
-                            ),
-                        ],
-                        max_event_bytes=939096,
-                        name='Mr. Roy Conn',
-                        parser_enabled=False,
-                        timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                            format='ad',
-                            length=244990,
-                            type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.FORMAT,
-                        ),
-                        timestamp_anchor_regex='provident',
-                        timestamp_earliest='possimus',
-                        timestamp_latest='iste',
-                        timestamp_timezone='blanditiis',
-                        type=shared.EventBreakerRulesetRulesEventBreakerType.JSON,
-                    ),
                 ],
-                tags='totam',
+                tags='ipsa',
             ),
         ],
         disable_breakers=False,
     ),
-    earliest_epoch=489225,
+    earliest_epoch=872991,
     error_state_config=shared.SearchJobErrorStateConfig(
         coordinated=False,
         error_messages=[
-            'iusto',
-            'culpa',
-            'voluptate',
-            'cupiditate',
+            'dolorem',
         ],
     ),
-    group='maxime',
-    id='d72cd248-4da2-4172-9f2a-c41ef5725f11',
-    latest_epoch=432597,
-    num_events_after=572996,
-    num_events_before=659804,
-    query='nobis',
-    sample_rate=94487,
+    group='repellat',
+    id='2132af03-102d-4514-b4cc-6f18bf9621a6',
+    latest_epoch=657301,
+    num_events_after=296128,
+    num_events_before=945419,
+    query='dignissimos',
+    sample_rate=457835,
     search_config=shared.SearchConfig(
         datasets=[
-            'aliquam',
-            'vitae',
-            'temporibus',
-            'voluptatum',
+            'animi',
         ],
         has_send_operator=False,
         ordered_field_names=[
-            'aspernatur',
-            'neque',
-            'impedit',
+            'laudantium',
         ],
         search_terms=[
             shared.SearchTerm(
                 is_case_sensitive=False,
-                term='neque',
+                term='esse',
             ),
         ],
         sort_fields=[
             shared.SortByField(
-                direction=shared.SortByFieldDirection.ASCENDING,
-                field_name='labore',
-                null_position=shared.SortByFieldNullPosition.NULLS_LAST,
-            ),
-            shared.SortByField(
-                direction=shared.SortByFieldDirection.ASCENDING,
-                field_name='quibusdam',
-                null_position=shared.SortByFieldNullPosition.NULLS_LAST,
-            ),
-            shared.SortByField(
                 direction=shared.SortByFieldDirection.DESCENDING,
-                field_name='quaerat',
-                null_position=shared.SortByFieldNullPosition.NULLS_LAST,
-            ),
-            shared.SortByField(
-                direction=shared.SortByFieldDirection.ASCENDING,
-                field_name='perspiciatis',
+                field_name='earum',
                 null_position=shared.SortByFieldNullPosition.NULLS_FIRST,
             ),
         ],
@@ -1430,45 +459,30 @@ res = s.search_job.update('eveniet', shared.SearchJob(
     ),
     search_parameter_declarations=[
         shared.SearchParameter(
-            default_value='iure',
-            name='Clay Monahan',
+            default_value='officiis',
+            name='Susie Ward',
             type=shared.SearchParameterType.STRING,
-        ),
-        shared.SearchParameter(
-            default_value='ipsam',
-            name='Ms. Dixie Turner Sr.',
-            type=shared.SearchParameterType.STRING,
-        ),
-        shared.SearchParameter(
-            default_value='perspiciatis',
-            name='Alfredo Halvorson',
-            type=shared.SearchParameterType.NUMBER,
-        ),
-        shared.SearchParameter(
-            default_value='reiciendis',
-            name='Pauline Ferry',
-            type=shared.SearchParameterType.NUMBER,
         ),
     ],
-    search_parameter_values='dolore',
-    status=shared.SearchJobStatus.RUNNING,
+    search_parameter_values='impedit',
+    status=shared.SearchJobStatus.COMPLETED,
     table_config=shared.TableViewSettings(
         column_filter_settings=shared.ColumnFilterSettings(
-            contains='dolor',
+            contains='quis',
         ),
         column_format_settings=shared.ColumnFormatSettings(
-            palette='perspiciatis',
-            precision='accusamus',
-            prefix='voluptates',
-            suffix='quia',
+            palette='facilis',
+            precision='ipsum',
+            prefix='ut',
+            suffix='quaerat',
         ),
         column_order_settings=shared.ColumnOrderSettings(
-            order='aspernatur',
+            order='architecto',
         ),
         column_sort_settings=shared.ColumnSortSettings(
-            sort='ut',
+            sort='praesentium',
         ),
-        row_number_column_width=250742,
+        row_number_column_width=907899,
         show_column_totals=False,
         show_column_totals_pinned=False,
         show_row_numbers=False,
@@ -1476,12 +490,12 @@ res = s.search_job.update('eveniet', shared.SearchJob(
         show_row_totals_pinned=False,
         view_mode=shared.TableViewSettingsViewMode.EVENT,
     ),
-    target_event_time=37044,
-    time_completed=273638,
-    time_created=302228,
-    time_started=210710,
+    target_event_time=709051,
+    time_completed=730003,
+    time_created=615277,
+    time_started=74921,
     type=shared.SearchJobType.SCHEDULED,
-    user='impedit',
+    user='quos',
 ))
 
 if res.search_job is not None:

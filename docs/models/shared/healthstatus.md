@@ -1,7 +1,5 @@
 # HealthStatus
 
-Healthy
-
 
 ## Fields
 

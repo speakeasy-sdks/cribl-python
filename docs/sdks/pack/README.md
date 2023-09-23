@@ -1,4 +1,4 @@
-# pack
+# Pack
 
 ### Available Operations
 
@@ -26,20 +26,15 @@ s = cribl.Cribl(
 )
 
 req = shared.PackClone(
-    dest='amet',
+    dest='dolores',
     dst_groups=[
-        'corporis',
-        'est',
-        'iure',
-        'quisquam',
+        'error',
     ],
     force=False,
     packs=[
-        'laudantium',
-        'nam',
-        'nemo',
+        'veritatis',
     ],
-    src_group='enim',
+    src_group='ducimus',
 )
 
 res = s.pack.clone(req)
@@ -77,7 +72,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pack.export('ipsam', 'minima', 'tempora')
+res = s.pack.export(id='voluptate', mode='pariatur', filename='itaque')
 
 if res.pack_infos is not None:
     # handle response
@@ -114,7 +109,7 @@ s = cribl.Cribl(
 )
 
 req = shared.CrudEntityBase(
-    id='080d40bc-acc6-4cbd-ab5f-3ec909304f92',
+    id='ac646ecb-5734-409e-beb1-e5a2b12eb07f',
 )
 
 res = s.pack.install(req)
@@ -152,7 +147,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pack.uninstall('vel')
+res = s.pack.uninstall(id='veritatis')
 
 if res.pack_infos is not None:
     # handle response
@@ -187,7 +182,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pack.upgrade('cum', 'id', 'possimus', 'fugit')
+res = s.pack.upgrade(id='quasi', minor='laboriosam', source='pariatur', spec='libero')
 
 if res.pack_infos is not None:
     # handle response
@@ -225,7 +220,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pack.upload('ipsam')
+res = s.pack.upload(filename='excepturi')
 
 if res.pack_infos is not None:
     # handle response

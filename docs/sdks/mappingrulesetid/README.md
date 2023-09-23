@@ -1,4 +1,4 @@
-# mapping_ruleset_id
+# MappingRulesetID
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_ruleset_id.get('doloribus')
+res = s.mapping_ruleset_id.get(id='sint')
 
 if res.mapping_rulesets is not None:
     # handle response

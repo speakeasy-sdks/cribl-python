@@ -1,4 +1,4 @@
-# user_properties
+# UserProperties
 
 ### Available Operations
 
@@ -21,19 +21,17 @@ s = cribl.Cribl(
 )
 
 
-res = s.user_properties.update('excepturi', shared.UserProfile(
+res = s.user_properties.update(id='provident', user_profile=shared.UserProfile(
     disabled=False,
-    email='Novella70@yahoo.com',
-    first='illo',
-    id='dd3bbce2-47b7-4684-aff5-0126d71cffbd',
-    last='aut',
-    password='itaque',
+    email='Alverta59@hotmail.com',
+    first='ex',
+    id='d90c364b-7c15-4dfb-ace1-88b1c4ee2c8c',
+    last='vel',
+    password='eligendi',
     roles=[
-        'molestiae',
-        'quaerat',
-        'distinctio',
+        'recusandae',
     ],
-    username='Jewell6',
+    username='Gunnar98',
 ))
 
 if res.user_profiles is not None:

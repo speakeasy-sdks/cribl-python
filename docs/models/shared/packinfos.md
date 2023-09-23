@@ -1,7 +1,5 @@
 # PackInfos
 
-a list of PackInfo objects
-
 
 ## Fields
 

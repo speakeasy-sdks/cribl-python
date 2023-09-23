@@ -1,4 +1,4 @@
-# output_id
+# OutputID
 
 ### Available Operations
 
@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.output_id.delete('voluptatum')
+res = s.output_id.delete(id='nostrum')
 
 if res.outputs is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.output_id.get('iusto')
+res = s.output_id.get(id='omnis')
 
 if res.outputs is not None:
     # handle response
@@ -93,61 +93,72 @@ s = cribl.Cribl(
 )
 
 
-res = s.output_id.update('quod', shared.OutputDlS3(
-    add_id_to_stage_path=False,
-    assume_role_arn='voluptas',
-    assume_role_external_id='non',
-    aws_api_key='ullam',
-    aws_authentication_method=shared.OutputDlS3AuthenticationMethod.MANUAL,
-    aws_secret='voluptas',
-    aws_secret_key='doloribus',
-    base_file_name='animi',
-    bucket='recusandae',
-    compress=shared.OutputDlS3Compress.NONE,
-    dest_path='non',
-    empty_dir_cleanup_sec=900368,
-    enable_assume_role=False,
-    endpoint='distinctio',
-    environment='maiores',
-    file_name_suffix='laboriosam',
-    format=shared.OutputDlS3DataFormat.PARQUET,
-    id='c321f023-b75d-4236-bfe1-a0cc8df79f0a',
-    kms_key_id='nesciunt',
-    max_concurrent_file_parts=590998,
-    max_file_idle_time_sec=404774,
-    max_file_open_time_sec=832944,
-    max_file_size_mb=601277,
-    max_open_files=1116,
-    object_acl=shared.OutputDlS3ObjectACL.BUCKET_OWNER_READ,
-    on_backpressure=shared.OutputDlS3BackpressureBehavior.BLOCK,
-    parquet_data_page_version=shared.OutputDlS3DataPageVersion.DATA_PAGE_V1,
-    parquet_page_size='labore',
-    parquet_row_group_size='expedita',
-    parquet_version=shared.OutputDlS3ParquetVersion.PARQUET_2_4,
-    partition_expr='quisquam',
-    partitioning_fields=[
-        'enim',
+res = s.output_id.update(id='libero', request_body=shared.OutputSplunkLb(
+    auth_token='id',
+    auth_type=shared.OutputSplunkLbAuthenticationMethod.MANUAL,
+    connection_timeout=854460,
+    dns_resolve_period_sec=637462,
+    enable_ack=False,
+    enable_multi_metrics=False,
+    environment='quos',
+    exclude_self=False,
+    hosts=[
+        shared.OutputSplunkLbHosts(
+            host='placeat',
+            port=25756,
+            servername='iusto',
+            tls=shared.OutputSplunkLbHostsTLS.INHERIT,
+            weight=914864,
+        ),
     ],
-    pipeline='nulla',
-    region=shared.OutputDlS3Region.US_GOV_WEST_1,
-    reject_unauthorized=False,
-    remove_empty_dirs=False,
-    reuse_connections=False,
-    server_side_encryption=shared.OutputDlS3ServerSideEncryption.AWS_KMS,
-    should_log_invalid_rows=False,
-    signature_version=shared.OutputDlS3SignatureVersion.V4,
-    spacer='mollitia',
-    stage_path='impedit',
-    storage_class=shared.OutputDlS3StorageClass.DEEP_ARCHIVE,
+    id='1084cb06-72d1-4ad8-b9ee-b9665b85efbd',
+    indexer_discovery=False,
+    indexer_discovery_configs=shared.OutputSplunkLbIndexerDiscoveryConfigs(
+        auth_token='alias',
+        auth_type=shared.OutputSplunkLbIndexerDiscoveryConfigsAuthenticationMethod.SECRET,
+        master_uri='quidem',
+        refresh_interval_sec=684126,
+        site='repudiandae',
+        text_secret='accusantium',
+    ),
+    load_balance_stats_period_sec=710456,
+    max_concurrent_senders=885208,
+    max_failed_health_checks=177005,
+    max_s2_sversion=shared.OutputSplunkLbMaxS2SVersion.V4,
+    nested_fields=shared.OutputSplunkLbNestedFieldSerialization.JSON,
+    on_backpressure=shared.OutputSplunkLbBackpressureBehavior.DROP,
+    optional_fields_in_general_section=shared.OutputSplunkLbOptionalFieldsInGeneralSection.INDEXER_DISCOVERY,
+    pipeline='explicabo',
+    pq_compress=shared.OutputSplunkLbCompression.NONE,
+    pq_controls=shared.OutputSplunkLbPqControls(),
+    pq_max_file_size='error',
+    pq_max_size='earum',
+    pq_on_backpressure=shared.OutputSplunkLbQueueFullBehavior.BLOCK,
+    pq_path='recusandae',
+    pq_strict_ordering=False,
+    sender_unhealthy_time_allowance=630871,
     streamtags=[
-        'quas',
+        'ut',
     ],
     system_fields=[
-        'cum',
-        'dicta',
-        'impedit',
+        'quidem',
     ],
-    type=shared.OutputDlS3Type.DL_S3,
+    text_secret='quis',
+    throttle_rate_per_sec='beatae',
+    tls=shared.OutputSplunkLbTLSSettingsClientSide(
+        ca_path='unde',
+        cert_path='molestiae',
+        certificate_name='delectus',
+        disabled=False,
+        max_version=shared.OutputSplunkLbTLSSettingsClientSideMaximumTLSVersion.TL_SV1_2,
+        min_version=shared.OutputSplunkLbTLSSettingsClientSideMinimumTLSVersion.TL_SV1,
+        passphrase='numquam',
+        priv_key_path='numquam',
+        reject_unauthorized=False,
+        servername='nesciunt',
+    ),
+    type=shared.OutputSplunkLbType.SPLUNK_LB,
+    write_timeout=873557,
 ))
 
 if res.outputs is not None:
