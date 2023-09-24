@@ -1,4 +1,4 @@
-# certificates
+# Certificates
 
 ### Available Operations
 

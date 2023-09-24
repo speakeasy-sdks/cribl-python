@@ -12,7 +12,6 @@ from typing import Any, Optional
 
 @dataclasses.dataclass
 class GetNamesOpts:
-    r"""GetNamesOpts object"""
     dim_key_filter: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dimKeyFilter'), 'exclude': lambda f: f is None }})
     dim_value_filter: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dimValueFilter'), 'exclude': lambda f: f is None }})
     earliest: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('earliest'), 'exclude': lambda f: f is None }})

@@ -1,4 +1,4 @@
-# regex_lib_entry
+# RegexLibEntry
 
 ### Available Operations
 
@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.regex_lib_entry.delete('facere')
+res = s.regex_lib_entry.delete(id='illo')
 
 if res.regex_lib_entries is not None:
     # handle response
@@ -58,12 +58,12 @@ s = cribl.Cribl(
 )
 
 req = shared.RegexLibEntry(
-    description='sed',
-    id='1f9ad030-c4ec-4c11-a083-6429068b8502',
-    lib='officia',
-    regex='quaerat',
-    sample_data='corporis',
-    tags='accusamus',
+    description='hic',
+    id='af4b7544-e472-4e80-a857-a5b40463a7d5',
+    lib='molestiae',
+    regex='veniam',
+    sample_data='reiciendis',
+    tags='ab',
 )
 
 res = s.regex_lib_entry.post(req)
@@ -101,13 +101,13 @@ s = cribl.Cribl(
 )
 
 
-res = s.regex_lib_entry.update('iusto', shared.RegexLibEntry(
-    description='sapiente',
-    id='73bc845e-320a-4319-b4ba-df947c9a867b',
-    lib='optio',
-    regex='incidunt',
-    sample_data='eos',
-    tags='magnam',
+res = s.regex_lib_entry.update(id='modi', regex_lib_entry=shared.RegexLibEntry(
+    description='aut',
+    id='0e764ad7-334e-4c1b-b81b-36a08088d100',
+    lib='saepe',
+    regex='delectus',
+    sample_data='mollitia',
+    tags='nulla',
 ))
 
 if res.regex_lib_entries is not None:

@@ -1,7 +1,5 @@
 # JobInfos
 
-a list of JobInfo objects
-
 
 ## Fields
 

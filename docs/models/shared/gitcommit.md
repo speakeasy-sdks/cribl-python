@@ -1,7 +1,5 @@
 # GitCommit
 
-a list of GitCommitSummary objects
-
 
 ## Fields
 

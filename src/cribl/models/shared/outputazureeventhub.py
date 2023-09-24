@@ -51,7 +51,7 @@ class OutputAzureEventhubAuthenticationSASLMechanism(str, Enum):
 @dataclasses.dataclass
 class OutputAzureEventhubAuthentication:
     r"""Authentication parameters to use when connecting to brokers. Using TLS is highly recommended."""
-    disabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled') }})
+    disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
     r"""Enable authentication."""
     mechanism: Optional[OutputAzureEventhubAuthenticationSASLMechanism] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mechanism'), 'exclude': lambda f: f is None }})
     r"""SASL authentication mechanism to use"""
@@ -63,7 +63,7 @@ class OutputAzureEventhubAuthentication:
 
 @dataclasses.dataclass
 class OutputAzureEventhubTLSSettingsClientSide:
-    disabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled') }})
+    disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
     reject_unauthorized: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rejectUnauthorized'), 'exclude': lambda f: f is None }})
     r"""Reject certs that are not authorized by a CA in the CA certificate path, or by another trusted CA (e.g., the system's CA)."""
     

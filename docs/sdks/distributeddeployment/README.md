@@ -1,4 +1,4 @@
-# distributed_deployment
+# DistributedDeployment
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.distributed_deployment.get('libero')
+res = s.distributed_deployment.get(mode='veritatis')
 
 if res.distributed_summaries is not None:
     # handle response

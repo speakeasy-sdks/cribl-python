@@ -1,4 +1,4 @@
-# cluis
+# Cluis
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.cluis.get('nam', 'earum')
+res = s.cluis.get(query='suscipit', context='deserunt')
 
 if res.clui_items is not None:
     # handle response

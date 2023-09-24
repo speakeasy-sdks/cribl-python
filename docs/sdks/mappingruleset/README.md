@@ -1,4 +1,4 @@
-# mapping_ruleset
+# MappingRuleset
 
 ### Available Operations
 
@@ -28,22 +28,11 @@ req = shared.MappingRuleset(
     conf=shared.MappingRulesetConf(
         functions=[
             {
-                "rerum": 'veritatis',
-            },
-            {
-                "autem": 'quidem',
-                "totam": 'porro',
-                "deserunt": 'magni',
-                "nihil": 'voluptas',
-            },
-            {
-                "commodi": 'alias',
-                "fuga": 'aut',
-                "dolore": 'maxime',
+                "nemo": 'voluptate',
             },
         ],
     ),
-    id='495cc699-171b-451c-9bdb-1cf4b888ebdf',
+    id='8a645842-73a8-4418-9162-309fb0929921',
 )
 
 res = s.mapping_ruleset.create(req)
@@ -81,7 +70,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_ruleset.delete('quo')
+res = s.mapping_ruleset.delete(id='fuga')
 
 if res.mapping_rulesets is not None:
     # handle response
@@ -116,7 +105,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_ruleset.get('incidunt')
+res = s.mapping_ruleset.get(id='accusamus')
 
 if res.mapping_rulesets is not None:
     # handle response
@@ -151,32 +140,16 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_ruleset.update('quod', shared.MappingRuleset(
+res = s.mapping_ruleset.update(id='voluptatibus', mapping_ruleset=shared.MappingRuleset(
     active=False,
     conf=shared.MappingRulesetConf(
         functions=[
             {
-                "id": 'excepturi',
-                "occaecati": 'libero',
-                "quo": 'esse',
-                "hic": 'maxime',
-            },
-            {
-                "soluta": 'fugit',
-            },
-            {
-                "eligendi": 'recusandae',
-                "veritatis": 'aut',
-                "laudantium": 'iusto',
-                "dolor": 'voluptates',
-            },
-            {
-                "magni": 'rerum',
-                "doloremque": 'voluptatem',
+                "distinctio": 'omnis',
             },
         ],
     ),
-    id='6d678878-ba85-481a-9820-8c54fefa9c95',
+    id='f58c4d86-e68e-44be-8560-13f59da757a5',
 ))
 
 if res.mapping_rulesets is not None:

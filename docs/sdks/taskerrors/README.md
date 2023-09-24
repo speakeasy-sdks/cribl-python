@@ -1,4 +1,4 @@
-# task_errors
+# TaskErrors
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.task_errors.get('sunt', 'asperiores')
+res = s.task_errors.get(group='laudantium', id='tempora')
 
 if res.task_errors is not None:
     # handle response
