@@ -1,7 +1,5 @@
 # RestartResponses
 
-a list of RestartResponse objects
-
 
 ## Fields
 

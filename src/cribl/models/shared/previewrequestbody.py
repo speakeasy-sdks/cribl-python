@@ -12,7 +12,6 @@ from typing import Any, Optional
 
 @dataclasses.dataclass
 class PreviewRequestBody:
-    r"""PreviewRequestBody object"""
     events: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
     query: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('query') }})
     options: Optional[shared_previewoptions.PreviewOptions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('options'), 'exclude': lambda f: f is None }})

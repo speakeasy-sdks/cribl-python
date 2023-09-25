@@ -1,4 +1,4 @@
-# script
+# Script
 
 ### Available Operations
 
@@ -24,9 +24,7 @@ s = cribl.Cribl(
 )
 
 req = {
-    "consectetur": 'labore',
-    "laudantium": 'cumque',
-    "adipisci": 'veritatis',
+    "neque": 'odit',
 }
 
 res = s.script.create(req)
@@ -64,7 +62,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.script.delete('nam')
+res = s.script.delete(id='earum')
 
 if res.script_lib_entry is not None:
     # handle response
@@ -99,7 +97,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.script.get('voluptatibus')
+res = s.script.get(id='veniam')
 
 if res.script_lib_entry is not None:
     # handle response
@@ -134,8 +132,8 @@ s = cribl.Cribl(
 )
 
 
-res = s.script.update('magnam', {
-    "ducimus": 'itaque',
+res = s.script.update(id='ipsam', request_body={
+    "eaque": 'exercitationem',
 })
 
 if res.script_lib_entry is not None:

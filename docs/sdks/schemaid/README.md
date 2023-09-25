@@ -1,4 +1,4 @@
-# schema_id
+# SchemaID
 
 ### Available Operations
 
@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.schema_id.delete('unde')
+res = s.schema_id.delete(id='architecto')
 
 if res.schema_lib_entries is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.schema_id.get('corrupti')
+res = s.schema_id.get(id='molestias')
 
 if res.schema_lib_entries is not None:
     # handle response
@@ -93,11 +93,8 @@ s = cribl.Cribl(
 )
 
 
-res = s.schema_id.update('quae', {
-    "ea": 'libero',
-    "nam": 'amet',
-    "adipisci": 'minus',
-    "hic": 'similique',
+res = s.schema_id.update(id='dolore', request_body={
+    "sunt": 'maiores',
 })
 
 if res.schema_lib_entries is not None:

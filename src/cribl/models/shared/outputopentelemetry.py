@@ -49,10 +49,10 @@ class OutputOpenTelemetryCompression1(str, Enum):
 
 @dataclasses.dataclass
 class OutputOpenTelemetryMetadata:
-    key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
-    r"""The key of the metadata"""
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
     r"""The value of the metadata"""
+    key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key'), 'exclude': lambda f: f is None }})
+    r"""The key of the metadata"""
     
 
 

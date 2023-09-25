@@ -1,4 +1,4 @@
-# working_tree
+# WorkingTree
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.working_tree.get('tempora')
+res = s.working_tree.get(group='dignissimos')
 
 if res.git_status_results is not None:
     # handle response

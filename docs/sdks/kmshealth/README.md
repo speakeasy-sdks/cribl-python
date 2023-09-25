@@ -1,4 +1,4 @@
-# kms_health
+# KMSHealth
 
 ### Available Operations
 

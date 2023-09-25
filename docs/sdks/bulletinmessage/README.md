@@ -1,4 +1,4 @@
-# bulletin_message
+# BulletinMessage
 
 ### Available Operations
 
@@ -23,18 +23,15 @@ s = cribl.Cribl(
 )
 
 req = shared.BulletinMessage(
-    group='error',
-    id='eee9526f-8d98-46e8-81ea-d4f0e1012563',
+    group='excepturi',
+    id='2601fb57-6b0d-45f0-930c-5fbb25870532',
     metadata=[
         shared.BulletinMessageMetadata(),
-        shared.BulletinMessageMetadata(),
-        shared.BulletinMessageMetadata(),
-        shared.BulletinMessageMetadata(),
     ],
-    severity=shared.BulletinMessageSeverity.ERROR,
-    text='magnam',
-    time=906355,
-    title='Mr.',
+    severity=shared.BulletinMessageSeverity.INFO,
+    text='dolores',
+    time=793698,
+    title='Ms.',
 )
 
 res = s.bulletin_message.create(req)
@@ -72,7 +69,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.bulletin_message.delete('occaecati')
+res = s.bulletin_message.delete(id='dolor')
 
 if res.bulletin_message is not None:
     # handle response
@@ -107,7 +104,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.bulletin_message.get('officiis')
+res = s.bulletin_message.get(id='vero')
 
 if res.bulletin_message is not None:
     # handle response

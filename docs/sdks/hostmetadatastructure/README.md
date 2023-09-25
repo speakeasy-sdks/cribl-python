@@ -1,4 +1,4 @@
-# host_metadata_structure
+# HostMetadataStructure
 
 ### Available Operations
 

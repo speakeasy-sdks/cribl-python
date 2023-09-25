@@ -1,7 +1,5 @@
 # GroupBundle
 
-a list of string objects
-
 
 ## Fields
 

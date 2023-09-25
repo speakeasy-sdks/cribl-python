@@ -1,4 +1,4 @@
-# user_object
+# UserObject
 
 ### Available Operations
 
@@ -51,21 +51,18 @@ s = cribl.Cribl(
 )
 
 
-res = s.user_object.update('amet', shared.User(
-    current_password='quis',
+res = s.user_object.update(id='culpa', user=shared.User(
+    current_password='voluptatum',
     disabled=False,
-    email='Belle.Kulas@hotmail.com',
-    first='quos',
-    id='f1edb783-59ec-4c5c-b860-f8cd580ba738',
-    last='sunt',
-    password='aperiam',
+    email='Princess.Wolff@yahoo.com',
+    first='ullam',
+    id='a6fae54e-bf60-4c32-9f02-3b75d2367fe1',
+    last='est',
+    password='accusantium',
     roles=[
-        'quaerat',
-        'repellat',
-        'necessitatibus',
-        'tempora',
+        'quod',
     ],
-    username='Eloy.Gutkowski',
+    username='Petra_Lubowitz48',
 ))
 
 if res.users is not None:

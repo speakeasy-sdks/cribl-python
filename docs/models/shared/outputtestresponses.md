@@ -1,7 +1,5 @@
 # OutputTestResponses
 
-a list of OutputTestResponse objects
-
 
 ## Fields
 

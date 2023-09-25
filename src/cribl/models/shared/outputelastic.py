@@ -19,9 +19,9 @@ class OutputElasticAuthAuthenticationMethod(str, Enum):
 
 @dataclasses.dataclass
 class OutputElasticAuth:
-    disabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled') }})
     auth_type: Optional[OutputElasticAuthAuthenticationMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authType'), 'exclude': lambda f: f is None }})
     r"""Enter credentials directly, or select a stored secret"""
+    disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
     
 
 

@@ -1,4 +1,4 @@
-# schema
+# Schema
 
 ### Available Operations
 
@@ -25,10 +25,7 @@ s = cribl.Cribl(
 )
 
 req = {
-    "quo": 'suscipit',
-    "ex": 'sint',
-    "est": 'doloribus',
-    "provident": 'alias',
+    "quos": 'corrupti',
 }
 
 res = s.schema.create(req)
@@ -66,7 +63,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.schema.delete('deserunt')
+res = s.schema.delete(id='amet')
 
 if res.schema_lib_entry is not None:
     # handle response
@@ -101,7 +98,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.schema.get('fugit')
+res = s.schema.get(id='molestiae')
 
 if res.schema_lib_entry is not None:
     # handle response
@@ -136,8 +133,7 @@ s = cribl.Cribl(
 )
 
 req = {
-    "quo": 'molestiae',
-    "maxime": 'facere',
+    "amet": 'laborum',
 }
 
 res = s.schema.post(req)
@@ -175,10 +171,8 @@ s = cribl.Cribl(
 )
 
 
-res = s.schema.update('impedit', {
-    "deleniti": 'quasi',
-    "maiores": 'voluptatem',
-    "aliquid": 'laudantium',
+res = s.schema.update(id='modi', request_body={
+    "perferendis": 'necessitatibus',
 })
 
 if res.schema_lib_entry is not None:

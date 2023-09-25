@@ -1,7 +1,5 @@
 # AppScopeLibEntries
 
-a list of AppscopeLibEntry objects
-
 
 ## Fields
 

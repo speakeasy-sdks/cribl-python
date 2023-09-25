@@ -1,4 +1,4 @@
-# authentication_settings
+# AuthenticationSettings
 
 ### Available Operations
 

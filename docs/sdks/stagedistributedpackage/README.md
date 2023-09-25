@@ -1,4 +1,4 @@
-# stage_distributed_package
+# StageDistributedPackage
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.stage_distributed_package.post('quos', 'atque')
+res = s.stage_distributed_package.post(group='accusamus', upgrade_percentage='aperiam')
 
 if res.cribl_package is not None:
     # handle response

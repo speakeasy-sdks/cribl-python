@@ -1,4 +1,4 @@
-# client_roles
+# ClientRoles
 
 ### Available Operations
 
