@@ -1,7 +1,5 @@
 # SearchTimeline
 
-SearchTimeline object
-
 
 ## Fields
 

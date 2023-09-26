@@ -3,7 +3,12 @@
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
 from cribl.models import errors, operations
+from enum import Enum
 from typing import Optional
+
+class GetAcceptEnum(str, Enum):
+    APPLICATION_JSON = "application/json"
+    TEXT_XML = "text/xml"
 
 class CriblMetadata:
     sdk_configuration: SDKConfiguration
@@ -12,13 +17,16 @@ class CriblMetadata:
         self.sdk_configuration = sdk_config
         
     
-    def get(self) -> operations.GetCriblMetadataResponse:
+    def get(self, accept_header_override: Optional[GetAcceptEnum] = None) -> operations.GetCriblMetadataResponse:
         r"""Obtain metadata which Cribl Stream/Edge uses when acting as a Service Provider"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/auth/metadata'
         headers = {}
-        headers['Accept'] = 'application/json;q=1, text/xml;q=0'
+        if accept_header_override is not None:
+            headers['Accept'] = accept_header_override.value
+        else:
+            headers['Accept'] = 'application/json;q=1, text/xml;q=0'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.security_client

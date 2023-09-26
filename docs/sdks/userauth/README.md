@@ -1,4 +1,4 @@
-# user_auth
+# UserAuth
 
 ### Available Operations
 

@@ -1,7 +1,5 @@
 # ExistingDiag
 
-a list of Diag objects
-
 
 ## Fields
 

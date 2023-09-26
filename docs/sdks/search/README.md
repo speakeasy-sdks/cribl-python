@@ -1,4 +1,4 @@
-# search
+# Search
 
 ### Available Operations
 
@@ -21,7 +21,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.search.dispatch_search('necessitatibus')
+res = s.search.dispatch_search(id='veniam')
 
 if res.search_id is not None:
     # handle response

@@ -1,4 +1,4 @@
-# saved_jobs
+# SavedJobs
 
 ### Available Operations
 
@@ -22,46 +22,43 @@ s = cribl.Cribl(
 )
 
 req = shared.SavedJobExecutor(
-    environment='assumenda',
+    environment='fuga',
     executor=shared.SavedJobExecutorExecutor(
         conf=shared.SavedJobExecutorExecutorExecutorSpecificSettings(),
         store_task_results=False,
-        type='sunt',
+        type='facere',
     ),
-    id='2e8c1f84-9382-45fd-842c-876c2c2dfb4c',
+    id='c1ac600d-ec00-41ac-802e-2ec09ff8f0f8',
     remove_fields=[
-        'quo',
-        'illo',
-        'nobis',
-        'esse',
+        'dicta',
     ],
     resume_on_boot=False,
     schedule=shared.SavedJobExecutorSchedule(
-        cron_schedule='nisi',
+        cron_schedule='suscipit',
         enabled=False,
-        max_concurrent_runs=129619,
-        resume_missed='sequi',
+        max_concurrent_runs=938257,
+        resume_missed='doloribus',
         run=shared.SavedJobExecutorScheduleRunSettings(
-            earliest=4787,
-            expression='reiciendis',
-            job_timeout='quos',
-            latest=256310,
-            log_level=shared.SavedJobExecutorScheduleRunSettingsLogLevel.ERROR,
-            max_task_reschedule=980376,
-            max_task_size='nam',
-            min_task_size='architecto',
-            mode='rerum',
+            earliest=244569,
+            expression='eius',
+            job_timeout='esse',
+            latest=446547,
+            log_level=shared.SavedJobExecutorScheduleRunSettingsLogLevel.DEBUG,
+            max_task_reschedule=94697,
+            max_task_size='neque',
+            min_task_size='vero',
+            mode='excepturi',
             reschedule_dropped_tasks=False,
-            time_range_type='assumenda',
-            timestamp_timezone='eos',
+            time_range_type='accusantium',
+            timestamp_timezone='qui',
         ),
         skippable=False,
     ),
     streamtags=[
-        'hic',
+        'impedit',
     ],
-    ttl='repellendus',
-    type=shared.SavedJobExecutorJobType.SCHEDULED_SEARCH,
+    ttl='beatae',
+    type=shared.SavedJobExecutorJobType.COLLECTION,
 )
 
 res = s.saved_jobs.create(req)

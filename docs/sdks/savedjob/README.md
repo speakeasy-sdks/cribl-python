@@ -1,4 +1,4 @@
-# saved_job
+# SavedJob
 
 ### Available Operations
 
@@ -23,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_job.delete('impedit')
+res = s.saved_job.delete(id='cum')
 
 if res.saved_jobs is not None:
     # handle response
@@ -58,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_job.get('recusandae')
+res = s.saved_job.get(id='aspernatur')
 
 if res.saved_jobs is not None:
     # handle response
@@ -93,46 +93,40 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_job.update('voluptate', shared.SavedJobExecutor(
-    environment='est',
-    executor=shared.SavedJobExecutorExecutor(
-        conf=shared.SavedJobExecutorExecutorExecutorSpecificSettings(),
-        store_task_results=False,
-        type='et',
-    ),
-    id='bd8fb7a0-a116-4ce7-a3d4-097fa30e9af7',
+res = s.saved_job.update(id='libero', request_body=shared.SavedJobScheduledSearch(
+    environment='incidunt',
+    id='ecae6c3d-5db3-4ade-bd5d-aea4c506a8aa',
     remove_fields=[
-        'ipsam',
+        'occaecati',
     ],
     resume_on_boot=False,
-    schedule=shared.SavedJobExecutorSchedule(
-        cron_schedule='libero',
+    saved_query_id='labore',
+    schedule=shared.SavedJobScheduledSearchSchedule(
+        cron_schedule='quo',
         enabled=False,
-        max_concurrent_runs=153942,
-        resume_missed='omnis',
-        run=shared.SavedJobExecutorScheduleRunSettings(
-            earliest=120646,
-            expression='qui',
-            job_timeout='explicabo',
-            latest=6203,
-            log_level=shared.SavedJobExecutorScheduleRunSettingsLogLevel.WARN,
-            max_task_reschedule=9284,
-            max_task_size='fugiat',
-            min_task_size='voluptatum',
-            mode='velit',
+        max_concurrent_runs=19462,
+        resume_missed='fugit',
+        run=shared.SavedJobScheduledSearchScheduleRunSettings(
+            earliest=399222,
+            expression='magnam',
+            job_timeout='quaerat',
+            latest=755868,
+            log_level=shared.SavedJobScheduledSearchScheduleRunSettingsLogLevel.SILLY,
+            max_task_reschedule=342921,
+            max_task_size='officiis',
+            min_task_size='unde',
+            mode='nulla',
             reschedule_dropped_tasks=False,
-            time_range_type='hic',
-            timestamp_timezone='ullam',
+            time_range_type='error',
+            timestamp_timezone='mollitia',
         ),
         skippable=False,
     ),
     streamtags=[
-        'itaque',
-        'distinctio',
-        'iusto',
+        'magnam',
     ],
-    ttl='dignissimos',
-    type=shared.SavedJobExecutorJobType.EXECUTOR,
+    ttl='nostrum',
+    type=shared.SavedJobScheduledSearchJobType.EXECUTOR,
 ))
 
 if res.saved_jobs is not None:

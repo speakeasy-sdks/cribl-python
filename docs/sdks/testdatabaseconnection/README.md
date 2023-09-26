@@ -1,4 +1,4 @@
-# test_database_connection
+# TestDatabaseConnection
 
 ### Available Operations
 
@@ -21,12 +21,12 @@ s = cribl.Cribl(
 )
 
 req = shared.DatabaseConnectionTest(
-    auth_type='corporis',
-    config_obj='vel',
-    connection_string='accusamus',
-    connection_timeout=521782,
-    database_type='ipsam',
-    text_secret='at',
+    auth_type='quae',
+    config_obj='omnis',
+    connection_string='illum',
+    connection_timeout=526584,
+    database_type='tenetur',
+    text_secret='deleniti',
 )
 
 res = s.test_database_connection.post(req)

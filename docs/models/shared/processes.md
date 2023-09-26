@@ -1,7 +1,5 @@
 # Processes
 
-a list of Process objects
-
 
 ## Fields
 

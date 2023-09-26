@@ -11,7 +11,6 @@ from dataclasses_json import Undefined, dataclass_json
 
 @dataclasses.dataclass
 class OutputTestRequest:
-    r"""OutputTestRequest object"""
     events: list[shared_criblevent.CriblEvent] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
     
 

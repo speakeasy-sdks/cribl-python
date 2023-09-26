@@ -1,4 +1,4 @@
-# logger_configs
+# LoggerConfigs
 
 ### Available Operations
 

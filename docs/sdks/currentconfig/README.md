@@ -1,4 +1,4 @@
-# current_config
+# CurrentConfig
 
 ### Available Operations
 

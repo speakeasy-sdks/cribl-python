@@ -1,4 +1,4 @@
-# group_bundle
+# GroupBundle
 
 ### Available Operations
 
@@ -21,8 +21,8 @@ s = cribl.Cribl(
 )
 
 
-res = s.group_bundle.get('quae', shared.DeployRequest(
-    version='eaque',
+res = s.group_bundle.get(id='voluptates', deploy_request=shared.DeployRequest(
+    version='perferendis',
 ))
 
 if res.group_bundle is not None:

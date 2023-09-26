@@ -1,7 +1,5 @@
 # DailyMetrics
 
-a list of DailyUsageMetrics objects
-
 
 ## Fields
 

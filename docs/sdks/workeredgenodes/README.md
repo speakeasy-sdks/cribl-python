@@ -1,4 +1,4 @@
-# worker_edge_nodes
+# WorkerEdgeNodes
 
 ### Available Operations
 
@@ -22,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.worker_edge_nodes.get('unde', 365473, 213405, 'rerum')
+res = s.worker_edge_nodes.get(filter_exp='itaque', limit=875452, offset=694394, sort_exp='illo')
 
 if res.master_worker_entries is not None:
     # handle response

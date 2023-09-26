@@ -1,4 +1,4 @@
-# ui_state
+# UIState
 
 ### Available Operations
 
@@ -22,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.ui_state.get('laudantium')
+res = s.ui_state.get(key='architecto')
 
 if res.ui_states is not None:
     # handle response
@@ -57,12 +57,12 @@ s = cribl.Cribl(
 )
 
 
-res = s.ui_state.update('dolorem', shared.UIStatePatch(
+res = s.ui_state.update(key='aliquam', ui_state_patch=shared.UIStatePatch(
     args={
-        "officiis": 'mollitia',
+        "labore": 'maiores',
     },
-    op=shared.UIStatePatchOp.PUSH_RECENT,
-    value='fugiat',
+    op=shared.UIStatePatchOp.SET,
+    value='saepe',
 ))
 
 if res.ui_states is not None:
