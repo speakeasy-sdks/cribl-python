@@ -1,4 +1,5 @@
-# notification_target
+# NotificationTarget
+(*notification_target*)
 
 ### Available Operations
 
@@ -23,19 +24,7 @@ s = cribl.Cribl(
     ),
 )
 
-req = shared.NotificationTargetPagerDuty(
-    class_='dolor',
-    component='expedita',
-    group='libero',
-    id='91c8d975-e0e8-4419-98f8-4f144f3e07ed',
-    routing_key='quisquam',
-    severity=shared.NotificationTargetPagerDutySeverity.CRITICAL,
-    system_fields=[
-        'dolorum',
-        'deserunt',
-    ],
-    type=shared.NotificationTargetPagerDutyType.PAGER_DUTY,
-)
+req = []
 
 res = s.notification_target.create(req)
 
@@ -45,9 +34,9 @@ if res.notification_targets is not None:
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [Any](../../models//.md)                   | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                                                                                                                                                                                                                                                                       | Type                                                                                                                                                                                                                                                                                                            | Required                                                                                                                                                                                                                                                                                                        | Description                                                                                                                                                                                                                                                                                                     |
+| --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                                                                                                                                                                                                       | [Union[shared.NotificationTargetBase, shared.NotificationTargetDefault, shared.NotificationTargetWebhook, shared.NotificationTargetBulletinMessage, shared.NotificationTargetRouter, shared.NotificationTargetNotificationsLog, shared.NotificationTargetPagerDuty]](../../models/shared/notificationtarget.md) | :heavy_check_mark:                                                                                                                                                                                                                                                                                              | The request object to use for the request.                                                                                                                                                                                                                                                                      |
 
 
 ### Response
@@ -72,7 +61,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.notification_target.delete('ad')
+res = s.notification_target.delete(id='asperiores')
 
 if res.notification_targets is not None:
     # handle response
@@ -107,7 +96,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.notification_target.get('reiciendis')
+res = s.notification_target.get(id='ex')
 
 if res.notification_targets is not None:
     # handle response
@@ -142,16 +131,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.notification_target.update('sequi', shared.NotificationTargetNotificationsLog(
-    id='abd905a9-72e0-4567-a822-7b2d309470bf',
-    logs_dir='quam',
-    system_fields=[
-        'aliquam',
-        'delectus',
-        'culpa',
-    ],
-    type=shared.NotificationTargetNotificationsLogType.NOTIFICATIONS_LOG,
-))
+res = s.notification_target.update(id='voluptas', notification_target=[])
 
 if res.notification_targets is not None:
     # handle response
@@ -159,10 +139,10 @@ if res.notification_targets is not None:
 
 ### Parameters
 
-| Parameter                               | Type                                    | Required                                | Description                             |
-| --------------------------------------- | --------------------------------------- | --------------------------------------- | --------------------------------------- |
-| `id`                                    | *str*                                   | :heavy_check_mark:                      | Unique ID                               |
-| `request_body`                          | *Optional[Any]*                         | :heavy_minus_sign:                      | NotificationTarget object to be updated |
+| Parameter                                                                                                                                                                                                                                                                                                                 | Type                                                                                                                                                                                                                                                                                                                      | Required                                                                                                                                                                                                                                                                                                                  | Description                                                                                                                                                                                                                                                                                                               |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                                                                                                                                                                                                      | *str*                                                                                                                                                                                                                                                                                                                     | :heavy_check_mark:                                                                                                                                                                                                                                                                                                        | Unique ID                                                                                                                                                                                                                                                                                                                 |
+| `notification_target`                                                                                                                                                                                                                                                                                                     | [Optional[Union[shared.NotificationTargetBase, shared.NotificationTargetDefault, shared.NotificationTargetWebhook, shared.NotificationTargetBulletinMessage, shared.NotificationTargetRouter, shared.NotificationTargetNotificationsLog, shared.NotificationTargetPagerDuty]]](../../models/shared/notificationtarget.md) | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                        | NotificationTarget object to be updated                                                                                                                                                                                                                                                                                   |
 
 
 ### Response

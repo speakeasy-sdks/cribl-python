@@ -1,4 +1,5 @@
-# saved_query
+# SavedQuery
+(*saved_query*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_query.get('similique')
+res = s.saved_query.get(id='itaque')
 
 if res.saved_query is not None:
     # handle response

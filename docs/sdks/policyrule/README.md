@@ -1,4 +1,5 @@
-# policy_rule
+# PolicyRule
+(*policy_rule*)
 
 ### Available Operations
 
@@ -25,13 +26,12 @@ s = cribl.Cribl(
 
 req = shared.PolicyRule(
     args=[
-        'esse',
-        'laborum',
+        'sit',
     ],
-    description='perspiciatis',
-    id='e61876c6-ab21-4d29-9fc9-4d6fecd79939',
+    description='iusto',
+    id='0e1084cb-0672-4d1a-9879-eeb9665b85ef',
     template=[
-        'eaque',
+        'cum',
     ],
 )
 
@@ -70,7 +70,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.policy_rule.delete('eum')
+res = s.policy_rule.delete(id='at')
 
 if res.policy_rules is not None:
     # handle response
@@ -105,7 +105,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.policy_rule.get('laboriosam')
+res = s.policy_rule.get(id='alias')
 
 if res.policy_rules is not None:
     # handle response
@@ -140,16 +140,14 @@ s = cribl.Cribl(
 )
 
 
-res = s.policy_rule.update('laborum', shared.PolicyRule(
+res = s.policy_rule.update(id='quia', policy_rule=shared.PolicyRule(
     args=[
-        'assumenda',
-        'explicabo',
+        'quidem',
     ],
-    description='fugiat',
-    id='00035533-8cec-4086-ba21-e9152cb31191',
+    description='fuga',
+    id='e0be2d78-2259-4e3e-a4b5-197f92443da7',
     template=[
-        'ducimus',
-        'libero',
+        'optio',
     ],
 ))
 

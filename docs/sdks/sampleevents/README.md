@@ -1,4 +1,5 @@
-# sample_events
+# SampleEvents
+(*sample_events*)
 
 ### Available Operations
 
@@ -25,32 +26,17 @@ req = shared.PreviewDataParams(
     dropped=False,
     events=[
         {
-            "aliquam": 'repudiandae',
-            "amet": 'natus',
-            "ab": 'officiis',
-        },
-        {
-            "rerum": 'placeat',
-            "ab": 'ad',
-        },
-        {
-            "porro": 'labore',
-            "impedit": 'ut',
-            "earum": 'ullam',
-        },
-        {
-            "enim": 'cupiditate',
-            "occaecati": 'itaque',
+            "nostrum": 'molestiae',
         },
     ],
-    input_id='fuga',
-    level=234845,
-    memory=268749,
+    input_id='veniam',
+    level=969206,
+    memory=66207,
     mode=shared.PreviewDataParamsMode.PIPE,
-    pipeline_id='explicabo',
-    sample_id='suscipit',
-    sample_pipeline_id='ipsa',
-    timeout=910410,
+    pipeline_id='aut',
+    sample_id='aut',
+    sample_pipeline_id='eveniet',
+    timeout=483753,
 )
 
 res = s.sample_events.post(req)

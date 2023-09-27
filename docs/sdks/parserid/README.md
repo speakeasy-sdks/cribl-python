@@ -1,4 +1,5 @@
-# parser_id
+# ParserID
+(*parser_id*)
 
 ### Available Operations
 
@@ -23,7 +24,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.parser_id.delete('nostrum')
+res = s.parser_id.delete(id='ut')
 
 if res.parser_lib_entries is not None:
     # handle response
@@ -58,7 +59,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.parser_id.get('sequi')
+res = s.parser_id.get(id='perspiciatis')
 
 if res.parser_lib_entries is not None:
     # handle response
@@ -93,8 +94,8 @@ s = cribl.Cribl(
 )
 
 
-res = s.parser_id.update('voluptatum', {
-    "error": 'nobis',
+res = s.parser_id.update(id='earum', request_body={
+    "dicta": 'impedit',
 })
 
 if res.parser_lib_entries is not None:

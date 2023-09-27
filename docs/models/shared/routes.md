@@ -1,7 +1,5 @@
 # Routes
 
-a list of Routes objects
-
 
 ## Fields
 

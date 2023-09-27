@@ -1,4 +1,5 @@
-# job_infos
+# JobInfos
+(*job_infos*)
 
 ### Available Operations
 
@@ -21,12 +22,12 @@ s = cribl.Cribl(
 )
 
 req = operations.GetJobInfosRequest(
-    collector_id='nesciunt',
-    id='e63562a7-b408-4f05-a3d4-8fdaf313a1f5',
-    limit=987890,
-    offset=823753,
-    run_type='unde',
-    state='incidunt',
+    collector_id='error',
+    id='eee9526f-8d98-46e8-81ea-d4f0e1012563',
+    limit=952143,
+    offset=562783,
+    run_type='magnam',
+    state='saepe',
 )
 
 res = s.job_infos.get(req)

@@ -1,4 +1,5 @@
-# role
+# Role
+(*role*)
 
 ### Available Operations
 
@@ -24,12 +25,9 @@ s = cribl.Cribl(
 )
 
 req = shared.Role(
-    id='4cdb0f4d-2811-487d-9684-4eded85a9065',
+    id='03d8bb31-180f-4739-ae9e-057eb809e281',
     policy=[
-        'laboriosam',
-        'ratione',
-        'blanditiis',
-        'quidem',
+        'voluptatem',
     ],
 )
 
@@ -68,7 +66,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.role.delete('illum')
+res = s.role.delete(id='velit')
 
 if res.roles is not None:
     # handle response
@@ -103,7 +101,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.role.get('reiciendis')
+res = s.role.get(id='dolor')
 
 if res.roles is not None:
     # handle response
@@ -138,10 +136,10 @@ s = cribl.Cribl(
 )
 
 
-res = s.role.update('placeat', shared.Role(
-    id='2032b6c8-7992-43b7-a135-84f7ae12c689',
+res = s.role.update(id='sunt', role=shared.Role(
+    id='f3981d4c-700b-4607-b3c9-3c73b9da3f2c',
     policy=[
-        'tenetur',
+        'itaque',
     ],
 ))
 

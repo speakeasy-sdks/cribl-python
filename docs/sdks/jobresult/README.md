@@ -1,4 +1,5 @@
-# job_result
+# JobResult
+(*job_result*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job_result.get('explicabo', 'ipsam', 583193)
+res = s.job_result.get(group='consequuntur', id='occaecati', max_files=886305)
 
 if res.job_result is not None:
     # handle response

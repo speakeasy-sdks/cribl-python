@@ -1,4 +1,5 @@
-# container
+# Container
+(*container*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.container.get('culpa')
+res = s.container.get(id='delectus')
 
 if res.containers is not None:
     # handle response

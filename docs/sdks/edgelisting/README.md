@@ -1,4 +1,5 @@
-# edge_listing
+# EdgeListing
+(*edge_listing*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.edge_listing.get('architecto')
+res = s.edge_listing.get(path='esse')
 
 if res.filesystem_entries is not None:
     # handle response

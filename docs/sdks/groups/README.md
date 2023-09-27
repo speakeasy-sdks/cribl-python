@@ -1,4 +1,5 @@
-# groups
+# Groups
+(*groups*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.groups.get('saepe', 'delectus')
+res = s.groups.get(fields_='est', product='quidem')
 
 if res.config_groups is not None:
     # handle response

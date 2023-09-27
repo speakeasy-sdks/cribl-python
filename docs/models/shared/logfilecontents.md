@@ -1,7 +1,5 @@
 # LogFileContents
 
-a list of any objects
-
 
 ## Fields
 

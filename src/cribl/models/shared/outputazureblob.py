@@ -51,8 +51,6 @@ class OutputAzureBlob:
     r"""A container organizes a set of blobs, similar to a directory in a file system. Value can be a JavaScript expression enclosed in quotes or backticks. @{product} evaluates the expression at init time. The expression can evaluate to a constant value, and can reference Global Variables, e.g., `myContainer-${C.env[\\"CRIBL_WORKER_ID\\"]}`"""
     dest_path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destPath') }})
     r"""Root directory prepended to path before uploading. Value can be a JavaScript expression enclosed in quotes or backticks. @{product} evaluates the expression at init time. The expression can evaluate to a constant value, and can reference Global Variables, e.g., `myBlobPrefix-${C.env[\\"CRIBL_WORKER_ID\\"]}`"""
-    stage_path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stagePath') }})
-    r"""Filesystem location in which to buffer files, before compressing and moving to final destination. Use performant stable storage."""
     add_id_to_stage_path: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('addIdToStagePath'), 'exclude': lambda f: f is None }})
     r"""Append output's ID to staging location."""
     auth_type: Optional[OutputAzureBlobAuthenticationMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authType'), 'exclude': lambda f: f is None }})
@@ -102,6 +100,8 @@ class OutputAzureBlob:
     should_log_invalid_rows: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shouldLogInvalidRows'), 'exclude': lambda f: f is None }})
     r"""To log rows that @{product} skips due to data mismatch, first set logging to Debug, then toggle this on. Logs up to 20 unique rows."""
     spacer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('spacer'), 'exclude': lambda f: f is None }})
+    stage_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stagePath'), 'exclude': lambda f: f is None }})
+    r"""Filesystem location in which to buffer files, before compressing and moving to final destination. Use performant stable storage."""
     streamtags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('streamtags'), 'exclude': lambda f: f is None }})
     r"""Add tags for filtering and grouping in @{product}."""
     system_fields: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemFields'), 'exclude': lambda f: f is None }})

@@ -1,4 +1,5 @@
-# destination_queue
+# DestinationQueue
+(*destination_queue*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.destination_queue.delete('magnam')
+res = s.destination_queue.delete(id='et')
 
 if res.delete_destination_queue_200_application_json_object is not None:
     # handle response

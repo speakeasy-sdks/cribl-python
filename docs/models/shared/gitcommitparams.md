@@ -1,7 +1,5 @@
 # GitCommitParams
 
-GitCommitParams object
-
 
 ## Fields
 

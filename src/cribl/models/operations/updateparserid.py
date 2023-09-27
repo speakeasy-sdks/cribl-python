@@ -22,9 +22,12 @@ class UpdateParserIDRequest:
 @dataclasses.dataclass
 class UpdateParserIDResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     parser_lib_entries: Optional[shared_parserlibentries.ParserLibEntries] = dataclasses.field(default=None)
     r"""a list of Parser objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

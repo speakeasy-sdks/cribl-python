@@ -1,7 +1,5 @@
 # EdgeMetadatas
 
-a list of EdgeMetadata objects
-
 
 ## Fields
 
