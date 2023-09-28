@@ -1,4 +1,5 @@
-# profiler
+# Profiler
+(*profiler*)
 
 ### Available Operations
 
@@ -24,10 +25,10 @@ s = cribl.Cribl(
 )
 
 req = shared.ProfilerItem(
-    create_time=218783,
-    id='c8db0340-8d6d-4364-bfd4-55906d1263d4',
-    size=523109,
-    worker_id='officiis',
+    create_time=185518,
+    id='b895c537-c645-44ef-b0b3-4896c3ca5acf',
+    size=735894,
+    worker_id='vero',
 )
 
 res = s.profiler.create(req)
@@ -65,7 +66,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.profiler.delete('omnis')
+res = s.profiler.delete(id='odit')
 
 if res.profiler_item is not None:
     # handle response
@@ -100,7 +101,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.profiler.get('neque')
+res = s.profiler.get(id='repellat')
 
 if res.profiler_item is not None:
     # handle response
@@ -135,11 +136,11 @@ s = cribl.Cribl(
 )
 
 
-res = s.profiler.update('corporis', shared.ProfilerItem(
-    create_time=797527,
-    id='2c9e81f3-0be3-4e43-a02d-721657650664',
-    size=94122,
-    worker_id='rem',
+res = s.profiler.update(id='pariatur', profiler_item=shared.ProfilerItem(
+    create_time=362888,
+    id='70757792-9177-4dea-8646-ecb573409e3e',
+    size=741232,
+    worker_id='dicta',
 ))
 
 if res.profiler_item is not None:

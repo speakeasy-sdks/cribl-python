@@ -1,4 +1,5 @@
-# events
+# Events
+(*events*)
 
 ### Available Operations
 
@@ -21,12 +22,12 @@ s = cribl.Cribl(
 )
 
 req = operations.GetEventsRequest(
-    files='nostrum',
-    et=207296,
-    filter='iusto',
-    limit=664965,
-    lt=522176,
-    source='eligendi',
+    files='exercitationem',
+    et=937285,
+    filter='facere',
+    limit=257233,
+    lt=985492,
+    source='suscipit',
 )
 
 res = s.events.get(req)

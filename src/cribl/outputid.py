@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
 from cribl.models import errors, operations, shared
-from typing import Any, Optional
+from typing import Optional, Union
 
 class OutputID:
     sdk_configuration: SDKConfiguration
@@ -24,7 +24,7 @@ class OutputID:
         
         url = utils.generate_url(operations.DeleteOutputIDRequest, base_url, '/system/outputs/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.security_client
@@ -65,7 +65,7 @@ class OutputID:
         
         url = utils.generate_url(operations.GetOutputIDRequest, base_url, '/system/outputs/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.security_client
@@ -94,23 +94,23 @@ class OutputID:
         return res
 
     
-    def update(self, id: str, request_body: Optional[Any] = None) -> operations.UpdateOutputIDResponse:
+    def update(self, id: str, output: Optional[Union[shared.OutputDefault, shared.OutputWebhook, shared.OutputDevnull, shared.OutputSyslog, shared.OutputSplunk, shared.OutputSplunkLb, shared.OutputSplunkHec, shared.OutputTcpjson, shared.OutputWavefront, shared.OutputSignalfx, shared.OutputFilesystem, shared.OutputS3, shared.OutputAzureBlob, shared.OutputAzureLogs, shared.OutputKinesis, shared.OutputHoneycomb, shared.OutputAzureEventhub, shared.OutputGoogleChronicle, shared.OutputGoogleCloudStorage, shared.OutputGoogleCloudLogging, shared.OutputGooglePubsub, shared.OutputKafka, shared.OutputConfluentCloud, shared.OutputMsk, shared.OutputElastic, shared.OutputNewrelic, shared.OutputNewrelicEvents, shared.OutputInfluxdb, shared.OutputCloudwatch, shared.OutputMinio, shared.OutputStatsd, shared.OutputStatsdExt, shared.OutputGraphite, shared.OutputRouter, shared.OutputSns, shared.OutputSqs, shared.OutputSnmp, shared.OutputSumoLogic, shared.OutputDatadog, Union[], shared.OutputLoki, shared.OutputPrometheus, shared.OutputRing, shared.OutputOpenTelemetry, shared.OutputDataset, shared.OutputCriblTCP, shared.OutputCriblHTTP, shared.OutputHumioHec, shared.OutputDlS3, shared.OutputSecurityLake]] = None) -> operations.UpdateOutputIDResponse:
         r"""Update Output
         Update Output
         """
         request = operations.UpdateOutputIDRequest(
             id=id,
-            request_body=request_body,
+            output=output,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdateOutputIDRequest, base_url, '/system/outputs/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "output", 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
+        headers['Accept'] = 'application/json'
         headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
         
         client = self.sdk_configuration.security_client

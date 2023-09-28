@@ -30,9 +30,12 @@ class GetLogFileContentRequest:
 @dataclasses.dataclass
 class GetLogFileContentResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     log_file_contents: Optional[shared_logfilecontents.LogFileContents] = dataclasses.field(default=None)
     r"""a list of any objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

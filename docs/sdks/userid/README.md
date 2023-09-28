@@ -1,4 +1,5 @@
-# user_id
+# UserID
+(*user_id*)
 
 ### Available Operations
 
@@ -22,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.user_id.delete('impedit')
+res = s.user_id.delete(id='non')
 
 if res.users is not None:
     # handle response
@@ -57,7 +58,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.user_id.get('facilis')
+res = s.user_id.get(id='quasi')
 
 if res.users is not None:
     # handle response

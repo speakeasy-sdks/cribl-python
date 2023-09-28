@@ -1,4 +1,5 @@
-# executor_id
+# ExecutorID
+(*executor_id*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.executor_id.get('ad')
+res = s.executor_id.get(id='adipisci')
 
 if res.executors is not None:
     # handle response

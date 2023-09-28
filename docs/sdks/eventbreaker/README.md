@@ -1,4 +1,5 @@
-# event_breaker
+# EventBreaker
+(*event_breaker*)
 
 ### Available Operations
 
@@ -23,7 +24,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.event_breaker.delete('voluptatibus')
+res = s.event_breaker.delete(id='quod')
 
 if res.event_breaker_rulesets is not None:
     # handle response
@@ -58,191 +59,49 @@ s = cribl.Cribl(
 )
 
 req = shared.EventBreakerRuleset(
-    description='quia',
-    id='c4310661-e963-449e-9cf9-e06e3a437000',
+    description='nam',
+    id='e61e6b7b-95bc-40ab-bc20-c4f3789fd871',
     lib=shared.EventBreakerRulesetLibrary.CUSTOM,
-    min_raw_length=639705,
+    min_raw_length=951875,
     rules=[
         shared.EventBreakerRulesetRules(
-            condition='ea',
+            condition='error',
             definitions=shared.EventBreakerRulesetRulesDefinitions(
-                dst_field='quidem',
-                field_filter_expr='voluptas',
+                dst_field='sint',
+                field_filter_expr='pariatur',
                 fields_=[
-                    'placeat',
-                    'perspiciatis',
-                    'expedita',
+                    'possimus',
                 ],
                 keep=[
-                    'a',
-                    'voluptate',
-                    'ullam',
-                ],
-                remove=[
-                    'necessitatibus',
-                    'animi',
-                    'impedit',
-                ],
-            ),
-            disabled=False,
-            fields_=[
-                shared.EventBreakerRulesetRulesFields(
-                    name='Jodi Mueller',
-                    value='veritatis',
-                ),
-                shared.EventBreakerRulesetRulesFields(
-                    name='Mrs. Glenn Bruen',
-                    value='qui',
-                ),
-            ],
-            max_event_bytes=611328,
-            name='Vivian Rodriguez',
-            parser_enabled=False,
-            timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                format='dolorum',
-                length=487676,
-                type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.AUTO,
-            ),
-            timestamp_anchor_regex='alias',
-            timestamp_earliest='magni',
-            timestamp_latest='vel',
-            timestamp_timezone='quae',
-            type=shared.EventBreakerRulesetRulesEventBreakerType.REGEX,
-        ),
-        shared.EventBreakerRulesetRules(
-            condition='modi',
-            definitions=shared.EventBreakerRulesetRulesDefinitions(
-                dst_field='neque',
-                field_filter_expr='exercitationem',
-                fields_=[
-                    'et',
-                    'ipsum',
-                    'unde',
-                    'nulla',
-                ],
-                keep=[
-                    'maxime',
-                    'quia',
                     'quia',
                 ],
                 remove=[
-                    'omnis',
-                    'libero',
+                    'eveniet',
                 ],
             ),
             disabled=False,
             fields_=[
                 shared.EventBreakerRulesetRulesFields(
-                    name='Wm Steuber',
-                    value='placeat',
+                    name='Carroll Bogan V',
+                    value='culpa',
                 ),
             ],
-            max_event_bytes=25756,
-            name='Mr. Angela Volkman',
+            max_event_bytes=398434,
+            name='Scott Wehner',
             parser_enabled=False,
             timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                format='dolore',
-                length=755106,
+                format='eius',
+                length=727697,
                 type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.CURRENT,
             ),
-            timestamp_anchor_regex='voluptatem',
-            timestamp_earliest='autem',
-            timestamp_latest='esse',
-            timestamp_timezone='dolores',
-            type=shared.EventBreakerRulesetRulesEventBreakerType.TIMESTAMP,
-        ),
-        shared.EventBreakerRulesetRules(
-            condition='beatae',
-            definitions=shared.EventBreakerRulesetRulesDefinitions(
-                dst_field='est',
-                field_filter_expr='facere',
-                fields_=[
-                    'molestiae',
-                    'provident',
-                    'accusamus',
-                ],
-                keep=[
-                    'tempore',
-                    'sint',
-                    'ea',
-                    'autem',
-                ],
-                remove=[
-                    'rerum',
-                    'laudantium',
-                ],
-            ),
-            disabled=False,
-            fields_=[
-                shared.EventBreakerRulesetRulesFields(
-                    name='Boyd Rippin Sr.',
-                    value='quidem',
-                ),
-                shared.EventBreakerRulesetRulesFields(
-                    name='Phil Barton',
-                    value='eos',
-                ),
-            ],
-            max_event_bytes=844854,
-            name='Mrs. Mabel Connelly',
-            parser_enabled=False,
-            timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                format='earum',
-                length=239337,
-                type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.CURRENT,
-            ),
-            timestamp_anchor_regex='similique',
-            timestamp_earliest='ut',
-            timestamp_latest='quidem',
-            timestamp_timezone='quis',
+            timestamp_anchor_regex='soluta',
+            timestamp_earliest='accusantium',
+            timestamp_latest='aliquam',
+            timestamp_timezone='sapiente',
             type=shared.EventBreakerRulesetRulesEventBreakerType.REGEX,
-        ),
-        shared.EventBreakerRulesetRules(
-            condition='unde',
-            definitions=shared.EventBreakerRulesetRulesDefinitions(
-                dst_field='molestiae',
-                field_filter_expr='delectus',
-                fields_=[
-                    'fugit',
-                    'numquam',
-                    'numquam',
-                ],
-                keep=[
-                    'at',
-                ],
-                remove=[
-                    'dignissimos',
-                    'optio',
-                    'necessitatibus',
-                ],
-            ),
-            disabled=False,
-            fields_=[
-                shared.EventBreakerRulesetRulesFields(
-                    name='Kristy Lemke',
-                    value='placeat',
-                ),
-                shared.EventBreakerRulesetRulesFields(
-                    name='Gladys King',
-                    value='modi',
-                ),
-            ],
-            max_event_bytes=357347,
-            name='Tasha Wolff DDS',
-            parser_enabled=False,
-            timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                format='ratione',
-                length=289913,
-                type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.FORMAT,
-            ),
-            timestamp_anchor_regex='occaecati',
-            timestamp_earliest='voluptas',
-            timestamp_latest='quo',
-            timestamp_timezone='velit',
-            type=shared.EventBreakerRulesetRulesEventBreakerType.TIMESTAMP,
         ),
     ],
-    tags='fuga',
+    tags='ullam',
 )
 
 res = s.event_breaker.post(req)
@@ -280,68 +139,50 @@ s = cribl.Cribl(
 )
 
 
-res = s.event_breaker.update('nostrum', shared.EventBreakerRuleset(
-    description='est',
-    id='cfbe2fd5-7075-4779-a917-7deac646ecb5',
+res = s.event_breaker.update(id='reprehenderit', event_breaker_ruleset=shared.EventBreakerRuleset(
+    description='ullam',
+    id='6082d68e-a19f-41d1-b051-339d08086a18',
     lib=shared.EventBreakerRulesetLibrary.CUSTOM,
-    min_raw_length=463344,
+    min_raw_length=251941,
     rules=[
         shared.EventBreakerRulesetRules(
-            condition='modi',
+            condition='voluptatem',
             definitions=shared.EventBreakerRulesetRulesDefinitions(
-                dst_field='ipsa',
-                field_filter_expr='sint',
+                dst_field='dolor',
+                field_filter_expr='occaecati',
                 fields_=[
-                    'sequi',
-                    'repudiandae',
-                    'cum',
-                    'dicta',
+                    'numquam',
                 ],
                 keep=[
-                    'veniam',
-                    'animi',
-                    'dolores',
-                    'nam',
+                    'impedit',
                 ],
                 remove=[
-                    'consequuntur',
+                    'explicabo',
                 ],
             ),
             disabled=False,
             fields_=[
                 shared.EventBreakerRulesetRulesFields(
-                    name='Larry Kuphal Sr.',
-                    value='laboriosam',
-                ),
-                shared.EventBreakerRulesetRulesFields(
-                    name='Pete Mann',
-                    value='aliquam',
-                ),
-                shared.EventBreakerRulesetRulesFields(
-                    name='Nettie Rosenbaum',
-                    value='hic',
-                ),
-                shared.EventBreakerRulesetRulesFields(
-                    name='Willard Larson',
-                    value='eaque',
+                    name='Dr. Maria Kulas',
+                    value='velit',
                 ),
             ],
-            max_event_bytes=901163,
-            name='Billie Morar',
+            max_event_bytes=974257,
+            name='Tabitha Bayer',
             parser_enabled=False,
             timestamp=shared.EventBreakerRulesetRulesTimestampFormat(
-                format='libero',
-                length=244032,
-                type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.AUTO,
+                format='consequuntur',
+                length=831520,
+                type=shared.EventBreakerRulesetRulesTimestampFormatTimestampType.FORMAT,
             ),
-            timestamp_anchor_regex='delectus',
-            timestamp_earliest='impedit',
-            timestamp_latest='cum',
-            timestamp_timezone='ipsum',
-            type=shared.EventBreakerRulesetRulesEventBreakerType.JSON,
+            timestamp_anchor_regex='maxime',
+            timestamp_earliest='dignissimos',
+            timestamp_latest='officia',
+            timestamp_timezone='asperiores',
+            type=shared.EventBreakerRulesetRulesEventBreakerType.JSON_ARRAY,
         ),
     ],
-    tags='saepe',
+    tags='quae',
 ))
 
 if res.event_breaker_rulesets is not None:

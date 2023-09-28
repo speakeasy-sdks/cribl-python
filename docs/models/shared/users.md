@@ -1,7 +1,5 @@
 # Users
 
-a list of User objects
-
 
 ## Fields
 

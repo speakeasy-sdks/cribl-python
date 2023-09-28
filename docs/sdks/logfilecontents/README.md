@@ -1,4 +1,5 @@
-# log_file_contents
+# LogFileContents
+(*log_file_contents*)
 
 ### Available Operations
 
@@ -21,14 +22,14 @@ s = cribl.Cribl(
 )
 
 req = operations.GetLogFileContentsRequest(
-    end_offset=369523,
-    et=60,
-    filter='suscipit',
-    group_id='deserunt',
-    id='8aa94c02-644c-4f5e-9d9a-4578adc1ac60',
-    limit=31574,
-    lt=816421,
-    offset=901008,
+    end_offset=848151,
+    et=52508,
+    filter='earum',
+    group_id='perspiciatis',
+    id='fe6c632c-a3ae-4d01-9799-6312fde04771',
+    limit=479754,
+    lt=457059,
+    offset=508390,
 )
 
 res = s.log_file_contents.get(req)

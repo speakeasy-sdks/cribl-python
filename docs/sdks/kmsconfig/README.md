@@ -1,4 +1,5 @@
-# kms_config
+# KMSConfig
+(*kms_config*)
 
 ### Available Operations
 
@@ -53,19 +54,19 @@ s = cribl.Cribl(
 req = shared.IKMSProviderConfig(
     enable_health_check=False,
     engine=shared.VaultKMSEngineConfig(
-        mount='quidem',
-        secret_path='nesciunt',
+        mount='adipisci',
+        secret_path='eveniet',
         type=shared.VaultKMSEngineConfigType.KV2,
     ),
-    health_check_endpoint='commodi',
-    namespace='sapiente',
+    health_check_endpoint='occaecati',
+    namespace='consequuntur',
     provider=shared.SecretProvider.LOCAL,
-    secret_dir='veniam',
+    secret_dir='id',
     service=shared.IAWSKMSServiceConfig(
-        kms_key_arn='debitis',
-        region='officia',
+        kms_key_arn='quis',
+        region='reprehenderit',
     ),
-    url='sint',
+    url='error',
 )
 
 res = s.kms_config.update(req)

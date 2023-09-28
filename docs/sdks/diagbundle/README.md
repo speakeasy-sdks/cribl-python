@@ -1,4 +1,5 @@
-# diag_bundle
+# DiagBundle
+(*diag_bundle*)
 
 ### Available Operations
 
@@ -23,7 +24,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.diag_bundle.delete('quibusdam')
+res = s.diag_bundle.delete(path='esse')
 
 if res.remove_diag_response is not None:
     # handle response
@@ -88,8 +89,8 @@ s = cribl.Cribl(
 
 req = shared.SendDiagBundle(
     include_metrics=False,
-    max_include_jobs=78969,
-    path='facere',
+    max_include_jobs=910545,
+    path='accusamus',
     rename_js=False,
     send_to_cribl=False,
 )

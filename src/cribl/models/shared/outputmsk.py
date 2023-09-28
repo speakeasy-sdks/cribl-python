@@ -76,12 +76,12 @@ class OutputMskKafkaSchemaRegistryAuthenticationTLSSettingsClientSide:
 
 @dataclasses.dataclass
 class OutputMskKafkaSchemaRegistryAuthentication:
-    disabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled') }})
-    r"""Enable Schema Registry"""
     default_key_schema_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultKeySchemaId'), 'exclude': lambda f: f is None }})
     r"""Used when __keySchemaIdOut is not present, to transform key values, leave blank if key transformation is not required by default."""
     default_value_schema_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultValueSchemaId'), 'exclude': lambda f: f is None }})
     r"""Used when __valueSchemaIdOut is not present, to transform _raw, leave blank if value transformation is not required by default."""
+    disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
+    r"""Enable Schema Registry"""
     schema_registry_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schemaRegistryURL'), 'exclude': lambda f: f is None }})
     r"""URL for access to the Confluent Schema Registry, i.e.: http://localhost:8081"""
     tls: Optional[OutputMskKafkaSchemaRegistryAuthenticationTLSSettingsClientSide] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tls'), 'exclude': lambda f: f is None }})
@@ -189,8 +189,6 @@ class OutputMskType(str, Enum):
 
 @dataclasses.dataclass
 class OutputMsk:
-    aws_authentication_method: OutputMskAuthenticationMethod = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsAuthenticationMethod') }})
-    r"""AWS authentication method. Choose Auto to use IAM roles."""
     brokers: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('brokers') }})
     r"""Enter each Kafka broker you want to use. Specify hostname and port, e.g., mykafkabroker:9092, or just hostname, in which case @{product} will assign port 9092."""
     region: OutputMskRegion = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('region') }})
@@ -207,6 +205,8 @@ class OutputMsk:
     r"""Maximum time to wait for Kafka to respond to an authentication request"""
     aws_api_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsApiKey'), 'exclude': lambda f: f is None }})
     r"""Access key"""
+    aws_authentication_method: Optional[OutputMskAuthenticationMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsAuthenticationMethod'), 'exclude': lambda f: f is None }})
+    r"""AWS authentication method. Choose Auto to use IAM roles."""
     aws_secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsSecret'), 'exclude': lambda f: f is None }})
     r"""Select (or create) a stored secret that references your access key and secret key."""
     aws_secret_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsSecretKey'), 'exclude': lambda f: f is None }})

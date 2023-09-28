@@ -1,4 +1,5 @@
-# rest_secret
+# RestSecret
+(*rest_secret*)
 
 ### Available Operations
 
@@ -24,15 +25,15 @@ s = cribl.Cribl(
 )
 
 req = shared.RestSecret(
-    api_key='suscipit',
-    description='quibusdam',
-    id='dca8ef51-fcb4-4c59-bec1-2cdaad0ec7af',
-    password='saepe',
-    secret_key='facere',
+    api_key='libero',
+    description='minus',
+    id='db35ff2e-4b27-4537-a8cd-9e7319c177d5',
+    password='aspernatur',
+    secret_key='enim',
     secret_type=shared.SecretType.CREDENTIALS,
-    tags='at',
-    username='Kelli_Ankunding27',
-    value='numquam',
+    tags='iusto',
+    username='Jensen6',
+    value='incidunt',
 )
 
 res = s.rest_secret.create(req)
@@ -70,7 +71,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.rest_secret.delete('corrupti')
+res = s.rest_secret.delete(id='accusamus')
 
 if res.rest_secret is not None:
     # handle response
@@ -105,7 +106,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.rest_secret.get('similique')
+res = s.rest_secret.get(id='saepe')
 
 if res.rest_secret is not None:
     # handle response
@@ -140,16 +141,16 @@ s = cribl.Cribl(
 )
 
 
-res = s.rest_secret.update('dolore', shared.RestSecret(
-    api_key='esse',
-    description='reiciendis',
-    id='9390c588-8098-43da-bf9e-f3ffdd9f7f07',
-    password='omnis',
-    secret_key='similique',
-    secret_type=shared.SecretType.CREDENTIALS,
-    tags='modi',
-    username='Rebecca.Durgan',
-    value='sed',
+res = s.rest_secret.update(id='tempore', rest_secret=shared.RestSecret(
+    api_key='veniam',
+    description='eos',
+    id='ff785fc3-7814-4d4c-98e0-c2bb89eb75da',
+    password='repellendus',
+    secret_key='iure',
+    secret_type=shared.SecretType.TEXT,
+    tags='commodi',
+    username='Olen3',
+    value='ad',
 ))
 
 if res.rest_secret is not None:

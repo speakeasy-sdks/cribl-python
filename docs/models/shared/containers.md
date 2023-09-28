@@ -1,7 +1,5 @@
 # Containers
 
-a list of Container objects
-
 
 ## Fields
 

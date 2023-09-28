@@ -1,7 +1,5 @@
 # SearchID
 
-a list of any objects
-
 
 ## Fields
 

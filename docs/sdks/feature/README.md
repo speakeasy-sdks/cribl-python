@@ -1,4 +1,5 @@
-# feature
+# Feature
+(*feature*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.feature.get('aspernatur')
+res = s.feature.get(id='non')
 
 if res.features_entry is not None:
     # handle response

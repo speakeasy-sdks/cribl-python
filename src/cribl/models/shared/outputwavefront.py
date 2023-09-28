@@ -60,8 +60,6 @@ class OutputWavefrontType(str, Enum):
 
 @dataclasses.dataclass
 class OutputWavefront:
-    domain: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('domain') }})
-    r"""WaveFront domain name, e.g. \\"longboard\\" """
     type: OutputWavefrontType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     auth_type: Optional[OutputWavefrontAuthenticationMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authType'), 'exclude': lambda f: f is None }})
     r"""Enter a token directly, or provide a secret referencing a token"""
@@ -69,6 +67,8 @@ class OutputWavefront:
     r"""Whether to compress the payload body before sending."""
     concurrency: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('concurrency'), 'exclude': lambda f: f is None }})
     r"""Maximum number of ongoing requests before blocking."""
+    domain: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('domain'), 'exclude': lambda f: f is None }})
+    r"""WaveFront domain name, e.g. \\"longboard\\" """
     environment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('environment'), 'exclude': lambda f: f is None }})
     r"""Optionally, enable this config only on a specified Git branch. If empty, will be enabled everywhere."""
     extra_http_headers: Optional[list[OutputWavefrontExtraHTTPHeaders]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('extraHttpHeaders'), 'exclude': lambda f: f is None }})

@@ -23,7 +23,6 @@ class ConfigGroupGit:
 
 @dataclasses.dataclass
 class ConfigGroup:
-    r"""New ConfigGroup object"""
     config_version: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configVersion') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})

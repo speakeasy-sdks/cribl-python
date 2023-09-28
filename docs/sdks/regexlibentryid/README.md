@@ -1,4 +1,5 @@
-# regex_lib_entry_id
+# RegexLibEntryID
+(*regex_lib_entry_id*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.regex_lib_entry_id.get('dolores')
+res = s.regex_lib_entry_id.get(id='voluptatibus')
 
 if res.regex_lib_entries is not None:
     # handle response

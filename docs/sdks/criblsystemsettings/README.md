@@ -1,4 +1,5 @@
-# cribl_system_settings
+# CriblSystemSettings
+(*cribl_system_settings*)
 
 ### Available Operations
 

@@ -1,4 +1,5 @@
-# key_metadata_entity
+# KeyMetadataEntity
+(*key_metadata_entity*)
 
 ### Available Operations
 
@@ -25,14 +26,14 @@ s = cribl.Cribl(
 
 req = shared.KeyMetadataEntity(
     algorithm=shared.KeyMetadataEntityEncryptionAlgorithm.AES_256_CBC,
-    cipher_key='numquam',
-    created=947822,
-    description='adipisci',
-    expires=728559,
-    key_id='in',
-    keyclass=329651,
+    cipher_key='corporis',
+    created=696463,
+    description='eveniet',
+    expires=247399,
+    key_id='vero',
+    keyclass=39615,
     kms=shared.KeyMetadataEntityKMSForThisKey.LOCAL,
-    plain_key='ex',
+    plain_key='iure',
     use_iv=False,
 )
 
@@ -71,7 +72,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.delete('minus')
+res = s.key_metadata_entity.delete(id='ipsa')
 
 if res.key_metadata_entities is not None:
     # handle response
@@ -106,7 +107,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.get('ab')
+res = s.key_metadata_entity.get(id='totam')
 
 if res.key_metadata_entities is not None:
     # handle response
@@ -141,16 +142,16 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.update('beatae', shared.KeyMetadataEntity(
-    algorithm=shared.KeyMetadataEntityEncryptionAlgorithm.AES_256_GCM,
-    cipher_key='nisi',
-    created=786954,
-    description='dolor',
-    expires=496548,
-    key_id='fuga',
-    keyclass=326903,
+res = s.key_metadata_entity.update(id='quae', key_metadata_entity=shared.KeyMetadataEntity(
+    algorithm=shared.KeyMetadataEntityEncryptionAlgorithm.AES_256_CBC,
+    cipher_key='eveniet',
+    created=184362,
+    description='cum',
+    expires=434761,
+    key_id='necessitatibus',
+    keyclass=187552,
     kms=shared.KeyMetadataEntityKMSForThisKey.LOCAL,
-    plain_key='architecto',
+    plain_key='laborum',
     use_iv=False,
 ))
 

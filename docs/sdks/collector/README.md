@@ -1,4 +1,5 @@
-# collector
+# Collector
+(*collector*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.collector.get('officia')
+res = s.collector.get(id='provident')
 
 if res.collectors is not None:
     # handle response

@@ -1,4 +1,5 @@
-# latest_pq
+# LatestPQ
+(*latest_pq*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.latest_pq.get('qui')
+res = s.latest_pq.get(id='distinctio')
 
 if res.get_latest_pq_200_application_json_object is not None:
     # handle response

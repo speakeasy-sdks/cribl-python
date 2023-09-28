@@ -1,4 +1,5 @@
-# query_snippet
+# QuerySnippet
+(*query_snippet*)
 
 ### Available Operations
 
@@ -22,11 +23,10 @@ s = cribl.Cribl(
 
 req = shared.PreviewRequestBody(
     events=[
-        'doloremque',
-        'assumenda',
+        'earum',
     ],
     options=shared.PreviewOptions(),
-    query='provident',
+    query='veniam',
 )
 
 res = s.query_snippet.apply(req)

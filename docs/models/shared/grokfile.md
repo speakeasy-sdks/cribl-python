@@ -1,7 +1,5 @@
 # GrokFile
 
-New GrokFile object
-
 
 ## Fields
 

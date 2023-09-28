@@ -2,18 +2,20 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import savedjobcollection as shared_savedjobcollection
+from ..shared import savedjobexecutor as shared_savedjobexecutor
+from ..shared import savedjobscheduledsearch as shared_savedjobscheduledsearch
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Any, Optional
+from typing import Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class SavedJobs:
-    r"""a list of SavedJob objects"""
     count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
     r"""number of items present in the items array"""
-    items: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})
+    items: Optional[list[Union[shared_savedjobcollection.SavedJobCollection, shared_savedjobexecutor.SavedJobExecutor, shared_savedjobscheduledsearch.SavedJobScheduledSearch]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})
     
 

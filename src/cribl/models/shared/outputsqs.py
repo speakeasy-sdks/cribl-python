@@ -79,8 +79,6 @@ class OutputSqsType(str, Enum):
 class OutputSqs:
     queue_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('queueName') }})
     r"""The name, URL, or ARN of the SQS queue to send events to. When a non-AWS URL is specified, format must be: '{url}/myQueueName'. E.g., 'https://host:port/myQueueName'. Must be a JavaScript expression (which can evaluate to a constant value), enclosed in quotes or backticks. Can be evaluated only at init time. E.g., referencing a Global Variable: `https://host:port/myQueue-${C.vars.myVar}`."""
-    queue_type: OutputSqsQueueType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('queueType') }})
-    r"""The queue type used (or created). Defaults to Standard."""
     assume_role_arn: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assumeRoleArn'), 'exclude': lambda f: f is None }})
     r"""Amazon Resource Name (ARN) of the role to assume"""
     assume_role_external_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assumeRoleExternalId'), 'exclude': lambda f: f is None }})
@@ -132,6 +130,8 @@ class OutputSqs:
     r"""The location for the persistent queue files. To this field's value, the system will append: /<worker-id>/<output-id>."""
     pq_strict_ordering: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqStrictOrdering'), 'exclude': lambda f: f is None }})
     r"""Toggle this off to forward new events to receiver(s) before queue is flushed. Otherwise, default drain behavior is FIFO (first in, first out)."""
+    queue_type: Optional[OutputSqsQueueType] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('queueType'), 'exclude': lambda f: f is None }})
+    r"""The queue type used (or created). Defaults to Standard."""
     region: Optional[OutputSqsRegion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('region'), 'exclude': lambda f: f is None }})
     r"""AWS Region where the SQS queue is located. Required, unless the Queue entry is a URL or ARN that includes a Region."""
     reject_unauthorized: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rejectUnauthorized'), 'exclude': lambda f: f is None }})
