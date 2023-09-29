@@ -1,4 +1,5 @@
-# mapping_rulesets
+# MappingRulesets
+(*mapping_rulesets*)
 
 ### Available Operations
 
@@ -23,7 +24,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_rulesets.delete('quia')
+res = s.mapping_rulesets.delete(id='program')
 
 if res.mapping_rulesets is not None:
     # handle response
@@ -87,31 +88,16 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_rulesets.update('officiis', shared.MappingRuleset(
+res = s.mapping_rulesets.update(id='Van', mapping_ruleset=shared.MappingRuleset(
     active=False,
     conf=shared.MappingRulesetConf(
         functions=[
             {
-                "quis": 'enim',
-                "eum": 'nemo',
-                "illum": 'nesciunt',
-                "sit": 'odio',
-            },
-            {
-                "asperiores": 'recusandae',
-                "voluptates": 'praesentium',
-                "dicta": 'fugit',
-                "sit": 'aliquid',
-            },
-            {
-                "sed": 'deleniti',
-                "sunt": 'nesciunt',
-                "delectus": 'laborum',
-                "aliquam": 'deserunt',
+                "aut": 'Reactive',
             },
         ],
     ),
-    id='41c480d3-f213-42af-8310-2d514f4cc6f1',
+    id='<ID>',
 ))
 
 if res.mapping_rulesets is not None:

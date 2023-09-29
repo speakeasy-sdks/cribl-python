@@ -4,18 +4,14 @@ from __future__ import annotations
 import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
-from typing import Optional
-
-class VaultKMSEngineConfigType(str, Enum):
-    KV2 = 'kv2'
+from typing import Final, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class VaultKMSEngineConfig:
-    type: VaultKMSEngineConfigType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    TYPE: Final[str] = dataclasses.field(default='kv2', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     mount: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mount'), 'exclude': lambda f: f is None }})
     secret_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secretPath'), 'exclude': lambda f: f is None }})
     

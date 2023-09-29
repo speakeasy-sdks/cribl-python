@@ -1,4 +1,5 @@
-# trust_policies
+# TrustPolicies
+(*trust_policies*)
 
 ### Available Operations
 

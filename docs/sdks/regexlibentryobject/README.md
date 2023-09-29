@@ -1,4 +1,5 @@
-# regex_lib_entry_object
+# RegexLibEntryObject
+(*regex_lib_entry_object*)
 
 ### Available Operations
 

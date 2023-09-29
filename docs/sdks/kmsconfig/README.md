@@ -1,4 +1,5 @@
-# kms_config
+# KMSConfig
+(*kms_config*)
 
 ### Available Operations
 
@@ -53,19 +54,19 @@ s = cribl.Cribl(
 req = shared.IKMSProviderConfig(
     enable_health_check=False,
     engine=shared.VaultKMSEngineConfig(
-        mount='quidem',
-        secret_path='nesciunt',
-        type=shared.VaultKMSEngineConfigType.KV2,
+        mount='New Reactive dock',
+        secret_path='Analyst invoice',
+        type='Islands',
     ),
-    health_check_endpoint='commodi',
-    namespace='sapiente',
-    provider=shared.SecretProvider.LOCAL,
-    secret_dir='veniam',
+    health_check_endpoint='withdrawal extend',
+    namespace='bifurcated',
+    provider=shared.SecretProvider.VAULT,
+    secret_dir='syndicate East Baht',
     service=shared.IAWSKMSServiceConfig(
-        kms_key_arn='debitis',
-        region='officia',
+        kms_key_arn='Representative Home',
+        region='pascal Gasoline',
     ),
-    url='sint',
+    url='http://boiling-latitude.info',
 )
 
 res = s.kms_config.update(req)

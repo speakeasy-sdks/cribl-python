@@ -1,4 +1,5 @@
-# key_metadata_entity
+# KeyMetadataEntity
+(*key_metadata_entity*)
 
 ### Available Operations
 
@@ -25,14 +26,14 @@ s = cribl.Cribl(
 
 req = shared.KeyMetadataEntity(
     algorithm=shared.KeyMetadataEntityEncryptionAlgorithm.AES_256_CBC,
-    cipher_key='numquam',
-    created=947822,
-    description='adipisci',
-    expires=728559,
-    key_id='in',
-    keyclass=329651,
-    kms=shared.KeyMetadataEntityKMSForThisKey.LOCAL,
-    plain_key='ex',
+    cipher_key='Configuration Money',
+    created=786546,
+    description='Business-focused zero tolerance project',
+    expires=376844,
+    key_id='abnormally deposit evolve',
+    keyclass=715040,
+    kms='SUV quantify Polestar',
+    plain_key='physical Ameliorated',
     use_iv=False,
 )
 
@@ -71,7 +72,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.delete('minus')
+res = s.key_metadata_entity.delete(id='program')
 
 if res.key_metadata_entities is not None:
     # handle response
@@ -106,7 +107,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.get('ab')
+res = s.key_metadata_entity.get(id='female')
 
 if res.key_metadata_entities is not None:
     # handle response
@@ -141,16 +142,16 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.update('beatae', shared.KeyMetadataEntity(
-    algorithm=shared.KeyMetadataEntityEncryptionAlgorithm.AES_256_GCM,
-    cipher_key='nisi',
-    created=786954,
-    description='dolor',
-    expires=496548,
-    key_id='fuga',
-    keyclass=326903,
-    kms=shared.KeyMetadataEntityKMSForThisKey.LOCAL,
-    plain_key='architecto',
+res = s.key_metadata_entity.update(id='Van', key_metadata_entity=shared.KeyMetadataEntity(
+    algorithm=shared.KeyMetadataEntityEncryptionAlgorithm.AES_256_CBC,
+    cipher_key='male Metal',
+    created=984008,
+    description='Customer-focused 6th generation definition',
+    expires=896501,
+    key_id='withdrawal extend',
+    keyclass=249440,
+    kms='Carolina syndicate',
+    plain_key='implement JBOD',
     use_iv=False,
 ))
 

@@ -1,4 +1,5 @@
-# idp_auth
+# IDPAuth
+(*idp_auth*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.idp_auth.get('mollitia', 'nulla')
+res = s.idp_auth.get(code='female', state='program')
 
 if res.success is not None:
     # handle response

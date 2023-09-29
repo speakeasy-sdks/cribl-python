@@ -1,4 +1,5 @@
-# database_connection
+# DatabaseConnection
+(*database_connection*)
 
 ### Available Operations
 
@@ -21,15 +22,15 @@ s = cribl.Cribl(
 )
 
 req = shared.DatabaseConnectionConfig(
-    auth_type='fuga',
-    config_obj='laudantium',
-    connection_string='incidunt',
-    connection_timeout=97493,
+    auth_type='Producer base',
+    config_obj='protocol off beside',
+    connection_string='Arizona synthesizing',
+    connection_timeout=767148,
     database_type=shared.DatabaseConnectionType(),
-    description='rem',
-    id='d162309f-b092-4992-9aef-b9f58c4d86e6',
-    request_timeout=520761,
-    tags='earum',
+    description='Fundamental grid-enabled emulation',
+    id='<ID>',
+    request_timeout=15395,
+    tags='Southeast array',
 )
 
 res = s.database_connection.post(req)

@@ -1,7 +1,5 @@
 # FilesystemEntries
 
-a list of FilesystemEntry objects
-
 
 ## Fields
 

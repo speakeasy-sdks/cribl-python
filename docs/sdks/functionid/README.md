@@ -1,4 +1,5 @@
-# function_id
+# FunctionID
+(*function_id*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.function_id.get('quae')
+res = s.function_id.get(id='female')
 
 if res.functions is not None:
     # handle response

@@ -5,9 +5,9 @@
 
 | Field               | Type                | Required            | Description         |
 | ------------------- | ------------------- | ------------------- | ------------------- |
-| `alive`             | *int*               | :heavy_check_mark:  | N/A                 |
-| `conf_versions`     | *int*               | :heavy_check_mark:  | N/A                 |
-| `count`             | *int*               | :heavy_check_mark:  | N/A                 |
-| `groups`            | *int*               | :heavy_check_mark:  | N/A                 |
-| `software_versions` | *int*               | :heavy_check_mark:  | N/A                 |
-| `unhealthy`         | *int*               | :heavy_check_mark:  | N/A                 |
+| `alive`             | *Optional[int]*     | :heavy_check_mark:  | N/A                 |
+| `conf_versions`     | *Optional[int]*     | :heavy_check_mark:  | N/A                 |
+| `count`             | *Optional[int]*     | :heavy_check_mark:  | N/A                 |
+| `groups`            | *Optional[int]*     | :heavy_check_mark:  | N/A                 |
+| `software_versions` | *Optional[int]*     | :heavy_check_mark:  | N/A                 |
+| `unhealthy`         | *Optional[int]*     | :heavy_check_mark:  | N/A                 |

@@ -22,9 +22,12 @@ class GetConfigGroupRequest:
 @dataclasses.dataclass
 class GetConfigGroupResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     config_group: Optional[shared_configgroup.ConfigGroup] = dataclasses.field(default=None)
     r"""a list of ConfigGroup objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

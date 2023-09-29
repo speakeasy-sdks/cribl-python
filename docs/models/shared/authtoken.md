@@ -1,10 +1,8 @@
 # AuthToken
 
-Authentication token
-
 
 ## Fields
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `token`            | *str*              | :heavy_check_mark: | N/A                |
+| `token`            | *Optional[str]*    | :heavy_check_mark: | N/A                |

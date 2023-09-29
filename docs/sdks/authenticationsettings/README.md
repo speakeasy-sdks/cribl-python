@@ -1,4 +1,5 @@
-# authentication_settings
+# AuthenticationSettings
+(*authentication_settings*)
 
 ### Available Operations
 
