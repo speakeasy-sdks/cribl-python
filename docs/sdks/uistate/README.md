@@ -1,4 +1,5 @@
-# ui_state
+# UIState
+(*ui_state*)
 
 ### Available Operations
 
@@ -22,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.ui_state.get('laudantium')
+res = s.ui_state.get(key='female')
 
 if res.ui_states is not None:
     # handle response
@@ -57,12 +58,12 @@ s = cribl.Cribl(
 )
 
 
-res = s.ui_state.update('dolorem', shared.UIStatePatch(
+res = s.ui_state.update(key='Van', ui_state_patch=shared.UIStatePatch(
     args={
-        "officiis": 'mollitia',
+        "aut": 'Reactive',
     },
     op=shared.UIStatePatchOp.PUSH_RECENT,
-    value='fugiat',
+    value='Metal',
 ))
 
 if res.ui_states is not None:

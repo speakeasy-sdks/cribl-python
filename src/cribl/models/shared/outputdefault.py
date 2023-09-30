@@ -4,11 +4,7 @@ from __future__ import annotations
 import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
-from typing import Optional
-
-class OutputDefaultType(str, Enum):
-    DEFAULT = 'default'
+from typing import Final, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -17,7 +13,7 @@ class OutputDefaultType(str, Enum):
 class OutputDefault:
     default_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultId') }})
     r"""ID of the default output. This will be used whenever a nonexistent/deleted output is referenced."""
-    type: OutputDefaultType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    TYPE: Final[str] = dataclasses.field(default='default', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     environment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('environment'), 'exclude': lambda f: f is None }})
     r"""Optionally, enable this config only on a specified Git branch. If empty, will be enabled everywhere."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})

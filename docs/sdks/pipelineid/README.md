@@ -1,4 +1,5 @@
-# pipeline_id
+# PipelineID
+(*pipeline_id*)
 
 ### Available Operations
 
@@ -23,7 +24,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pipeline_id.delete('voluptates')
+res = s.pipeline_id.delete(id='program')
 
 if res.pipelines is not None:
     # handle response
@@ -58,7 +59,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.pipeline_id.get('possimus')
+res = s.pipeline_id.get(id='female')
 
 if res.pipelines is not None:
     # handle response
@@ -93,49 +94,34 @@ s = cribl.Cribl(
 )
 
 
-res = s.pipeline_id.update('fugit', shared.Pipeline(
+res = s.pipeline_id.update(id='Van', pipeline=shared.Pipeline(
     conf=shared.PipelineConf(
-        async_func_timeout=27946,
-        description='repudiandae',
+        async_func_timeout=15652,
+        description='Future-proofed next generation workforce',
         functions=[
             shared.PipelineFunctionConf(
                 conf=shared.PipelineFunctionConfFunctionSpecificConfigs(),
-                description='ea',
+                description='Extended modular open architecture',
                 disabled=False,
-                filter='eos',
+                filter='invoice Arizona',
                 final=False,
-                group_id='aliquam',
-                id='8fff639a-910a-4bdc-ab62-676696e1ec00',
-            ),
-            shared.PipelineFunctionConf(
-                conf=shared.PipelineFunctionConfFunctionSpecificConfigs(),
-                description='qui',
-                disabled=False,
-                filter='consequuntur',
-                final=False,
-                group_id='vitae',
-                id='b335d89a-cb3e-4cfd-a8d0-c549ef030049',
+                group_id='mostly',
+                id='<ID>',
             ),
         ],
         groups={
-            "atque": shared.PipelineConfGroups(
-                description='officia',
+            "in": shared.PipelineConfGroups(
+                description='Horizontal dynamic productivity',
                 disabled=False,
-                name='Alice Wilkinson DDS',
-            ),
-            "a": shared.PipelineConfGroups(
-                description='qui',
-                disabled=False,
-                name='Lucy Lind',
+                name='bifurcated',
             ),
         },
-        output='voluptate',
+        output='silver immediately',
         streamtags=[
-            'quod',
-            'vitae',
+            'implement',
         ],
     ),
-    id='ffc71dca-163f-42a3-880a-97ff334cddf8',
+    id='<ID>',
 ))
 
 if res.pipelines is not None:

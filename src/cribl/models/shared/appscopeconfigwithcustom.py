@@ -7,7 +7,7 @@ from ..shared import appscopetransport as shared_appscopetransport
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Optional
+from typing import Final, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -30,9 +30,6 @@ class AppscopeConfigWithCustomEventFormat:
     maxeventpersec: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxeventpersec') }})
     
 
-
-class AppscopeConfigWithCustomEventType(str, Enum):
-    NDJSON = 'ndjson'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -57,8 +54,8 @@ class AppscopeConfigWithCustomEvent:
     enable: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable') }})
     format: AppscopeConfigWithCustomEventFormat = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format') }})
     transport: shared_appscopetransport.AppscopeTransport = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transport') }})
-    type: AppscopeConfigWithCustomEventType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     watch: list[AppscopeConfigWithCustomEventWatch] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('watch') }})
+    TYPE: Final[str] = dataclasses.field(default='ndjson', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     
 
 

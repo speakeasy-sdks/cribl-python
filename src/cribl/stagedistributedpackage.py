@@ -26,8 +26,8 @@ class StageDistributedPackage:
         url = utils.generate_url(operations.PostStageDistributedPackageRequest, base_url, '/system/distributed/upgrade/stage/{group}', request)
         headers = {}
         query_params = utils.get_query_params(operations.PostStageDistributedPackageRequest, request)
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

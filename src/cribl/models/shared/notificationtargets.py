@@ -2,18 +2,24 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import notificationtargetbase as shared_notificationtargetbase
+from ..shared import notificationtargetbulletinmessage as shared_notificationtargetbulletinmessage
+from ..shared import notificationtargetdefault as shared_notificationtargetdefault
+from ..shared import notificationtargetnotificationslog as shared_notificationtargetnotificationslog
+from ..shared import notificationtargetpagerduty as shared_notificationtargetpagerduty
+from ..shared import notificationtargetrouter as shared_notificationtargetrouter
+from ..shared import notificationtargetwebhook as shared_notificationtargetwebhook
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Any, Optional
+from typing import Optional, Union
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class NotificationTargets:
-    r"""a list of NotificationTarget objects"""
     count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
     r"""number of items present in the items array"""
-    items: Optional[list[Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})
+    items: Optional[list[Union[shared_notificationtargetbase.NotificationTargetBase, shared_notificationtargetdefault.NotificationTargetDefault, shared_notificationtargetwebhook.NotificationTargetWebhook, shared_notificationtargetbulletinmessage.NotificationTargetBulletinMessage, shared_notificationtargetrouter.NotificationTargetRouter, shared_notificationtargetnotificationslog.NotificationTargetNotificationsLog, shared_notificationtargetpagerduty.NotificationTargetPagerDuty]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})
     
 

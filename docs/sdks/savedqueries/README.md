@@ -1,4 +1,5 @@
-# saved_queries
+# SavedQueries
+(*saved_queries*)
 
 ### Available Operations
 
@@ -24,20 +25,20 @@ s = cribl.Cribl(
 )
 
 req = shared.SavedQuery(
-    description='ab',
-    earliest='magnam',
-    id='db6be5a6-8599-48e2-aae2-0da16fc2b271',
-    latest='deserunt',
-    name='Vickie Marvin',
-    query='molestiae',
-    sample_rate=933840,
+    description='Multi-tiered human-resource model',
+    earliest='Money blue shred',
+    id='<ID>',
+    latest='technology East',
+    name='evolve',
+    query='fuchsia Gasoline Screen',
+    sample_rate=491570,
     schedule=shared.SavedQuerySchedule(
-        cron_schedule='rem',
+        cron_schedule='National Durham after',
         enabled=False,
-        keep_last_n=366327,
-        tz='non',
+        keep_last_n=519028,
+        tz='Bike',
     ),
-    user='recusandae',
+    user='Micah.Bergnaum89',
 )
 
 res = s.saved_queries.create(req)
@@ -75,7 +76,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_queries.delete('omnis')
+res = s.saved_queries.delete(id='program')
 
 if res.saved_query is not None:
     # handle response
@@ -139,21 +140,21 @@ s = cribl.Cribl(
 )
 
 
-res = s.saved_queries.update('ipsa', shared.SavedQuery(
-    description='aliquam',
-    earliest='dolor',
-    id='9d222465-6946-4240-b084-f7ab37cef022',
-    latest='consequuntur',
-    name='Jean Mayert',
-    query='quidem',
-    sample_rate=350202,
+res = s.saved_queries.update(id='Van', saved_query=shared.SavedQuery(
+    description='Advanced encompassing orchestration',
+    earliest='Metal cheater Islands',
+    id='<ID>',
+    latest='withdrawal extend',
+    name='bifurcated',
+    query='silver immediately',
+    sample_rate=302461,
     schedule=shared.SavedQuerySchedule(
-        cron_schedule='veniam',
+        cron_schedule='JBOD',
         enabled=False,
-        keep_last_n=267988,
-        tz='quasi',
+        keep_last_n=771203,
+        tz='Representative Home',
     ),
-    user='quae',
+    user='Eulah_Roob',
 ))
 
 if res.saved_query is not None:

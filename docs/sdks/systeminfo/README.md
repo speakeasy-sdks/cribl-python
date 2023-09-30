@@ -1,4 +1,5 @@
-# system_info
+# SystemInfo
+(*system_info*)
 
 ### Available Operations
 

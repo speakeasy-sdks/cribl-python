@@ -4,11 +4,7 @@ from __future__ import annotations
 import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
-from typing import Optional
-
-class NotificationTargetDefaultType(str, Enum):
-    DEFAULT = 'default'
+from typing import Final, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -19,7 +15,7 @@ class NotificationTargetDefault:
     r"""ID of the default output. This will be used whenever a nonexistent/deleted output is referenced."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Unique ID for this output"""
-    type: NotificationTargetDefaultType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    TYPE: Final[str] = dataclasses.field(default='default', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     system_fields: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemFields'), 'exclude': lambda f: f is None }})
     r"""Set of fields to automatically add to events using this output. E.g.: cribl_pipe, c*. Wildcards supported."""
     

@@ -1,4 +1,5 @@
-# log_files
+# LogFiles
+(*log_files*)
 
 ### Available Operations
 

@@ -1,7 +1,5 @@
 # Success
 
-Authorization success
-
 
 ## Fields
 

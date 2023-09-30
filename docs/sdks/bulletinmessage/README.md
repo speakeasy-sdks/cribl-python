@@ -1,4 +1,5 @@
-# bulletin_message
+# BulletinMessage
+(*bulletin_message*)
 
 ### Available Operations
 
@@ -23,18 +24,15 @@ s = cribl.Cribl(
 )
 
 req = shared.BulletinMessage(
-    group='error',
-    id='eee9526f-8d98-46e8-81ea-d4f0e1012563',
+    group='bluetooth Extended',
+    id='<ID>',
     metadata=[
         shared.BulletinMessageMetadata(),
-        shared.BulletinMessageMetadata(),
-        shared.BulletinMessageMetadata(),
-        shared.BulletinMessageMetadata(),
     ],
-    severity=shared.BulletinMessageSeverity.ERROR,
-    text='magnam',
-    time=906355,
-    title='Mr.',
+    severity=shared.BulletinMessageSeverity.INFO,
+    text='Cambridgeshire grey technology',
+    time=86,
+    title='orange Northwest',
 )
 
 res = s.bulletin_message.create(req)
@@ -72,7 +70,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.bulletin_message.delete('occaecati')
+res = s.bulletin_message.delete(id='program')
 
 if res.bulletin_message is not None:
     # handle response
@@ -107,7 +105,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.bulletin_message.get('officiis')
+res = s.bulletin_message.get(id='female')
 
 if res.bulletin_message is not None:
     # handle response

@@ -1,4 +1,5 @@
-# notification_targets
+# NotificationTargets
+(*notification_targets*)
 
 ### Available Operations
 

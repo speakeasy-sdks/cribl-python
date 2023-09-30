@@ -1,4 +1,5 @@
-# log_file_list
+# LogFileList
+(*log_file_list*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.log_file_list.get('maxime', 9375, 'eaque', 'architecto')
+res = s.log_file_list.get(allow='female', depth=558834, mode='Hatchback', path='Kia')
 
 if res.edge_files is not None:
     # handle response
