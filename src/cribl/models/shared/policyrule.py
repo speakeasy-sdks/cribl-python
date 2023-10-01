@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class PolicyRule:
-    r"""New PolicyRule object"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     template: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('template') }})
     args: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('args'), 'exclude': lambda f: f is None }})

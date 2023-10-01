@@ -1,4 +1,5 @@
-# idp_user_auth
+# IDPUserAuth
+(*idp_user_auth*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.idp_user_auth.logout('officia', 'sed')
+res = s.idp_user_auth.logout(relay_state='numb', saml_response='Nebraska')
 
 if res.success is not None:
     # handle response

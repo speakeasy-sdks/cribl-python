@@ -1,4 +1,5 @@
-# parser_object
+# ParserObject
+(*parser_object*)
 
 ### Available Operations
 
@@ -21,8 +22,7 @@ s = cribl.Cribl(
 )
 
 req = {
-    "voluptate": 'eius',
-    "expedita": 'aperiam',
+    "in": 'Producer',
 }
 
 res = s.parser_object.post(req)

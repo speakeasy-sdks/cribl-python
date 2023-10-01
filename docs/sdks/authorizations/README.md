@@ -1,4 +1,5 @@
-# authorizations
+# Authorizations
+(*authorizations*)
 
 ### Available Operations
 

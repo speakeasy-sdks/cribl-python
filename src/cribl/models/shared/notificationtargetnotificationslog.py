@@ -4,11 +4,7 @@ from __future__ import annotations
 import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
-from typing import Optional
-
-class NotificationTargetNotificationsLogType(str, Enum):
-    NOTIFICATIONS_LOG = 'notifications_log'
+from typing import Final, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -17,7 +13,7 @@ class NotificationTargetNotificationsLogType(str, Enum):
 class NotificationTargetNotificationsLog:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Unique ID for this output"""
-    type: NotificationTargetNotificationsLogType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    TYPE: Final[str] = dataclasses.field(default='notifications_log', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     logs_dir: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('logsDir'), 'exclude': lambda f: f is None }})
     r"""Directory in which to store the notification log"""
     system_fields: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemFields'), 'exclude': lambda f: f is None }})

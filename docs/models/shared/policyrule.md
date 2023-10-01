@@ -1,7 +1,5 @@
 # PolicyRule
 
-New PolicyRule object
-
 
 ## Fields
 
@@ -9,5 +7,5 @@ New PolicyRule object
 | ------------------ | ------------------ | ------------------ | ------------------ |
 | `args`             | list[*str*]        | :heavy_minus_sign: | N/A                |
 | `description`      | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-| `id`               | *str*              | :heavy_check_mark: | N/A                |
+| `id`               | *Optional[str]*    | :heavy_check_mark: | N/A                |
 | `template`         | list[*str*]        | :heavy_check_mark: | N/A                |

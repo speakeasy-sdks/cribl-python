@@ -1,7 +1,5 @@
 # ScriptLibEntries
 
-a list of Script objects
-
 
 ## Fields
 

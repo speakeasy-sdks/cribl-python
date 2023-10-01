@@ -1,4 +1,5 @@
-# search_jobs
+# SearchJobs
+(*search_jobs*)
 
 ### Available Operations
 

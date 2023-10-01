@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `sort`             | *Any*              | :heavy_check_mark: | N/A                |
+| `sort`             | *Optional[Any]*    | :heavy_check_mark: | N/A                |

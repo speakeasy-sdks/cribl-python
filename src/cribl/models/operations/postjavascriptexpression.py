@@ -11,9 +11,12 @@ from typing import Optional
 @dataclasses.dataclass
 class PostJavascriptExpressionResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     expr_lib_entries: Optional[shared_exprlibentries.ExprLibEntries] = dataclasses.field(default=None)
     r"""a list of ExprLibEntry objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

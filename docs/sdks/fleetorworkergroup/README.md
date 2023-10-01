@@ -1,4 +1,5 @@
-# fleet_or_worker_group
+# FleetOrWorkerGroup
+(*fleet_or_worker_group*)
 
 ### Available Operations
 
@@ -21,8 +22,8 @@ s = cribl.Cribl(
 )
 
 
-res = s.fleet_or_worker_group.deploy('voluptatem', shared.DeployRequest(
-    version='ad',
+res = s.fleet_or_worker_group.deploy(id='peasant', deploy_request=shared.DeployRequest(
+    version='Gasoline',
 ))
 
 if res.config_group is not None:
