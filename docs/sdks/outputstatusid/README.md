@@ -1,4 +1,5 @@
-# output_status_id
+# OutputStatusID
+(*output_status_id*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.output_status_id.get('quaerat')
+res = s.output_status_id.get(id='female')
 
 if res.output_statuses is not None:
     # handle response

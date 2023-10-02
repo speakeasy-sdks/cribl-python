@@ -22,9 +22,12 @@ class UpdateProfilerRequest:
 @dataclasses.dataclass
 class UpdateProfilerResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     profiler_item: Optional[shared_profileritem.ProfilerItem] = dataclasses.field(default=None)
     r"""a list of ProfilerItem objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

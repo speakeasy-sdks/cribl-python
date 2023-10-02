@@ -5,7 +5,7 @@ import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Optional
+from typing import Final, Optional
 
 class NotificationTargetBulletinMessageSeverity(str, Enum):
     r"""Default value for message severity, will be overwritten by value of __severity if set. Defaults to warn."""
@@ -14,9 +14,6 @@ class NotificationTargetBulletinMessageSeverity(str, Enum):
     INFO = 'info'
     FATAL = 'fatal'
 
-class NotificationTargetBulletinMessageType(str, Enum):
-    BULLETIN_MESSAGE = 'bulletin_message'
-
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
@@ -24,14 +21,14 @@ class NotificationTargetBulletinMessageType(str, Enum):
 class NotificationTargetBulletinMessage:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Unique ID for this output"""
-    type: NotificationTargetBulletinMessageType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    severity: Optional[NotificationTargetBulletinMessageSeverity] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('severity'), 'exclude': lambda f: f is None }})
+    TYPE: Final[str] = dataclasses.field(default='bulletin_message', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    severity: Optional[NotificationTargetBulletinMessageSeverity] = dataclasses.field(default=NotificationTargetBulletinMessageSeverity.WARN, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('severity'), 'exclude': lambda f: f is None }})
     r"""Default value for message severity, will be overwritten by value of __severity if set. Defaults to warn."""
     system_fields: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemFields'), 'exclude': lambda f: f is None }})
     r"""Set of fields to automatically add to events using this output. E.g.: cribl_pipe, c*. Wildcards supported."""
-    text: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('text'), 'exclude': lambda f: f is None }})
+    text: Optional[str] = dataclasses.field(default='Notification has been triggered', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('text'), 'exclude': lambda f: f is None }})
     r"""Text of the message"""
-    title: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is None }})
+    title: Optional[str] = dataclasses.field(default='Notification', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title'), 'exclude': lambda f: f is None }})
     r"""Title of the message"""
     
 

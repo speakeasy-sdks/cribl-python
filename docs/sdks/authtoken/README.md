@@ -1,4 +1,5 @@
-# auth_token
+# AuthToken
+(*auth_token*)
 
 ### Available Operations
 
@@ -21,8 +22,8 @@ s = cribl.Cribl(
 )
 
 req = shared.LoginInfo(
-    password='et',
-    username='Jairo.Farrell53',
+    password='2bVVxb7UVU0peMp',
+    username='Clyde.Parisian',
 )
 
 res = s.auth_token.login(req)

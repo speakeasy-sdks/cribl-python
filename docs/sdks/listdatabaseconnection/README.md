@@ -1,4 +1,5 @@
-# list_database_connection
+# ListDatabaseConnection
+(*list_database_connection*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.list_database_connection.get('sed')
+res = s.list_database_connection.get(database_type='female')
 
 if res.database_connection_configs is not None:
     # handle response

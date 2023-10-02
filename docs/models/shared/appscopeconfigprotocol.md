@@ -5,9 +5,9 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `binary`           | *bool*             | :heavy_check_mark: | N/A                |
-| `detect`           | *bool*             | :heavy_check_mark: | N/A                |
-| `len`              | *int*              | :heavy_check_mark: | N/A                |
-| `name`             | *str*              | :heavy_check_mark: | N/A                |
-| `payload`          | *bool*             | :heavy_check_mark: | N/A                |
-| `regex`            | *str*              | :heavy_check_mark: | N/A                |
+| `binary`           | *Optional[bool]*   | :heavy_check_mark: | N/A                |
+| `detect`           | *Optional[bool]*   | :heavy_check_mark: | N/A                |
+| `len`              | *Optional[int]*    | :heavy_check_mark: | N/A                |
+| `name`             | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `payload`          | *Optional[bool]*   | :heavy_check_mark: | N/A                |
+| `regex`            | *Optional[str]*    | :heavy_check_mark: | N/A                |

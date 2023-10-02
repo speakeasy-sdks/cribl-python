@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `aws`              | *str*              | :heavy_check_mark: | N/A                |
+| `aws`              | *Optional[str]*    | :heavy_check_mark: | N/A                |

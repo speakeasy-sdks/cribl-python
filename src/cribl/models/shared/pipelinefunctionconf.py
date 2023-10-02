@@ -24,7 +24,7 @@ class PipelineFunctionConf:
     r"""Simple description of this step"""
     disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
     r"""If true, data will not be pushed through this function"""
-    filter: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filter'), 'exclude': lambda f: f is None }})
+    filter: Optional[str] = dataclasses.field(default='true', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filter'), 'exclude': lambda f: f is None }})
     r"""Filter that selects data to be fed through this function"""
     final: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('final'), 'exclude': lambda f: f is None }})
     r"""If true, stops the results of this function from being passed to the downstream functions"""

@@ -1,4 +1,5 @@
-# logger_configs
+# LoggerConfigs
+(*logger_configs*)
 
 ### Available Operations
 

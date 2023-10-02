@@ -1,4 +1,5 @@
-# job_infos
+# JobInfos
+(*job_infos*)
 
 ### Available Operations
 
@@ -21,12 +22,12 @@ s = cribl.Cribl(
 )
 
 req = operations.GetJobInfosRequest(
-    collector_id='nesciunt',
-    id='e63562a7-b408-4f05-a3d4-8fdaf313a1f5',
-    limit=987890,
-    offset=823753,
-    run_type='unde',
-    state='incidunt',
+    collector_id='Northeast Hatchback Kia',
+    id='<ID>',
+    limit=78592,
+    offset=969961,
+    run_type='payment withdrawal Car',
+    state='Rupiah',
 )
 
 res = s.job_infos.get(req)
