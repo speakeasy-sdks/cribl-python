@@ -22,8 +22,11 @@ class GetTaskErrorsRequest:
 @dataclasses.dataclass
 class GetTaskErrorsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     task_errors: Optional[shared_taskerrors.TaskErrors] = dataclasses.field(default=None)
     r"""a list of any objects"""
     

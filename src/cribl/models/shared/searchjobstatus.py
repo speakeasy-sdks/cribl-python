@@ -4,7 +4,6 @@ from __future__ import annotations
 from enum import Enum
 
 class SearchJobStatus(str, Enum):
-    r"""SearchJobStatus object"""
     NEW = 'new'
     RUNNING = 'running'
     COMPLETED = 'completed'

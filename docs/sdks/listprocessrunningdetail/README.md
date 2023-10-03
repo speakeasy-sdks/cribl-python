@@ -1,4 +1,5 @@
-# list_process_running_detail
+# ListProcessRunningDetail
+(*list_process_running_detail*)
 
 ### Available Operations
 

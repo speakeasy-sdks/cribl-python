@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `version`          | *str*              | :heavy_check_mark: | Version number     |
+| `version`          | *Optional[str]*    | :heavy_check_mark: | Version number     |

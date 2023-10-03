@@ -5,6 +5,6 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `index`            | *str*              | :heavy_check_mark: | N/A                |
-| `path`             | *str*              | :heavy_check_mark: | N/A                |
-| `working_dir`      | *str*              | :heavy_check_mark: | N/A                |
+| `index`            | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `path`             | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `working_dir`      | *Optional[str]*    | :heavy_check_mark: | N/A                |

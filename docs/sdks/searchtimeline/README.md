@@ -1,4 +1,5 @@
-# search_timeline
+# SearchTimeline
+(*search_timeline*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.search_timeline.get('magnam')
+res = s.search_timeline.get(id='female')
 
 if res.search_timeline is not None:
     # handle response

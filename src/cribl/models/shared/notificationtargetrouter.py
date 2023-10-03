@@ -4,8 +4,7 @@ from __future__ import annotations
 import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from enum import Enum
-from typing import Optional
+from typing import Final, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -18,13 +17,10 @@ class NotificationTargetRouterRules:
     r"""Output to send matching events to"""
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""Description of this rule's purpose"""
-    final: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('final'), 'exclude': lambda f: f is None }})
+    final: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('final'), 'exclude': lambda f: f is None }})
     r"""Flag to control whether to stop the event from being checked against other rules"""
     
 
-
-class NotificationTargetRouterType(str, Enum):
-    ROUTER = 'router'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
@@ -35,7 +31,7 @@ class NotificationTargetRouter:
     r"""Unique ID for this output"""
     rules: list[NotificationTargetRouterRules] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules') }})
     r"""Event routing rules"""
-    type: NotificationTargetRouterType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
+    TYPE: Final[str] = dataclasses.field(default='router', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     system_fields: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemFields'), 'exclude': lambda f: f is None }})
     r"""Set of fields to automatically add to events using this output. E.g.: cribl_pipe, c*. Wildcards supported."""
     

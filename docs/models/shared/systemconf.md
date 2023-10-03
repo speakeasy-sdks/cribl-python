@@ -5,6 +5,6 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `install_type`     | *str*              | :heavy_check_mark: | N/A                |
-| `restart`          | *str*              | :heavy_check_mark: | N/A                |
-| `upgrade`          | *str*              | :heavy_check_mark: | N/A                |
+| `install_type`     | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `restart`          | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `upgrade`          | *Optional[str]*    | :heavy_check_mark: | N/A                |

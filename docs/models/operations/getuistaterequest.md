@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `key`              | *str*              | :heavy_check_mark: | UI state key       |
+| `key`              | *Optional[str]*    | :heavy_check_mark: | UI state key       |

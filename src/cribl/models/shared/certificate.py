@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class Certificate:
-    r"""New Certificate object"""
     cert: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cert') }})
     r"""Drag/drop or upload host certificate, in PEM/Base64 format. Or paste its contents here."""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})

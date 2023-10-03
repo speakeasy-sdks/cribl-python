@@ -1,4 +1,5 @@
-# event_breaker_id
+# EventBreakerID
+(*event_breaker_id*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.event_breaker_id.get('deserunt')
+res = s.event_breaker_id.get(id='female')
 
 if res.event_breaker_rulesets is not None:
     # handle response

@@ -1,4 +1,5 @@
-# bulletin_messages
+# BulletinMessages
+(*bulletin_messages*)
 
 ### Available Operations
 

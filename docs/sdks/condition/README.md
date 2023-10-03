@@ -1,4 +1,5 @@
-# condition
+# Condition
+(*condition*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.condition.get('modi')
+res = s.condition.get(id='female')
 
 if res.conditions is not None:
     # handle response

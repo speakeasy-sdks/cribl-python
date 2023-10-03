@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class User:
-    r"""New User object"""
     disabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled') }})
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     first: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('first') }})

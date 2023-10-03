@@ -5,6 +5,6 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `changes`          | *int*              | :heavy_check_mark: | N/A                |
-| `deletions`        | *int*              | :heavy_check_mark: | N/A                |
-| `insertions`       | *int*              | :heavy_check_mark: | N/A                |
+| `changes`          | *Optional[int]*    | :heavy_check_mark: | N/A                |
+| `deletions`        | *Optional[int]*    | :heavy_check_mark: | N/A                |
+| `insertions`       | *Optional[int]*    | :heavy_check_mark: | N/A                |

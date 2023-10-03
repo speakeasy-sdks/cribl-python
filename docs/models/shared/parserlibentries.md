@@ -1,7 +1,5 @@
 # ParserLibEntries
 
-a list of Parser objects
-
 
 ## Fields
 

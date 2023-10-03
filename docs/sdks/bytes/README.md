@@ -1,4 +1,5 @@
-# bytes
+# Bytes
+(*bytes*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.bytes.get('perspiciatis', 446394)
+res = s.bytes.get(path='female', bytes_requested=558834)
 
 if res.sample_files is not None:
     # handle response
