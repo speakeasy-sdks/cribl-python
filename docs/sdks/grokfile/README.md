@@ -1,4 +1,5 @@
-# grok_file
+# GrokFile
+(*grok_file*)
 
 ### Available Operations
 
@@ -24,10 +25,10 @@ s = cribl.Cribl(
 )
 
 req = shared.GrokFile(
-    content='nihil',
-    id='411faf4b-7544-4e47-ae80-2857a5b40463',
-    size=652125,
-    tags='dignissimos',
+    content='bluetooth Extended',
+    id='<ID>',
+    size=134365,
+    tags='Cambridgeshire grey technology',
 )
 
 res = s.grok_file.create(req)
@@ -65,7 +66,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.grok_file.delete('fugiat')
+res = s.grok_file.delete(id='program')
 
 if res.grok_file is not None:
     # handle response
@@ -100,7 +101,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.grok_file.get('nostrum')
+res = s.grok_file.get(id='female')
 
 if res.grok_file is not None:
     # handle response
@@ -135,11 +136,11 @@ s = cribl.Cribl(
 )
 
 
-res = s.grok_file.update('molestiae', shared.GrokFile(
-    content='veniam',
-    id='f1400e76-4ad7-4334-ac1b-781b36a08088',
-    size=832239,
-    tags='veritatis',
+res = s.grok_file.update(id='Van', grok_file=shared.GrokFile(
+    content='Reactive',
+    id='<ID>',
+    size=991464,
+    tags='Quality',
 ))
 
 if res.grok_file is not None:

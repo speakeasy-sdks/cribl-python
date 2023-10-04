@@ -1,7 +1,5 @@
 # DatabaseConnectionTestResults
 
-a list of DatabaseConnectionTestResult objects
-
 
 ## Fields
 

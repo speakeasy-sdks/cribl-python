@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `memory_limit`     | *str*              | :heavy_check_mark: | N/A                |
+| `memory_limit`     | *Optional[str]*    | :heavy_check_mark: | N/A                |

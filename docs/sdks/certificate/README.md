@@ -1,4 +1,5 @@
-# certificate
+# Certificate
+(*certificate*)
 
 ### Available Operations
 
@@ -24,16 +25,15 @@ s = cribl.Cribl(
 )
 
 req = shared.Certificate(
-    ca='eveniet',
-    cert='occaecati',
-    description='consequuntur',
-    id='2a57a15b-e3e0-4608-87e2-b6e3ab8845f0',
+    ca='bluetooth Extended',
+    cert='blue',
+    description='Vision-oriented responsive function',
+    id='<ID>',
     in_use=[
-        'perspiciatis',
-        'nihil',
+        'technology',
     ],
-    passphrase='mollitia',
-    priv_key='voluptas',
+    passphrase='deposit',
+    priv_key='Northwest',
 )
 
 res = s.certificate.create(req)
@@ -71,7 +71,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.certificate.delete('alias')
+res = s.certificate.delete(id='program')
 
 if res.certificate is not None:
     # handle response
@@ -106,7 +106,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.certificate.get('maiores')
+res = s.certificate.get(id='female')
 
 if res.certificate is not None:
     # handle response
@@ -141,18 +141,16 @@ s = cribl.Cribl(
 )
 
 
-res = s.certificate.update('reiciendis', shared.Certificate(
-    ca='dolores',
-    cert='id',
-    description='minima',
-    id='4a31e947-64a3-4e86-9e79-56f9251a5a9d',
+res = s.certificate.update(id='Van', certificate=shared.Certificate(
+    ca='Reactive',
+    cert='Metal cheater Islands',
+    description='Networked heuristic framework',
+    id='<ID>',
     in_use=[
-        'ex',
-        'aliquid',
-        'accusantium',
+        'extend',
     ],
-    passphrase='repellat',
-    priv_key='doloribus',
+    passphrase='bifurcated',
+    priv_key='silver immediately',
 ))
 
 if res.certificate is not None:

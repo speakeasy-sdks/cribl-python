@@ -1,4 +1,5 @@
-# commit
+# Commit
+(*commit*)
 
 ### Available Operations
 
@@ -22,8 +23,8 @@ s = cribl.Cribl(
 
 req = shared.GitCommitParams(
     effective=False,
-    group='laborum',
-    message='placeat',
+    group='bluetooth Extended',
+    message='blue',
 )
 
 res = s.commit.create(req)

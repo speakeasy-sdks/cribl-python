@@ -17,7 +17,6 @@ class LicenseCls(str, Enum):
 
 @dataclasses.dataclass
 class License:
-    r"""New License object"""
     cls: LicenseCls = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cls') }})
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     exp: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exp') }})

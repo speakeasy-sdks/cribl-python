@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `versioning`       | *bool*             | :heavy_check_mark: | N/A                |
+| `versioning`       | *Optional[bool]*   | :heavy_check_mark: | N/A                |

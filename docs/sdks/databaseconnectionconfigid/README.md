@@ -1,4 +1,5 @@
-# database_connection_config_id
+# DatabaseConnectionConfigID
+(*database_connection_config_id*)
 
 ### Available Operations
 
@@ -23,7 +24,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.database_connection_config_id.delete('modi')
+res = s.database_connection_config_id.delete(id='program')
 
 if res.database_connection_configs is not None:
     # handle response
@@ -58,7 +59,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.database_connection_config_id.get('nam')
+res = s.database_connection_config_id.get(id='female')
 
 if res.database_connection_configs is not None:
     # handle response
@@ -93,16 +94,16 @@ s = cribl.Cribl(
 )
 
 
-res = s.database_connection_config_id.update('vero', shared.DatabaseConnectionConfig(
-    auth_type='voluptatem',
-    config_obj='ipsam',
-    connection_string='vel',
-    connection_timeout=1383,
+res = s.database_connection_config_id.update(id='Van', database_connection_config=shared.DatabaseConnectionConfig(
+    auth_type='Reactive',
+    config_obj='Metal cheater Islands',
+    connection_string='withdrawal extend',
+    connection_timeout=249440,
     database_type=shared.DatabaseConnectionType(),
-    description='quasi',
-    id='3f59da75-7a59-4ecf-af66-ef1caa3383c2',
-    request_timeout=746585,
-    tags='repudiandae',
+    description='Horizontal bifurcated moderator',
+    id='<ID>',
+    request_timeout=789275,
+    tags='immediately implement JBOD',
 ))
 
 if res.database_connection_configs is not None:
