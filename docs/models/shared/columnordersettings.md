@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `order`            | *Any*              | :heavy_check_mark: | N/A                |
+| `order`            | *Optional[Any]*    | :heavy_check_mark: | N/A                |

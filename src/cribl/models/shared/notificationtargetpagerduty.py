@@ -29,11 +29,11 @@ class NotificationTargetPagerDuty:
     type: NotificationTargetPagerDutyType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     class_: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('class'), 'exclude': lambda f: f is None }})
     r"""Optional, default class value"""
-    component: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('component'), 'exclude': lambda f: f is None }})
+    component: Optional[str] = dataclasses.field(default='logstream', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('component'), 'exclude': lambda f: f is None }})
     r"""Optional, default component value"""
     group: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group'), 'exclude': lambda f: f is None }})
     r"""Optional, default group value"""
-    severity: Optional[NotificationTargetPagerDutySeverity] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('severity'), 'exclude': lambda f: f is None }})
+    severity: Optional[NotificationTargetPagerDutySeverity] = dataclasses.field(default=NotificationTargetPagerDutySeverity.INFO, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('severity'), 'exclude': lambda f: f is None }})
     r"""Default value for message severity, will be overwritten by value of __severity if set. Defaults to info."""
     system_fields: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemFields'), 'exclude': lambda f: f is None }})
     r"""Set of fields to automatically add to events using this output. E.g.: cribl_pipe, c*. Wildcards supported."""

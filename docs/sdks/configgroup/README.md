@@ -1,4 +1,5 @@
-# config_group
+# ConfigGroup
+(*config_group*)
 
 ### Available Operations
 
@@ -24,33 +25,33 @@ s = cribl.Cribl(
 )
 
 req = shared.ConfigGroup(
-    config_version='voluptatibus',
-    description='molestias',
-    estimated_ingest_rate=889794,
+    config_version='bluetooth Extended',
+    description='Customer-focused regional approach',
+    estimated_ingest_rate=996706,
     git=shared.ConfigGroupGit(
-        commit='sapiente',
-        local_changes=764562,
+        commit='abnormally deposit evolve',
+        local_changes=715040,
         log=[
             shared.Commit(
-                author_email='rerum',
-                author_name='tempora',
-                date_='quis',
-                hash='inventore',
-                message='fugit',
-                short='cumque',
+                author_email='SUV quantify Polestar',
+                author_name='physical Ameliorated',
+                date_='after',
+                hash='Intelligent Fish',
+                message='Fiat',
+                short='Grocery Borders Northwest',
             ),
         ],
     ),
-    id='1032648d-c2f6-4151-99eb-fd0e9fe6c632',
-    inherits='cumque',
+    id='<ID>',
+    inherits='Kentucky animated',
     is_fleet=False,
     is_search=False,
-    name='Philip O'Kon',
+    name='Interactions Senior Mouse',
     on_prem=False,
     provisioned=False,
-    source_group_id='consequatur',
-    tags='quasi',
-    worker_count=90233,
+    source_group_id='or',
+    tags='Edinburg Investor',
+    worker_count=550483,
     worker_remote_access=False,
 )
 
@@ -89,7 +90,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.config_group.delete('ducimus')
+res = s.config_group.delete(id='program')
 
 if res.config_group is not None:
     # handle response
@@ -124,7 +125,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.config_group.get('natus', 'occaecati')
+res = s.config_group.get(id='female', fields_='program')
 
 if res.config_group is not None:
     # handle response
@@ -160,58 +161,34 @@ s = cribl.Cribl(
 )
 
 
-res = s.config_group.update('suscipit', shared.ConfigGroup(
-    config_version='adipisci',
-    description='quasi',
-    estimated_ingest_rate=169025,
+res = s.config_group.update(id='Van', config_group=shared.ConfigGroup(
+    config_version='Reactive',
+    description='Vision-oriented didactic migration',
+    estimated_ingest_rate=684199,
     git=shared.ConfigGroupGit(
-        commit='doloribus',
-        local_changes=859581,
+        commit='invoice Arizona',
+        local_changes=278281,
         log=[
             shared.Commit(
-                author_email='ipsa',
-                author_name='tempora',
-                date_='nihil',
-                hash='molestiae',
-                message='dicta',
-                short='iusto',
-            ),
-            shared.Commit(
-                author_email='esse',
-                author_name='praesentium',
-                date_='maiores',
-                hash='reiciendis',
-                message='vel',
-                short='architecto',
-            ),
-            shared.Commit(
-                author_email='fugiat',
-                author_name='doloremque',
-                date_='dicta',
-                hash='odio',
-                message='tempora',
-                short='esse',
-            ),
-            shared.Commit(
-                author_email='ex',
-                author_name='consectetur',
-                date_='aliquid',
-                hash='ipsa',
-                message='laborum',
-                short='sunt',
+                author_email='online dynamic white',
+                author_name='Carolina syndicate',
+                date_='implement JBOD',
+                hash='Quality guestbook driver',
+                message='pascal Gasoline',
+                short='Northeast Wooden',
             ),
         ],
     ),
-    id='5db6a660-659a-41ad-aaab-5851d6c645b0',
-    inherits='molestias',
+    id='<ID>',
+    inherits='Jaguar Dodge',
     is_fleet=False,
     is_search=False,
-    name='Gene Brekke',
+    name='Buckinghamshire frictionless haptic',
     on_prem=False,
     provisioned=False,
-    source_group_id='veritatis',
-    tags='rerum',
-    worker_count=665678,
+    source_group_id='possimus navigating Diesel',
+    tags='Greens',
+    worker_count=656776,
     worker_remote_access=False,
 ))
 

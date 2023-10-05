@@ -1,4 +1,5 @@
-# event_breaker_on_data
+# EventBreakerOnData
+(*event_breaker_on_data*)
 
 ### Available Operations
 
@@ -23,50 +24,42 @@ s = cribl.Cribl(
 req = shared.DatatypePreviewRequestBody(
     event_breaker_rule=shared.EventBreakerRule(
         clean_fields=False,
-        condition='doloremque',
-        delimiter='quis',
-        delimiter_regex='veniam',
+        condition='Producer base',
+        delimiter='protocol off beside',
+        delimiter_regex='Arizona synthesizing',
         disabled=False,
-        escape_char='libero',
-        event_breaker_regex='architecto',
+        escape_char='content intelligence array',
+        event_breaker_regex='Clothing array Kids',
         fields_=[
             shared.EventBreakerRuleFields(
-                name='Sheri Schuppe',
-                value='itaque',
-            ),
-            shared.EventBreakerRuleFields(
-                name='Ollie Harris',
-                value='laudantium',
-            ),
-            shared.EventBreakerRuleFields(
-                name='Freda Farrell I',
-                value='facilis',
+                name='Integration HTTP',
+                value='Hybrid open compress',
             ),
         ],
-        fields_line_regex='tempore',
-        header_line_regex='nisi',
-        json_array_field='voluptatibus',
+        fields_line_regex='Dollar',
+        header_line_regex='Southeast deposit Bicycle',
+        json_array_field='dynamic',
         json_extract_all=False,
-        json_time_field='quaerat',
-        max_event_bytes=503748,
-        name='Charlie Harvey',
-        null_field_val='minus',
-        parser='facere',
+        json_time_field='Folk hm',
+        max_event_bytes=759000,
+        name='gullible nose',
+        null_field_val='Mouse Clemente',
+        parser='XML',
         parser_enabled=False,
-        quote_char='facilis',
-        time_field='ipsum',
+        quote_char='Soap bah deploy',
+        time_field='primary',
         timestamp=shared.EventBreakerRuleTimestamp(
-            format='ad',
-            length=973819,
+            format='Research Egypt',
+            length=181401,
             type=shared.EventBreakerRuleTimestampType.CURRENT,
         ),
-        timestamp_anchor_regex='consequuntur',
-        timestamp_earliest='debitis',
-        timestamp_latest='labore',
-        timestamp_timezone='rerum',
-        type=shared.EventBreakerRuleType.JSON,
+        timestamp_anchor_regex='Reggae Hybrid',
+        timestamp_earliest='array',
+        timestamp_latest='rich Investor',
+        timestamp_timezone='weird revolutionize',
+        type=shared.EventBreakerRuleType.HEADER,
     ),
-    input='reprehenderit',
+    input='degree',
 )
 
 res = s.event_breaker_on_data.post(req)

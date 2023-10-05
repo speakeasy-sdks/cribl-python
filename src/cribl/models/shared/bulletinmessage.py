@@ -24,7 +24,6 @@ class BulletinMessageSeverity(str, Enum):
 
 @dataclasses.dataclass
 class BulletinMessage:
-    r"""New BulletinMessage object"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     text: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('text') }})
     group: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group'), 'exclude': lambda f: f is None }})

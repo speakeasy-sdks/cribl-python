@@ -5,7 +5,7 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `palette`          | *Any*              | :heavy_check_mark: | N/A                |
-| `precision`        | *Any*              | :heavy_check_mark: | N/A                |
-| `prefix`           | *Any*              | :heavy_check_mark: | N/A                |
-| `suffix`           | *Any*              | :heavy_check_mark: | N/A                |
+| `palette`          | *Optional[Any]*    | :heavy_check_mark: | N/A                |
+| `precision`        | *Optional[Any]*    | :heavy_check_mark: | N/A                |
+| `prefix`           | *Optional[Any]*    | :heavy_check_mark: | N/A                |
+| `suffix`           | *Optional[Any]*    | :heavy_check_mark: | N/A                |

@@ -1,4 +1,5 @@
-# data_sample_id
+# DataSampleID
+(*data_sample_id*)
 
 ### Available Operations
 
@@ -23,7 +24,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.data_sample_id.delete('nemo')
+res = s.data_sample_id.delete(id='program')
 
 if res.data_samples is not None:
     # handle response
@@ -58,7 +59,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.data_sample_id.get('quos')
+res = s.data_sample_id.get(id='female')
 
 if res.data_samples is not None:
     # handle response
@@ -93,8 +94,8 @@ s = cribl.Cribl(
 )
 
 
-res = s.data_sample_id.update('eius', {
-    "ducimus": 'nesciunt',
+res = s.data_sample_id.update(id='Van', request_body={
+    "aut": 'Reactive',
 })
 
 if res.data_samples is not None:

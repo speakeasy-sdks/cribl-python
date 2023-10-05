@@ -5,5 +5,5 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `destination`      | *str*              | :heavy_check_mark: | N/A                |
-| `source`           | *str*              | :heavy_check_mark: | N/A                |
+| `destination`      | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `source`           | *Optional[str]*    | :heavy_check_mark: | N/A                |

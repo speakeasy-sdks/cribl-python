@@ -1,4 +1,5 @@
-# key_metadata_entities
+# KeyMetadataEntities
+(*key_metadata_entities*)
 
 ### Available Operations
 

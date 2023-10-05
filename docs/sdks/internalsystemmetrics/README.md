@@ -1,4 +1,5 @@
-# internal_system_metrics
+# InternalSystemMetrics
+(*internal_system_metrics*)
 
 ### Available Operations
 
@@ -23,27 +24,27 @@ s = cribl.Cribl(
 req = shared.MetricsAggOpts(
     aggs=shared.AggregationMgrOptions(
         aggregations=[
-            'alias',
+            'payment',
         ],
         cumulative=False,
-        flush_event_limit=910073,
-        flush_mem_limit=941668,
-        hostname='altruistic-doorpost.biz',
-        idle_time_limit_seconds=185897,
-        lag_tolerance_seconds=895912,
+        flush_event_limit=722100,
+        flush_mem_limit=390366,
+        hostname='needy-order.org',
+        idle_time_limit_seconds=520911,
+        lag_tolerance_seconds=42444,
         metrics_mode=False,
-        prefix='harum',
+        prefix='Metrics synergize Arizona',
         preserve_split_by_structure=False,
-        search_agg_mode='explicabo',
+        search_agg_mode='synthesizing',
         split_bys=[
-            'aliquid',
+            'withdrawal',
         ],
         sufficient_stats_only=False,
-        time_window_seconds=264649,
+        time_window_seconds=15395,
     ),
     always_bounds=False,
     metrics=shared.MetricsStore(),
-    where='optio',
+    where='Southeast array',
 )
 
 res = s.internal_system_metrics.post(req)
