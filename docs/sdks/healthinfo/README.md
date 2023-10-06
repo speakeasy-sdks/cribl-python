@@ -1,4 +1,5 @@
-# health_info
+# HealthInfo
+(*health_info*)
 
 ### Available Operations
 

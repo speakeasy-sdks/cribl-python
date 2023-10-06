@@ -1,7 +1,5 @@
 # EdgeFiles
 
-a list of EdgeFile objects
-
 
 ## Fields
 

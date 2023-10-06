@@ -1,4 +1,5 @@
-# give_cribl_version
+# GiveCriblVersion
+(*give_cribl_version*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.give_cribl_version.post('amet')
+res = s.give_cribl_version.post(version='payment')
 
 if res.cribl is not None:
     # handle response

@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
 from cribl.models import errors, operations, shared
-from typing import Any, Optional
+from typing import Optional, Union
 
 class NotificationTarget:
     sdk_configuration: SDKConfiguration
@@ -12,7 +12,7 @@ class NotificationTarget:
         self.sdk_configuration = sdk_config
         
     
-    def create(self, request: Any) -> operations.CreateNotificationTargetResponse:
+    def create(self, request: Union[shared.NotificationTargetBase, shared.NotificationTargetDefault, shared.NotificationTargetWebhook, shared.NotificationTargetBulletinMessage, shared.NotificationTargetRouter, shared.NotificationTargetNotificationsLog, shared.NotificationTargetPagerDuty]) -> operations.CreateNotificationTargetResponse:
         r"""Create NotificationTarget
         Create NotificationTarget
         """
@@ -20,11 +20,11 @@ class NotificationTarget:
         
         url = base_url + '/notification-targets'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -64,8 +64,8 @@ class NotificationTarget:
         
         url = utils.generate_url(operations.DeletetNotificationTargetRequest, base_url, '/notification-targets/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -105,8 +105,8 @@ class NotificationTarget:
         
         url = utils.generate_url(operations.GetNotificationTargetRequest, base_url, '/notification-targets/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -134,24 +134,24 @@ class NotificationTarget:
         return res
 
     
-    def update(self, id: str, request_body: Optional[Any] = None) -> operations.UpdatetNotificationTargetResponse:
+    def update(self, id: str, notification_target: Optional[Union[shared.NotificationTargetBase, shared.NotificationTargetDefault, shared.NotificationTargetWebhook, shared.NotificationTargetBulletinMessage, shared.NotificationTargetRouter, shared.NotificationTargetNotificationsLog, shared.NotificationTargetPagerDuty]] = None) -> operations.UpdatetNotificationTargetResponse:
         r"""Update NotificationTarget
         Update NotificationTarget
         """
         request = operations.UpdatetNotificationTargetRequest(
             id=id,
-            request_body=request_body,
+            notification_target=notification_target,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdatetNotificationTargetRequest, base_url, '/notification-targets/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "notification_target", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

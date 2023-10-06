@@ -1,4 +1,5 @@
-# create_pipeline
+# CreatePipeline
+(*create_pipeline*)
 
 ### Available Operations
 
@@ -22,34 +23,32 @@ s = cribl.Cribl(
 
 req = shared.Pipeline(
     conf=shared.PipelineConf(
-        async_func_timeout=959143,
-        description='officiis',
+        async_func_timeout=449035,
+        description='Quality-focused non-volatile functionalities',
         functions=[
             shared.PipelineFunctionConf(
                 conf=shared.PipelineFunctionConfFunctionSpecificConfigs(),
-                description='fuga',
+                description='Organic mobile strategy',
                 disabled=False,
-                filter='pariatur',
+                filter='Metrics synergize',
                 final=False,
-                group_id='debitis',
-                id='008e6f8c-5f35-40d8-8db5-a34181430104',
+                group_id='Direct Grenada',
+                id='<ID>',
             ),
         ],
         groups={
-            "ab": shared.PipelineConfGroups(
-                description='laudantium',
+            "sunt": shared.PipelineConfGroups(
+                description='Object-based scalable process improvement',
                 disabled=False,
-                name='Rosa Stiedemann',
+                name='withdrawal',
             ),
         },
-        output='ipsa',
+        output='intelligence',
         streamtags=[
-            'eveniet',
-            'impedit',
-            'officiis',
+            'array',
         ],
     ),
-    id='7e253b66-8451-4c6c-ae20-5e16deab3fec',
+    id='<ID>',
 )
 
 res = s.create_pipeline.post(req)

@@ -1,4 +1,5 @@
-# global_variable_id
+# GlobalVariableID
+(*global_variable_id*)
 
 ### Available Operations
 
@@ -23,7 +24,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.global_variable_id.delete('atque')
+res = s.global_variable_id.delete(id='program')
 
 if res.global_vars is not None:
     # handle response
@@ -58,7 +59,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.global_variable_id.get('beatae')
+res = s.global_variable_id.get(id='female')
 
 if res.global_vars is not None:
     # handle response
@@ -93,13 +94,13 @@ s = cribl.Cribl(
 )
 
 
-res = s.global_variable_id.update('at', shared.GlobalVar(
-    description='labore',
-    id='c700b607-f3c9-43c7-bb9d-a3f2ceda7e23',
-    lib='repellat',
-    tags='explicabo',
-    type=shared.GlobalVarType.STRING,
-    value='exercitationem',
+res = s.global_variable_id.update(id='Van', global_var=shared.GlobalVar(
+    description='Advanced encompassing orchestration',
+    id='<ID>',
+    lib='Metal cheater Islands',
+    tags='withdrawal extend',
+    type=shared.GlobalVarType.NUMBER,
+    value='Carolina syndicate',
 ))
 
 if res.global_vars is not None:

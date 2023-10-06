@@ -1,4 +1,5 @@
-# mapping_ruleset
+# MappingRuleset
+(*mapping_ruleset*)
 
 ### Available Operations
 
@@ -28,22 +29,11 @@ req = shared.MappingRuleset(
     conf=shared.MappingRulesetConf(
         functions=[
             {
-                "rerum": 'veritatis',
-            },
-            {
-                "autem": 'quidem',
-                "totam": 'porro',
-                "deserunt": 'magni',
-                "nihil": 'voluptas',
-            },
-            {
-                "commodi": 'alias',
-                "fuga": 'aut',
-                "dolore": 'maxime',
+                "odio": 'bluetooth',
             },
         ],
     ),
-    id='495cc699-171b-451c-9bdb-1cf4b888ebdf',
+    id='<ID>',
 )
 
 res = s.mapping_ruleset.create(req)
@@ -81,7 +71,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_ruleset.delete('quo')
+res = s.mapping_ruleset.delete(id='program')
 
 if res.mapping_rulesets is not None:
     # handle response
@@ -116,7 +106,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_ruleset.get('incidunt')
+res = s.mapping_ruleset.get(id='female')
 
 if res.mapping_rulesets is not None:
     # handle response
@@ -151,32 +141,16 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_ruleset.update('quod', shared.MappingRuleset(
+res = s.mapping_ruleset.update(id='Van', mapping_ruleset=shared.MappingRuleset(
     active=False,
     conf=shared.MappingRulesetConf(
         functions=[
             {
-                "id": 'excepturi',
-                "occaecati": 'libero',
-                "quo": 'esse',
-                "hic": 'maxime',
-            },
-            {
-                "soluta": 'fugit',
-            },
-            {
-                "eligendi": 'recusandae',
-                "veritatis": 'aut',
-                "laudantium": 'iusto',
-                "dolor": 'voluptates',
-            },
-            {
-                "magni": 'rerum',
-                "doloremque": 'voluptatem',
+                "aut": 'Reactive',
             },
         ],
     ),
-    id='6d678878-ba85-481a-9820-8c54fefa9c95',
+    id='<ID>',
 ))
 
 if res.mapping_rulesets is not None:

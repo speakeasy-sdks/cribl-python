@@ -1,0 +1,12 @@
+# LookupFile1
+
+
+## Fields
+
+| Field                                                                                  | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `description`                                                                          | *Optional[str]*                                                                        | :heavy_minus_sign:                                                                     | Brief description of this lookup. Optional.                                            |
+| `file_info`                                                                            | [Optional[shared.LookupFile1FileInfo]](undefined/models/shared/lookupfile1fileinfo.md) | :heavy_minus_sign:                                                                     | Uploaded file information                                                              |
+| `id`                                                                                   | *Optional[str]*                                                                        | :heavy_check_mark:                                                                     | Filename with the lookup table. Required.                                              |
+| `size`                                                                                 | *Optional[int]*                                                                        | :heavy_minus_sign:                                                                     | File size. Optional.                                                                   |
+| `tags`                                                                                 | *Optional[str]*                                                                        | :heavy_minus_sign:                                                                     | One or more tags related to this lookup. Optional.                                     |

@@ -1,4 +1,5 @@
-# user
+# User
+(*user*)
 
 ### Available Operations
 
@@ -21,20 +22,17 @@ s = cribl.Cribl(
 )
 
 req = shared.User(
-    current_password='voluptas',
+    current_password='Jeep Ford',
     disabled=False,
-    email='Jeff69@gmail.com',
-    first='aperiam',
-    id='d51a44bf-01ba-4d87-86d4-6082bfbdc41f',
-    last='delectus',
-    password='nemo',
+    email='Sean.Brown40@hotmail.com',
+    first='crossly',
+    id='<ID>',
+    last='iterate South Delaware',
+    password='JJFZd3JtxWkW1UM',
     roles=[
-        'magnam',
-        'officiis',
-        'sed',
-        'mollitia',
+        'intuitive',
     ],
-    username='Stephen_Green32',
+    username='Lucinda56',
 )
 
 res = s.user.create_user(req)

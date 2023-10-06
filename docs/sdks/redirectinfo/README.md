@@ -1,4 +1,5 @@
-# redirect_info
+# RedirectInfo
+(*redirect_info*)
 
 ### Available Operations
 
