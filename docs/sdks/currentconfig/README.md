@@ -1,4 +1,5 @@
-# current_config
+# CurrentConfig
+(*current_config*)
 
 ### Available Operations
 

@@ -26,9 +26,12 @@ class GetLogFileListRequest:
 @dataclasses.dataclass
 class GetLogFileListResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     edge_files: Optional[shared_edgefiles.EdgeFiles] = dataclasses.field(default=None)
     r"""a list of EdgeFile objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

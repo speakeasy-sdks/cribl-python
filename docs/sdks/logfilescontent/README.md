@@ -1,4 +1,5 @@
-# log_files_content
+# LogFilesContent
+(*log_files_content*)
 
 ### Available Operations
 
@@ -21,13 +22,7 @@ s = cribl.Cribl(
 )
 
 req = operations.GetLogFilesContentsRequest(
-    et=627161,
-    files='porro',
-    filter='blanditiis',
-    group_id='quae',
-    limit=169819,
-    lt=885797,
-    type='sed',
+    type='Northeast Hatchback Kia',
 )
 
 res = s.log_files_content.get(req)

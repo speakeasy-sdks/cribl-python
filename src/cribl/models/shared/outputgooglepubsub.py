@@ -72,44 +72,44 @@ class OutputGooglePubsub:
     topic_name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('topicName') }})
     r"""ID of the topic to send events to."""
     type: OutputGooglePubsubType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    batch_size: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('batchSize'), 'exclude': lambda f: f is None }})
+    batch_size: Optional[int] = dataclasses.field(default=1000, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('batchSize'), 'exclude': lambda f: f is None }})
     r"""The maximum number of items the Google API should batch before it sends them to the topic."""
-    batch_timeout: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('batchTimeout'), 'exclude': lambda f: f is None }})
+    batch_timeout: Optional[int] = dataclasses.field(default=100, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('batchTimeout'), 'exclude': lambda f: f is None }})
     r"""The maximum amount of time, in milliseconds, that the Google API should wait to send a batch (if the Batch size is not reached)."""
-    create_topic: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createTopic'), 'exclude': lambda f: f is None }})
+    create_topic: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('createTopic'), 'exclude': lambda f: f is None }})
     r"""If enabled, create topic if it does not exist."""
     environment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('environment'), 'exclude': lambda f: f is None }})
     r"""Optionally, enable this config only on a specified Git branch. If empty, will be enabled everywhere."""
     flush_period_sec: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flushPeriodSec'), 'exclude': lambda f: f is None }})
     r"""Maximum time to wait before sending a batch (when Max batch size is not reached)."""
-    google_auth_method: Optional[OutputGooglePubsubAuthenticationMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('googleAuthMethod'), 'exclude': lambda f: f is None }})
+    google_auth_method: Optional[OutputGooglePubsubAuthenticationMethod] = dataclasses.field(default=OutputGooglePubsubAuthenticationMethod.MANUAL, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('googleAuthMethod'), 'exclude': lambda f: f is None }})
     r"""Google authentication method. Choose Auto to use environment variables PUBSUB_PROJECT and PUBSUB_CREDENTIALS.."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Unique ID for this output"""
-    max_in_progress: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxInProgress'), 'exclude': lambda f: f is None }})
+    max_in_progress: Optional[int] = dataclasses.field(default=10, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxInProgress'), 'exclude': lambda f: f is None }})
     r"""The maximum number of in-progress API requests before backpressure is applied."""
-    max_queue_size: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxQueueSize'), 'exclude': lambda f: f is None }})
+    max_queue_size: Optional[int] = dataclasses.field(default=100, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxQueueSize'), 'exclude': lambda f: f is None }})
     r"""Maximum number of queued batches before blocking."""
-    max_record_size_kb: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxRecordSizeKB'), 'exclude': lambda f: f is None }})
+    max_record_size_kb: Optional[int] = dataclasses.field(default=256, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxRecordSizeKB'), 'exclude': lambda f: f is None }})
     r"""Maximum size (KB) of batches to send."""
-    on_backpressure: Optional[OutputGooglePubsubBackpressureBehavior] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onBackpressure'), 'exclude': lambda f: f is None }})
+    on_backpressure: Optional[OutputGooglePubsubBackpressureBehavior] = dataclasses.field(default=OutputGooglePubsubBackpressureBehavior.BLOCK, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onBackpressure'), 'exclude': lambda f: f is None }})
     r"""Whether to block, drop, or queue events when all receivers are exerting backpressure."""
-    ordered_delivery: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orderedDelivery'), 'exclude': lambda f: f is None }})
+    ordered_delivery: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('orderedDelivery'), 'exclude': lambda f: f is None }})
     r"""If enabled, send events in the order they were added to the queue. For this to work correctly, the process receiving events must have ordering enabled."""
     pipeline: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pipeline'), 'exclude': lambda f: f is None }})
     r"""Pipeline to process data before sending out to this output."""
-    pq_compress: Optional[OutputGooglePubsubCompression] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqCompress'), 'exclude': lambda f: f is None }})
+    pq_compress: Optional[OutputGooglePubsubCompression] = dataclasses.field(default=OutputGooglePubsubCompression.NONE, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqCompress'), 'exclude': lambda f: f is None }})
     r"""Codec to use to compress the persisted data."""
     pq_controls: Optional[OutputGooglePubsubPqControls] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqControls'), 'exclude': lambda f: f is None }})
-    pq_max_file_size: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqMaxFileSize'), 'exclude': lambda f: f is None }})
+    pq_max_file_size: Optional[str] = dataclasses.field(default='1 MB', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqMaxFileSize'), 'exclude': lambda f: f is None }})
     r"""The maximum size to store in each queue file before closing and optionally compressing (KB, MB, etc.)."""
     pq_max_size: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqMaxSize'), 'exclude': lambda f: f is None }})
     r"""The maximum amount of disk space the queue is allowed to consume. Once reached, the system stops queueing and applies the fallback Queue-full behavior. Enter a numeral with units of KB, MB, etc."""
-    pq_on_backpressure: Optional[OutputGooglePubsubQueueFullBehavior] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqOnBackpressure'), 'exclude': lambda f: f is None }})
+    pq_on_backpressure: Optional[OutputGooglePubsubQueueFullBehavior] = dataclasses.field(default=OutputGooglePubsubQueueFullBehavior.BLOCK, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqOnBackpressure'), 'exclude': lambda f: f is None }})
     r"""Whether to block or drop events when the queue is exerting backpressure (full capacity or low disk). 'Block' is the same behavior as non-PQ blocking. 'Drop new data' throws away incoming data, while leaving the contents of the PQ unchanged."""
-    pq_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqPath'), 'exclude': lambda f: f is None }})
+    pq_path: Optional[str] = dataclasses.field(default='$CRIBL_HOME/state/queues', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqPath'), 'exclude': lambda f: f is None }})
     r"""The location for the persistent queue files. To this field's value, the system will append: /<worker-id>/<output-id>."""
-    pq_strict_ordering: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqStrictOrdering'), 'exclude': lambda f: f is None }})
+    pq_strict_ordering: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqStrictOrdering'), 'exclude': lambda f: f is None }})
     r"""Toggle this off to forward new events to receiver(s) before queue is flushed. Otherwise, default drain behavior is FIFO (first in, first out)."""
     region: Optional[OutputGooglePubsubRegion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('region'), 'exclude': lambda f: f is None }})
     r"""Region to publish messages to. Select 'default' to allow Google to auto-select the nearest region. When using ordered delivery, the selected region must be allowed by message storage policy."""

@@ -1,4 +1,5 @@
-# mapping_rulesets
+# MappingRulesets
+(*mapping_rulesets*)
 
 ### Available Operations
 
@@ -23,7 +24,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_rulesets.delete('quia')
+res = s.mapping_rulesets.delete(id='program')
 
 if res.mapping_rulesets is not None:
     # handle response
@@ -87,32 +88,9 @@ s = cribl.Cribl(
 )
 
 
-res = s.mapping_rulesets.update('officiis', shared.MappingRuleset(
-    active=False,
-    conf=shared.MappingRulesetConf(
-        functions=[
-            {
-                "quis": 'enim',
-                "eum": 'nemo',
-                "illum": 'nesciunt',
-                "sit": 'odio',
-            },
-            {
-                "asperiores": 'recusandae',
-                "voluptates": 'praesentium',
-                "dicta": 'fugit',
-                "sit": 'aliquid',
-            },
-            {
-                "sed": 'deleniti',
-                "sunt": 'nesciunt',
-                "delectus": 'laborum',
-                "aliquam": 'deserunt',
-            },
-        ],
-    ),
-    id='41c480d3-f213-42af-8310-2d514f4cc6f1',
-))
+res = s.mapping_rulesets.update(id='Van', request_body={
+    "East": 'male',
+})
 
 if res.mapping_rulesets is not None:
     # handle response
@@ -120,10 +98,10 @@ if res.mapping_rulesets is not None:
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `id`                                                                     | *str*                                                                    | :heavy_check_mark:                                                       | Unique ID                                                                |
-| `mapping_ruleset`                                                        | [Optional[shared.MappingRuleset]](../../models/shared/mappingruleset.md) | :heavy_minus_sign:                                                       | MappingRuleset object to be updated                                      |
+| Parameter                           | Type                                | Required                            | Description                         |
+| ----------------------------------- | ----------------------------------- | ----------------------------------- | ----------------------------------- |
+| `id`                                | *str*                               | :heavy_check_mark:                  | Unique ID                           |
+| `request_body`                      | dict[str, *Any*]                    | :heavy_minus_sign:                  | MappingRuleset object to be updated |
 
 
 ### Response

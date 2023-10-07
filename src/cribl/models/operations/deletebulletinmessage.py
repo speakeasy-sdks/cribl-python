@@ -3,8 +3,7 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import bulletinmessage as shared_bulletinmessage
-from typing import Optional
+from typing import Any, Optional
 
 
 
@@ -20,9 +19,12 @@ class DeleteBulletinMessageRequest:
 @dataclasses.dataclass
 class DeleteBulletinMessageResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    bulletin_message: Optional[shared_bulletinmessage.BulletinMessage] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    bulletin_message: Optional[dict[str, Any]] = dataclasses.field(default=None)
     r"""a list of BulletinMessage objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

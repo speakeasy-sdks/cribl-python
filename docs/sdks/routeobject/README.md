@@ -1,4 +1,5 @@
-# route_object
+# RouteObject
+(*route_object*)
 
 ### Available Operations
 
@@ -21,56 +22,9 @@ s = cribl.Cribl(
 )
 
 
-res = s.route_object.update('aspernatur', shared.Routes(
-    comments=[
-        {
-            "dicta": 'inventore',
-            "ullam": 'iusto',
-            "inventore": 'voluptate',
-            "sed": 'dolorem',
-        },
-        {
-            "exercitationem": 'amet',
-        },
-        {
-            "voluptate": 'pariatur',
-            "minus": 'a',
-        },
-        {
-            "totam": 'cupiditate',
-            "at": 'doloribus',
-            "omnis": 'quam',
-        },
-    ],
-    groups={
-        "voluptates": shared.RoutesGroups(
-            description='sequi',
-            disabled=False,
-            name='Gertrude Kautzer',
-        ),
-        "aperiam": shared.RoutesGroups(
-            description='perspiciatis',
-            disabled=False,
-            name='Kellie Miller',
-        ),
-    },
-    id='ddc5f111-dea1-4026-9541-a4d190feb217',
-    routes=[
-        {
-            "distinctio": 'placeat',
-        },
-        {
-            "eligendi": 'sit',
-            "possimus": 'distinctio',
-            "distinctio": 'assumenda',
-            "illum": 'soluta',
-        },
-        {
-            "laudantium": 'tempora',
-            "esse": 'doloremque',
-        },
-    ],
-))
+res = s.route_object.update(id='Van', request_body={
+    "East": 'male',
+})
 
 if res.routes is not None:
     # handle response
@@ -81,7 +35,7 @@ if res.routes is not None:
 | Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | `id`                                                                       | *str*                                                                      | :heavy_check_mark:                                                         | There is only one route entity and it should be accessed with id: default. |
-| `routes`                                                                   | [Optional[shared.Routes]](../../models/shared/routes.md)                   | :heavy_minus_sign:                                                         | Routes object                                                              |
+| `request_body`                                                             | dict[str, *Any*]                                                           | :heavy_minus_sign:                                                         | Routes object                                                              |
 
 
 ### Response

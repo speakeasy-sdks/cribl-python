@@ -33,19 +33,19 @@ class OutputRing:
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Unique ID for this output"""
     type: OutputRingType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    compress: Optional[OutputRingCompression] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('compress'), 'exclude': lambda f: f is None }})
+    compress: Optional[OutputRingCompression] = dataclasses.field(default=OutputRingCompression.GZIP, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('compress'), 'exclude': lambda f: f is None }})
     r"""Select data compression format. Optional."""
     dest_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destPath'), 'exclude': lambda f: f is None }})
     r"""Path to use to write metrics. Defaults to $CRIBL_HOME/state/<id>"""
     environment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('environment'), 'exclude': lambda f: f is None }})
     r"""Optionally, enable this config only on a specified Git branch. If empty, will be enabled everywhere."""
-    format: Optional[OutputRingDataFormat] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format'), 'exclude': lambda f: f is None }})
+    format: Optional[OutputRingDataFormat] = dataclasses.field(default=OutputRingDataFormat.JSON, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format'), 'exclude': lambda f: f is None }})
     r"""Format of the output data."""
-    max_data_size: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxDataSize'), 'exclude': lambda f: f is None }})
+    max_data_size: Optional[str] = dataclasses.field(default='1GB', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxDataSize'), 'exclude': lambda f: f is None }})
     r"""Maximum disk space allowed to be consumed (e.g., 420MB or 4GB). Once reached, older data will be deleted."""
-    max_data_time: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxDataTime'), 'exclude': lambda f: f is None }})
+    max_data_time: Optional[str] = dataclasses.field(default='24h', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxDataTime'), 'exclude': lambda f: f is None }})
     r"""Maximum amount of time to retain data (e.g., 2h or 4d). Once reached, older data will be deleted."""
-    on_backpressure: Optional[OutputRingBackpressureBehavior] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onBackpressure'), 'exclude': lambda f: f is None }})
+    on_backpressure: Optional[OutputRingBackpressureBehavior] = dataclasses.field(default=OutputRingBackpressureBehavior.BLOCK, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onBackpressure'), 'exclude': lambda f: f is None }})
     r"""Whether to block or drop events when all receivers are exerting backpressure."""
     partition_expr: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partitionExpr'), 'exclude': lambda f: f is None }})
     r"""JS expression to define how files are partitioned and organized. If left blank, Cribl Stream will fallback on event.__partition."""

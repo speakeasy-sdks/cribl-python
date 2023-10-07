@@ -3,7 +3,6 @@
 from __future__ import annotations
 import dataclasses
 from ..shared import appmode as shared_appmode
-from ..shared import bulletinmessage as shared_bulletinmessage
 from ..shared import licenseinfo as shared_licenseinfo
 from ..shared import systemconf as shared_systemconf
 from cribl import utils
@@ -114,7 +113,7 @@ class SystemInfo:
     limits: SystemInfoLimits = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limits') }})
     loadavg: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('loadavg') }})
     memory: SystemInfoMemory = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('memory') }})
-    messages: list[shared_bulletinmessage.BulletinMessage] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('messages') }})
+    messages: list[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('messages') }})
     net: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('net') }})
     os: SystemInfoOs = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('os') }})
     system_conf: shared_systemconf.SystemConf = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemConf') }})

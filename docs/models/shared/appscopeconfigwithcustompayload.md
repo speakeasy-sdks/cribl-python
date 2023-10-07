@@ -5,5 +5,5 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `dir`              | *str*              | :heavy_check_mark: | N/A                |
-| `enable`           | *bool*             | :heavy_check_mark: | N/A                |
+| `dir`              | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `enable`           | *Optional[bool]*   | :heavy_check_mark: | N/A                |

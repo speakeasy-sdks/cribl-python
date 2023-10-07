@@ -1,4 +1,5 @@
-# request_auth
+# RequestAuth
+(*request_auth*)
 
 ### Available Operations
 
@@ -22,7 +23,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.request_auth.get('aliquid', 'eum')
+res = s.request_auth.get(relay_state='female', saml_response='program')
 
 if res.success is not None:
     # handle response
@@ -57,10 +58,7 @@ s = cribl.Cribl(
     ),
 )
 
-req = operations.PostRequestAuthRequestBody(
-    relay_state='vel',
-    saml_response='ad',
-)
+req = operations.PostRequestAuthRequestBody()
 
 res = s.request_auth.post(req)
 

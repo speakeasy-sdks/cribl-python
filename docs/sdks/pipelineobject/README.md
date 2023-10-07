@@ -1,4 +1,5 @@
-# pipeline_object
+# PipelineObject
+(*pipeline_object*)
 
 ### Available Operations
 
