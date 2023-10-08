@@ -1,4 +1,5 @@
-# sample_events
+# SampleEvents
+(*sample_events*)
 
 ### Available Operations
 
@@ -21,36 +22,14 @@ s = cribl.Cribl(
 )
 
 req = shared.PreviewDataParams(
-    cpu_profile=False,
-    dropped=False,
     events=[
         {
-            "aliquam": 'repudiandae',
-            "amet": 'natus',
-            "ab": 'officiis',
-        },
-        {
-            "rerum": 'placeat',
-            "ab": 'ad',
-        },
-        {
-            "porro": 'labore',
-            "impedit": 'ut',
-            "earum": 'ullam',
-        },
-        {
-            "enim": 'cupiditate',
-            "occaecati": 'itaque',
+            "payment": 'Silver',
         },
     ],
-    input_id='fuga',
-    level=234845,
-    memory=268749,
-    mode=shared.PreviewDataParamsMode.PIPE,
-    pipeline_id='explicabo',
-    sample_id='suscipit',
-    sample_pipeline_id='ipsa',
-    timeout=910410,
+    mode=shared.PreviewDataParamsMode.ROUTE,
+    pipeline_id='mealy Metrics',
+    sample_id='Market',
 )
 
 res = s.sample_events.post(req)

@@ -1,4 +1,5 @@
-# dataset_object
+# DatasetObject
+(*dataset_object*)
 
 ### Available Operations
 
@@ -23,7 +24,7 @@ s = cribl.Cribl(
     ),
 )
 
-req = 'quibusdam'
+req = 'online'
 
 res = s.dataset_object.create(req)
 
@@ -60,7 +61,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.dataset_object.delete('iure')
+res = s.dataset_object.delete(id='program')
 
 if res.dataset is not None:
     # handle response
@@ -95,7 +96,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.dataset_object.get('odit')
+res = s.dataset_object.get(id='female')
 
 if res.dataset is not None:
     # handle response
@@ -130,7 +131,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.dataset_object.update('voluptatibus', 'vel')
+res = s.dataset_object.update(id='Van', request_body='East')
 
 if res.dataset is not None:
     # handle response

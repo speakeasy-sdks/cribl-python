@@ -1,4 +1,5 @@
-# user_properties
+# UserProperties
+(*user_properties*)
 
 ### Available Operations
 
@@ -21,19 +22,16 @@ s = cribl.Cribl(
 )
 
 
-res = s.user_properties.update('excepturi', shared.UserProfile(
+res = s.user_properties.update(id='Van', user_profile=shared.UserProfile(
     disabled=False,
-    email='Novella70@yahoo.com',
-    first='illo',
-    id='dd3bbce2-47b7-4684-aff5-0126d71cffbd',
-    last='aut',
-    password='itaque',
+    email='Evie.Quitzon62@gmail.com',
+    first='redundant cheater Islands',
+    id='<ID>',
+    last='withdrawal extend',
     roles=[
-        'molestiae',
-        'quaerat',
-        'distinctio',
+        'Plastic',
     ],
-    username='Jewell6',
+    username='Brody_Nolan88',
 ))
 
 if res.user_profiles is not None:

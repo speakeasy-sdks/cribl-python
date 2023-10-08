@@ -1,4 +1,5 @@
-# regex_lib_entry
+# RegexLibEntry
+(*regex_lib_entry*)
 
 ### Available Operations
 
@@ -23,7 +24,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.regex_lib_entry.delete('facere')
+res = s.regex_lib_entry.delete(id='program')
 
 if res.regex_lib_entries is not None:
     # handle response
@@ -57,14 +58,9 @@ s = cribl.Cribl(
     ),
 )
 
-req = shared.RegexLibEntry(
-    description='sed',
-    id='1f9ad030-c4ec-4c11-a083-6429068b8502',
-    lib='officia',
-    regex='quaerat',
-    sample_data='corporis',
-    tags='accusamus',
-)
+req = {
+    "payment": 'Silver',
+}
 
 res = s.regex_lib_entry.post(req)
 
@@ -74,9 +70,9 @@ if res.regex_lib_entries is not None:
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `request`                                                    | [shared.RegexLibEntry](../../models/shared/regexlibentry.md) | :heavy_check_mark:                                           | The request object to use for the request.                   |
+| Parameter                                  | Type                                       | Required                                   | Description                                |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| `request`                                  | [dict[str, Any]](../../models//.md)        | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
@@ -101,14 +97,9 @@ s = cribl.Cribl(
 )
 
 
-res = s.regex_lib_entry.update('iusto', shared.RegexLibEntry(
-    description='sapiente',
-    id='73bc845e-320a-4319-b4ba-df947c9a867b',
-    lib='optio',
-    regex='incidunt',
-    sample_data='eos',
-    tags='magnam',
-))
+res = s.regex_lib_entry.update(id='Van', request_body={
+    "East": 'male',
+})
 
 if res.regex_lib_entries is not None:
     # handle response
@@ -116,10 +107,10 @@ if res.regex_lib_entries is not None:
 
 ### Parameters
 
-| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `id`                                                                   | *str*                                                                  | :heavy_check_mark:                                                     | Unique ID                                                              |
-| `regex_lib_entry`                                                      | [Optional[shared.RegexLibEntry]](../../models/shared/regexlibentry.md) | :heavy_minus_sign:                                                     | RegexLibEntry object to be updated                                     |
+| Parameter                          | Type                               | Required                           | Description                        |
+| ---------------------------------- | ---------------------------------- | ---------------------------------- | ---------------------------------- |
+| `id`                               | *str*                              | :heavy_check_mark:                 | Unique ID                          |
+| `request_body`                     | dict[str, *Any*]                   | :heavy_minus_sign:                 | RegexLibEntry object to be updated |
 
 
 ### Response

@@ -5,7 +5,7 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `cron_schedule`    | *str*              | :heavy_check_mark: | N/A                |
-| `enabled`          | *bool*             | :heavy_check_mark: | N/A                |
-| `keep_last_n`      | *int*              | :heavy_check_mark: | N/A                |
-| `tz`               | *str*              | :heavy_check_mark: | N/A                |
+| `cron_schedule`    | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `enabled`          | *Optional[bool]*   | :heavy_check_mark: | N/A                |
+| `keep_last_n`      | *Optional[int]*    | :heavy_check_mark: | N/A                |
+| `tz`               | *Optional[str]*    | :heavy_check_mark: | N/A                |

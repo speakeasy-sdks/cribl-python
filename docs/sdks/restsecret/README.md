@@ -1,4 +1,5 @@
-# rest_secret
+# RestSecret
+(*rest_secret*)
 
 ### Available Operations
 
@@ -24,15 +25,8 @@ s = cribl.Cribl(
 )
 
 req = shared.RestSecret(
-    api_key='suscipit',
-    description='quibusdam',
-    id='dca8ef51-fcb4-4c59-bec1-2cdaad0ec7af',
-    password='saepe',
-    secret_key='facere',
-    secret_type=shared.SecretType.CREDENTIALS,
-    tags='at',
-    username='Kelli_Ankunding27',
-    value='numquam',
+    id='<ID>',
+    secret_type=shared.SecretType.KEYPAIR,
 )
 
 res = s.rest_secret.create(req)
@@ -70,7 +64,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.rest_secret.delete('corrupti')
+res = s.rest_secret.delete(id='program')
 
 if res.rest_secret is not None:
     # handle response
@@ -105,7 +99,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.rest_secret.get('similique')
+res = s.rest_secret.get(id='female')
 
 if res.rest_secret is not None:
     # handle response
@@ -140,16 +134,9 @@ s = cribl.Cribl(
 )
 
 
-res = s.rest_secret.update('dolore', shared.RestSecret(
-    api_key='esse',
-    description='reiciendis',
-    id='9390c588-8098-43da-bf9e-f3ffdd9f7f07',
-    password='omnis',
-    secret_key='similique',
-    secret_type=shared.SecretType.CREDENTIALS,
-    tags='modi',
-    username='Rebecca.Durgan',
-    value='sed',
+res = s.rest_secret.update(id='Van', rest_secret=shared.RestSecret(
+    id='<ID>',
+    secret_type=shared.SecretType.TEXT,
 ))
 
 if res.rest_secret is not None:

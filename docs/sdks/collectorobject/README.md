@@ -1,4 +1,5 @@
-# collector_object
+# CollectorObject
+(*collector_object*)
 
 ### Available Operations
 

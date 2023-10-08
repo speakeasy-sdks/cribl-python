@@ -1,4 +1,5 @@
-# fleet_mapping
+# FleetMapping
+(*fleet_mapping*)
 
 ### Available Operations
 
@@ -20,29 +21,9 @@ s = cribl.Cribl(
     ),
 )
 
-req = shared.MappingRuleset(
-    active=False,
-    conf=shared.MappingRulesetConf(
-        functions=[
-            {
-                "dignissimos": 'libero',
-                "illo": 'ab',
-            },
-            {
-                "accusamus": 'saepe',
-                "tempore": 'veniam',
-            },
-            {
-                "reiciendis": 'earum',
-            },
-            {
-                "praesentium": 'nemo',
-                "repellat": 'quisquam',
-            },
-        ],
-    ),
-    id='37814d4c-98e0-4c2b-b89e-b75dad636c60',
-)
+req = {
+    "online": 'Configuration',
+}
 
 res = s.fleet_mapping.create(req)
 
@@ -52,9 +33,9 @@ if res.mapping_rulesets is not None:
 
 ### Parameters
 
-| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `request`                                                      | [shared.MappingRuleset](../../models/shared/mappingruleset.md) | :heavy_check_mark:                                             | The request object to use for the request.                     |
+| Parameter                                  | Type                                       | Required                                   | Description                                |
+| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
+| `request`                                  | [dict[str, Any]](../../models//.md)        | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response

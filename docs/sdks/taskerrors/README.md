@@ -1,4 +1,5 @@
-# task_errors
+# TaskErrors
+(*task_errors*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.task_errors.get('sunt', 'asperiores')
+res = s.task_errors.get(group='female', id='program')
 
 if res.task_errors is not None:
     # handle response

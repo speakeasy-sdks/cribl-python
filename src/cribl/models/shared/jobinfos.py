@@ -12,7 +12,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class JobInfos:
-    r"""a list of JobInfo objects"""
     items: Optional[list[shared_jobinfo.JobInfo]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})
     r"""the pre-limited items in the list of results"""
     limit: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limit'), 'exclude': lambda f: f is None }})

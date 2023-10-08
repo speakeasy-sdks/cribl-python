@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import eventbreakerruleset as shared_eventbreakerruleset
 from ..shared import eventbreakerrulesets as shared_eventbreakerrulesets
-from typing import Optional
+from typing import Any, Optional
 
 
 
@@ -13,7 +12,7 @@ from typing import Optional
 class UpdateEventBreakerRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Unique ID"""
-    event_breaker_ruleset: Optional[shared_eventbreakerruleset.EventBreakerRuleset] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    request_body: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""Event Breaker Ruleset object to be updated"""
     
 
@@ -23,9 +22,12 @@ class UpdateEventBreakerRequest:
 @dataclasses.dataclass
 class UpdateEventBreakerResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     event_breaker_rulesets: Optional[shared_eventbreakerrulesets.EventBreakerRulesets] = dataclasses.field(default=None)
     r"""a list of Event Breaker Ruleset objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

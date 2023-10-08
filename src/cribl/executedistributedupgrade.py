@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
 from cribl.models import errors, operations, shared
-from typing import Optional
+from typing import Any, Optional
 
 class ExecuteDistributedUpgrade:
     sdk_configuration: SDKConfiguration
@@ -12,24 +12,24 @@ class ExecuteDistributedUpgrade:
         self.sdk_configuration = sdk_config
         
     
-    def post(self, group: str, distributed_upgrade_request: Optional[shared.DistributedUpgradeRequest] = None) -> operations.PostExecuteDistributedUpgradeResponse:
+    def post(self, group: str, request_body: Optional[dict[str, Any]] = None) -> operations.PostExecuteDistributedUpgradeResponse:
         r"""Execute distributed group upgrade
         Execute distributed group upgrade
         """
         request = operations.PostExecuteDistributedUpgradeRequest(
             group=group,
-            distributed_upgrade_request=distributed_upgrade_request,
+            request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.PostExecuteDistributedUpgradeRequest, base_url, '/system/distributed/upgrade/{group}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "distributed_upgrade_request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

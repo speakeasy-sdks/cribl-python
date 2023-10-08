@@ -1,4 +1,5 @@
-# data_sample
+# DataSample
+(*data_sample*)
 
 ### Available Operations
 
@@ -21,9 +22,7 @@ s = cribl.Cribl(
 )
 
 req = {
-    "nemo": 'voluptate',
-    "blanditiis": 'officia',
-    "voluptas": 'numquam',
+    "payment": 'Silver',
 }
 
 res = s.data_sample.post(req)
