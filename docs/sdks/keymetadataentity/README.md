@@ -1,4 +1,5 @@
-# key_metadata_entity
+# KeyMetadataEntity
+(*key_metadata_entity*)
 
 ### Available Operations
 
@@ -24,16 +25,7 @@ s = cribl.Cribl(
 )
 
 req = shared.KeyMetadataEntity(
-    algorithm=shared.KeyMetadataEntityEncryptionAlgorithm.AES_256_CBC,
-    cipher_key='numquam',
-    created=947822,
-    description='adipisci',
-    expires=728559,
-    key_id='in',
-    keyclass=329651,
-    kms=shared.KeyMetadataEntityKMSForThisKey.LOCAL,
-    plain_key='ex',
-    use_iv=False,
+    key_id='bluetooth Extended',
 )
 
 res = s.key_metadata_entity.create(req)
@@ -71,7 +63,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.delete('minus')
+res = s.key_metadata_entity.delete(id='program')
 
 if res.key_metadata_entities is not None:
     # handle response
@@ -106,7 +98,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.get('ab')
+res = s.key_metadata_entity.get(id='female')
 
 if res.key_metadata_entities is not None:
     # handle response
@@ -141,17 +133,8 @@ s = cribl.Cribl(
 )
 
 
-res = s.key_metadata_entity.update('beatae', shared.KeyMetadataEntity(
-    algorithm=shared.KeyMetadataEntityEncryptionAlgorithm.AES_256_GCM,
-    cipher_key='nisi',
-    created=786954,
-    description='dolor',
-    expires=496548,
-    key_id='fuga',
-    keyclass=326903,
-    kms=shared.KeyMetadataEntityKMSForThisKey.LOCAL,
-    plain_key='architecto',
-    use_iv=False,
+res = s.key_metadata_entity.update(id='Van', key_metadata_entity=shared.KeyMetadataEntity(
+    key_id='Reactive',
 ))
 
 if res.key_metadata_entities is not None:

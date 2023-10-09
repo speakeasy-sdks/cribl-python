@@ -12,7 +12,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class RestSecret:
-    r"""New RestSecret object"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     secret_type: shared_secrettype.SecretType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('secretType') }})
     api_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiKey'), 'exclude': lambda f: f is None }})

@@ -2,8 +2,8 @@
 
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
-from cribl.models import errors, operations, shared
-from typing import Optional
+from cribl.models import errors, operations
+from typing import Any, Optional
 
 class RouteListID:
     sdk_configuration: SDKConfiguration
@@ -24,8 +24,8 @@ class RouteListID:
         
         url = utils.generate_url(operations.GetRouteListIDRequest, base_url, '/routes/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -36,7 +36,7 @@ class RouteListID:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.Routes])
+                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
                 res.routes = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

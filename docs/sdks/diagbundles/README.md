@@ -1,4 +1,5 @@
-# diag_bundles
+# DiagBundles
+(*diag_bundles*)
 
 ### Available Operations
 

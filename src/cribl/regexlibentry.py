@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
 from cribl.models import errors, operations, shared
-from typing import Optional
+from typing import Any, Optional
 
 class RegexLibEntry:
     sdk_configuration: SDKConfiguration
@@ -24,8 +24,8 @@ class RegexLibEntry:
         
         url = utils.generate_url(operations.DeleteRegexLibEntryRequest, base_url, '/lib/regex/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -53,7 +53,7 @@ class RegexLibEntry:
         return res
 
     
-    def post(self, request: shared.RegexLibEntry) -> operations.PostRegexLibEntryResponse:
+    def post(self, request: dict[str, Any]) -> operations.PostRegexLibEntryResponse:
         r"""Create RegexLibEntry
         Create RegexLibEntry
         """
@@ -61,11 +61,11 @@ class RegexLibEntry:
         
         url = base_url + '/lib/regex'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -93,24 +93,24 @@ class RegexLibEntry:
         return res
 
     
-    def update(self, id: str, regex_lib_entry: Optional[shared.RegexLibEntry] = None) -> operations.UpdateRegexLibEntryResponse:
+    def update(self, id: str, request_body: Optional[dict[str, Any]] = None) -> operations.UpdateRegexLibEntryResponse:
         r"""Update RegexLibEntry
         Update RegexLibEntry
         """
         request = operations.UpdateRegexLibEntryRequest(
             id=id,
-            regex_lib_entry=regex_lib_entry,
+            request_body=request_body,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdateRegexLibEntryRequest, base_url, '/lib/regex/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "regex_lib_entry", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request_body", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

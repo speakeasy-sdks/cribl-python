@@ -1,4 +1,5 @@
-# job_status
+# JobStatus
+(*job_status*)
 
 ### Available Operations
 
@@ -21,7 +22,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.job_status.get('alias')
+res = s.job_status.get(id='female')
 
 if res.search_job_status is not None:
     # handle response
