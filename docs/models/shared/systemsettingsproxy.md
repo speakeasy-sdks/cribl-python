@@ -5,4 +5,4 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `use_env_vars`     | *bool*             | :heavy_check_mark: | N/A                |
+| `use_env_vars`     | *Optional[bool]*   | :heavy_check_mark: | N/A                |

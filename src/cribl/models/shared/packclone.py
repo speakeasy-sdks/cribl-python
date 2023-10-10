@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class PackClone:
-    r"""PackClone object"""
     dst_groups: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dstGroups') }})
     packs: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packs') }})
     src_group: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('srcGroup') }})

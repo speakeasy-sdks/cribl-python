@@ -1,4 +1,5 @@
-# metrics
+# Metrics
+(*metrics*)
 
 ### Available Operations
 
@@ -22,50 +23,32 @@ s = cribl.Cribl(
 )
 
 req = shared.GetNamesOpts(
-    dim_key_filter='similique',
-    dim_value_filter='ea',
-    earliest=657301,
     filter_expr=shared.Expression(
-        max_cache=296128,
+        max_cache=449035,
         cache=shared.Map(
             op=shared.MapOp(),
         ),
         declared_variables=[
-            'dignissimos',
-            'esse',
-            'animi',
-            'laudantium',
+            'Producer',
         ],
         is_safe=False,
-        modified_expression='esse',
+        modified_expression='iste mealy',
         opt=shared.ExpressionOptions(
-            allow_internal=False,
             args=[
-                'earum',
-                'velit',
-                'officiis',
-                'eius',
+                'Metrics',
             ],
             ast_traverse_callback=shared.TraverseCallback(),
-            context='rerum',
-            disallow_assign=False,
-            max_num_of_allowed_iterations=930111,
             partial_eval=shared.PartialEvalRewrite(
                 field_filter=shared.PartialEvalFieldFilter(),
-                null_obj='dignissimos',
+                null_obj='Market',
             ),
-            replace_identifiers=False,
-            replace_literals=False,
-            unprotected=False,
         ),
-        original_expression='ipsam',
-        partial_expression='explicabo',
+        original_expression='Grenada',
+        partial_expression='synthesizing',
         referenced_cribl_export=False,
-        replace_identifiers_expression='impedit',
-        replace_literal_expression='aliquid',
+        replace_identifiers_expression='content intelligence array',
+        replace_literal_expression='Clothing array Kids',
     ),
-    max_values=339843,
-    metric_name_filter='facilis',
 )
 
 res = s.metrics.post(req)
@@ -102,13 +85,7 @@ s = cribl.Cribl(
     ),
 )
 
-req = operations.QueryMetricsRequest(
-    earliest=218128,
-    filter_expr='ut',
-    latest=308819,
-    metric_name_filter='architecto',
-    num_buckets=506966,
-)
+req = operations.QueryMetricsRequest()
 
 res = s.metrics.query(req)
 

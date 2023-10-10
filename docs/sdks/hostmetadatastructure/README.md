@@ -1,4 +1,5 @@
-# host_metadata_structure
+# HostMetadataStructure
+(*host_metadata_structure*)
 
 ### Available Operations
 

@@ -1,4 +1,5 @@
-# output_status
+# OutputStatus
+(*output_status*)
 
 ### Available Operations
 

@@ -1,4 +1,5 @@
-# execute_distributed_upgrade
+# ExecuteDistributedUpgrade
+(*execute_distributed_upgrade*)
 
 ### Available Operations
 
@@ -21,26 +22,9 @@ s = cribl.Cribl(
 )
 
 
-res = s.execute_distributed_upgrade.post('fugiat', shared.DistributedUpgradeRequest(
-    package_urls=[
-        shared.DistributedUpgradeRequestPackageUrls(
-            package_hash_url='officiis',
-            package_url='ducimus',
-        ),
-        shared.DistributedUpgradeRequestPackageUrls(
-            package_hash_url='dolor',
-            package_url='dicta',
-        ),
-        shared.DistributedUpgradeRequestPackageUrls(
-            package_hash_url='error',
-            package_url='porro',
-        ),
-    ],
-    upgrade_mode=shared.DistributedUpgradeRequestUpgradeMode.ROLLING,
-    upgrade_percentage=491591,
-    worker_retries=458970,
-    worker_retry_delay=854115,
-))
+res = s.execute_distributed_upgrade.post(group='payment', request_body={
+    "Silver": 'iste',
+})
 
 if res.cribl_package is not None:
     # handle response
@@ -48,10 +32,10 @@ if res.cribl_package is not None:
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `group`                                                                                        | *str*                                                                                          | :heavy_check_mark:                                                                             | Group to upgrade                                                                               |
-| `distributed_upgrade_request`                                                                  | [Optional[shared.DistributedUpgradeRequest]](../../models/shared/distributedupgraderequest.md) | :heavy_minus_sign:                                                                             | distributedUpgrade object                                                                      |
+| Parameter                 | Type                      | Required                  | Description               |
+| ------------------------- | ------------------------- | ------------------------- | ------------------------- |
+| `group`                   | *str*                     | :heavy_check_mark:        | Group to upgrade          |
+| `request_body`            | dict[str, *Any*]          | :heavy_minus_sign:        | distributedUpgrade object |
 
 
 ### Response

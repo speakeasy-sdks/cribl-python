@@ -10,5 +10,5 @@
 | `field`            | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `headers`          | *Optional[str]*    | :heavy_minus_sign: | N/A                |
 | `name`             | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-| `type`             | *str*              | :heavy_check_mark: | N/A                |
+| `type`             | *Optional[str]*    | :heavy_check_mark: | N/A                |
 | `value`            | *Optional[str]*    | :heavy_minus_sign: | N/A                |

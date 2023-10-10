@@ -1,4 +1,5 @@
-# logger_config
+# LoggerConfig
+(*logger_config*)
 
 ### Available Operations
 
@@ -23,7 +24,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.logger_config.delete('ipsa')
+res = s.logger_config.delete(id='program')
 
 if res.logger_config is not None:
     # handle response
@@ -58,7 +59,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.logger_config.get('excepturi')
+res = s.logger_config.get(id='female')
 
 if res.logger_config is not None:
     # handle response
@@ -93,38 +94,21 @@ s = cribl.Cribl(
 )
 
 
-res = s.logger_config.update('a', shared.LoggerConfig(
+res = s.logger_config.update(id='Van', logger_config=shared.LoggerConfig(
     channels=[
         shared.LoggerEntry(
-            can_delete=False,
-            id='8f0f816f-f347-47c1-be90-2c14125b0960',
-            level='id',
-        ),
-        shared.LoggerEntry(
-            can_delete=False,
-            id='668151a4-72af-4923-8594-9f83f350cf87',
-            level='aliquid',
-        ),
-        shared.LoggerEntry(
-            can_delete=False,
-            id='ffb901c6-ecbb-44e2-83cf-789ffafeda53',
-            level='officiis',
-        ),
-        shared.LoggerEntry(
-            can_delete=False,
-            id='5ae6e0ac-184c-42b9-8247-c88373a40e19',
-            level='dolore',
+            id='<ID>',
+            level='Reactive',
         ),
     ],
     default_redact_fields=[
-        'maiores',
+        'dock',
     ],
-    id='32e55055-756f-45d5-ad0b-d0af2dfe13db',
+    id='<ID>',
     redact_fields=[
-        'voluptatibus',
-        'iure',
+        'Quality',
     ],
-    redact_label='explicabo',
+    redact_label='invoice Arizona',
 ))
 
 if res.logger_config is not None:

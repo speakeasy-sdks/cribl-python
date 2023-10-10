@@ -3,6 +3,8 @@
 import requests
 from dataclasses import dataclass, field
 
+from .utils.retries import RetryConfig
+
 
 SERVERS = [
     'https://logstream.{organizationID}.cribl.cloud/',
@@ -20,8 +22,10 @@ class SDKConfiguration:
     server_defaults: list[dict[str, str]] = field(default_factory=list)
     language: str = 'python'
     openapi_doc_version: str = '1.0.0'
-    sdk_version: str = '1.0.0'
-    gen_version: str = '2.73.0'
+    sdk_version: str = '1.1.0'
+    gen_version: str = '2.150.1'
+    user_agent: str = 'speakeasy-sdk/python 1.1.0 2.150.1 1.0.0 cribl'
+    retry_config: RetryConfig = None
 
     def get_server_details(self) -> tuple[str, dict[str, str]]:
         if self.server_url:

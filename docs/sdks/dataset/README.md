@@ -1,4 +1,5 @@
-# dataset
+# Dataset
+(*dataset*)
 
 ### Available Operations
 
@@ -24,10 +25,8 @@ s = cribl.Cribl(
 )
 
 req = shared.DatasetProviderType(
-    description='nam',
     id=shared.ProviderType.QUICKSORT,
     locality=shared.OriginConfig(
-        filter_expression='iusto',
         origin=shared.DatasetOrigin(),
     ),
 )
@@ -67,7 +66,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.dataset.delete('voluptate')
+res = s.dataset.delete(id='program')
 
 if res.dataset_provider_type is not None:
     # handle response
@@ -102,7 +101,7 @@ s = cribl.Cribl(
 )
 
 
-res = s.dataset.get('sequi')
+res = s.dataset.get(id='female')
 
 if res.dataset_provider_type is not None:
     # handle response
@@ -137,11 +136,9 @@ s = cribl.Cribl(
 )
 
 
-res = s.dataset.update('dignissimos', shared.DatasetProviderType(
-    description='neque',
-    id=shared.ProviderType.INVALID,
+res = s.dataset.update(id='Van', dataset_provider_type=shared.DatasetProviderType(
+    id=shared.ProviderType.MM_HEAP,
     locality=shared.OriginConfig(
-        filter_expression='deleniti',
         origin=shared.DatasetOrigin(),
     ),
 ))

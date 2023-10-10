@@ -1,4 +1,5 @@
-# log_file_content
+# LogFileContent
+(*log_file_content*)
 
 ### Available Operations
 
@@ -21,12 +22,7 @@ s = cribl.Cribl(
 )
 
 req = operations.GetLogFileContentRequest(
-    end_offset=697330,
-    et=932080,
-    filter='laboriosam',
-    id='949fb2bb-4eca-4e6c-bd5d-b3adebd5daea',
-    limit=276337,
-    lt=802356,
+    id='<ID>',
 )
 
 res = s.log_file_content.get(req)

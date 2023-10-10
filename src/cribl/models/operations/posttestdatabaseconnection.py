@@ -11,9 +11,12 @@ from typing import Optional
 @dataclasses.dataclass
 class PostTestDatabaseConnectionResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     database_connection_test_results: Optional[shared_databaseconnectiontestresults.DatabaseConnectionTestResults] = dataclasses.field(default=None)
     r"""a list of DatabaseConnectionTestResult objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -1,4 +1,5 @@
-# create_pipeline
+# CreatePipeline
+(*create_pipeline*)
 
 ### Available Operations
 
@@ -21,35 +22,10 @@ s = cribl.Cribl(
 )
 
 req = shared.Pipeline(
-    conf=shared.PipelineConf(
-        async_func_timeout=959143,
-        description='officiis',
-        functions=[
-            shared.PipelineFunctionConf(
-                conf=shared.PipelineFunctionConfFunctionSpecificConfigs(),
-                description='fuga',
-                disabled=False,
-                filter='pariatur',
-                final=False,
-                group_id='debitis',
-                id='008e6f8c-5f35-40d8-8db5-a34181430104',
-            ),
-        ],
-        groups={
-            "ab": shared.PipelineConfGroups(
-                description='laudantium',
-                disabled=False,
-                name='Rosa Stiedemann',
-            ),
-        },
-        output='ipsa',
-        streamtags=[
-            'eveniet',
-            'impedit',
-            'officiis',
-        ],
-    ),
-    id='7e253b66-8451-4c6c-ae20-5e16deab3fec',
+    conf={
+        "payment": 'Silver',
+    },
+    id='<ID>',
 )
 
 res = s.create_pipeline.post(req)

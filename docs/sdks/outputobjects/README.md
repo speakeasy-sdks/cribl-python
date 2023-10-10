@@ -1,4 +1,5 @@
-# output_objects
+# OutputObjects
+(*output_objects*)
 
 ### Available Operations
 

@@ -1,7 +1,5 @@
 # PackClone
 
-PackClone object
-
 
 ## Fields
 
@@ -11,4 +9,4 @@ PackClone object
 | `dst_groups`       | list[*str*]        | :heavy_check_mark: | N/A                |
 | `force`            | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
 | `packs`            | list[*str*]        | :heavy_check_mark: | N/A                |
-| `src_group`        | *str*              | :heavy_check_mark: | N/A                |
+| `src_group`        | *Optional[str]*    | :heavy_check_mark: | N/A                |

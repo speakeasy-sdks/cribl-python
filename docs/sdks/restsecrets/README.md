@@ -1,4 +1,5 @@
-# rest_secrets
+# RestSecrets
+(*rest_secrets*)
 
 ### Available Operations
 

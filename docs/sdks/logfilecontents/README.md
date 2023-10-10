@@ -1,4 +1,5 @@
-# log_file_contents
+# LogFileContents
+(*log_file_contents*)
 
 ### Available Operations
 
@@ -21,14 +22,8 @@ s = cribl.Cribl(
 )
 
 req = operations.GetLogFileContentsRequest(
-    end_offset=369523,
-    et=60,
-    filter='suscipit',
-    group_id='deserunt',
-    id='8aa94c02-644c-4f5e-9d9a-4578adc1ac60',
-    limit=31574,
-    lt=816421,
-    offset=901008,
+    group_id='Northeast Hatchback Kia',
+    id='<ID>',
 )
 
 res = s.log_file_contents.get(req)

@@ -1,4 +1,5 @@
-# appscope_lib_entries
+# AppscopeLibEntries
+(*appscope_lib_entries*)
 
 ### Available Operations
 
