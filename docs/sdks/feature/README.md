@@ -1,4 +1,5 @@
-# feature
+# Feature
+(*feature*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.feature.get('aspernatur')
+res = s.feature.get(id='female')
 
 if res.features_entry is not None:
     # handle response

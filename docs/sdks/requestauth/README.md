@@ -1,4 +1,5 @@
-# request_auth
+# RequestAuth
+(*request_auth*)
 
 ### Available Operations
 
@@ -16,13 +17,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.request_auth.get('aliquid', 'eum')
+res = s.request_auth.get(relay_state='female', saml_response='program')
 
 if res.success is not None:
     # handle response
@@ -52,15 +51,10 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = operations.PostRequestAuthRequestBody(
-    relay_state='vel',
-    saml_response='ad',
-)
+req = operations.PostRequestAuthRequestBody()
 
 res = s.request_auth.post(req)
 

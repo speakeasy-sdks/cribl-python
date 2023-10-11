@@ -1,4 +1,5 @@
-# stage_distributed_package
+# StageDistributedPackage
+(*stage_distributed_package*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.stage_distributed_package.post('quos', 'atque')
+res = s.stage_distributed_package.post(group='payment', upgrade_percentage='Silver')
 
 if res.cribl_package is not None:
     # handle response

@@ -1,4 +1,5 @@
-# textual_diff
+# TextualDiff
+(*textual_diff*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.textual_diff.get('culpa', 'nihil')
+res = s.textual_diff.get(commit='female', group='program')
 
 if res.textual_diff is not None:
     # handle response

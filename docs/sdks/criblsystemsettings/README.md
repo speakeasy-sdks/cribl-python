@@ -1,4 +1,5 @@
-# cribl_system_settings
+# CriblSystemSettings
+(*cribl_system_settings*)
 
 ### Available Operations
 
@@ -16,9 +17,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -45,9 +44,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 

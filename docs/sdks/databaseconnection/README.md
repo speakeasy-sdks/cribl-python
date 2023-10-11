@@ -1,4 +1,5 @@
-# database_connection
+# DatabaseConnection
+(*database_connection*)
 
 ### Available Operations
 
@@ -15,21 +16,14 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.DatabaseConnectionConfig(
-    auth_type='fuga',
-    config_obj='laudantium',
-    connection_string='incidunt',
-    connection_timeout=97493,
+    auth_type='Producer base',
     database_type=shared.DatabaseConnectionType(),
-    description='rem',
-    id='d162309f-b092-4992-9aef-b9f58c4d86e6',
-    request_timeout=520761,
-    tags='earum',
+    description='Synergized incremental alliance',
+    id='<ID>',
 )
 
 res = s.database_connection.post(req)

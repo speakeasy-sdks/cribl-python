@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class RedirectInfo:
-    r"""Redirect info"""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     redirect_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('redirectUrl'), 'exclude': lambda f: f is None }})
     token: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('token'), 'exclude': lambda f: f is None }})

@@ -1,4 +1,5 @@
-# function_id
+# FunctionID
+(*function_id*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.function_id.get('quae')
+res = s.function_id.get(id='female')
 
 if res.functions is not None:
     # handle response

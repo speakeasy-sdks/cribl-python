@@ -1,4 +1,5 @@
-# group_bundle
+# GroupBundle
+(*group_bundle*)
 
 ### Available Operations
 
@@ -15,14 +16,12 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.group_bundle.get('quae', shared.DeployRequest(
-    version='eaque',
+res = s.group_bundle.get(id='female', deploy_request=shared.DeployRequest(
+    version='Hatchback Kia',
 ))
 
 if res.group_bundle is not None:

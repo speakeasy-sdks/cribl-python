@@ -22,9 +22,12 @@ class GetCluisRequest:
 @dataclasses.dataclass
 class GetCluisResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     clui_items: Optional[shared_cluiitems.CluiItems] = dataclasses.field(default=None)
     r"""a list of CluiItem objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

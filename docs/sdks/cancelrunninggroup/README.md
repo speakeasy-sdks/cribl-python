@@ -1,4 +1,5 @@
-# cancel_running_group
+# CancelRunningGroup
+(*cancel_running_group*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.cancel_running_group.post('adipisci')
+res = s.cancel_running_group.post(group='payment')
 
 if res.cancel_running_group is not None:
     # handle response

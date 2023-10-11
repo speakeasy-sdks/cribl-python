@@ -1,4 +1,5 @@
-# worker_edge_nodes
+# WorkerEdgeNodes
+(*worker_edge_nodes*)
 
 ### Available Operations
 
@@ -16,13 +17,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.worker_edge_nodes.get('unde', 365473, 213405, 'rerum')
+res = s.worker_edge_nodes.get(filter_exp='female', limit=558834, offset=844199, sort_exp='transmit')
 
 if res.master_worker_entries is not None:
     # handle response
@@ -54,9 +53,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 

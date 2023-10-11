@@ -1,4 +1,5 @@
-# lookup
+# Lookup
+(*lookup*)
 
 ### Available Operations
 
@@ -16,20 +17,17 @@ Create LookupFile
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = operations.CreateLookupRequestBody2(
-    content='soluta',
-    description='dolorum',
-    id='3f8941ae-bc0b-480a-a924-d3b2ecfcc8f8',
-    size=614770,
-    tags='corporis',
+req = shared.LookupFile1(
+    file_info=shared.LookupFile1FileInfo(
+        filename='configuration_money.mpeg',
+    ),
+    id='<ID>',
 )
 
 res = s.lookup.create(req)
@@ -40,9 +38,9 @@ if res.lookup_files is not None:
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [Any](../../models//.md)                   | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `request`                                                                          | [Union[shared.LookupFile1, shared.LookupFile2]](../../models/shared/lookupfile.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
 
 
 ### Response
@@ -61,13 +59,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.lookup.delete('accusantium')
+res = s.lookup.delete(id='program')
 
 if res.lookup_file is not None:
     # handle response
@@ -96,13 +92,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.lookup.get('illo')
+res = s.lookup.get(id='female')
 
 if res.lookup_file is not None:
     # handle response
@@ -131,18 +125,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.lookup.update('aut', operations.UpdateLookupRequestBody2(
-    content='nostrum',
-    description='at',
-    id='d3d6fa18-04e5-44c8-af16-8a363c8873e4',
-    size=503449,
-    tags='numquam',
+res = s.lookup.update(id='Van', lookup_file=shared.LookupFile1(
+    file_info=shared.LookupFile1FileInfo(
+        filename='male_metal.html',
+    ),
+    id='<ID>',
 ))
 
 if res.lookup_file is not None:
@@ -151,10 +142,10 @@ if res.lookup_file is not None:
 
 ### Parameters
 
-| Parameter                       | Type                            | Required                        | Description                     |
-| ------------------------------- | ------------------------------- | ------------------------------- | ------------------------------- |
-| `id`                            | *str*                           | :heavy_check_mark:              | Unique ID                       |
-| `request_body`                  | *Optional[Any]*                 | :heavy_minus_sign:              | LookupFile object to be updated |
+| Parameter                                                                                    | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `id`                                                                                         | *str*                                                                                        | :heavy_check_mark:                                                                           | Unique ID                                                                                    |
+| `lookup_file`                                                                                | [Optional[Union[shared.LookupFile1, shared.LookupFile2]]](../../models/shared/lookupfile.md) | :heavy_minus_sign:                                                                           | LookupFile object to be updated                                                              |
 
 
 ### Response
@@ -173,13 +164,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.lookup.upload('sequi')
+res = s.lookup.upload(filename='Market')
 
 if res.lookup_file_info_response is not None:
     # handle response

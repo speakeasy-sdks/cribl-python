@@ -8,7 +8,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class LogoutRequest:
-    r"""Logout request object"""
     relay_state: Optional[str] = dataclasses.field(default=None, metadata={'form': { 'field_name': 'RelayState' }})
     saml_response: Optional[str] = dataclasses.field(default=None, metadata={'form': { 'field_name': 'SAMLResponse' }})
     r"""Logout request object"""

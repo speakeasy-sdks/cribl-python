@@ -23,7 +23,6 @@ class UpgradeMasterRequestPackages:
 
 @dataclasses.dataclass
 class UpgradeMasterRequest:
-    r"""upgradeMaster object"""
     packages: Optional[list[UpgradeMasterRequestPackages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packages'), 'exclude': lambda f: f is None }})
     r"""Provide your own URLs or local paths for platform-specific Cribl packages."""
     

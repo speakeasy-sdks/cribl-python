@@ -1,7 +1,5 @@
 # SendDiagBundle
 
-SendDiagBundle object
-
 
 ## Fields
 

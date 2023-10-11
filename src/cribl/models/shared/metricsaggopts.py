@@ -13,7 +13,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class MetricsAggOpts:
-    r"""MetricsAggOpts object"""
     aggs: shared_aggregationmgroptions.AggregationMgrOptions = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('aggs') }})
     always_bounds: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alwaysBounds'), 'exclude': lambda f: f is None }})
     metrics: Optional[shared_metricsstore.MetricsStore] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metrics'), 'exclude': lambda f: f is None }})

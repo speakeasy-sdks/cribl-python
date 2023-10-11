@@ -100,25 +100,23 @@ class OutputSecurityLake:
     r"""Name of the custom source configured in Amazon Security Lake"""
     region: OutputSecurityLakeRegion = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('region') }})
     r"""Region where the Amazon Security Lake is located."""
-    stage_path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stagePath') }})
-    r"""Filesystem location in which to buffer files, before compressing and moving to final destination. Use performant stable storage."""
-    add_id_to_stage_path: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('addIdToStagePath'), 'exclude': lambda f: f is None }})
+    add_id_to_stage_path: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('addIdToStagePath'), 'exclude': lambda f: f is None }})
     r"""Append output's ID to staging location."""
     assume_role_external_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('assumeRoleExternalId'), 'exclude': lambda f: f is None }})
     r"""External ID to use when assuming role"""
     aws_api_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsApiKey'), 'exclude': lambda f: f is None }})
     r"""Access key. This value can be a constant or a JavaScript expression(e.g., `${C.env.SOME_ACCESS_KEY}`)."""
-    aws_authentication_method: Optional[OutputSecurityLakeAuthenticationMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsAuthenticationMethod'), 'exclude': lambda f: f is None }})
+    aws_authentication_method: Optional[OutputSecurityLakeAuthenticationMethod] = dataclasses.field(default=OutputSecurityLakeAuthenticationMethod.undefined, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsAuthenticationMethod'), 'exclude': lambda f: f is None }})
     r"""AWS authentication method. Choose Auto to use IAM roles."""
     aws_secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsSecret'), 'exclude': lambda f: f is None }})
     r"""Select (or create) a stored secret that references your access key and secret key."""
     aws_secret_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsSecretKey'), 'exclude': lambda f: f is None }})
     r"""Secret key"""
-    base_file_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('baseFileName'), 'exclude': lambda f: f is None }})
+    base_file_name: Optional[str] = dataclasses.field(default='`CriblOut`', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('baseFileName'), 'exclude': lambda f: f is None }})
     r"""JavaScript expression to define the output filename prefix (can be constant)."""
-    empty_dir_cleanup_sec: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emptyDirCleanupSec'), 'exclude': lambda f: f is None }})
+    empty_dir_cleanup_sec: Optional[int] = dataclasses.field(default=300, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emptyDirCleanupSec'), 'exclude': lambda f: f is None }})
     r"""How often (secs) to clean-up empty directories when 'Remove Staging Dirs' is enabled."""
-    enable_assume_role: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enableAssumeRole'), 'exclude': lambda f: f is None }})
+    enable_assume_role: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enableAssumeRole'), 'exclude': lambda f: f is None }})
     r"""Use Assume Role credentials to access S3"""
     endpoint: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('endpoint'), 'exclude': lambda f: f is None }})
     r"""Amazon Security Lake service endpoint. If empty, defaults to AWS' Region-specific endpoint. Otherwise, it must point to Amazon Security Lake-compatible endpoint."""
@@ -128,41 +126,43 @@ class OutputSecurityLake:
     r"""Unique ID for this output"""
     kms_key_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('kmsKeyId'), 'exclude': lambda f: f is None }})
     r"""ID or ARN of the KMS customer-managed key to use for encryption"""
-    max_concurrent_file_parts: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxConcurrentFileParts'), 'exclude': lambda f: f is None }})
+    max_concurrent_file_parts: Optional[int] = dataclasses.field(default=4, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxConcurrentFileParts'), 'exclude': lambda f: f is None }})
     r"""Maximum number of parts to upload in parallel per file. Minimum part size is 5MB."""
-    max_file_idle_time_sec: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxFileIdleTimeSec'), 'exclude': lambda f: f is None }})
+    max_file_idle_time_sec: Optional[int] = dataclasses.field(default=30, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxFileIdleTimeSec'), 'exclude': lambda f: f is None }})
     r"""Maximum amount of time to keep inactive files open. Files open for longer than this will be closed and moved to final output location."""
-    max_file_open_time_sec: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxFileOpenTimeSec'), 'exclude': lambda f: f is None }})
+    max_file_open_time_sec: Optional[int] = dataclasses.field(default=300, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxFileOpenTimeSec'), 'exclude': lambda f: f is None }})
     r"""Maximum amount of time to write to a file. Files open for longer than this will be closed and moved to final output location."""
-    max_file_size_mb: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxFileSizeMB'), 'exclude': lambda f: f is None }})
+    max_file_size_mb: Optional[int] = dataclasses.field(default=32, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxFileSizeMB'), 'exclude': lambda f: f is None }})
     r"""Maximum uncompressed output file size. Files of this size will be closed and moved to final output location."""
-    max_open_files: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxOpenFiles'), 'exclude': lambda f: f is None }})
+    max_open_files: Optional[int] = dataclasses.field(default=100, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxOpenFiles'), 'exclude': lambda f: f is None }})
     r"""Maximum number of files to keep open concurrently. When exceeded, @{product} will close the oldest open files and move them to the final output location."""
-    object_acl: Optional[OutputSecurityLakeObjectACL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('objectACL'), 'exclude': lambda f: f is None }})
+    object_acl: Optional[OutputSecurityLakeObjectACL] = dataclasses.field(default=OutputSecurityLakeObjectACL.PRIVATE, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('objectACL'), 'exclude': lambda f: f is None }})
     r"""Object ACL to assign to uploaded objects."""
-    on_backpressure: Optional[OutputSecurityLakeBackpressureBehavior] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onBackpressure'), 'exclude': lambda f: f is None }})
+    on_backpressure: Optional[OutputSecurityLakeBackpressureBehavior] = dataclasses.field(default=OutputSecurityLakeBackpressureBehavior.BLOCK, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onBackpressure'), 'exclude': lambda f: f is None }})
     r"""Whether to block or drop events when all receivers are exerting backpressure."""
-    parquet_data_page_version: Optional[OutputSecurityLakeDataPageVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetDataPageVersion'), 'exclude': lambda f: f is None }})
+    parquet_data_page_version: Optional[OutputSecurityLakeDataPageVersion] = dataclasses.field(default=OutputSecurityLakeDataPageVersion.DATA_PAGE_V1, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetDataPageVersion'), 'exclude': lambda f: f is None }})
     r"""Serialization format of data pages. Note that not all reader implentations support Data page V2."""
-    parquet_page_size: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetPageSize'), 'exclude': lambda f: f is None }})
+    parquet_page_size: Optional[str] = dataclasses.field(default='1MB', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetPageSize'), 'exclude': lambda f: f is None }})
     r"""Ideal memory size for page segments. E.g., 1MB or 128MB. Generally, lower values improve reading speed, while higher values improve compression. Imposes a target, not a strict limit; the final size of a row group may be larger or smaller."""
-    parquet_row_group_size: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetRowGroupSize'), 'exclude': lambda f: f is None }})
+    parquet_row_group_size: Optional[str] = dataclasses.field(default='16MB', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetRowGroupSize'), 'exclude': lambda f: f is None }})
     r"""Ideal memory size for row group segments. E.g., 128MB or 1GB. Affects memory use when writing. Imposes a target, not a strict limit; the final size of a row group may be larger or smaller."""
-    parquet_version: Optional[OutputSecurityLakeParquetVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetVersion'), 'exclude': lambda f: f is None }})
+    parquet_version: Optional[OutputSecurityLakeParquetVersion] = dataclasses.field(default=OutputSecurityLakeParquetVersion.PARQUET_2_6, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetVersion'), 'exclude': lambda f: f is None }})
     r"""Determines which data types are supported and how they are represented."""
     pipeline: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pipeline'), 'exclude': lambda f: f is None }})
     r"""Pipeline to process data before sending out to this output."""
-    reject_unauthorized: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rejectUnauthorized'), 'exclude': lambda f: f is None }})
+    reject_unauthorized: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rejectUnauthorized'), 'exclude': lambda f: f is None }})
     r"""Whether to reject certificates that cannot be verified against a valid CA (e.g., self-signed certificates)."""
-    remove_empty_dirs: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('removeEmptyDirs'), 'exclude': lambda f: f is None }})
+    remove_empty_dirs: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('removeEmptyDirs'), 'exclude': lambda f: f is None }})
     r"""Remove empty staging directories after moving files."""
-    reuse_connections: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reuseConnections'), 'exclude': lambda f: f is None }})
+    reuse_connections: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reuseConnections'), 'exclude': lambda f: f is None }})
     r"""Whether to reuse connections between requests, which can improve performance."""
     server_side_encryption: Optional[OutputSecurityLakeServerSideEncryption] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('serverSideEncryption'), 'exclude': lambda f: f is None }})
     r"""Server-side encryption for uploaded objects."""
-    signature_version: Optional[OutputSecurityLakeSignatureVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('signatureVersion'), 'exclude': lambda f: f is None }})
+    signature_version: Optional[OutputSecurityLakeSignatureVersion] = dataclasses.field(default=OutputSecurityLakeSignatureVersion.V4, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('signatureVersion'), 'exclude': lambda f: f is None }})
     r"""Signature version to use for signing Amazon Security Lake requests."""
     spacer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('spacer'), 'exclude': lambda f: f is None }})
+    stage_path: Optional[str] = dataclasses.field(default='$CRIBL_HOME/state/outputs/staging', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stagePath'), 'exclude': lambda f: f is None }})
+    r"""Filesystem location in which to buffer files, before compressing and moving to final destination. Use performant stable storage."""
     storage_class: Optional[OutputSecurityLakeStorageClass] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('storageClass'), 'exclude': lambda f: f is None }})
     r"""Storage class to select for uploaded objects."""
     streamtags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('streamtags'), 'exclude': lambda f: f is None }})

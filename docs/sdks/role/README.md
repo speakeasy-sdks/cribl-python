@@ -1,4 +1,5 @@
-# role
+# Role
+(*role*)
 
 ### Available Operations
 
@@ -18,18 +19,13 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.Role(
-    id='4cdb0f4d-2811-487d-9684-4eded85a9065',
+    id='<ID>',
     policy=[
-        'laboriosam',
-        'ratione',
-        'blanditiis',
-        'quidem',
+        'online',
     ],
 )
 
@@ -62,13 +58,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.role.delete('illum')
+res = s.role.delete(id='program')
 
 if res.roles is not None:
     # handle response
@@ -97,13 +91,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.role.get('reiciendis')
+res = s.role.get(id='female')
 
 if res.roles is not None:
     # handle response
@@ -132,16 +124,14 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.role.update('placeat', shared.Role(
-    id='2032b6c8-7992-43b7-a135-84f7ae12c689',
+res = s.role.update(id='Van', role=shared.Role(
+    id='<ID>',
     policy=[
-        'tenetur',
+        'East',
     ],
 ))
 

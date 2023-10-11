@@ -1,4 +1,5 @@
-# saved_query
+# SavedQuery
+(*saved_query*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.saved_query.get('similique')
+res = s.saved_query.get(id='female')
 
 if res.saved_query is not None:
     # handle response

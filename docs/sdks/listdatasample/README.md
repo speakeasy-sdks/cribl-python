@@ -1,4 +1,5 @@
-# list_data_sample
+# ListDataSample
+(*list_data_sample*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 

@@ -1,4 +1,5 @@
-# changed_files
+# ChangedFiles
+(*changed_files*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.changed_files.get('ullam', 'in')
+res = s.changed_files.get(id='female', group='program')
 
 if res.changed_files is not None:
     # handle response

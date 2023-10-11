@@ -1,4 +1,5 @@
-# request_user_auth
+# RequestUserAuth
+(*request_user_auth*)
 
 ### Available Operations
 
@@ -15,15 +16,10 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.LogoutRequest(
-    relay_state='quos',
-    saml_response='illo',
-)
+req = shared.LogoutRequest()
 
 res = s.request_user_auth.logout(req)
 

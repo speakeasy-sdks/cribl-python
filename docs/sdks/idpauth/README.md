@@ -1,4 +1,5 @@
-# idp_auth
+# IDPAuth
+(*idp_auth*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.idp_auth.get('mollitia', 'nulla')
+res = s.idp_auth.get(code='female', state='program')
 
 if res.success is not None:
     # handle response
