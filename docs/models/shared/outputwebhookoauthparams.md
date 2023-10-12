@@ -5,5 +5,5 @@
 
 | Field                 | Type                  | Required              | Description           |
 | --------------------- | --------------------- | --------------------- | --------------------- |
-| `name`                | *str*                 | :heavy_check_mark:    | OAuth parameter name  |
-| `value`               | *str*                 | :heavy_check_mark:    | OAuth parameter value |
+| `name`                | *Optional[str]*       | :heavy_check_mark:    | OAuth parameter name  |
+| `value`               | *Optional[str]*       | :heavy_check_mark:    | OAuth parameter value |

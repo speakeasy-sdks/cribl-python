@@ -1,4 +1,5 @@
-# pack
+# Pack
+(*pack*)
 
 ### Available Operations
 
@@ -20,26 +21,17 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.PackClone(
-    dest='amet',
     dst_groups=[
-        'corporis',
-        'est',
-        'iure',
-        'quisquam',
+        'West',
     ],
-    force=False,
     packs=[
-        'laudantium',
-        'nam',
-        'nemo',
+        'MTF',
     ],
-    src_group='enim',
+    src_group='microchip oversleep',
 )
 
 res = s.pack.clone(req)
@@ -71,13 +63,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pack.export('ipsam', 'minima', 'tempora')
+res = s.pack.export(id='salmon', mode='hmph', filename='holistic')
 
 if res.pack_infos is not None:
     # handle response
@@ -108,13 +98,11 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.CrudEntityBase(
-    id='080d40bc-acc6-4cbd-ab5f-3ec909304f92',
+    id='<ID>',
 )
 
 res = s.pack.install(req)
@@ -146,13 +134,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pack.uninstall('vel')
+res = s.pack.uninstall(id='male')
 
 if res.pack_infos is not None:
     # handle response
@@ -181,13 +167,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pack.upgrade('cum', 'id', 'possimus', 'fugit')
+res = s.pack.upgrade(id='katal', minor='Producer', source='South', spec='online')
 
 if res.pack_infos is not None:
     # handle response
@@ -219,13 +203,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pack.upload('ipsam')
+res = s.pack.upload(filename='Market')
 
 if res.pack_infos is not None:
     # handle response

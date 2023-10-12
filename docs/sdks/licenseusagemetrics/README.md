@@ -1,4 +1,5 @@
-# license_usage_metrics
+# LicenseUsageMetrics
+(*license_usage_metrics*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 

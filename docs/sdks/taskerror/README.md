@@ -1,4 +1,5 @@
-# task_error
+# TaskError
+(*task_error*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.task_error.get('quisquam')
+res = s.task_error.get(id='female')
 
 if res.task_errors is not None:
     # handle response

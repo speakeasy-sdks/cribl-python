@@ -1,4 +1,5 @@
-# container
+# Container
+(*container*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.container.get('culpa')
+res = s.container.get(id='female')
 
 if res.containers is not None:
     # handle response

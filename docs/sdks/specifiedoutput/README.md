@@ -1,4 +1,5 @@
-# specified_output
+# SpecifiedOutput
+(*specified_output*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.specified_output.get('vitae')
+res = s.specified_output.get(id='female')
 
 if res.get_specified_output_200_application_json_object is not None:
     # handle response

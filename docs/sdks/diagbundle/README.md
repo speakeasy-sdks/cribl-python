@@ -1,4 +1,5 @@
-# diag_bundle
+# DiagBundle
+(*diag_bundle*)
 
 ### Available Operations
 
@@ -17,13 +18,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.diag_bundle.delete('quibusdam')
+res = s.diag_bundle.delete(path='program')
 
 if res.remove_diag_response is not None:
     # handle response
@@ -52,9 +51,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -81,18 +78,10 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.SendDiagBundle(
-    include_metrics=False,
-    max_include_jobs=78969,
-    path='facere',
-    rename_js=False,
-    send_to_cribl=False,
-)
+req = shared.SendDiagBundle()
 
 res = s.diag_bundle.send(req)
 

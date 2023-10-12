@@ -1,4 +1,5 @@
-# auth_token
+# AuthToken
+(*auth_token*)
 
 ### Available Operations
 
@@ -15,14 +16,12 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.LoginInfo(
-    password='et',
-    username='Jairo.Farrell53',
+    password='2bVVxb7UVU0peMp',
+    username='Clyde.Parisian',
 )
 
 res = s.auth_token.login(req)

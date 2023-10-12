@@ -1,4 +1,5 @@
-# count_file
+# CountFile
+(*count_file*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.count_file.get('voluptatem')
+res = s.count_file.get(group='female')
 
 if res.count_file is not None:
     # handle response

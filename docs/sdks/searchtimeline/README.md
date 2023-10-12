@@ -1,4 +1,5 @@
-# search_timeline
+# SearchTimeline
+(*search_timeline*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.search_timeline.get('magnam')
+res = s.search_timeline.get(id='female')
 
 if res.search_timeline is not None:
     # handle response

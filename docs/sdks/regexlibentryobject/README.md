@@ -1,4 +1,5 @@
-# regex_lib_entry_object
+# RegexLibEntryObject
+(*regex_lib_entry_object*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 

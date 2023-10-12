@@ -1,4 +1,5 @@
-# mapping_ruleset
+# MappingRuleset
+(*mapping_ruleset*)
 
 ### Available Operations
 
@@ -18,32 +19,18 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.MappingRuleset(
-    active=False,
     conf=shared.MappingRulesetConf(
         functions=[
             {
-                "rerum": 'veritatis',
-            },
-            {
-                "autem": 'quidem',
-                "totam": 'porro',
-                "deserunt": 'magni',
-                "nihil": 'voluptas',
-            },
-            {
-                "commodi": 'alias',
-                "fuga": 'aut',
-                "dolore": 'maxime',
+                "online": 'Configuration',
             },
         ],
     ),
-    id='495cc699-171b-451c-9bdb-1cf4b888ebdf',
+    id='<ID>',
 )
 
 res = s.mapping_ruleset.create(req)
@@ -75,13 +62,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.mapping_ruleset.delete('quo')
+res = s.mapping_ruleset.delete(id='program')
 
 if res.mapping_rulesets is not None:
     # handle response
@@ -110,13 +95,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.mapping_ruleset.get('incidunt')
+res = s.mapping_ruleset.get(id='female')
 
 if res.mapping_rulesets is not None:
     # handle response
@@ -145,38 +128,19 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.mapping_ruleset.update('quod', shared.MappingRuleset(
-    active=False,
+res = s.mapping_ruleset.update(id='Van', mapping_ruleset=shared.MappingRuleset(
     conf=shared.MappingRulesetConf(
         functions=[
             {
-                "id": 'excepturi',
-                "occaecati": 'libero',
-                "quo": 'esse',
-                "hic": 'maxime',
-            },
-            {
-                "soluta": 'fugit',
-            },
-            {
-                "eligendi": 'recusandae',
-                "veritatis": 'aut',
-                "laudantium": 'iusto',
-                "dolor": 'voluptates',
-            },
-            {
-                "magni": 'rerum',
-                "doloremque": 'voluptatem',
+                "East": 'male',
             },
         ],
     ),
-    id='6d678878-ba85-481a-9820-8c54fefa9c95',
+    id='<ID>',
 ))
 
 if res.mapping_rulesets is not None:

@@ -1,4 +1,5 @@
-# saved_queries
+# SavedQueries
+(*saved_queries*)
 
 ### Available Operations
 
@@ -18,26 +19,19 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.SavedQuery(
-    description='ab',
-    earliest='magnam',
-    id='db6be5a6-8599-48e2-aae2-0da16fc2b271',
-    latest='deserunt',
-    name='Vickie Marvin',
-    query='molestiae',
-    sample_rate=933840,
+    id='<ID>',
+    name='bluetooth Extended',
+    query='blue',
     schedule=shared.SavedQuerySchedule(
-        cron_schedule='rem',
+        cron_schedule='grey technology East',
         enabled=False,
-        keep_last_n=366327,
-        tz='non',
+        keep_last_n=169727,
+        tz='Northwest',
     ),
-    user='recusandae',
 )
 
 res = s.saved_queries.create(req)
@@ -69,13 +63,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.saved_queries.delete('omnis')
+res = s.saved_queries.delete(id='program')
 
 if res.saved_query is not None:
     # handle response
@@ -104,9 +96,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -133,27 +123,20 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.saved_queries.update('ipsa', shared.SavedQuery(
-    description='aliquam',
-    earliest='dolor',
-    id='9d222465-6946-4240-b084-f7ab37cef022',
-    latest='consequuntur',
-    name='Jean Mayert',
-    query='quidem',
-    sample_rate=350202,
+res = s.saved_queries.update(id='Van', saved_query=shared.SavedQuery(
+    id='<ID>',
+    name='Reactive',
+    query='Metal cheater Islands',
     schedule=shared.SavedQuerySchedule(
-        cron_schedule='veniam',
+        cron_schedule='withdrawal extend',
         enabled=False,
-        keep_last_n=267988,
-        tz='quasi',
+        keep_last_n=249440,
+        tz='Carolina syndicate',
     ),
-    user='quae',
 ))
 
 if res.saved_query is not None:

@@ -1,4 +1,5 @@
-# field_summaries
+# FieldSummaries
+(*field_summaries*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.field_summaries.get('enim')
+res = s.field_summaries.get(id='female')
 
 if res.field_summaries is not None:
     # handle response

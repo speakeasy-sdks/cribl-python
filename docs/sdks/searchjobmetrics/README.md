@@ -1,4 +1,5 @@
-# search_job_metrics
+# SearchJobMetrics
+(*search_job_metrics*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.search_job_metrics.get('architecto')
+res = s.search_job_metrics.get(id='female')
 
 if res.geth_search_job_metrics_200_application_json_string is not None:
     # handle response

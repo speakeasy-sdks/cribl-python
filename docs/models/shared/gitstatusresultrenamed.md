@@ -5,5 +5,5 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `from_`            | *str*              | :heavy_check_mark: | N/A                |
-| `to`               | *str*              | :heavy_check_mark: | N/A                |
+| `from_`            | *Optional[str]*    | :heavy_check_mark: | N/A                |
+| `to`               | *Optional[str]*    | :heavy_check_mark: | N/A                |

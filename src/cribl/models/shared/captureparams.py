@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class CaptureParams:
-    r"""CaptureParams object"""
     filter: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filter') }})
     level: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('level') }})
     max_events: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxEvents') }})

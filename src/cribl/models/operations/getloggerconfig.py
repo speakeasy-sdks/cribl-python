@@ -20,9 +20,12 @@ class GetLoggerConfigRequest:
 @dataclasses.dataclass
 class GetLoggerConfigResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     logger_config: Optional[shared_loggerconfig.LoggerConfig] = dataclasses.field(default=None)
     r"""a list of LoggerConfig objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

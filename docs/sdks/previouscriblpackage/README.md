@@ -1,4 +1,5 @@
-# previous_cribl_package
+# PreviousCriblPackage
+(*previous_cribl_package*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.previous_cribl_package.get('molestias')
+res = s.previous_cribl_package.get(file='female')
 
 if res.cribl_package is not None:
     # handle response

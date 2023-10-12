@@ -1,4 +1,5 @@
-# latest_pq
+# LatestPQ
+(*latest_pq*)
 
 ### Available Operations
 
@@ -15,13 +16,11 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.latest_pq.get('qui')
+res = s.latest_pq.get(id='female')
 
 if res.get_latest_pq_200_application_json_object is not None:
     # handle response
