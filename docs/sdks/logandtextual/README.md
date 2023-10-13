@@ -1,4 +1,5 @@
-# logand_textual
+# LogandTextual
+(*logand_textual*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.logand_textual.get('necessitatibus', 'impedit')
+res = s.logand_textual.get(commit='female', group='program')
 
 if res.textual_diff is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

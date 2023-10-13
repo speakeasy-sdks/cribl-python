@@ -1,4 +1,5 @@
-# commit
+# Commit
+(*commit*)
 
 ### Available Operations
 
@@ -15,21 +16,18 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.GitCommitParams(
-    effective=False,
-    group='laborum',
-    message='placeat',
+    message='bluetooth Extended',
 )
 
 res = s.commit.create(req)
 
 if res.git_commit is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

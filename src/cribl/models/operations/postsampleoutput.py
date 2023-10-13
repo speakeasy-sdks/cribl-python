@@ -23,9 +23,12 @@ class PostSampleOutputRequest:
 @dataclasses.dataclass
 class PostSampleOutputResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     output_test_responses: Optional[shared_outputtestresponses.OutputTestResponses] = dataclasses.field(default=None)
     r"""a list of OutputTestResponse objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

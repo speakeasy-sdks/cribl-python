@@ -1,7 +1,5 @@
 # KMSHealth
 
-a list of IKMSHealth objects
-
 
 ## Fields
 

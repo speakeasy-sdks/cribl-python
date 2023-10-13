@@ -1,4 +1,5 @@
-# master_node_package
+# MasterNodePackage
+(*master_node_package*)
 
 ### Available Operations
 
@@ -15,24 +16,13 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.UpgradeMasterRequest(
     packages=[
         shared.UpgradeMasterRequestPackages(
-            package_hash_url='expedita',
-            package_url='hic',
-        ),
-        shared.UpgradeMasterRequestPackages(
-            package_hash_url='excepturi',
-            package_url='aliquid',
-        ),
-        shared.UpgradeMasterRequestPackages(
-            package_hash_url='sed',
-            package_url='beatae',
+            package_url='Producer base',
         ),
     ],
 )
@@ -41,6 +31,7 @@ res = s.master_node_package.post(req)
 
 if res.cribl is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

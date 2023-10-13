@@ -1,4 +1,5 @@
-# pipeline_id
+# PipelineID
+(*pipeline_id*)
 
 ### Available Operations
 
@@ -17,16 +18,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pipeline_id.delete('voluptates')
+res = s.pipeline_id.delete(id='program')
 
 if res.pipelines is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -52,16 +52,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pipeline_id.get('possimus')
+res = s.pipeline_id.get(id='female')
 
 if res.pipelines is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -87,59 +86,33 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pipeline_id.update('fugit', shared.Pipeline(
+res = s.pipeline_id.update(id='Van', pipeline=shared.Pipeline(
     conf=shared.PipelineConf(
-        async_func_timeout=27946,
-        description='repudiandae',
         functions=[
             shared.PipelineFunctionConf(
                 conf=shared.PipelineFunctionConfFunctionSpecificConfigs(),
-                description='ea',
-                disabled=False,
-                filter='eos',
-                final=False,
-                group_id='aliquam',
-                id='8fff639a-910a-4bdc-ab62-676696e1ec00',
-            ),
-            shared.PipelineFunctionConf(
-                conf=shared.PipelineFunctionConfFunctionSpecificConfigs(),
-                description='qui',
-                disabled=False,
-                filter='consequuntur',
-                final=False,
-                group_id='vitae',
-                id='b335d89a-cb3e-4cfd-a8d0-c549ef030049',
+                id='<ID>',
             ),
         ],
         groups={
-            "atque": shared.PipelineConfGroups(
-                description='officia',
-                disabled=False,
-                name='Alice Wilkinson DDS',
-            ),
-            "a": shared.PipelineConfGroups(
-                description='qui',
-                disabled=False,
-                name='Lucy Lind',
+            "East": shared.PipelineConfGroups(
+                name='dock Quality redundant',
             ),
         },
-        output='voluptate',
         streamtags=[
-            'quod',
-            'vitae',
+            'cheater',
         ],
     ),
-    id='ffc71dca-163f-42a3-880a-97ff334cddf8',
+    id='<ID>',
 ))
 
 if res.pipelines is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -1,7 +1,5 @@
 # ConfigGroup
 
-New ConfigGroup object
-
 
 ## Fields
 

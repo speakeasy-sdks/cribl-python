@@ -22,8 +22,11 @@ class UpdateSchemaIDRequest:
 @dataclasses.dataclass
 class UpdateSchemaIDResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     schema_lib_entries: Optional[shared_schemalibentries.SchemaLibEntries] = dataclasses.field(default=None)
     r"""a list of Schema objects"""
     
