@@ -1,7 +1,5 @@
 # FieldSummaries
 
-FieldSummaries object
-
 
 ## Fields
 

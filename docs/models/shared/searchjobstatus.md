@@ -1,7 +1,5 @@
 # SearchJobStatus
 
-SearchJobStatus object
-
 
 ## Values
 

@@ -10,7 +10,6 @@ from dataclasses_json import Undefined, dataclass_json
 
 @dataclasses.dataclass
 class Role:
-    r"""New Role object"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     policy: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('policy') }})
     

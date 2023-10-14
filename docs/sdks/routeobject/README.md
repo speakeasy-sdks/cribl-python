@@ -1,4 +1,5 @@
-# route_object
+# RouteObject
+(*route_object*)
 
 ### Available Operations
 
@@ -15,65 +16,31 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.route_object.update('aspernatur', shared.Routes(
+res = s.route_object.update(id='Van', routes=shared.Routes(
     comments=[
         {
-            "dicta": 'inventore',
-            "ullam": 'iusto',
-            "inventore": 'voluptate',
-            "sed": 'dolorem',
-        },
-        {
-            "exercitationem": 'amet',
-        },
-        {
-            "voluptate": 'pariatur',
-            "minus": 'a',
-        },
-        {
-            "totam": 'cupiditate',
-            "at": 'doloribus',
-            "omnis": 'quam',
+            "East": 'male',
         },
     ],
     groups={
-        "voluptates": shared.RoutesGroups(
-            description='sequi',
-            disabled=False,
-            name='Gertrude Kautzer',
-        ),
-        "aperiam": shared.RoutesGroups(
-            description='perspiciatis',
-            disabled=False,
-            name='Kellie Miller',
+        "Metal": shared.RoutesGroups(
+            name='Arizona Cotton extend',
         ),
     },
-    id='ddc5f111-dea1-4026-9541-a4d190feb217',
     routes=[
         {
-            "distinctio": 'placeat',
-        },
-        {
-            "eligendi": 'sit',
-            "possimus": 'distinctio',
-            "distinctio": 'assumenda',
-            "illum": 'soluta',
-        },
-        {
-            "laudantium": 'tempora',
-            "esse": 'doloremque',
+            "Plastic": 'Carolina',
         },
     ],
 ))
 
 if res.routes is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

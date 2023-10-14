@@ -117,70 +117,70 @@ class OutputGoogleCloudStorage:
     r"""Name of the destination Bucket. This value can be a constant or a JavaScript expression that can only be evaluated at init time. E.g. referencing a Global Variable: `myBucket-${C.vars.myVar}`."""
     dest_path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('destPath') }})
     r"""Prefix to append to files before uploading. Must be a JavaScript expression (which can evaluate to a constant value), enclosed in quotes or backticks. Can be evaluated only at init time. E.g., referencing a Global Variable: `myKeyPrefix-${C.vars.myVar}`."""
-    endpoint: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('endpoint') }})
-    r"""Google Cloud Storage service endpoint."""
     region: OutputGoogleCloudStorageRegion = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('region') }})
     r"""Region where the bucket is located."""
-    stage_path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stagePath') }})
-    r"""Filesystem location in which to buffer files, before compressing and moving to final destination. Use performant stable storage."""
-    add_id_to_stage_path: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('addIdToStagePath'), 'exclude': lambda f: f is None }})
+    add_id_to_stage_path: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('addIdToStagePath'), 'exclude': lambda f: f is None }})
     r"""Append output's ID to staging location."""
     aws_api_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsApiKey'), 'exclude': lambda f: f is None }})
     r"""HMAC access Key. This value can be a constant or a JavaScript expression(e.g., `${C.env.GCS_ACCESS_KEY}`)."""
-    aws_authentication_method: Optional[OutputGoogleCloudStorageAuthenticationMethod] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsAuthenticationMethod'), 'exclude': lambda f: f is None }})
+    aws_authentication_method: Optional[OutputGoogleCloudStorageAuthenticationMethod] = dataclasses.field(default=OutputGoogleCloudStorageAuthenticationMethod.MANUAL, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsAuthenticationMethod'), 'exclude': lambda f: f is None }})
     aws_secret: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsSecret'), 'exclude': lambda f: f is None }})
     r"""Select (or create) a stored secret that references your access key and secret key."""
     aws_secret_key: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('awsSecretKey'), 'exclude': lambda f: f is None }})
     r"""HMAC secret. This value can be a constant or a JavaScript expression(e.g., `${C.env.GCS_SECRET}`)."""
-    base_file_name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('baseFileName'), 'exclude': lambda f: f is None }})
+    base_file_name: Optional[str] = dataclasses.field(default='`CriblOut`', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('baseFileName'), 'exclude': lambda f: f is None }})
     r"""JavaScript expression to define the output filename prefix (can be constant)."""
-    compress: Optional[OutputGoogleCloudStorageCompress] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('compress'), 'exclude': lambda f: f is None }})
+    compress: Optional[OutputGoogleCloudStorageCompress] = dataclasses.field(default=OutputGoogleCloudStorageCompress.NONE, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('compress'), 'exclude': lambda f: f is None }})
     r"""Choose data compression format to apply before moving files to final destination."""
-    empty_dir_cleanup_sec: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emptyDirCleanupSec'), 'exclude': lambda f: f is None }})
+    empty_dir_cleanup_sec: Optional[int] = dataclasses.field(default=300, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('emptyDirCleanupSec'), 'exclude': lambda f: f is None }})
     r"""How often (secs) to clean-up empty directories when 'Remove Staging Dirs' is enabled."""
+    endpoint: Optional[str] = dataclasses.field(default='https://storage.googleapis.com', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('endpoint'), 'exclude': lambda f: f is None }})
+    r"""Google Cloud Storage service endpoint."""
     environment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('environment'), 'exclude': lambda f: f is None }})
     r"""Optionally, enable this config only on a specified Git branch. If empty, will be enabled everywhere."""
-    file_name_suffix: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fileNameSuffix'), 'exclude': lambda f: f is None }})
+    file_name_suffix: Optional[str] = dataclasses.field(default='`.${C.env["CRIBL_WORKER_ID"]}.${__format}${__compression === "gzip" ? ".gz" : ""}`', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fileNameSuffix'), 'exclude': lambda f: f is None }})
     r"""JavaScript expression to define the output filename suffix (can be constant).  The `__format` variable refers to the value of the `Data format` field (`json` or `raw`).  The `__compression` field refers to the kind of compression being used (`none` or `gzip`)"""
-    format: Optional[OutputGoogleCloudStorageDataFormat] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format'), 'exclude': lambda f: f is None }})
+    format: Optional[OutputGoogleCloudStorageDataFormat] = dataclasses.field(default=OutputGoogleCloudStorageDataFormat.JSON, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format'), 'exclude': lambda f: f is None }})
     r"""Format of the output data."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Unique ID for this output"""
-    max_file_idle_time_sec: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxFileIdleTimeSec'), 'exclude': lambda f: f is None }})
+    max_file_idle_time_sec: Optional[int] = dataclasses.field(default=30, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxFileIdleTimeSec'), 'exclude': lambda f: f is None }})
     r"""Maximum amount of time to keep inactive files open. Files open for longer than this will be closed and moved to final output location."""
-    max_file_open_time_sec: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxFileOpenTimeSec'), 'exclude': lambda f: f is None }})
+    max_file_open_time_sec: Optional[int] = dataclasses.field(default=300, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxFileOpenTimeSec'), 'exclude': lambda f: f is None }})
     r"""Maximum amount of time to write to a file. Files open for longer than this will be closed and moved to final output location."""
-    max_file_size_mb: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxFileSizeMB'), 'exclude': lambda f: f is None }})
+    max_file_size_mb: Optional[int] = dataclasses.field(default=32, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxFileSizeMB'), 'exclude': lambda f: f is None }})
     r"""Maximum uncompressed output file size. Files of this size will be closed and moved to final output location."""
-    max_open_files: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxOpenFiles'), 'exclude': lambda f: f is None }})
+    max_open_files: Optional[int] = dataclasses.field(default=100, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxOpenFiles'), 'exclude': lambda f: f is None }})
     r"""Maximum number of files to keep open concurrently. When exceeded, @{product} will close the oldest open files and move them to the final output location."""
-    object_acl: Optional[OutputGoogleCloudStorageObjectACL] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('objectACL'), 'exclude': lambda f: f is None }})
+    object_acl: Optional[OutputGoogleCloudStorageObjectACL] = dataclasses.field(default=OutputGoogleCloudStorageObjectACL.PRIVATE, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('objectACL'), 'exclude': lambda f: f is None }})
     r"""Object ACL to assign to uploaded objects."""
-    on_backpressure: Optional[OutputGoogleCloudStorageBackpressureBehavior] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onBackpressure'), 'exclude': lambda f: f is None }})
+    on_backpressure: Optional[OutputGoogleCloudStorageBackpressureBehavior] = dataclasses.field(default=OutputGoogleCloudStorageBackpressureBehavior.BLOCK, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onBackpressure'), 'exclude': lambda f: f is None }})
     r"""Whether to block or drop events when all receivers are exerting backpressure."""
-    parquet_data_page_version: Optional[OutputGoogleCloudStorageDataPageVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetDataPageVersion'), 'exclude': lambda f: f is None }})
+    parquet_data_page_version: Optional[OutputGoogleCloudStorageDataPageVersion] = dataclasses.field(default=OutputGoogleCloudStorageDataPageVersion.DATA_PAGE_V1, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetDataPageVersion'), 'exclude': lambda f: f is None }})
     r"""Serialization format of data pages. Note that not all reader implentations support Data page V2."""
-    parquet_page_size: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetPageSize'), 'exclude': lambda f: f is None }})
+    parquet_page_size: Optional[str] = dataclasses.field(default='1MB', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetPageSize'), 'exclude': lambda f: f is None }})
     r"""Ideal memory size for page segments. E.g., 1MB or 128MB. Generally, lower values improve reading speed, while higher values improve compression. Imposes a target, not a strict limit; the final size of a row group may be larger or smaller."""
-    parquet_row_group_size: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetRowGroupSize'), 'exclude': lambda f: f is None }})
+    parquet_row_group_size: Optional[str] = dataclasses.field(default='16MB', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetRowGroupSize'), 'exclude': lambda f: f is None }})
     r"""Ideal memory size for row group segments. E.g., 128MB or 1GB. Affects memory use when writing. Imposes a target, not a strict limit; the final size of a row group may be larger or smaller."""
-    parquet_version: Optional[OutputGoogleCloudStorageParquetVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetVersion'), 'exclude': lambda f: f is None }})
+    parquet_version: Optional[OutputGoogleCloudStorageParquetVersion] = dataclasses.field(default=OutputGoogleCloudStorageParquetVersion.PARQUET_2_6, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parquetVersion'), 'exclude': lambda f: f is None }})
     r"""Determines which data types are supported and how they are represented."""
-    partition_expr: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partitionExpr'), 'exclude': lambda f: f is None }})
+    partition_expr: Optional[str] = dataclasses.field(default='C.Time.strftime(_time ? _time : Date.now()/1000, \'%Y/%m/%d\')', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partitionExpr'), 'exclude': lambda f: f is None }})
     r"""JS expression defining how files are partitioned and organized. Default is date-based. If blank, Stream will fall back to the event's __partition field value – if present – otherwise to each location's root directory."""
     pipeline: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pipeline'), 'exclude': lambda f: f is None }})
     r"""Pipeline to process data before sending out to this output."""
-    reject_unauthorized: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rejectUnauthorized'), 'exclude': lambda f: f is None }})
+    reject_unauthorized: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rejectUnauthorized'), 'exclude': lambda f: f is None }})
     r"""Whether to reject certificates that cannot be verified against a valid CA (e.g., self-signed certificates)."""
-    remove_empty_dirs: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('removeEmptyDirs'), 'exclude': lambda f: f is None }})
+    remove_empty_dirs: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('removeEmptyDirs'), 'exclude': lambda f: f is None }})
     r"""Remove empty staging directories after moving files."""
-    reuse_connections: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reuseConnections'), 'exclude': lambda f: f is None }})
+    reuse_connections: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reuseConnections'), 'exclude': lambda f: f is None }})
     r"""Whether to reuse connections between requests, which can improve performance."""
     should_log_invalid_rows: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('shouldLogInvalidRows'), 'exclude': lambda f: f is None }})
     r"""To log rows that @{product} skips due to data mismatch, first set logging to Debug, then toggle this on. Logs up to 20 unique rows."""
-    signature_version: Optional[OutputGoogleCloudStorageSignatureVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('signatureVersion'), 'exclude': lambda f: f is None }})
+    signature_version: Optional[OutputGoogleCloudStorageSignatureVersion] = dataclasses.field(default=OutputGoogleCloudStorageSignatureVersion.V4, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('signatureVersion'), 'exclude': lambda f: f is None }})
     r"""Signature version to use for signing Google Cloud Storage requests."""
     spacer: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('spacer'), 'exclude': lambda f: f is None }})
+    stage_path: Optional[str] = dataclasses.field(default='$CRIBL_HOME/state/outputs/staging', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('stagePath'), 'exclude': lambda f: f is None }})
+    r"""Filesystem location in which to buffer files, before compressing and moving to final destination. Use performant stable storage."""
     storage_class: Optional[OutputGoogleCloudStorageStorageClass] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('storageClass'), 'exclude': lambda f: f is None }})
     r"""Storage class to select for uploaded objects."""
     streamtags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('streamtags'), 'exclude': lambda f: f is None }})

@@ -1,4 +1,5 @@
-# profiler
+# Profiler
+(*profiler*)
 
 ### Available Operations
 
@@ -18,22 +19,18 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.ProfilerItem(
-    create_time=218783,
-    id='c8db0340-8d6d-4364-bfd4-55906d1263d4',
-    size=523109,
-    worker_id='officiis',
+    id='<ID>',
 )
 
 res = s.profiler.create(req)
 
 if res.profiler_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -59,16 +56,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.profiler.delete('omnis')
+res = s.profiler.delete(id='program')
 
 if res.profiler_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -94,16 +90,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.profiler.get('neque')
+res = s.profiler.get(id='female')
 
 if res.profiler_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -129,21 +124,17 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.profiler.update('corporis', shared.ProfilerItem(
-    create_time=797527,
-    id='2c9e81f3-0be3-4e43-a02d-721657650664',
-    size=94122,
-    worker_id='rem',
+res = s.profiler.update(id='Van', profiler_item=shared.ProfilerItem(
+    id='<ID>',
 ))
 
 if res.profiler_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

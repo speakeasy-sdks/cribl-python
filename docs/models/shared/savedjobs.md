@@ -1,11 +1,9 @@
 # SavedJobs
 
-a list of SavedJob objects
-
 
 ## Fields
 
-| Field                                      | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `count`                                    | *Optional[int]*                            | :heavy_minus_sign:                         | number of items present in the items array |
-| `items`                                    | list[*Any*]                                | :heavy_minus_sign:                         | N/A                                        |
+| Field                                                                                                         | Type                                                                                                          | Required                                                                                                      | Description                                                                                                   |
+| ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- | ------------------------------------------------------------------------------------------------------------- |
+| `count`                                                                                                       | *Optional[int]*                                                                                               | :heavy_minus_sign:                                                                                            | number of items present in the items array                                                                    |
+| `items`                                                                                                       | list[[Union[SavedJobCollection, SavedJobExecutor, SavedJobScheduledSearch]](../../models/shared/savedjob.md)] | :heavy_minus_sign:                                                                                            | N/A                                                                                                           |

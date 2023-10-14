@@ -1,4 +1,5 @@
-# destination_queue
+# DestinationQueue
+(*destination_queue*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.destination_queue.delete('magnam')
+res = s.destination_queue.delete(id='program')
 
 if res.delete_destination_queue_200_application_json_object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

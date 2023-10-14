@@ -1,4 +1,5 @@
-# schema
+# Schema
+(*schema*)
 
 ### Available Operations
 
@@ -19,22 +20,18 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = {
-    "quo": 'suscipit',
-    "ex": 'sint',
-    "est": 'doloribus',
-    "provident": 'alias',
+    "online": 'Configuration',
 }
 
 res = s.schema.create(req)
 
 if res.schema_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -60,16 +57,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.schema.delete('deserunt')
+res = s.schema.delete(id='program')
 
 if res.schema_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -95,16 +91,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.schema.get('fugit')
+res = s.schema.get(id='female')
 
 if res.schema_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -130,20 +125,18 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = {
-    "quo": 'molestiae',
-    "maxime": 'facere',
+    "payment": 'Silver',
 }
 
 res = s.schema.post(req)
 
 if res.schema_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -169,20 +162,17 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.schema.update('impedit', {
-    "deleniti": 'quasi',
-    "maiores": 'voluptatem',
-    "aliquid": 'laudantium',
+res = s.schema.update(id='Van', request_body={
+    "East": 'male',
 })
 
 if res.schema_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

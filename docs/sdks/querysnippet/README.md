@@ -1,4 +1,5 @@
-# query_snippet
+# QuerySnippet
+(*query_snippet*)
 
 ### Available Operations
 
@@ -15,24 +16,22 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.PreviewRequestBody(
     events=[
-        'doloremque',
-        'assumenda',
+        'interface',
     ],
     options=shared.PreviewOptions(),
-    query='provident',
+    query='structure Aruba hourly',
 )
 
 res = s.query_snippet.apply(req)
 
 if res.preview_responses is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

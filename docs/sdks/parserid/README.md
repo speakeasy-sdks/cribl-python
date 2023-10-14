@@ -1,4 +1,5 @@
-# parser_id
+# ParserID
+(*parser_id*)
 
 ### Available Operations
 
@@ -17,16 +18,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.parser_id.delete('nostrum')
+res = s.parser_id.delete(id='program')
 
 if res.parser_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -52,16 +52,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.parser_id.get('sequi')
+res = s.parser_id.get(id='female')
 
 if res.parser_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -87,18 +86,17 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.parser_id.update('voluptatum', {
-    "error": 'nobis',
+res = s.parser_id.update(id='Van', request_body={
+    "East": 'male',
 })
 
 if res.parser_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

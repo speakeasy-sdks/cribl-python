@@ -11,7 +11,6 @@ from dataclasses_json import Undefined, dataclass_json
 
 @dataclasses.dataclass
 class SearchTimeline:
-    r"""SearchTimeline object"""
     buckets: list[shared_bucket.Bucket] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('buckets') }})
     total_event_count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('totalEventCount') }})
     

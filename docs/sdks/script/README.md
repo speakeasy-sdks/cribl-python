@@ -1,4 +1,5 @@
-# script
+# Script
+(*script*)
 
 ### Available Operations
 
@@ -18,21 +19,18 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = {
-    "consectetur": 'labore',
-    "laudantium": 'cumque',
-    "adipisci": 'veritatis',
+    "online": 'Configuration',
 }
 
 res = s.script.create(req)
 
 if res.script_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -58,16 +56,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.script.delete('nam')
+res = s.script.delete(id='program')
 
 if res.script_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -93,16 +90,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.script.get('voluptatibus')
+res = s.script.get(id='female')
 
 if res.script_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -128,18 +124,17 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.script.update('magnam', {
-    "ducimus": 'itaque',
+res = s.script.update(id='Van', request_body={
+    "East": 'male',
 })
 
 if res.script_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

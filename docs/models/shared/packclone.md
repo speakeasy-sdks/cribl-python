@@ -1,7 +1,5 @@
 # PackClone
 
-PackClone object
-
 
 ## Fields
 

@@ -1,7 +1,5 @@
 # LogFilesInfo
 
-a list of LogFileInfo objects
-
 
 ## Fields
 
