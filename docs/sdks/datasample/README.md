@@ -1,4 +1,5 @@
-# data_sample
+# DataSample
+(*data_sample*)
 
 ### Available Operations
 
@@ -15,21 +16,18 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = {
-    "nemo": 'voluptate',
-    "blanditiis": 'officia',
-    "voluptas": 'numquam',
+    "payment": 'Silver',
 }
 
 res = s.data_sample.post(req)
 
 if res.data_samples is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

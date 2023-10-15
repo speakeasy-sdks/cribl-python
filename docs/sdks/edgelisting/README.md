@@ -1,4 +1,5 @@
-# edge_listing
+# EdgeListing
+(*edge_listing*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.edge_listing.get('architecto')
+res = s.edge_listing.get(path='female')
 
 if res.filesystem_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

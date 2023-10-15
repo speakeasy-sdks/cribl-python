@@ -1,7 +1,5 @@
 # CrudEntityBases
 
-a list of CrudEntityBase objects
-
 
 ## Fields
 

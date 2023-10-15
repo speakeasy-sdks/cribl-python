@@ -50,7 +50,7 @@ class OutputConfluentCloudKafkaSchemaRegistryAuthenticationTLSSettingsClientSide
     r"""The name of the predefined certificate."""
     cert_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certPath'), 'exclude': lambda f: f is None }})
     r"""Path on client in which to find certificates to use. PEM format. Can reference $ENV_VARS."""
-    disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
+    disabled: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
     max_version: Optional[OutputConfluentCloudKafkaSchemaRegistryAuthenticationTLSSettingsClientSideMaximumTLSVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxVersion'), 'exclude': lambda f: f is None }})
     r"""Maximum TLS version to use when connecting"""
     min_version: Optional[OutputConfluentCloudKafkaSchemaRegistryAuthenticationTLSSettingsClientSideMinimumTLSVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('minVersion'), 'exclude': lambda f: f is None }})
@@ -59,7 +59,7 @@ class OutputConfluentCloudKafkaSchemaRegistryAuthenticationTLSSettingsClientSide
     r"""Passphrase to use to decrypt private key."""
     priv_key_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privKeyPath'), 'exclude': lambda f: f is None }})
     r"""Path on client in which to find the private key to use. PEM format. Can reference $ENV_VARS."""
-    reject_unauthorized: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rejectUnauthorized'), 'exclude': lambda f: f is None }})
+    reject_unauthorized: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rejectUnauthorized'), 'exclude': lambda f: f is None }})
     r"""Reject certs that are not authorized by a CA in the CA certificate path, or by another trusted CA (e.g., the system's CA). Defaults to No."""
     servername: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('servername'), 'exclude': lambda f: f is None }})
     r"""Server name for the SNI (Server Name Indication) TLS extension. It must be a host name, and not an IP address."""
@@ -71,13 +71,13 @@ class OutputConfluentCloudKafkaSchemaRegistryAuthenticationTLSSettingsClientSide
 
 @dataclasses.dataclass
 class OutputConfluentCloudKafkaSchemaRegistryAuthentication:
-    disabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled') }})
-    r"""Enable Schema Registry"""
     default_key_schema_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultKeySchemaId'), 'exclude': lambda f: f is None }})
     r"""Used when __keySchemaIdOut is not present, to transform key values, leave blank if key transformation is not required by default."""
     default_value_schema_id: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultValueSchemaId'), 'exclude': lambda f: f is None }})
     r"""Used when __valueSchemaIdOut is not present, to transform _raw, leave blank if value transformation is not required by default."""
-    schema_registry_url: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schemaRegistryURL'), 'exclude': lambda f: f is None }})
+    disabled: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
+    r"""Enable Schema Registry"""
+    schema_registry_url: Optional[str] = dataclasses.field(default='http://localhost:8081', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schemaRegistryURL'), 'exclude': lambda f: f is None }})
     r"""URL for access to the Confluent Schema Registry, i.e.: http://localhost:8081"""
     tls: Optional[OutputConfluentCloudKafkaSchemaRegistryAuthenticationTLSSettingsClientSide] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tls'), 'exclude': lambda f: f is None }})
     
@@ -118,9 +118,9 @@ class OutputConfluentCloudAuthenticationSASLMechanism(str, Enum):
 @dataclasses.dataclass
 class OutputConfluentCloudAuthentication:
     r"""Authentication parameters to use when connecting to brokers. Using TLS is highly recommended."""
-    disabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled') }})
+    disabled: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
     r"""Enable Authentication"""
-    mechanism: Optional[OutputConfluentCloudAuthenticationSASLMechanism] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mechanism'), 'exclude': lambda f: f is None }})
+    mechanism: Optional[OutputConfluentCloudAuthenticationSASLMechanism] = dataclasses.field(default=OutputConfluentCloudAuthenticationSASLMechanism.PLAIN, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mechanism'), 'exclude': lambda f: f is None }})
     r"""SASL authentication mechanism to use."""
     
 
@@ -150,7 +150,7 @@ class OutputConfluentCloudTLSSettingsClientSide:
     r"""The name of the predefined certificate."""
     cert_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certPath'), 'exclude': lambda f: f is None }})
     r"""Path on client in which to find certificates to use. PEM format. Can reference $ENV_VARS."""
-    disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
+    disabled: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
     max_version: Optional[OutputConfluentCloudTLSSettingsClientSideMaximumTLSVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxVersion'), 'exclude': lambda f: f is None }})
     r"""Maximum TLS version to use when connecting"""
     min_version: Optional[OutputConfluentCloudTLSSettingsClientSideMinimumTLSVersion] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('minVersion'), 'exclude': lambda f: f is None }})
@@ -159,7 +159,7 @@ class OutputConfluentCloudTLSSettingsClientSide:
     r"""Passphrase to use to decrypt private key."""
     priv_key_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privKeyPath'), 'exclude': lambda f: f is None }})
     r"""Path on client in which to find the private key to use. PEM format. Can reference $ENV_VARS."""
-    reject_unauthorized: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rejectUnauthorized'), 'exclude': lambda f: f is None }})
+    reject_unauthorized: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rejectUnauthorized'), 'exclude': lambda f: f is None }})
     r"""Reject certs that are not authorized by a CA in the CA certificate path, or by another trusted CA (e.g., the system's CA). Defaults to No."""
     servername: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('servername'), 'exclude': lambda f: f is None }})
     r"""Server name for the SNI (Server Name Indication) TLS extension. It must be a host name, and not an IP address."""
@@ -178,49 +178,49 @@ class OutputConfluentCloud:
     r"""List of Confluent Cloud brokers to connect to, e.g., yourAccount.confluent.cloud:9092."""
     topic: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('topic') }})
     r"""The topic to publish events to. Can be overridden using the __topicOut field."""
-    ack: Optional[OutputConfluentCloudAcknowledgments] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ack'), 'exclude': lambda f: f is None }})
+    ack: Optional[OutputConfluentCloudAcknowledgments] = dataclasses.field(default=OutputConfluentCloudAcknowledgments.ONE, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ack'), 'exclude': lambda f: f is None }})
     r"""Control the number of required acknowledgments."""
-    authentication_timeout: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authenticationTimeout'), 'exclude': lambda f: f is None }})
+    authentication_timeout: Optional[int] = dataclasses.field(default=10000, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authenticationTimeout'), 'exclude': lambda f: f is None }})
     r"""Maximum time to wait for Kafka to respond to an authentication request"""
-    compression: Optional[OutputConfluentCloudCompression] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('compression'), 'exclude': lambda f: f is None }})
+    compression: Optional[OutputConfluentCloudCompression] = dataclasses.field(default=OutputConfluentCloudCompression.NONE, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('compression'), 'exclude': lambda f: f is None }})
     r"""Codec to use to compress the data before sending to Kafka"""
-    connection_timeout: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connectionTimeout'), 'exclude': lambda f: f is None }})
+    connection_timeout: Optional[int] = dataclasses.field(default=10000, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connectionTimeout'), 'exclude': lambda f: f is None }})
     r"""Maximum time to wait for a connection to complete successfully"""
     environment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('environment'), 'exclude': lambda f: f is None }})
     r"""Optionally, enable this config only on a specified Git branch. If empty, will be enabled everywhere."""
-    flush_event_count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flushEventCount'), 'exclude': lambda f: f is None }})
+    flush_event_count: Optional[int] = dataclasses.field(default=1000, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flushEventCount'), 'exclude': lambda f: f is None }})
     r"""The maximum number of events you want the Destination to allow in a batch before forcing a flush"""
-    flush_period_sec: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flushPeriodSec'), 'exclude': lambda f: f is None }})
+    flush_period_sec: Optional[int] = dataclasses.field(default=1, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flushPeriodSec'), 'exclude': lambda f: f is None }})
     r"""The maximum amount of time you want the Destination to wait before forcing a flush. Shorter intervals tend to result in smaller batches being sent."""
-    format: Optional[OutputConfluentCloudRecordDataFormat] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format'), 'exclude': lambda f: f is None }})
+    format: Optional[OutputConfluentCloudRecordDataFormat] = dataclasses.field(default=OutputConfluentCloudRecordDataFormat.JSON, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format'), 'exclude': lambda f: f is None }})
     r"""Format to use to serialize events before writing to Kafka."""
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Unique ID for this output"""
     kafka_schema_registry: Optional[OutputConfluentCloudKafkaSchemaRegistryAuthentication] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('kafkaSchemaRegistry'), 'exclude': lambda f: f is None }})
-    max_record_size_kb: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxRecordSizeKB'), 'exclude': lambda f: f is None }})
+    max_record_size_kb: Optional[int] = dataclasses.field(default=768, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxRecordSizeKB'), 'exclude': lambda f: f is None }})
     r"""Maximum size of each record batch before compression. The value must not exceed the Kafka brokers' message.max.bytes setting."""
-    max_retries: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxRetries'), 'exclude': lambda f: f is None }})
+    max_retries: Optional[int] = dataclasses.field(default=5, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxRetries'), 'exclude': lambda f: f is None }})
     r"""If messages are failing, you can set the maximum number of retries as high as 100 to prevent loss of data."""
-    on_backpressure: Optional[OutputConfluentCloudBackpressureBehavior] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onBackpressure'), 'exclude': lambda f: f is None }})
+    on_backpressure: Optional[OutputConfluentCloudBackpressureBehavior] = dataclasses.field(default=OutputConfluentCloudBackpressureBehavior.BLOCK, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('onBackpressure'), 'exclude': lambda f: f is None }})
     r"""Whether to block, drop, or queue events when all receivers are exerting backpressure."""
     pipeline: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pipeline'), 'exclude': lambda f: f is None }})
     r"""Pipeline to process data before sending out to this output."""
-    pq_compress: Optional[OutputConfluentCloudCompression1] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqCompress'), 'exclude': lambda f: f is None }})
+    pq_compress: Optional[OutputConfluentCloudCompression1] = dataclasses.field(default=OutputConfluentCloudCompression1.NONE, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqCompress'), 'exclude': lambda f: f is None }})
     r"""Codec to use to compress the persisted data."""
     pq_controls: Optional[OutputConfluentCloudPqControls] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqControls'), 'exclude': lambda f: f is None }})
-    pq_max_file_size: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqMaxFileSize'), 'exclude': lambda f: f is None }})
+    pq_max_file_size: Optional[str] = dataclasses.field(default='1 MB', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqMaxFileSize'), 'exclude': lambda f: f is None }})
     r"""The maximum size to store in each queue file before closing and optionally compressing (KB, MB, etc.)."""
     pq_max_size: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqMaxSize'), 'exclude': lambda f: f is None }})
     r"""The maximum amount of disk space the queue is allowed to consume. Once reached, the system stops queueing and applies the fallback Queue-full behavior. Enter a numeral with units of KB, MB, etc."""
-    pq_on_backpressure: Optional[OutputConfluentCloudQueueFullBehavior] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqOnBackpressure'), 'exclude': lambda f: f is None }})
+    pq_on_backpressure: Optional[OutputConfluentCloudQueueFullBehavior] = dataclasses.field(default=OutputConfluentCloudQueueFullBehavior.BLOCK, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqOnBackpressure'), 'exclude': lambda f: f is None }})
     r"""Whether to block or drop events when the queue is exerting backpressure (full capacity or low disk). 'Block' is the same behavior as non-PQ blocking. 'Drop new data' throws away incoming data, while leaving the contents of the PQ unchanged."""
-    pq_path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqPath'), 'exclude': lambda f: f is None }})
+    pq_path: Optional[str] = dataclasses.field(default='$CRIBL_HOME/state/queues', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqPath'), 'exclude': lambda f: f is None }})
     r"""The location for the persistent queue files. To this field's value, the system will append: /<worker-id>/<output-id>."""
-    pq_strict_ordering: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqStrictOrdering'), 'exclude': lambda f: f is None }})
+    pq_strict_ordering: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pqStrictOrdering'), 'exclude': lambda f: f is None }})
     r"""Toggle this off to forward new events to receiver(s) before queue is flushed. Otherwise, default drain behavior is FIFO (first in, first out)."""
-    reauthentication_threshold: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reauthenticationThreshold'), 'exclude': lambda f: f is None }})
+    reauthentication_threshold: Optional[int] = dataclasses.field(default=10000, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('reauthenticationThreshold'), 'exclude': lambda f: f is None }})
     r"""Specifies a time window during which @{product} can reauthenticate if needed. Creates the window measuring backwards from the moment when credentials are set to expire."""
-    request_timeout: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestTimeout'), 'exclude': lambda f: f is None }})
+    request_timeout: Optional[int] = dataclasses.field(default=60000, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('requestTimeout'), 'exclude': lambda f: f is None }})
     r"""Maximum time to wait for Kafka to respond to a request"""
     sasl: Optional[OutputConfluentCloudAuthentication] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sasl'), 'exclude': lambda f: f is None }})
     r"""Authentication parameters to use when connecting to brokers. Using TLS is highly recommended."""
