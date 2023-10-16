@@ -32,7 +32,7 @@ class PipelineConf:
     functions: Optional[list[shared_pipelinefunctionconf.PipelineFunctionConf]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('functions'), 'exclude': lambda f: f is None }})
     r"""List of functions to pass data through"""
     groups: Optional[dict[str, PipelineConfGroups]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('groups'), 'exclude': lambda f: f is None }})
-    output: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('output'), 'exclude': lambda f: f is None }})
+    output: Optional[str] = dataclasses.field(default='default', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('output'), 'exclude': lambda f: f is None }})
     r"""The output destination for events processed by this pipeline"""
     streamtags: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('streamtags'), 'exclude': lambda f: f is None }})
     r"""Add tags for filtering and grouping in @{product}."""
@@ -44,7 +44,6 @@ class PipelineConf:
 
 @dataclasses.dataclass
 class Pipeline:
-    r"""New Pipeline object"""
     conf: PipelineConf = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('conf') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     r"""Pipeline ID"""

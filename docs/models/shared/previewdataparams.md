@@ -1,7 +1,5 @@
 # PreviewDataParams
 
-PreviewDataParams object
-
 
 ## Fields
 

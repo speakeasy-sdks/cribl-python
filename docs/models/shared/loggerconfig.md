@@ -1,7 +1,5 @@
 # LoggerConfig
 
-a list of LoggerConfig objects
-
 
 ## Fields
 

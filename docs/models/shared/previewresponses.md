@@ -1,7 +1,5 @@
 # PreviewResponses
 
-a list of PreviewResponseBody objects
-
 
 ## Fields
 

@@ -1,7 +1,5 @@
 # License
 
-New License object
-
 
 ## Fields
 

@@ -1,7 +1,5 @@
 # SystemInfoObjects
 
-a list of SystemInfo objects
-
 
 ## Fields
 

@@ -1,4 +1,5 @@
-# give_cribl_version
+# GiveCriblVersion
+(*give_cribl_version*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.give_cribl_version.post('amet')
+res = s.give_cribl_version.post(version='payment')
 
 if res.cribl is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -11,7 +11,6 @@ from typing import Optional
 
 @dataclasses.dataclass
 class WorkerEdgeNodes:
-    r"""a list of number objects"""
     count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
     r"""number of items present in the items array"""
     items: Optional[list[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})

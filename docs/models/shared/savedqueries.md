@@ -1,7 +1,5 @@
 # SavedQueries
 
-a list of SavedQuery objects
-
 
 ## Fields
 

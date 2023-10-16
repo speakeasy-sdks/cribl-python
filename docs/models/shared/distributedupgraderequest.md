@@ -1,7 +1,5 @@
 # DistributedUpgradeRequest
 
-distributedUpgrade object
-
 
 ## Fields
 
