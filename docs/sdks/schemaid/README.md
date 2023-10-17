@@ -1,4 +1,5 @@
-# schema_id
+# SchemaID
+(*schema_id*)
 
 ### Available Operations
 
@@ -17,16 +18,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.schema_id.delete('unde')
+res = s.schema_id.delete(id='program')
 
 if res.schema_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -52,16 +52,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.schema_id.get('corrupti')
+res = s.schema_id.get(id='female')
 
 if res.schema_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -87,21 +86,17 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.schema_id.update('quae', {
-    "ea": 'libero',
-    "nam": 'amet',
-    "adipisci": 'minus',
-    "hic": 'similique',
+res = s.schema_id.update(id='Van', request_body={
+    "East": 'male',
 })
 
 if res.schema_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -1,4 +1,5 @@
-# data_sample_id
+# DataSampleID
+(*data_sample_id*)
 
 ### Available Operations
 
@@ -17,16 +18,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.data_sample_id.delete('nemo')
+res = s.data_sample_id.delete(id='program')
 
 if res.data_samples is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -52,16 +52,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.data_sample_id.get('quos')
+res = s.data_sample_id.get(id='female')
 
 if res.data_samples is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -87,18 +86,17 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.data_sample_id.update('eius', {
-    "ducimus": 'nesciunt',
+res = s.data_sample_id.update(id='Van', request_body={
+    "East": 'male',
 })
 
 if res.data_samples is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -1,7 +1,5 @@
 # Collectors
 
-a list of Collector objects
-
 
 ## Fields
 

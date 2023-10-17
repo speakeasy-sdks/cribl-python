@@ -1,7 +1,5 @@
 # GlobalVars
 
-a list of Global Variable objects
-
 
 ## Fields
 

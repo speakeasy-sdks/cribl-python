@@ -1,4 +1,5 @@
-# logger_configs
+# LoggerConfigs
+(*logger_configs*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.logger_configs.get()
 
 if res.logger_configs is not None:
     # handle response
+    pass
 ```
 
 

@@ -1,7 +1,5 @@
 # PolicyRules
 
-a list of PolicyRule objects
-
 
 ## Fields
 

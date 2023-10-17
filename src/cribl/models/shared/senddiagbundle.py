@@ -11,16 +11,15 @@ from typing import Optional
 
 @dataclasses.dataclass
 class SendDiagBundle:
-    r"""SendDiagBundle object"""
-    include_metrics: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includeMetrics'), 'exclude': lambda f: f is None }})
+    include_metrics: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('includeMetrics'), 'exclude': lambda f: f is None }})
     r"""Toggle to No to exclude metrics from the diag bundle."""
     max_include_jobs: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxIncludeJobs'), 'exclude': lambda f: f is None }})
     r"""Number of jobs including all tasks that will be included in the bundle."""
     path: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('path'), 'exclude': lambda f: f is None }})
     r"""Existing diag bundle that will be send to Cribl Support. Max 100MB."""
-    rename_js: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('renameJs'), 'exclude': lambda f: f is None }})
+    rename_js: Optional[bool] = dataclasses.field(default=True, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('renameJs'), 'exclude': lambda f: f is None }})
     r"""Append .txt to JavaScript files."""
-    send_to_cribl: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sendToCribl'), 'exclude': lambda f: f is None }})
+    send_to_cribl: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sendToCribl'), 'exclude': lambda f: f is None }})
     r"""Send diag bundle to Cribl Support"""
     
 

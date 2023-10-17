@@ -1,4 +1,5 @@
-# global_variable_id
+# GlobalVariableID
+(*global_variable_id*)
 
 ### Available Operations
 
@@ -17,16 +18,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.global_variable_id.delete('atque')
+res = s.global_variable_id.delete(id='program')
 
 if res.global_vars is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -52,16 +52,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.global_variable_id.get('beatae')
+res = s.global_variable_id.get(id='female')
 
 if res.global_vars is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -87,23 +86,18 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.global_variable_id.update('at', shared.GlobalVar(
-    description='labore',
-    id='c700b607-f3c9-43c7-bb9d-a3f2ceda7e23',
-    lib='repellat',
-    tags='explicabo',
-    type=shared.GlobalVarType.STRING,
-    value='exercitationem',
+res = s.global_variable_id.update(id='Van', global_var=shared.GlobalVar(
+    id='<ID>',
+    value='Reactive',
 ))
 
 if res.global_vars is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

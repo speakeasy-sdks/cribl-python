@@ -17,7 +17,6 @@ class PreviewDataParamsMode(str, Enum):
 
 @dataclasses.dataclass
 class PreviewDataParams:
-    r"""PreviewDataParams object"""
     mode: PreviewDataParamsMode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode') }})
     pipeline_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pipelineId') }})
     sample_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sampleId') }})

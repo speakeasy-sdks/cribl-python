@@ -1,4 +1,5 @@
-# execute_distributed_upgrade
+# ExecuteDistributedUpgrade
+(*execute_distributed_upgrade*)
 
 ### Available Operations
 
@@ -15,35 +16,21 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.execute_distributed_upgrade.post('fugiat', shared.DistributedUpgradeRequest(
+res = s.execute_distributed_upgrade.post(group='payment', distributed_upgrade_request=shared.DistributedUpgradeRequest(
     package_urls=[
         shared.DistributedUpgradeRequestPackageUrls(
-            package_hash_url='officiis',
-            package_url='ducimus',
-        ),
-        shared.DistributedUpgradeRequestPackageUrls(
-            package_hash_url='dolor',
-            package_url='dicta',
-        ),
-        shared.DistributedUpgradeRequestPackageUrls(
-            package_hash_url='error',
-            package_url='porro',
+            package_url='base mealy Metrics',
         ),
     ],
-    upgrade_mode=shared.DistributedUpgradeRequestUpgradeMode.ROLLING,
-    upgrade_percentage=491591,
-    worker_retries=458970,
-    worker_retry_delay=854115,
 ))
 
 if res.cribl_package is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

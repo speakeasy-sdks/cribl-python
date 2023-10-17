@@ -1,4 +1,5 @@
-# search_doc
+# SearchDoc
+(*search_doc*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.search_doc.get()
 
 if res.get_search_doc_200_application_json_string is not None:
     # handle response
+    pass
 ```
 
 

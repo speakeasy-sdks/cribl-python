@@ -1,7 +1,5 @@
 # Cribl
 
-a list of string objects
-
 
 ## Fields
 

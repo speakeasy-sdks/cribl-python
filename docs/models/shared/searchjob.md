@@ -1,7 +1,5 @@
 # SearchJob
 
-New SearchJob object
-
 
 ## Fields
 

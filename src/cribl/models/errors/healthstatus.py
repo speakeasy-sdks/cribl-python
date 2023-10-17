@@ -2,20 +2,21 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import healthstatus_status as shared_healthstatus_status
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from enum import Enum
+
+class HealthStatusStatus(str, Enum):
+    HEALTHY = 'healthy'
+    SHUTTING_DOWN = 'shutting down'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
 
 @dataclasses.dataclass
 class HealthStatus(Exception):
-    r"""Healthy"""
-    status: shared_healthstatus_status.HealthStatusStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: True }})
+    status: HealthStatusStatus = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('status') }})
     
+
     def __str__(self) -> str:
         return utils.marshal_json(self)
