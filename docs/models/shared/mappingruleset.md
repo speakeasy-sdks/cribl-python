@@ -1,7 +1,5 @@
 # MappingRuleset
 
-New MappingRuleset object
-
 
 ## Fields
 

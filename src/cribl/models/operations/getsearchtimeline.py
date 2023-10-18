@@ -7,7 +7,6 @@ from ..shared import searchtimeline as shared_searchtimeline
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetSearchTimelineRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -16,12 +15,14 @@ class GetSearchTimelineRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetSearchTimelineResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     search_timeline: Optional[shared_searchtimeline.SearchTimeline] = dataclasses.field(default=None)
     r"""SearchTimeline object"""
     

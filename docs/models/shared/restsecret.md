@@ -1,7 +1,5 @@
 # RestSecret
 
-New RestSecret object
-
 
 ## Fields
 

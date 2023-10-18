@@ -1,4 +1,5 @@
-# policy_rule
+# PolicyRule
+(*policy_rule*)
 
 ### Available Operations
 
@@ -18,20 +19,16 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.PolicyRule(
     args=[
-        'esse',
-        'laborum',
+        'online',
     ],
-    description='perspiciatis',
-    id='e61876c6-ab21-4d29-9fc9-4d6fecd79939',
+    id='<ID>',
     template=[
-        'eaque',
+        'Configuration',
     ],
 )
 
@@ -39,6 +36,7 @@ res = s.policy_rule.create(req)
 
 if res.policy_rules is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -64,16 +62,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.policy_rule.delete('eum')
+res = s.policy_rule.delete(id='program')
 
 if res.policy_rules is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -99,16 +96,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.policy_rule.get('laboriosam')
+res = s.policy_rule.get(id='female')
 
 if res.policy_rules is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -134,27 +130,23 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.policy_rule.update('laborum', shared.PolicyRule(
+res = s.policy_rule.update(id='Van', policy_rule=shared.PolicyRule(
     args=[
-        'assumenda',
-        'explicabo',
+        'East',
     ],
-    description='fugiat',
-    id='00035533-8cec-4086-ba21-e9152cb31191',
+    id='<ID>',
     template=[
-        'ducimus',
-        'libero',
+        'male',
     ],
 ))
 
 if res.policy_rules is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

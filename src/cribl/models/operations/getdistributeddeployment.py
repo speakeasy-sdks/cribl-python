@@ -7,7 +7,6 @@ from ..shared import distributedsummaries as shared_distributedsummaries
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetDistributedDeploymentRequest:
     mode: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'mode', 'style': 'form', 'explode': True }})
@@ -16,13 +15,15 @@ class GetDistributedDeploymentRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetDistributedDeploymentResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     distributed_summaries: Optional[shared_distributedsummaries.DistributedSummaries] = dataclasses.field(default=None)
     r"""a list of DistributedSummary objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

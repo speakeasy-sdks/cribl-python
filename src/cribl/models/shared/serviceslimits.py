@@ -8,7 +8,6 @@ from dataclasses_json import Undefined, dataclass_json
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ServicesLimits:
     connections: shared_commonservicelimitconfigs.CommonServiceLimitConfigs = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('connections') }})

@@ -1,7 +1,5 @@
 # DatabaseConnectionConfig
 
-New DatabaseConnectionConfig object
-
 
 ## Fields
 

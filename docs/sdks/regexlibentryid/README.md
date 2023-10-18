@@ -1,4 +1,5 @@
-# regex_lib_entry_id
+# RegexLibEntryID
+(*regex_lib_entry_id*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.regex_lib_entry_id.get('dolores')
+res = s.regex_lib_entry_id.get(id='female')
 
 if res.regex_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

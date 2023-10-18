@@ -1,4 +1,5 @@
-# sample_output
+# SampleOutput
+(*sample_output*)
 
 ### Available Operations
 
@@ -15,28 +16,21 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.sample_output.post('sint', shared.OutputTestRequest(
+res = s.sample_output.post(id='payment', output_test_request=shared.OutputTestRequest(
     events=[
         shared.CriblEvent(
-            raw='qui',
-        ),
-        shared.CriblEvent(
-            raw='accusantium',
-        ),
-        shared.CriblEvent(
-            raw='consequatur',
+            raw='Silver',
         ),
     ],
 ))
 
 if res.output_test_responses is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

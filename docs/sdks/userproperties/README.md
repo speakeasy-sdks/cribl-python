@@ -1,4 +1,5 @@
-# user_properties
+# UserProperties
+(*user_properties*)
 
 ### Available Operations
 
@@ -15,29 +16,25 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.user_properties.update('excepturi', shared.UserProfile(
+res = s.user_properties.update(id='Van', user_profile=shared.UserProfile(
     disabled=False,
-    email='Novella70@yahoo.com',
-    first='illo',
-    id='dd3bbce2-47b7-4684-aff5-0126d71cffbd',
-    last='aut',
-    password='itaque',
+    email='Evie.Quitzon62@gmail.com',
+    first='Analyst',
+    id='<ID>',
+    last='invoice',
     roles=[
-        'molestiae',
-        'quaerat',
-        'distinctio',
+        'Arizona',
     ],
-    username='Jewell6',
+    username='Dudley.Treutel',
 ))
 
 if res.user_profiles is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

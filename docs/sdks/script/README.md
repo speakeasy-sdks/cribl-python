@@ -1,4 +1,5 @@
-# script
+# Script
+(*script*)
 
 ### Available Operations
 
@@ -18,28 +19,35 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = {
-    "consectetur": 'labore',
-    "laudantium": 'cumque',
-    "adipisci": 'veritatis',
-}
+req = shared.ScriptLibEntry(
+    additional_properties={
+        "online": 'Configuration',
+    },
+    args=[
+        'Money',
+    ],
+    command='blue',
+    env={
+        "shred": 'abnormally',
+    },
+    id='<ID>',
+)
 
 res = s.script.create(req)
 
 if res.script_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [dict[str, Any]](../../models//.md)        | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `request`                                                      | [shared.ScriptLibEntry](../../models/shared/scriptlibentry.md) | :heavy_check_mark:                                             | The request object to use for the request.                     |
 
 
 ### Response
@@ -58,16 +66,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.script.delete('nam')
+res = s.script.delete(id='program')
 
 if res.script_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -93,16 +100,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.script.get('voluptatibus')
+res = s.script.get(id='female')
 
 if res.script_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -128,26 +134,35 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.script.update('magnam', {
-    "ducimus": 'itaque',
-})
+res = s.script.update(id='Van', script_lib_entry=shared.ScriptLibEntry(
+    additional_properties={
+        "East": 'male',
+    },
+    args=[
+        'Metal',
+    ],
+    command='cheater',
+    env={
+        "Islands": 'online',
+    },
+    id='<ID>',
+))
 
 if res.script_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                   | Type                        | Required                    | Description                 |
-| --------------------------- | --------------------------- | --------------------------- | --------------------------- |
-| `id`                        | *str*                       | :heavy_check_mark:          | Unique ID                   |
-| `request_body`              | dict[str, *Any*]            | :heavy_minus_sign:          | Script object to be updated |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `id`                                                                     | *str*                                                                    | :heavy_check_mark:                                                       | Unique ID                                                                |
+| `script_lib_entry`                                                       | [Optional[shared.ScriptLibEntry]](../../models/shared/scriptlibentry.md) | :heavy_minus_sign:                                                       | Script object to be updated                                              |
 
 
 ### Response

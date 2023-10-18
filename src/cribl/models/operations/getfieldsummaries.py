@@ -7,7 +7,6 @@ from ..shared import fieldsummaries as shared_fieldsummaries
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetFieldSummariesRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -16,13 +15,15 @@ class GetFieldSummariesRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetFieldSummariesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     field_summaries: Optional[shared_fieldsummaries.FieldSummaries] = dataclasses.field(default=None)
     r"""FieldSummaries object"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
