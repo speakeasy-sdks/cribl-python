@@ -1,4 +1,5 @@
-# log_files_content
+# LogFilesContent
+(*log_files_content*)
 
 ### Available Operations
 
@@ -15,25 +16,18 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = operations.GetLogFilesContentsRequest(
-    et=627161,
-    files='porro',
-    filter='blanditiis',
-    group_id='quae',
-    limit=169819,
-    lt=885797,
-    type='sed',
+    type='female',
 )
 
 res = s.log_files_content.get(req)
 
 if res.log_file_contents is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

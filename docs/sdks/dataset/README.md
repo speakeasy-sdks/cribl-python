@@ -1,4 +1,5 @@
-# dataset
+# Dataset
+(*dataset*)
 
 ### Available Operations
 
@@ -18,16 +19,12 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.DatasetProviderType(
-    description='nam',
     id=shared.ProviderType.QUICKSORT,
     locality=shared.OriginConfig(
-        filter_expression='iusto',
         origin=shared.DatasetOrigin(),
     ),
 )
@@ -36,6 +33,7 @@ res = s.dataset.create(req)
 
 if res.dataset_provider_type is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -61,16 +59,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.dataset.delete('voluptate')
+res = s.dataset.delete(id='program')
 
 if res.dataset_provider_type is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -96,16 +93,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.dataset.get('sequi')
+res = s.dataset.get(id='female')
 
 if res.dataset_provider_type is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -131,23 +127,20 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.dataset.update('dignissimos', shared.DatasetProviderType(
-    description='neque',
-    id=shared.ProviderType.INVALID,
+res = s.dataset.update(id='Van', dataset_provider_type=shared.DatasetProviderType(
+    id=shared.ProviderType.MM_HEAP,
     locality=shared.OriginConfig(
-        filter_expression='deleniti',
         origin=shared.DatasetOrigin(),
     ),
 ))
 
 if res.dataset_provider_type is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

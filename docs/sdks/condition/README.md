@@ -1,4 +1,5 @@
-# condition
+# Condition
+(*condition*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.condition.get('modi')
+res = s.condition.get(id='female')
 
 if res.conditions is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

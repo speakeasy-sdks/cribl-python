@@ -7,13 +7,15 @@ from ..shared import licenses as shared_licenses
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetLicensesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     licenses: Optional[shared_licenses.Licenses] = dataclasses.field(default=None)
     r"""a list of License objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

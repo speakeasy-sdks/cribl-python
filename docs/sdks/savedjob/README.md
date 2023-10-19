@@ -1,4 +1,5 @@
-# saved_job
+# SavedJob
+(*saved_job*)
 
 ### Available Operations
 
@@ -17,16 +18,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.saved_job.delete('impedit')
+res = s.saved_job.delete(id='program')
 
 if res.saved_jobs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -52,16 +52,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.saved_job.get('recusandae')
+res = s.saved_job.get(id='female')
 
 if res.saved_jobs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -87,64 +86,54 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.saved_job.update('voluptate', shared.SavedJobExecutor(
-    environment='est',
-    executor=shared.SavedJobExecutorExecutor(
-        conf=shared.SavedJobExecutorExecutorExecutorSpecificSettings(),
-        store_task_results=False,
-        type='et',
+res = s.saved_job.update(id='Van', saved_job=shared.SavedJobCollection(
+    collector=shared.SavedJobCollectionCollector(
+        conf=shared.SavedJobCollectionCollectorCollectorSpecificSettings(),
+        type='Reactive',
     ),
-    id='bd8fb7a0-a116-4ce7-a3d4-097fa30e9af7',
-    remove_fields=[
-        'ipsam',
-    ],
-    resume_on_boot=False,
-    schedule=shared.SavedJobExecutorSchedule(
-        cron_schedule='libero',
-        enabled=False,
-        max_concurrent_runs=153942,
-        resume_missed='omnis',
-        run=shared.SavedJobExecutorScheduleRunSettings(
-            earliest=120646,
-            expression='qui',
-            job_timeout='explicabo',
-            latest=6203,
-            log_level=shared.SavedJobExecutorScheduleRunSettingsLogLevel.WARN,
-            max_task_reschedule=9284,
-            max_task_size='fugiat',
-            min_task_size='voluptatum',
-            mode='velit',
-            reschedule_dropped_tasks=False,
-            time_range_type='hic',
-            timestamp_timezone='ullam',
+    input=shared.SavedJobCollectionInput(
+        breaker_rulesets=[
+            'dock',
+        ],
+        metadata=[
+            shared.SavedJobCollectionInputMetadata(
+                name='Quality',
+                value='redundant',
+            ),
+        ],
+        preprocess=shared.SavedJobCollectionInputPreprocess(
+            args=[
+                'cheater',
+            ],
         ),
-        skippable=False,
+    ),
+    remove_fields=[
+        'Islands',
+    ],
+    schedule=shared.SavedJobCollectionSchedule(
+        run=shared.SavedJobCollectionScheduleRunSettings(),
     ),
     streamtags=[
-        'itaque',
-        'distinctio',
-        'iusto',
+        'online',
     ],
-    ttl='dignissimos',
-    type=shared.SavedJobExecutorJobType.EXECUTOR,
+    type=shared.SavedJobCollectionJobType.EXECUTOR,
 ))
 
 if res.saved_jobs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                     | Type                          | Required                      | Description                   |
-| ----------------------------- | ----------------------------- | ----------------------------- | ----------------------------- |
-| `id`                          | *str*                         | :heavy_check_mark:            | Unique ID                     |
-| `request_body`                | *Optional[Any]*               | :heavy_minus_sign:            | SavedJob object to be updated |
+| Parameter                                                                                                                              | Type                                                                                                                                   | Required                                                                                                                               | Description                                                                                                                            |
+| -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------------------------------- |
+| `id`                                                                                                                                   | *str*                                                                                                                                  | :heavy_check_mark:                                                                                                                     | Unique ID                                                                                                                              |
+| `saved_job`                                                                                                                            | [Optional[Union[shared.SavedJobCollection, shared.SavedJobExecutor, shared.SavedJobScheduledSearch]]](../../models/shared/savedjob.md) | :heavy_minus_sign:                                                                                                                     | SavedJob object to be updated                                                                                                          |
 
 
 ### Response

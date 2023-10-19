@@ -5,25 +5,22 @@ import dataclasses
 from ..shared import commit as shared_commit
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ConfigGroupGit:
     commit: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('commit'), 'exclude': lambda f: f is None }})
     local_changes: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('localChanges'), 'exclude': lambda f: f is None }})
-    log: Optional[list[shared_commit.Commit]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('log'), 'exclude': lambda f: f is None }})
+    log: Optional[List[shared_commit.Commit]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('log'), 'exclude': lambda f: f is None }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ConfigGroup:
-    r"""New ConfigGroup object"""
     config_version: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configVersion') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})

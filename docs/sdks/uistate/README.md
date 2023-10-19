@@ -1,4 +1,5 @@
-# ui_state
+# UIState
+(*ui_state*)
 
 ### Available Operations
 
@@ -16,16 +17,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.ui_state.get('laudantium')
+res = s.ui_state.get(key='female')
 
 if res.ui_states is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -51,22 +51,21 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.ui_state.update('dolorem', shared.UIStatePatch(
+res = s.ui_state.update(key='Van', ui_state_patch=shared.UIStatePatch(
     args={
-        "officiis": 'mollitia',
+        "East": 'male',
     },
-    op=shared.UIStatePatchOp.PUSH_RECENT,
-    value='fugiat',
+    op=shared.UIStatePatchOp.SET,
+    value='Quality',
 ))
 
 if res.ui_states is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

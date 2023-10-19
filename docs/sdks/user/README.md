@@ -1,4 +1,5 @@
-# user
+# User
+(*user*)
 
 ### Available Operations
 
@@ -15,32 +16,26 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.User(
-    current_password='voluptas',
     disabled=False,
-    email='Jeff69@gmail.com',
-    first='aperiam',
-    id='d51a44bf-01ba-4d87-86d4-6082bfbdc41f',
-    last='delectus',
-    password='nemo',
+    email='Richie.Kuhic95@yahoo.com',
+    first='cavernous',
+    id='<ID>',
+    last='female',
     roles=[
-        'magnam',
-        'officiis',
-        'sed',
-        'mollitia',
+        'Account',
     ],
-    username='Stephen_Green32',
+    username='Brooke90',
 )
 
 res = s.user.create_user(req)
 
 if res.users is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
