@@ -194,6 +194,7 @@ from .workeredgenodescount import WorkerEdgeNodesCount
 from .workingtree import WorkingTree
 from cribl import utils
 from cribl.models import shared
+from typing import Dict
 
 class Cribl:
     r"""Cribl API Reference: This API Reference lists available REST endpoints, along with their supported operations for accessing, creating, updating, or deleting resources. See our complementary product documentation at [docs.cribl.io](http://docs.cribl.io)."""
@@ -391,17 +392,18 @@ class Cribl:
     sdk_configuration: SDKConfiguration
 
     def __init__(self,
-                 security: shared.Security = None,
+                 bearer_auth: str,
                  organization_id: str = None,
                  server_idx: int = None,
                  server_url: str = None,
-                 url_params: dict[str, str] = None,
-                 client: requests_http.Session = None
+                 url_params: Dict[str, str] = None,
+                 client: requests_http.Session = None,
+                 retry_config: utils.RetryConfig = None
                  ) -> None:
         """Instantiates the SDK configuring it with the provided parameters.
         
-        :param security: The security details required for authentication
-        :type security: shared.Security
+        :param bearer_auth: The bearer_auth required for authentication
+        :type bearer_auth: str
         :param organization_id: Allows setting the organizationID variable for url substitution
         :type organization_id: str
         :param server_idx: The index of the server to use for all operations
@@ -409,14 +411,18 @@ class Cribl:
         :param server_url: The server URL to use for all operations
         :type server_url: str
         :param url_params: Parameters to optionally template the server URL with
-        :type url_params: dict[str, str]
+        :type url_params: Dict[str, str]
         :param client: The requests.Session HTTP client to use for all operations
-        :type client: requests_http.Session        
+        :type client: requests_http.Session
+        :param retry_config: The utils.RetryConfig to use globally
+        :type retry_config: utils.RetryConfig
         """
         if client is None:
             client = requests_http.Session()
         
-        security_client = utils.configure_security_client(client, security)
+        
+        security_client = utils.configure_security_client(client, shared.Security(bearer_auth = bearer_auth))
+        
         
         if server_url is not None:
             if url_params is not None:
@@ -427,7 +433,7 @@ class Cribl:
             },
         ]
 
-        self.sdk_configuration = SDKConfiguration(client, security_client, server_url, server_idx, server_defaults)
+        self.sdk_configuration = SDKConfiguration(client, security_client, server_url, server_idx, server_defaults, retry_config=retry_config)
        
         self._init_sdks()
     

@@ -1,4 +1,5 @@
-# create_pipeline
+# CreatePipeline
+(*create_pipeline*)
 
 ### Available Operations
 
@@ -15,47 +16,34 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.Pipeline(
     conf=shared.PipelineConf(
-        async_func_timeout=959143,
-        description='officiis',
         functions=[
             shared.PipelineFunctionConf(
                 conf=shared.PipelineFunctionConfFunctionSpecificConfigs(),
-                description='fuga',
-                disabled=False,
-                filter='pariatur',
-                final=False,
-                group_id='debitis',
-                id='008e6f8c-5f35-40d8-8db5-a34181430104',
+                id='<ID>',
             ),
         ],
         groups={
-            "ab": shared.PipelineConfGroups(
-                description='laudantium',
-                disabled=False,
-                name='Rosa Stiedemann',
+            "payment": shared.PipelineConfGroups(
+                name='Silver',
             ),
         },
-        output='ipsa',
         streamtags=[
-            'eveniet',
-            'impedit',
-            'officiis',
+            'iste',
         ],
     ),
-    id='7e253b66-8451-4c6c-ae20-5e16deab3fec',
+    id='<ID>',
 )
 
 res = s.create_pipeline.post(req)
 
 if res.pipelines is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

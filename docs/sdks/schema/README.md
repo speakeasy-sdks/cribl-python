@@ -1,4 +1,5 @@
-# schema
+# Schema
+(*schema*)
 
 ### Available Operations
 
@@ -19,29 +20,29 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = {
-    "quo": 'suscipit',
-    "ex": 'sint',
-    "est": 'doloribus',
-    "provident": 'alias',
-}
+req = shared.SchemaLibEntry(
+    additional_properties={
+        "online": 'Configuration',
+    },
+    id='<ID>',
+    schema='Money',
+)
 
 res = s.schema.create(req)
 
 if res.schema_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [dict[str, Any]](../../models//.md)        | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `request`                                                      | [shared.SchemaLibEntry](../../models/shared/schemalibentry.md) | :heavy_check_mark:                                             | The request object to use for the request.                     |
 
 
 ### Response
@@ -60,16 +61,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.schema.delete('deserunt')
+res = s.schema.delete(id='program')
 
 if res.schema_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -95,16 +95,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.schema.get('fugit')
+res = s.schema.get(id='female')
 
 if res.schema_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -130,27 +129,29 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = {
-    "quo": 'molestiae',
-    "maxime": 'facere',
-}
+req = shared.SchemaLibEntry(
+    additional_properties={
+        "payment": 'Silver',
+    },
+    id='<ID>',
+    schema='iste',
+)
 
 res = s.schema.post(req)
 
 if res.schema_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [dict[str, Any]](../../models//.md)        | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `request`                                                      | [shared.SchemaLibEntry](../../models/shared/schemalibentry.md) | :heavy_check_mark:                                             | The request object to use for the request.                     |
 
 
 ### Response
@@ -169,28 +170,29 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.schema.update('impedit', {
-    "deleniti": 'quasi',
-    "maiores": 'voluptatem',
-    "aliquid": 'laudantium',
-})
+res = s.schema.update(id='Van', schema_lib_entry=shared.SchemaLibEntry(
+    additional_properties={
+        "East": 'male',
+    },
+    id='<ID>',
+    schema='Metal',
+))
 
 if res.schema_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                   | Type                        | Required                    | Description                 |
-| --------------------------- | --------------------------- | --------------------------- | --------------------------- |
-| `id`                        | *str*                       | :heavy_check_mark:          | Unique ID                   |
-| `request_body`              | dict[str, *Any*]            | :heavy_minus_sign:          | Schema object to be updated |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `id`                                                                     | *str*                                                                    | :heavy_check_mark:                                                       | Unique ID                                                                |
+| `schema_lib_entry`                                                       | [Optional[shared.SchemaLibEntry]](../../models/shared/schemalibentry.md) | :heavy_minus_sign:                                                       | Schema object to be updated                                              |
 
 
 ### Response

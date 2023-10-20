@@ -1,4 +1,5 @@
-# worker_edge_nodes_count
+# WorkerEdgeNodesCount
+(*worker_edge_nodes_count*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.worker_edge_nodes_count.get('ut')
+res = s.worker_edge_nodes_count.get(filter_exp='female')
 
 if res.worker_edge_nodes is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

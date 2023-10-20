@@ -1,7 +1,5 @@
 # ChangelogStateses
 
-a list of ChangelogState objects
-
 
 ## Fields
 

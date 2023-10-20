@@ -1,4 +1,5 @@
-# certificate
+# Certificate
+(*certificate*)
 
 ### Available Operations
 
@@ -18,28 +19,23 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.Certificate(
-    ca='eveniet',
-    cert='occaecati',
-    description='consequuntur',
-    id='2a57a15b-e3e0-4608-87e2-b6e3ab8845f0',
+    cert='online',
+    id='<ID>',
     in_use=[
-        'perspiciatis',
-        'nihil',
+        'Configuration',
     ],
-    passphrase='mollitia',
-    priv_key='voluptas',
+    priv_key='Money',
 )
 
 res = s.certificate.create(req)
 
 if res.certificate is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -65,16 +61,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.certificate.delete('alias')
+res = s.certificate.delete(id='program')
 
 if res.certificate is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -100,16 +95,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.certificate.get('maiores')
+res = s.certificate.get(id='female')
 
 if res.certificate is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -135,28 +129,22 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.certificate.update('reiciendis', shared.Certificate(
-    ca='dolores',
-    cert='id',
-    description='minima',
-    id='4a31e947-64a3-4e86-9e79-56f9251a5a9d',
+res = s.certificate.update(id='Van', certificate=shared.Certificate(
+    cert='East',
+    id='<ID>',
     in_use=[
-        'ex',
-        'aliquid',
-        'accusantium',
+        'male',
     ],
-    passphrase='repellat',
-    priv_key='doloribus',
+    priv_key='Metal',
 ))
 
 if res.certificate is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
