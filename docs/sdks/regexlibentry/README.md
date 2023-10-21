@@ -1,4 +1,5 @@
-# regex_lib_entry
+# RegexLibEntry
+(*regex_lib_entry*)
 
 ### Available Operations
 
@@ -17,16 +18,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.regex_lib_entry.delete('facere')
+res = s.regex_lib_entry.delete(id='string')
 
 if res.regex_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -52,24 +52,19 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.RegexLibEntry(
-    description='sed',
-    id='1f9ad030-c4ec-4c11-a083-6429068b8502',
-    lib='officia',
-    regex='quaerat',
-    sample_data='corporis',
-    tags='accusamus',
+    id='<ID>',
+    regex='string',
 )
 
 res = s.regex_lib_entry.post(req)
 
 if res.regex_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -95,23 +90,18 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.regex_lib_entry.update('iusto', shared.RegexLibEntry(
-    description='sapiente',
-    id='73bc845e-320a-4319-b4ba-df947c9a867b',
-    lib='optio',
-    regex='incidunt',
-    sample_data='eos',
-    tags='magnam',
+res = s.regex_lib_entry.update(id='string', regex_lib_entry=shared.RegexLibEntry(
+    id='<ID>',
+    regex='string',
 ))
 
 if res.regex_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

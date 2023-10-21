@@ -1,4 +1,5 @@
-# mapping_rulesets
+# MappingRulesets
+(*mapping_rulesets*)
 
 ### Available Operations
 
@@ -17,16 +18,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.mapping_rulesets.delete('quia')
+res = s.mapping_rulesets.delete(id='string')
 
 if res.mapping_rulesets is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -52,9 +52,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -62,6 +60,7 @@ res = s.mapping_rulesets.get()
 
 if res.mapping_rulesets is not None:
     # handle response
+    pass
 ```
 
 
@@ -81,41 +80,24 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.mapping_rulesets.update('officiis', shared.MappingRuleset(
-    active=False,
+res = s.mapping_rulesets.update(id='string', mapping_ruleset=shared.MappingRuleset(
     conf=shared.MappingRulesetConf(
         functions=[
             {
-                "quis": 'enim',
-                "eum": 'nemo',
-                "illum": 'nesciunt',
-                "sit": 'odio',
-            },
-            {
-                "asperiores": 'recusandae',
-                "voluptates": 'praesentium',
-                "dicta": 'fugit',
-                "sit": 'aliquid',
-            },
-            {
-                "sed": 'deleniti',
-                "sunt": 'nesciunt',
-                "delectus": 'laborum',
-                "aliquam": 'deserunt',
+                "key": 'string',
             },
         ],
     ),
-    id='41c480d3-f213-42af-8310-2d514f4cc6f1',
+    id='<ID>',
 ))
 
 if res.mapping_rulesets is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

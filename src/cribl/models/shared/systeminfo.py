@@ -8,11 +8,10 @@ from ..shared import licenseinfo as shared_licenseinfo
 from ..shared import systemconf as shared_systemconf
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemInfoConf:
     inputs: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('inputs') }})
@@ -26,18 +25,16 @@ class SystemInfoConf:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemInfoCpus:
     model: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('model') }})
     speed: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('speed') }})
-    times: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('times') }})
+    times: Dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('times') }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemInfoDiskUsage:
     bytes_available: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('bytesAvailable') }})
@@ -48,14 +45,12 @@ class SystemInfoDiskUsage:
 
 
 
-
 @dataclasses.dataclass
 class SystemInfoEnv:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemInfoLimitsSamples:
     max_size: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxSize') }})
@@ -64,7 +59,6 @@ class SystemInfoLimitsSamples:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemInfoLimits:
     samples: SystemInfoLimitsSamples = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('samples') }})
@@ -73,7 +67,6 @@ class SystemInfoLimits:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemInfoMemory:
     free: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('free') }})
@@ -83,7 +76,6 @@ class SystemInfoMemory:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemInfoOs:
     arch: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('arch') }})
@@ -96,14 +88,13 @@ class SystemInfoOs:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemInfo:
     api_port: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('apiPort') }})
-    build: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('BUILD') }})
+    build: Dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('BUILD') }})
     conf: SystemInfoConf = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('conf') }})
     config_path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('configPath') }})
-    cpus: list[SystemInfoCpus] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cpus') }})
+    cpus: List[SystemInfoCpus] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cpus') }})
     disk_usage: SystemInfoDiskUsage = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('diskUsage') }})
     dist_mode: shared_appmode.AppMode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('distMode') }})
     env: SystemInfoEnv = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('env') }})
@@ -112,10 +103,10 @@ class SystemInfo:
     install_path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('installPath') }})
     license: shared_licenseinfo.LicenseInfo = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('license') }})
     limits: SystemInfoLimits = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limits') }})
-    loadavg: list[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('loadavg') }})
+    loadavg: List[int] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('loadavg') }})
     memory: SystemInfoMemory = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('memory') }})
-    messages: list[shared_bulletinmessage.BulletinMessage] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('messages') }})
-    net: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('net') }})
+    messages: List[shared_bulletinmessage.BulletinMessage] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('messages') }})
+    net: Dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('net') }})
     os: SystemInfoOs = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('os') }})
     system_conf: shared_systemconf.SystemConf = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('systemConf') }})
     uptime: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uptime') }})

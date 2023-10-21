@@ -13,11 +13,10 @@ from ..shared import searchparameter as shared_searchparameter
 from ..shared import tableviewsettings as shared_tableviewsettings
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Any, Optional
+from typing import Any, List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SearchJobCompatibilityChecks:
     datatypes: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('datatypes'), 'exclude': lambda f: f is None }})
@@ -26,10 +25,8 @@ class SearchJobCompatibilityChecks:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SearchJob:
-    r"""New SearchJob object"""
     group: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     query: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('query') }})
@@ -48,7 +45,7 @@ class SearchJob:
     num_events_after: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numEventsAfter'), 'exclude': lambda f: f is None }})
     num_events_before: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('numEventsBefore'), 'exclude': lambda f: f is None }})
     sample_rate: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sampleRate'), 'exclude': lambda f: f is None }})
-    search_parameter_declarations: Optional[list[shared_searchparameter.SearchParameter]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('searchParameterDeclarations'), 'exclude': lambda f: f is None }})
+    search_parameter_declarations: Optional[List[shared_searchparameter.SearchParameter]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('searchParameterDeclarations'), 'exclude': lambda f: f is None }})
     search_parameter_values: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('searchParameterValues'), 'exclude': lambda f: f is None }})
     table_config: Optional[shared_tableviewsettings.TableViewSettings] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tableConfig'), 'exclude': lambda f: f is None }})
     target_event_time: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('targetEventTime'), 'exclude': lambda f: f is None }})

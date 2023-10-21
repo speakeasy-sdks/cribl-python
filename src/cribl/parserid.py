@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
 from cribl.models import errors, operations, shared
-from typing import Any, Optional
+from typing import Optional
 
 class ParserID:
     sdk_configuration: SDKConfiguration
@@ -24,8 +24,8 @@ class ParserID:
         
         url = utils.generate_url(operations.DeleteParserIDRequest, base_url, '/lib/parsers/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -65,8 +65,8 @@ class ParserID:
         
         url = utils.generate_url(operations.GetParserIDRequest, base_url, '/lib/parsers/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -94,24 +94,24 @@ class ParserID:
         return res
 
     
-    def update(self, id: str, request_body: Optional[dict[str, Any]] = None) -> operations.UpdateParserIDResponse:
+    def update(self, id: str, parser_lib_entry: Optional[shared.ParserLibEntry] = None) -> operations.UpdateParserIDResponse:
         r"""Update Parser
         Update Parser
         """
         request = operations.UpdateParserIDRequest(
             id=id,
-            request_body=request_body,
+            parser_lib_entry=parser_lib_entry,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdateParserIDRequest, base_url, '/lib/parsers/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "parser_lib_entry", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

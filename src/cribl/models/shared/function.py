@@ -4,14 +4,13 @@ from __future__ import annotations
 import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Any
+from typing import Any, Dict
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Function:
-    conf: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('__conf') }})
+    conf: Dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('__conf') }})
     filename: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('__filename') }})
     disabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled') }})
     group: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group') }})
@@ -20,8 +19,8 @@ class Function:
     load_time: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('loadTime') }})
     mod_time: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modTime') }})
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
-    schema: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schema') }})
-    uischema: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uischema') }})
+    schema: Dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('schema') }})
+    uischema: Dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('uischema') }})
     version: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('version') }})
     
 

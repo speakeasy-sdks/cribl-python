@@ -7,7 +7,6 @@ from dataclasses_json import Undefined, dataclass_json
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DistributedSummaryGroups:
     count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count') }})
@@ -20,7 +19,6 @@ class DistributedSummaryGroups:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DistributedSummaryWorkers:
     alive: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('alive') }})
@@ -34,7 +32,6 @@ class DistributedSummaryWorkers:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DistributedSummary:
     groups: DistributedSummaryGroups = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('groups') }})

@@ -4,15 +4,14 @@ from __future__ import annotations
 import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Any
+from typing import Any, List
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PreviewResponseBody:
     count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count') }})
-    events: list[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
+    events: List[Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
     processing_time_ms: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('processingTimeMS') }})
     use_formatted_visualization: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('useFormattedVisualization') }})
     

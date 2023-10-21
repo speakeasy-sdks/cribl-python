@@ -7,13 +7,15 @@ from ..shared import changelogstates as shared_changelogstates
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetChangelogsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     changelog_states: Optional[shared_changelogstates.ChangelogStates] = dataclasses.field(default=None)
     r"""a list of ChangelogState objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

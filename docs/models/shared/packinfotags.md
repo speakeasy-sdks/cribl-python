@@ -5,7 +5,7 @@
 
 | Field              | Type               | Required           | Description        |
 | ------------------ | ------------------ | ------------------ | ------------------ |
-| `data_type`        | list[*str*]        | :heavy_check_mark: | N/A                |
-| `domain`           | list[*str*]        | :heavy_check_mark: | N/A                |
-| `streamtags`       | list[*str*]        | :heavy_check_mark: | N/A                |
-| `technology`       | list[*str*]        | :heavy_check_mark: | N/A                |
+| `data_type`        | List[*str*]        | :heavy_check_mark: | N/A                |
+| `domain`           | List[*str*]        | :heavy_check_mark: | N/A                |
+| `streamtags`       | List[*str*]        | :heavy_check_mark: | N/A                |
+| `technology`       | List[*str*]        | :heavy_check_mark: | N/A                |

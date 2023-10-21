@@ -6,13 +6,15 @@ import requests as requests_http
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetDiagBundlesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    get_diag_bundles_200_application_tar_plus_gzip_binary_string: Optional[bytes] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    get_diag_bundles_200_application_tar_plus_gzip_binary_string: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Get list of existing diag bundles"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
