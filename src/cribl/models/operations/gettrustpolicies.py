@@ -7,12 +7,14 @@ from ..shared import trustpolicies as shared_trustpolicies
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetTrustPoliciesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     trust_policies: Optional[shared_trustpolicies.TrustPolicies] = dataclasses.field(default=None)
     r"""a list of TrustPolicy objects"""
     

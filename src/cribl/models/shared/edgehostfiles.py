@@ -5,16 +5,14 @@ import dataclasses
 from ..shared import edgefileinspectresponse as shared_edgefileinspectresponse
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EdgeHostFiles:
-    r"""a list of EdgeFileInspectResponse objects"""
     count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
     r"""number of items present in the items array"""
-    items: Optional[list[shared_edgefileinspectresponse.EdgeFileInspectResponse]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})
+    items: Optional[List[shared_edgefileinspectresponse.EdgeFileInspectResponse]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})
     
 

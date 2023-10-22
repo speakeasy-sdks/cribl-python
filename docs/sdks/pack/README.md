@@ -1,4 +1,5 @@
-# pack
+# Pack
+(*pack*)
 
 ### Available Operations
 
@@ -20,32 +21,24 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.PackClone(
-    dest='amet',
     dst_groups=[
-        'corporis',
-        'est',
-        'iure',
-        'quisquam',
+        'string',
     ],
-    force=False,
     packs=[
-        'laudantium',
-        'nam',
-        'nemo',
+        'string',
     ],
-    src_group='enim',
+    src_group='string',
 )
 
 res = s.pack.clone(req)
 
 if res.pack_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -71,16 +64,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pack.export('ipsam', 'minima', 'tempora')
+res = s.pack.export(id='string', mode='string', filename='string')
 
 if res.pack_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -108,19 +100,18 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.CrudEntityBase(
-    id='080d40bc-acc6-4cbd-ab5f-3ec909304f92',
+    id='<ID>',
 )
 
 res = s.pack.install(req)
 
 if res.pack_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -146,16 +137,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pack.uninstall('vel')
+res = s.pack.uninstall(id='string')
 
 if res.pack_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -181,16 +171,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pack.upgrade('cum', 'id', 'possimus', 'fugit')
+res = s.pack.upgrade(id='string', minor='string', source='string', spec='string')
 
 if res.pack_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -219,16 +208,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pack.upload('ipsam')
+res = s.pack.upload(filename='string')
 
 if res.pack_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

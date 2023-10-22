@@ -5,7 +5,7 @@ import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Any, Optional
+from typing import Any, Dict, Optional
 
 class UIStatePatchOp(str, Enum):
     SET = 'set'
@@ -13,12 +13,10 @@ class UIStatePatchOp(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UIStatePatch:
-    r"""UI State Patch object"""
     op: UIStatePatchOp = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('op') }})
     value: Any = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
-    args: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('args'), 'exclude': lambda f: f is None }})
+    args: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('args'), 'exclude': lambda f: f is None }})
     
 

@@ -8,7 +8,7 @@ from ..shared import dockerinfo as shared_dockerinfo
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Optional
+from typing import List, Optional
 
 class ContainerType(str, Enum):
     DOCKER = 'docker'
@@ -16,7 +16,6 @@ class ContainerType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Container:
     created: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created') }})
@@ -27,7 +26,7 @@ class Container:
     type: ContainerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     containerd: Optional[shared_containerdinfo.ContainerdInfo] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('containerd'), 'exclude': lambda f: f is None }})
     docker: Optional[shared_dockerinfo.DockerInfo] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('docker'), 'exclude': lambda f: f is None }})
-    ips: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ips'), 'exclude': lambda f: f is None }})
-    ports: Optional[list[shared_containerport.ContainerPort]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ports'), 'exclude': lambda f: f is None }})
+    ips: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ips'), 'exclude': lambda f: f is None }})
+    ports: Optional[List[shared_containerport.ContainerPort]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ports'), 'exclude': lambda f: f is None }})
     
 

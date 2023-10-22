@@ -7,7 +7,6 @@ from ..shared import featuresentry as shared_featuresentry
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetFeatureRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -16,13 +15,15 @@ class GetFeatureRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetFeatureResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     features_entry: Optional[shared_featuresentry.FeaturesEntry] = dataclasses.field(default=None)
     r"""a list of FeaturesEntry objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -1,4 +1,5 @@
-# database_connection_config_id
+# DatabaseConnectionConfigID
+(*database_connection_config_id*)
 
 ### Available Operations
 
@@ -17,16 +18,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.database_connection_config_id.delete('modi')
+res = s.database_connection_config_id.delete(id='string')
 
 if res.database_connection_configs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -52,16 +52,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.database_connection_config_id.get('nam')
+res = s.database_connection_config_id.get(id='string')
 
 if res.database_connection_configs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -87,26 +86,20 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.database_connection_config_id.update('vero', shared.DatabaseConnectionConfig(
-    auth_type='voluptatem',
-    config_obj='ipsam',
-    connection_string='vel',
-    connection_timeout=1383,
+res = s.database_connection_config_id.update(id='string', database_connection_config=shared.DatabaseConnectionConfig(
+    auth_type='string',
     database_type=shared.DatabaseConnectionType(),
-    description='quasi',
-    id='3f59da75-7a59-4ecf-af66-ef1caa3383c2',
-    request_timeout=746585,
-    tags='repudiandae',
+    description='Synchronised 3rd generation matrix',
+    id='<ID>',
 ))
 
 if res.database_connection_configs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

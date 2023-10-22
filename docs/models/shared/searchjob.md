@@ -1,7 +1,5 @@
 # SearchJob
 
-New SearchJob object
-
 
 ## Fields
 
@@ -22,7 +20,7 @@ New SearchJob object
 | `query`                                                                                       | *str*                                                                                         | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `sample_rate`                                                                                 | *Optional[int]*                                                                               | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `search_config`                                                                               | [SearchConfig](../../models/shared/searchconfig.md)                                           | :heavy_check_mark:                                                                            | N/A                                                                                           |
-| `search_parameter_declarations`                                                               | list[[SearchParameter](../../models/shared/searchparameter.md)]                               | :heavy_minus_sign:                                                                            | N/A                                                                                           |
+| `search_parameter_declarations`                                                               | List[[SearchParameter](../../models/shared/searchparameter.md)]                               | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `search_parameter_values`                                                                     | *Optional[Any]*                                                                               | :heavy_minus_sign:                                                                            | N/A                                                                                           |
 | `status`                                                                                      | [SearchJobStatus](../../models/shared/searchjobstatus.md)                                     | :heavy_check_mark:                                                                            | N/A                                                                                           |
 | `table_config`                                                                                | [Optional[TableViewSettings]](../../models/shared/tableviewsettings.md)                       | :heavy_minus_sign:                                                                            | N/A                                                                                           |
