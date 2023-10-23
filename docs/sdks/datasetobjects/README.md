@@ -1,4 +1,5 @@
-# dataset_objects
+# DatasetObjects
+(*dataset_objects*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.dataset_objects.get()
 
 if res.datasets is not None:
     # handle response
+    pass
 ```
 
 

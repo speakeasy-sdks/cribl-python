@@ -1,4 +1,5 @@
-# bytes
+# Bytes
+(*bytes*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.bytes.get('perspiciatis', 446394)
+res = s.bytes.get(path='string', bytes_requested=700347)
 
 if res.sample_files is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -11,10 +11,8 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class IKMSProviderConfig:
-    r"""IKMSProviderConfig object"""
     enable_health_check: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enableHealthCheck') }})
     provider: shared_secret_provider.SecretProvider = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('provider') }})
     engine: Optional[shared_vaultkmsengineconfig.VaultKMSEngineConfig] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('engine'), 'exclude': lambda f: f is None }})

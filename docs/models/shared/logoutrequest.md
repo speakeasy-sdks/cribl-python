@@ -1,7 +1,5 @@
 # LogoutRequest
 
-Logout request object
-
 
 ## Fields
 

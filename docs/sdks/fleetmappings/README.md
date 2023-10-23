@@ -1,4 +1,5 @@
-# fleet_mappings
+# FleetMappings
+(*fleet_mappings*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.fleet_mappings.get()
 
 if res.mapping_rulesets is not None:
     # handle response
+    pass
 ```
 
 

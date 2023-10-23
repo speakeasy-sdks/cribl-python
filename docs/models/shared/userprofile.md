@@ -1,7 +1,5 @@
 # UserProfile
 
-UserProfile object
-
 
 ## Fields
 
@@ -13,5 +11,5 @@ UserProfile object
 | `id`               | *str*              | :heavy_check_mark: | N/A                |
 | `last`             | *str*              | :heavy_check_mark: | N/A                |
 | `password`         | *Optional[str]*    | :heavy_minus_sign: | N/A                |
-| `roles`            | list[*str*]        | :heavy_minus_sign: | N/A                |
+| `roles`            | List[*str*]        | :heavy_minus_sign: | N/A                |
 | `username`         | *str*              | :heavy_check_mark: | N/A                |

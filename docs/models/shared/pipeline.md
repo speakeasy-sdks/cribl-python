@@ -1,7 +1,5 @@
 # Pipeline
 
-New Pipeline object
-
 
 ## Fields
 

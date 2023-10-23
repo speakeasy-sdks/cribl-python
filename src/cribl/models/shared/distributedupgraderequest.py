@@ -5,11 +5,10 @@ import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DistributedUpgradeRequestPackageUrls:
     package_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packageUrl') }})
@@ -25,18 +24,16 @@ class DistributedUpgradeRequestUpgradeMode(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DistributedUpgradeRequest:
-    r"""distributedUpgrade object"""
-    package_urls: Optional[list[DistributedUpgradeRequestPackageUrls]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packageUrls'), 'exclude': lambda f: f is None }})
+    package_urls: Optional[List[DistributedUpgradeRequestPackageUrls]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packageUrls'), 'exclude': lambda f: f is None }})
     r"""Provide your own URLs or local paths for platform-specific Cribl packages."""
     upgrade_mode: Optional[DistributedUpgradeRequestUpgradeMode] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upgradeMode'), 'exclude': lambda f: f is None }})
-    upgrade_percentage: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upgradePercentage'), 'exclude': lambda f: f is None }})
+    upgrade_percentage: Optional[int] = dataclasses.field(default=1, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upgradePercentage'), 'exclude': lambda f: f is None }})
     r"""Percentage of the total worker nodes on the group to run the upgrade on"""
-    worker_retries: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workerRetries'), 'exclude': lambda f: f is None }})
+    worker_retries: Optional[int] = dataclasses.field(default=5, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workerRetries'), 'exclude': lambda f: f is None }})
     r"""Number of times to retry conncecting to a worker node before marking the upgrade as failed."""
-    worker_retry_delay: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workerRetryDelay'), 'exclude': lambda f: f is None }})
+    worker_retry_delay: Optional[int] = dataclasses.field(default=1000, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('workerRetryDelay'), 'exclude': lambda f: f is None }})
     r"""Delay between retries"""
     
 

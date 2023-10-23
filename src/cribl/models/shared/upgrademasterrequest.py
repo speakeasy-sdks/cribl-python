@@ -4,11 +4,10 @@ from __future__ import annotations
 import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpgradeMasterRequestPackages:
     package_url: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packageUrl') }})
@@ -20,11 +19,9 @@ class UpgradeMasterRequestPackages:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpgradeMasterRequest:
-    r"""upgradeMaster object"""
-    packages: Optional[list[UpgradeMasterRequestPackages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packages'), 'exclude': lambda f: f is None }})
+    packages: Optional[List[UpgradeMasterRequestPackages]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packages'), 'exclude': lambda f: f is None }})
     r"""Provide your own URLs or local paths for platform-specific Cribl packages."""
     
 

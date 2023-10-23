@@ -8,10 +8,8 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class RegexLibEntry:
-    r"""New RegexLibEntry object"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     regex: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('regex') }})
     r"""Regex pattern. Required."""

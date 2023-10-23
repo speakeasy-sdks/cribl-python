@@ -5,15 +5,13 @@ import dataclasses
 from ..shared import field as shared_field
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class FieldSummaries:
-    r"""FieldSummaries object"""
-    fields_: list[shared_field.Field] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields') }})
+    fields_: List[shared_field.Field] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields') }})
     total_event_count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('totalEventCount') }})
     partial: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('partial'), 'exclude': lambda f: f is None }})
     

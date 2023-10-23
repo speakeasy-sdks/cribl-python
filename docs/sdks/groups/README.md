@@ -1,4 +1,5 @@
-# groups
+# Groups
+(*groups*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.groups.get('saepe', 'delectus')
+res = s.groups.get(fields_='string', product='string')
 
 if res.config_groups is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
