@@ -3,16 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from typing import Any, Optional
-
+from ..shared import schemalibentry as shared_schemalibentry
+from typing import Optional
 
 
 @dataclasses.dataclass
 class CreateSchemaResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    schema_lib_entry: Optional[dict[str, Any]] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    schema_lib_entry: Optional[shared_schemalibentry.SchemaLibEntry] = dataclasses.field(default=None)
     r"""a list of Schema objects"""
     
 

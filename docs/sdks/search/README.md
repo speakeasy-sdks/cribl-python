@@ -1,4 +1,5 @@
-# search
+# Search
+(*search*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.search.dispatch_search('necessitatibus')
+res = s.search.dispatch_search(id='string')
 
 if res.search_id is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

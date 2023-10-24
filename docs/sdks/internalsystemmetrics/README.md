@@ -1,4 +1,5 @@
-# internal_system_metrics
+# InternalSystemMetrics
+(*internal_system_metrics*)
 
 ### Available Operations
 
@@ -15,41 +16,33 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.MetricsAggOpts(
     aggs=shared.AggregationMgrOptions(
         aggregations=[
-            'alias',
+            'string',
         ],
         cumulative=False,
-        flush_event_limit=910073,
-        flush_mem_limit=941668,
-        hostname='altruistic-doorpost.biz',
-        idle_time_limit_seconds=185897,
-        lag_tolerance_seconds=895912,
+        flush_event_limit=449035,
+        flush_mem_limit=690234,
+        hostname='scared-godparent.name',
         metrics_mode=False,
-        prefix='harum',
-        preserve_split_by_structure=False,
-        search_agg_mode='explicabo',
         split_bys=[
-            'aliquid',
+            'string',
         ],
         sufficient_stats_only=False,
-        time_window_seconds=264649,
+        time_window_seconds=614946,
     ),
-    always_bounds=False,
     metrics=shared.MetricsStore(),
-    where='optio',
 )
 
 res = s.internal_system_metrics.post(req)
 
 if res.metrics_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

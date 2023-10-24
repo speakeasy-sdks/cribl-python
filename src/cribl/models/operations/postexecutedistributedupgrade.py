@@ -8,7 +8,6 @@ from ..shared import distributedupgraderequest as shared_distributedupgradereque
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class PostExecuteDistributedUpgradeRequest:
     group: str = dataclasses.field(metadata={'path_param': { 'field_name': 'group', 'style': 'simple', 'explode': False }})
@@ -19,13 +18,15 @@ class PostExecuteDistributedUpgradeRequest:
 
 
 
-
 @dataclasses.dataclass
 class PostExecuteDistributedUpgradeResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     cribl_package: Optional[shared_criblpackage.CriblPackage] = dataclasses.field(default=None)
     r"""a list of any objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

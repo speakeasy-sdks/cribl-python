@@ -1,4 +1,5 @@
-# events
+# Events
+(*events*)
 
 ### Available Operations
 
@@ -15,24 +16,16 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = operations.GetEventsRequest(
-    files='nostrum',
-    et=207296,
-    filter='iusto',
-    limit=664965,
-    lt=522176,
-    source='eligendi',
-)
+req = operations.GetEventsRequest()
 
 res = s.events.get(req)
 
 if res.events is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

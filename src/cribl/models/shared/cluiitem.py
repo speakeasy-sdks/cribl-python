@@ -10,7 +10,6 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class CluiItem:
     category: shared_cluicategory.CluiCategory = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('category') }})

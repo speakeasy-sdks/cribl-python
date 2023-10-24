@@ -5,7 +5,7 @@ import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Any, Optional
+from typing import Any, Dict, Optional
 
 class LicenseCls(str, Enum):
     PROD = 'prod'
@@ -14,10 +14,8 @@ class LicenseCls(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class License:
-    r"""New License object"""
     cls: LicenseCls = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cls') }})
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
     exp: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('exp') }})
@@ -30,6 +28,6 @@ class License:
     license: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('license') }})
     quota: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('quota') }})
     title: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('title') }})
-    limits: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limits'), 'exclude': lambda f: f is None }})
+    limits: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limits'), 'exclude': lambda f: f is None }})
     
 

@@ -4,14 +4,13 @@ from __future__ import annotations
 import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Any, Optional
+from typing import Any, List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AggregationMgrOptions:
-    aggregations: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('aggregations') }})
+    aggregations: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('aggregations') }})
     cumulative: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cumulative') }})
     flush_event_limit: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flushEventLimit') }})
     flush_mem_limit: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('flushMemLimit') }})
@@ -24,6 +23,6 @@ class AggregationMgrOptions:
     prefix: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('prefix'), 'exclude': lambda f: f is None }})
     preserve_split_by_structure: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('preserveSplitByStructure'), 'exclude': lambda f: f is None }})
     search_agg_mode: Optional[Any] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('searchAggMode'), 'exclude': lambda f: f is None }})
-    split_bys: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('splitBys'), 'exclude': lambda f: f is None }})
+    split_bys: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('splitBys'), 'exclude': lambda f: f is None }})
     
 

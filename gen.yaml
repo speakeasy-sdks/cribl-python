@@ -2,19 +2,38 @@ configVersion: 1.0.0
 management:
   docChecksum: 6ab1d537b67f27f862b9ba29d8f5eb87
   docVersion: 1.0.0
-  speakeasyVersion: 1.65.0
-  generationVersion: 2.73.0
+  speakeasyVersion: 1.105.0
+  generationVersion: 2.169.3
 generation:
   comments:
     disableComments: false
     omitDescriptionIfSummaryPresent: false
   baseServerURL: ""
+  repoURL: https://github.com/speakeasy-sdks/cribl-python.git
   sdkClassName: cribl
   singleTagPerOp: false
   tagNamespacingDisabled: false
+features:
+  python:
+    additionalProperties: 0.1.0
+    core: 3.3.0
+    deprecations: 2.81.1
+    downloadStreams: 0.0.2
+    errors: 2.81.7
+    flattening: 2.81.1
+    getRequestBodies: 2.81.1
+    globalSecurity: 2.82.0
+    globalServerURLs: 2.82.0
+    groups: 2.81.2
+    inputOutputModels: 2.81.1
+    nameOverrides: 2.81.1
 python:
-  version: 1.0.0
+  version: 1.1.0
   author: speakeask-sdks
   description: Python SDK for Cribl API
+  flattenGlobalSecurity: true
+  installationURL: https://github.com/speakeasy-sdks/cribl-python.git
   maxMethodParams: 4
   packageName: cribl
+  published: true
+  repoSubDirectory: .

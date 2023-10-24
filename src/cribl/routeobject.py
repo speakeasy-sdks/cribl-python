@@ -12,24 +12,24 @@ class RouteObject:
         self.sdk_configuration = sdk_config
         
     
-    def update(self, id: str, routes: Optional[shared.Routes] = None) -> operations.UpdateRouteObjectResponse:
+    def update(self, id: str, routes_input: Optional[shared.RoutesInput] = None) -> operations.UpdateRouteObjectResponse:
         r"""Add, delete or update the routes with the required content.
         Add, delete or update the routes with the required content.
         """
         request = operations.UpdateRouteObjectRequest(
             id=id,
-            routes=routes,
+            routes_input=routes_input,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdateRouteObjectRequest, base_url, '/routes/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "routes", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "routes_input", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
