@@ -17,14 +17,12 @@ from dataclasses_json import Undefined, dataclass_json
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class SystemSettingsAPIHeaders:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemSettingsAPISsl:
     cert_path: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('certPath') }})
@@ -37,7 +35,6 @@ class SystemSettingsAPISsl:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemSettingsAPI:
     disabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled') }})
@@ -56,7 +53,6 @@ class SystemSettingsAPI:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemSettingsBackups:
     backup_persistence: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('backupPersistence') }})
@@ -66,7 +62,6 @@ class SystemSettingsBackups:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemSettingsCustomLogo:
     enabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enabled') }})
@@ -77,7 +72,6 @@ class SystemSettingsCustomLogo:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemSettingsDistributed:
     mode: shared_appmode.AppMode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode') }})
@@ -86,7 +80,6 @@ class SystemSettingsDistributed:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemSettingsProxy:
     use_env_vars: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('useEnvVars') }})
@@ -95,7 +88,6 @@ class SystemSettingsProxy:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemSettingsRollback:
     rollback_enabled: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rollbackEnabled') }})
@@ -106,7 +98,6 @@ class SystemSettingsRollback:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemSettingsShutdown:
     drain_timeout: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('drainTimeout') }})
@@ -115,7 +106,6 @@ class SystemSettingsShutdown:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemSettingsSystem:
     intercom: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('intercom') }})
@@ -124,7 +114,6 @@ class SystemSettingsSystem:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemSettingsTLS:
     default_cipher_list: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultCipherList') }})
@@ -137,7 +126,6 @@ class SystemSettingsTLS:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemSettingsWorkers:
     count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count') }})
@@ -152,10 +140,8 @@ class SystemSettingsWorkers:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class SystemSettings:
-    r"""a list of SystemSettings objects"""
     api: SystemSettingsAPI = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('api') }})
     auth: shared_authconfig.AuthConfig = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('auth') }})
     backups: SystemSettingsBackups = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('backups') }})

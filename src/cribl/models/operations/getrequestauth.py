@@ -7,7 +7,6 @@ from ..shared import success as shared_success
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetRequestAuthRequest:
     relay_state: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'RelayState', 'style': 'form', 'explode': True }})
@@ -17,12 +16,14 @@ class GetRequestAuthRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetRequestAuthResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     success: Optional[shared_success.Success] = dataclasses.field(default=None)
     r"""Authentication success"""
     

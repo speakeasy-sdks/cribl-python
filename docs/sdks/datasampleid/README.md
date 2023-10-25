@@ -1,4 +1,5 @@
-# data_sample_id
+# DataSampleID
+(*data_sample_id*)
 
 ### Available Operations
 
@@ -17,16 +18,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.data_sample_id.delete('nemo')
+res = s.data_sample_id.delete(id='string')
 
 if res.data_samples is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -52,16 +52,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.data_sample_id.get('quos')
+res = s.data_sample_id.get(id='string')
 
 if res.data_samples is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -87,26 +86,29 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.data_sample_id.update('eius', {
-    "ducimus": 'nesciunt',
-})
+res = s.data_sample_id.update(id='string', data_sample=shared.DataSample(
+    additional_properties={
+        "key": 'string',
+    },
+    id='<ID>',
+    sample_name='string',
+))
 
 if res.data_samples is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                       | Type                            | Required                        | Description                     |
-| ------------------------------- | ------------------------------- | ------------------------------- | ------------------------------- |
-| `id`                            | *str*                           | :heavy_check_mark:              | Unique ID                       |
-| `request_body`                  | dict[str, *Any*]                | :heavy_minus_sign:              | DataSample object to be updated |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `id`                                                             | *str*                                                            | :heavy_check_mark:                                               | Unique ID                                                        |
+| `data_sample`                                                    | [Optional[shared.DataSample]](../../models/shared/datasample.md) | :heavy_minus_sign:                                               | DataSample object to be updated                                  |
 
 
 ### Response

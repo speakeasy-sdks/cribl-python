@@ -7,7 +7,6 @@ from ..shared import countfile as shared_countfile
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetCountFileRequest:
     group: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'group', 'style': 'form', 'explode': True }})
@@ -16,13 +15,15 @@ class GetCountFileRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetCountFileResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     count_file: Optional[shared_countfile.CountFile] = dataclasses.field(default=None)
     r"""a list of any objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
 from cribl.models import errors, operations, shared
-from typing import Any, Optional
+from typing import Optional, Union
 
 class OutputObject:
     sdk_configuration: SDKConfiguration
@@ -12,7 +12,7 @@ class OutputObject:
         self.sdk_configuration = sdk_config
         
     
-    def create(self, request: Any) -> operations.CreateOutputObjectResponse:
+    def create(self, request: Union[shared.OutputDefault, shared.OutputWebhook, shared.OutputDevnull, shared.OutputSyslog, shared.OutputSplunk, shared.OutputSplunkLb, shared.OutputSplunkHec, shared.OutputTcpjson, shared.OutputWavefront, shared.OutputSignalfx, shared.OutputFilesystem, shared.OutputS3, shared.OutputAzureBlob, shared.OutputAzureLogs, shared.OutputKinesis, shared.OutputHoneycomb, shared.OutputAzureEventhub, shared.OutputGoogleChronicle, shared.OutputGoogleCloudStorage, shared.OutputGoogleCloudLogging, shared.OutputGooglePubsub, shared.OutputKafka, shared.OutputConfluentCloud, shared.OutputMsk, shared.OutputElastic, shared.OutputNewrelic, shared.OutputNewrelicEvents, shared.OutputInfluxdb, shared.OutputCloudwatch, shared.OutputMinio, shared.OutputStatsd, shared.OutputStatsdExt, shared.OutputGraphite, shared.OutputRouter, shared.OutputSns, shared.OutputSqs, shared.OutputSnmp, shared.OutputSumoLogic, shared.OutputDatadog, Union[shared.OutputGrafanaCloud1, shared.OutputGrafanaCloud2], shared.OutputLoki, shared.OutputPrometheus, shared.OutputRing, shared.OutputOpenTelemetry, shared.OutputDataset, shared.OutputCriblTCP, shared.OutputCriblHTTP, shared.OutputHumioHec, shared.OutputDlS3, shared.OutputSecurityLake]) -> operations.CreateOutputObjectResponse:
         r"""Create Output
         Create Output
         """
@@ -20,11 +20,11 @@ class OutputObject:
         
         url = base_url + '/system/outputs'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

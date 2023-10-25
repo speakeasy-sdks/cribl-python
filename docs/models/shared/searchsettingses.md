@@ -1,7 +1,5 @@
 # SearchSettingses
 
-a list of SearchSettings objects
-
 
 ## Fields
 

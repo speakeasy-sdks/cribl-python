@@ -1,4 +1,5 @@
-# job_results
+# JobResults
+(*job_results*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.job_results.get('optio')
+res = s.job_results.get(id='string')
 
 if res.get_job_results_200_application_x_ndjson_binary_string is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -1,4 +1,5 @@
-# executor_id
+# ExecutorID
+(*executor_id*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.executor_id.get('ad')
+res = s.executor_id.get(id='string')
 
 if res.executors is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
