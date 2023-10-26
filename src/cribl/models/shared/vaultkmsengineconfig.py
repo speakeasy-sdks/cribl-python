@@ -12,7 +12,6 @@ class VaultKMSEngineConfigType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class VaultKMSEngineConfig:
     type: VaultKMSEngineConfigType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})

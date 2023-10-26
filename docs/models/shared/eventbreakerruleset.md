@@ -1,7 +1,5 @@
 # EventBreakerRuleset
 
-New Event Breaker Ruleset object
-
 
 ## Fields
 
@@ -11,5 +9,5 @@ New Event Breaker Ruleset object
 | `id`                                                                                      | *str*                                                                                     | :heavy_check_mark:                                                                        | N/A                                                                                       |
 | `lib`                                                                                     | [Optional[EventBreakerRulesetLibrary]](../../models/shared/eventbreakerrulesetlibrary.md) | :heavy_minus_sign:                                                                        | N/A                                                                                       |
 | `min_raw_length`                                                                          | *Optional[int]*                                                                           | :heavy_minus_sign:                                                                        | Threshold number of characters in _raw to determine which rule to use.                    |
-| `rules`                                                                                   | list[[EventBreakerRulesetRules](../../models/shared/eventbreakerrulesetrules.md)]         | :heavy_minus_sign:                                                                        | List of rules. Evaluated in order, top down.                                              |
+| `rules`                                                                                   | List[[EventBreakerRulesetRules](../../models/shared/eventbreakerrulesetrules.md)]         | :heavy_minus_sign:                                                                        | List of rules. Evaluated in order, top down.                                              |
 | `tags`                                                                                    | *Optional[str]*                                                                           | :heavy_minus_sign:                                                                        | One or more tags related to this ruleset. Optional.                                       |

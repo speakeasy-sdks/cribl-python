@@ -1,7 +1,5 @@
 # License
 
-New License object
-
 
 ## Fields
 
@@ -17,6 +15,6 @@ New License object
 | `id`                                            | *str*                                           | :heavy_check_mark:                              | N/A                                             |
 | `iss`                                           | *str*                                           | :heavy_check_mark:                              | N/A                                             |
 | `license`                                       | *str*                                           | :heavy_check_mark:                              | N/A                                             |
-| `limits`                                        | dict[str, *Any*]                                | :heavy_minus_sign:                              | N/A                                             |
+| `limits`                                        | Dict[str, *Any*]                                | :heavy_minus_sign:                              | N/A                                             |
 | `quota`                                         | *int*                                           | :heavy_check_mark:                              | N/A                                             |
 | `title`                                         | *str*                                           | :heavy_check_mark:                              | N/A                                             |

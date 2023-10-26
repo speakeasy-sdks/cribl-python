@@ -5,8 +5,7 @@ import dataclasses
 from ..shared import appmode as shared_appmode
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -15,7 +14,6 @@ class MasterWorkerEntryInfoCriblConfig:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class MasterWorkerEntryInfoCriblMaster:
     host: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('host') }})
@@ -25,7 +23,6 @@ class MasterWorkerEntryInfoCriblMaster:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class MasterWorkerEntryInfoCribl:
     config: MasterWorkerEntryInfoCriblConfig = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('config') }})
@@ -33,12 +30,11 @@ class MasterWorkerEntryInfoCribl:
     group: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('group') }})
     guid: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('guid') }})
     start_time: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('startTime') }})
-    tags: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tags') }})
+    tags: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tags') }})
     version: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('version') }})
     master: Optional[MasterWorkerEntryInfoCriblMaster] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('master'), 'exclude': lambda f: f is None }})
     pid: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pid'), 'exclude': lambda f: f is None }})
     
-
 
 
 
@@ -48,7 +44,6 @@ class MasterWorkerEntryInfoEnv:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class MasterWorkerEntryInfo:
     conn_ip: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('conn_ip') }})
@@ -67,7 +62,6 @@ class MasterWorkerEntryInfo:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class MasterWorkerEntry:
     first_msg_time: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('firstMsgTime') }})

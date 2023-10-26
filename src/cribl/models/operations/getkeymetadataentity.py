@@ -7,7 +7,6 @@ from ..shared import keymetadataentities as shared_keymetadataentities
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetKeyMetadataEntityRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -16,13 +15,15 @@ class GetKeyMetadataEntityRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetKeyMetadataEntityResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     key_metadata_entities: Optional[shared_keymetadataentities.KeyMetadataEntities] = dataclasses.field(default=None)
     r"""a list of KeyMetadataEntity objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -1,7 +1,5 @@
 # DeployRequest
 
-DeployRequest object
-
 
 ## Fields
 

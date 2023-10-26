@@ -1,11 +1,9 @@
 # SchemaLibEntries
 
-a list of Schema objects
-
 
 ## Fields
 
-| Field                                      | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `count`                                    | *Optional[int]*                            | :heavy_minus_sign:                         | number of items present in the items array |
-| `items`                                    | list[dict[str, *Any*]]                     | :heavy_minus_sign:                         | N/A                                        |
+| Field                                                         | Type                                                          | Required                                                      | Description                                                   |
+| ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- | ------------------------------------------------------------- |
+| `count`                                                       | *Optional[int]*                                               | :heavy_minus_sign:                                            | number of items present in the items array                    |
+| `items`                                                       | List[[SchemaLibEntry](../../models/shared/schemalibentry.md)] | :heavy_minus_sign:                                            | N/A                                                           |

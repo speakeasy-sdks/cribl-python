@@ -1,4 +1,5 @@
-# global_variable
+# GlobalVariable
+(*global_variable*)
 
 ### Available Operations
 
@@ -15,24 +16,19 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.GlobalVar(
-    description='illum',
-    id='8bb31180-f739-4ae9-a057-eb809e281033',
-    lib='sunt',
-    tags='a',
-    type=shared.GlobalVarType.NUMBER,
-    value='occaecati',
+    id='<ID>',
+    value='string',
 )
 
 res = s.global_variable.post(req)
 
 if res.global_vars is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
