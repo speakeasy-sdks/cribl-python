@@ -7,7 +7,6 @@ from ..shared import textualdiff as shared_textualdiff
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetLogandTextualRequest:
     commit: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'commit', 'style': 'form', 'explode': True }})
@@ -18,12 +17,14 @@ class GetLogandTextualRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetLogandTextualResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     textual_diff: Optional[shared_textualdiff.TextualDiff] = dataclasses.field(default=None)
     r"""a list of any objects"""
     

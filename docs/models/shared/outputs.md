@@ -1,7 +1,5 @@
 # Outputs
 
-a list of Output objects
-
 
 ## Fields
 

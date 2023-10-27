@@ -7,11 +7,10 @@ from ..shared import appscopetransport as shared_appscopetransport
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppscopeConfigWithCustomCribl:
     authtoken: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authtoken'), 'exclude': lambda f: f is None }})
@@ -23,7 +22,6 @@ class AppscopeConfigWithCustomCribl:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppscopeConfigWithCustomEventFormat:
     enhancefs: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enhancefs') }})
@@ -36,7 +34,6 @@ class AppscopeConfigWithCustomEventType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppscopeConfigWithCustomEventWatch:
     type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -51,14 +48,13 @@ class AppscopeConfigWithCustomEventWatch:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppscopeConfigWithCustomEvent:
     enable: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable') }})
     format: AppscopeConfigWithCustomEventFormat = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format') }})
     transport: shared_appscopetransport.AppscopeTransport = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transport') }})
     type: AppscopeConfigWithCustomEventType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    watch: list[AppscopeConfigWithCustomEventWatch] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('watch') }})
+    watch: List[AppscopeConfigWithCustomEventWatch] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('watch') }})
     
 
 
@@ -71,7 +67,6 @@ class AppscopeConfigWithCustomLibscopeLogLevel(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppscopeConfigWithCustomLibscopeLog:
     level: Optional[AppscopeConfigWithCustomLibscopeLogLevel] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('level'), 'exclude': lambda f: f is None }})
@@ -81,7 +76,6 @@ class AppscopeConfigWithCustomLibscopeLog:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppscopeConfigWithCustomLibscope:
     commanddir: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('commanddir'), 'exclude': lambda f: f is None }})
@@ -93,7 +87,6 @@ class AppscopeConfigWithCustomLibscope:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppscopeConfigWithCustomMetricFormat:
     statsdmaxlen: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('statsdmaxlen'), 'exclude': lambda f: f is None }})
@@ -105,19 +98,17 @@ class AppscopeConfigWithCustomMetricFormat:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppscopeConfigWithCustomMetric:
     enable: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('enable') }})
     format: AppscopeConfigWithCustomMetricFormat = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format') }})
     transport: shared_appscopetransport.AppscopeTransport = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('transport') }})
-    watch: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('watch') }})
+    watch: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('watch') }})
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppscopeConfigWithCustomPayload:
     dir: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dir') }})
@@ -127,7 +118,6 @@ class AppscopeConfigWithCustomPayload:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppscopeConfigWithCustomProtocol:
     binary: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('binary') }})
@@ -141,7 +131,6 @@ class AppscopeConfigWithCustomProtocol:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppscopeConfigWithCustomTags:
     key: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('key') }})
@@ -151,16 +140,15 @@ class AppscopeConfigWithCustomTags:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AppscopeConfigWithCustom:
     cribl: Optional[AppscopeConfigWithCustomCribl] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cribl'), 'exclude': lambda f: f is None }})
-    custom: Optional[list[shared_appscopecustom.AppscopeCustom]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom'), 'exclude': lambda f: f is None }})
+    custom: Optional[List[shared_appscopecustom.AppscopeCustom]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('custom'), 'exclude': lambda f: f is None }})
     event: Optional[AppscopeConfigWithCustomEvent] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('event'), 'exclude': lambda f: f is None }})
     libscope: Optional[AppscopeConfigWithCustomLibscope] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('libscope'), 'exclude': lambda f: f is None }})
     metric: Optional[AppscopeConfigWithCustomMetric] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('metric'), 'exclude': lambda f: f is None }})
     payload: Optional[AppscopeConfigWithCustomPayload] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('payload'), 'exclude': lambda f: f is None }})
-    protocol: Optional[list[AppscopeConfigWithCustomProtocol]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('protocol'), 'exclude': lambda f: f is None }})
-    tags: Optional[list[AppscopeConfigWithCustomTags]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tags'), 'exclude': lambda f: f is None }})
+    protocol: Optional[List[AppscopeConfigWithCustomProtocol]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('protocol'), 'exclude': lambda f: f is None }})
+    tags: Optional[List[AppscopeConfigWithCustomTags]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tags'), 'exclude': lambda f: f is None }})
     
 

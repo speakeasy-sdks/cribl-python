@@ -1,7 +1,5 @@
 # GetNamesOpts
 
-GetNamesOpts object
-
 
 ## Fields
 

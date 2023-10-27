@@ -17,7 +17,6 @@ class TableViewSettingsViewMode(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class TableViewSettings:
     show_column_totals: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('showColumnTotals') }})

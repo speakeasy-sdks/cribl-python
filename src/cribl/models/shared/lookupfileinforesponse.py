@@ -7,10 +7,8 @@ from dataclasses_json import Undefined, dataclass_json
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class LookupFileInfoResponse:
-    r"""LookupFileInfoResponse object"""
     filename: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('filename') }})
     rows: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rows') }})
     size: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size') }})

@@ -1,7 +1,5 @@
 # DatatypePreviewRequestBody
 
-DatatypePreviewRequestBody object
-
 
 ## Fields
 

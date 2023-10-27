@@ -1,7 +1,5 @@
 # LookupFileInfoResponse
 
-LookupFileInfoResponse object
-
 
 ## Fields
 

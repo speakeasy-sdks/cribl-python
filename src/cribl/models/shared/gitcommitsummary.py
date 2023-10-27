@@ -8,7 +8,6 @@ from typing import Any
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GitCommitSummaryAuthor:
     email: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('email') }})
@@ -18,7 +17,6 @@ class GitCommitSummaryAuthor:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GitCommitSummarySummary:
     changes: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('changes') }})
@@ -29,7 +27,6 @@ class GitCommitSummarySummary:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GitCommitSummary:
     author: GitCommitSummaryAuthor = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('author') }})
