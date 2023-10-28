@@ -7,7 +7,6 @@ from ..shared import license as shared_license
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetLicenseRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -16,13 +15,15 @@ class GetLicenseRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetLicenseResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     license: Optional[shared_license.License] = dataclasses.field(default=None)
     r"""a list of License objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

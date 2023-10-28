@@ -1,4 +1,5 @@
-# working_tree
+# WorkingTree
+(*working_tree*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.working_tree.get('tempora')
+res = s.working_tree.get(group='string')
 
 if res.git_status_results is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

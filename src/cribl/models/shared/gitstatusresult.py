@@ -4,10 +4,10 @@ from __future__ import annotations
 import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
+from typing import List
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GitStatusResultFiles:
     index: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('index') }})
@@ -18,7 +18,6 @@ class GitStatusResultFiles:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GitStatusResultRenamed:
     from_: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('from') }})
@@ -28,20 +27,19 @@ class GitStatusResultRenamed:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class GitStatusResult:
     ahead: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('ahead') }})
     behind: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('behind') }})
-    conflicted: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('conflicted') }})
-    created: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created') }})
+    conflicted: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('conflicted') }})
+    created: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('created') }})
     current: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('current') }})
-    deleted: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted') }})
-    files: list[GitStatusResultFiles] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files') }})
-    modified: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modified') }})
-    not_added: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('not_added') }})
-    renamed: list[GitStatusResultRenamed] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('renamed') }})
-    staged: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('staged') }})
+    deleted: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('deleted') }})
+    files: List[GitStatusResultFiles] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('files') }})
+    modified: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modified') }})
+    not_added: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('not_added') }})
+    renamed: List[GitStatusResultRenamed] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('renamed') }})
+    staged: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('staged') }})
     tracking: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tracking') }})
     
 

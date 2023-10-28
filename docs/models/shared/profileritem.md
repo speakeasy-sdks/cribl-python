@@ -1,7 +1,5 @@
 # ProfilerItem
 
-New ProfilerItem object
-
 
 ## Fields
 

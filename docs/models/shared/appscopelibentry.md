@@ -1,7 +1,5 @@
 # AppscopeLibEntry
 
-New AppscopeLibEntry object
-
 
 ## Fields
 

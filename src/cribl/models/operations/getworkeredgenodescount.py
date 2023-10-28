@@ -7,7 +7,6 @@ from ..shared import workeredgenodes as shared_workeredgenodes
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetWorkerEdgeNodesCountRequest:
     filter_exp: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'filterExp', 'style': 'form', 'explode': True }})
@@ -16,12 +15,14 @@ class GetWorkerEdgeNodesCountRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetWorkerEdgeNodesCountResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     worker_edge_nodes: Optional[shared_workeredgenodes.WorkerEdgeNodes] = dataclasses.field(default=None)
     r"""a list of number objects"""
     

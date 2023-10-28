@@ -3,7 +3,7 @@
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
 from cribl.models import errors, operations, shared
-from typing import Any, Optional
+from typing import Optional, Union
 
 class SavedJob:
     sdk_configuration: SDKConfiguration
@@ -24,8 +24,8 @@ class SavedJob:
         
         url = utils.generate_url(operations.DeleteSavedJobRequest, base_url, '/lib/jobs/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -65,8 +65,8 @@ class SavedJob:
         
         url = utils.generate_url(operations.GetSavedJobRequest, base_url, '/lib/jobs/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -94,24 +94,24 @@ class SavedJob:
         return res
 
     
-    def update(self, id: str, request_body: Optional[Any] = None) -> operations.UpdateSavedJobResponse:
+    def update(self, id: str, saved_job: Optional[Union[shared.SavedJobCollection, shared.SavedJobExecutor, shared.SavedJobScheduledSearch]] = None) -> operations.UpdateSavedJobResponse:
         r"""Update SavedJob
         Update SavedJob
         """
         request = operations.UpdateSavedJobRequest(
             id=id,
-            request_body=request_body,
+            saved_job=saved_job,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdateSavedJobRequest, base_url, '/lib/jobs/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "saved_job", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         

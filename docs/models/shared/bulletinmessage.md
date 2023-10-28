@@ -1,7 +1,5 @@
 # BulletinMessage
 
-New BulletinMessage object
-
 
 ## Fields
 
@@ -9,7 +7,7 @@ New BulletinMessage object
 | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- | ----------------------------------------------------------------------------------- |
 | `group`                                                                             | *Optional[str]*                                                                     | :heavy_minus_sign:                                                                  | N/A                                                                                 |
 | `id`                                                                                | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
-| `metadata`                                                                          | list[[BulletinMessageMetadata](../../models/shared/bulletinmessagemetadata.md)]     | :heavy_minus_sign:                                                                  | N/A                                                                                 |
+| `metadata`                                                                          | List[[BulletinMessageMetadata](../../models/shared/bulletinmessagemetadata.md)]     | :heavy_minus_sign:                                                                  | N/A                                                                                 |
 | `severity`                                                                          | [Optional[BulletinMessageSeverity]](../../models/shared/bulletinmessageseverity.md) | :heavy_minus_sign:                                                                  | N/A                                                                                 |
 | `text`                                                                              | *str*                                                                               | :heavy_check_mark:                                                                  | N/A                                                                                 |
 | `time`                                                                              | *Optional[int]*                                                                     | :heavy_minus_sign:                                                                  | N/A                                                                                 |
