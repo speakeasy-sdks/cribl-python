@@ -7,7 +7,6 @@ from ..shared import databaseconnectionconfigs as shared_databaseconnectionconfi
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetListDatabaseConnectionRequest:
     database_type: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'databaseType', 'style': 'form', 'explode': True }})
@@ -16,13 +15,15 @@ class GetListDatabaseConnectionRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetListDatabaseConnectionResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     database_connection_configs: Optional[shared_databaseconnectionconfigs.DatabaseConnectionConfigs] = dataclasses.field(default=None)
     r"""a list of DatabaseConnectionConfig objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

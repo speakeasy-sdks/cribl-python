@@ -1,4 +1,5 @@
-# job_result
+# JobResult
+(*job_result*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.job_result.get('explicabo', 'ipsam', 583193)
+res = s.job_result.get(group='string', id='string', max_files=700347)
 
 if res.job_result is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

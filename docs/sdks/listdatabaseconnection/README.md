@@ -1,4 +1,5 @@
-# list_database_connection
+# ListDatabaseConnection
+(*list_database_connection*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.list_database_connection.get('sed')
+res = s.list_database_connection.get(database_type='string')
 
 if res.database_connection_configs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

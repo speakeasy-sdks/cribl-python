@@ -7,7 +7,6 @@ from ..shared import jobinfos as shared_jobinfos
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetJobInfosRequest:
     collector_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'collectorId', 'style': 'form', 'explode': True }})
@@ -26,13 +25,15 @@ class GetJobInfosRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetJobInfosResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     job_infos: Optional[shared_jobinfos.JobInfos] = dataclasses.field(default=None)
     r"""a list of JobInfo objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

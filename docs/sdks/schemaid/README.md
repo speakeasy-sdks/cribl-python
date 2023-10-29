@@ -1,4 +1,5 @@
-# schema_id
+# SchemaID
+(*schema_id*)
 
 ### Available Operations
 
@@ -17,16 +18,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.schema_id.delete('unde')
+res = s.schema_id.delete(id='string')
 
 if res.schema_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -52,16 +52,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.schema_id.get('corrupti')
+res = s.schema_id.get(id='string')
 
 if res.schema_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -87,29 +86,29 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.schema_id.update('quae', {
-    "ea": 'libero',
-    "nam": 'amet',
-    "adipisci": 'minus',
-    "hic": 'similique',
-})
+res = s.schema_id.update(id='string', schema_lib_entry=shared.SchemaLibEntry(
+    additional_properties={
+        "key": 'string',
+    },
+    id='<ID>',
+    schema='string',
+))
 
 if res.schema_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                   | Type                        | Required                    | Description                 |
-| --------------------------- | --------------------------- | --------------------------- | --------------------------- |
-| `id`                        | *str*                       | :heavy_check_mark:          | Unique ID                   |
-| `request_body`              | dict[str, *Any*]            | :heavy_minus_sign:          | Schema object to be updated |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `id`                                                                     | *str*                                                                    | :heavy_check_mark:                                                       | Unique ID                                                                |
+| `schema_lib_entry`                                                       | [Optional[shared.SchemaLibEntry]](../../models/shared/schemalibentry.md) | :heavy_minus_sign:                                                       | Schema object to be updated                                              |
 
 
 ### Response

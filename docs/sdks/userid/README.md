@@ -1,4 +1,5 @@
-# user_id
+# UserID
+(*user_id*)
 
 ### Available Operations
 
@@ -16,16 +17,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.user_id.delete('impedit')
+res = s.user_id.delete(id='string')
 
 if res.users is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -51,16 +51,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.user_id.get('facilis')
+res = s.user_id.get(id='string')
 
 if res.users is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

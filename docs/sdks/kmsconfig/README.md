@@ -1,4 +1,5 @@
-# kms_config
+# KMSConfig
+(*kms_config*)
 
 ### Available Operations
 
@@ -16,9 +17,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -26,6 +25,7 @@ res = s.kms_config.get()
 
 if res.kms_configs is not None:
     # handle response
+    pass
 ```
 
 
@@ -45,33 +45,26 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.IKMSProviderConfig(
     enable_health_check=False,
     engine=shared.VaultKMSEngineConfig(
-        mount='quidem',
-        secret_path='nesciunt',
         type=shared.VaultKMSEngineConfigType.KV2,
     ),
-    health_check_endpoint='commodi',
-    namespace='sapiente',
-    provider=shared.SecretProvider.LOCAL,
-    secret_dir='veniam',
+    provider=shared.SecretProvider.AWS_KMS,
     service=shared.IAWSKMSServiceConfig(
-        kms_key_arn='debitis',
-        region='officia',
+        kms_key_arn='string',
+        region='string',
     ),
-    url='sint',
 )
 
 res = s.kms_config.update(req)
 
 if res.ikms_provider_config is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

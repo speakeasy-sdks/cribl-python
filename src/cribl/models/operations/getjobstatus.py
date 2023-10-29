@@ -7,7 +7,6 @@ from ..shared import searchjobstatus as shared_searchjobstatus
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetJobStatusRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -16,12 +15,14 @@ class GetJobStatusRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetJobStatusResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     search_job_status: Optional[shared_searchjobstatus.SearchJobStatus] = dataclasses.field(default=None)
     r"""SearchJobStatus object"""
     

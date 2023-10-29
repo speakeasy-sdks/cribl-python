@@ -1,4 +1,5 @@
-# bulletin_message
+# BulletinMessage
+(*bulletin_message*)
 
 ### Available Operations
 
@@ -17,30 +18,22 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 req = shared.BulletinMessage(
-    group='error',
-    id='eee9526f-8d98-46e8-81ea-d4f0e1012563',
+    id='<ID>',
     metadata=[
         shared.BulletinMessageMetadata(),
-        shared.BulletinMessageMetadata(),
-        shared.BulletinMessageMetadata(),
-        shared.BulletinMessageMetadata(),
     ],
-    severity=shared.BulletinMessageSeverity.ERROR,
-    text='magnam',
-    time=906355,
-    title='Mr.',
+    text='string',
 )
 
 res = s.bulletin_message.create(req)
 
 if res.bulletin_message is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -66,16 +59,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.bulletin_message.delete('occaecati')
+res = s.bulletin_message.delete(id='string')
 
 if res.bulletin_message is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -101,16 +93,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.bulletin_message.get('officiis')
+res = s.bulletin_message.get(id='string')
 
 if res.bulletin_message is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
