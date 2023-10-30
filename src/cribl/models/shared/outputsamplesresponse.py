@@ -4,13 +4,12 @@ from __future__ import annotations
 import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Any
+from typing import Any, Dict, List
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class OutputSamplesResponse:
-    events: list[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
+    events: List[Dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events') }})
     
 

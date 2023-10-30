@@ -6,7 +6,7 @@ from ..shared import eventbreakerrulefields as shared_eventbreakerrulefields
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Any, Optional
+from typing import Any, List, Optional
 
 class EventBreakerRuleTimestampType(str, Enum):
     AUTO = 'auto'
@@ -15,7 +15,6 @@ class EventBreakerRuleTimestampType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EventBreakerRuleTimestamp:
     type: EventBreakerRuleTimestampType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
@@ -34,7 +33,6 @@ class EventBreakerRuleType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EventBreakerRule:
     condition: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition') }})
@@ -49,7 +47,7 @@ class EventBreakerRule:
     disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
     escape_char: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('escapeChar'), 'exclude': lambda f: f is None }})
     event_breaker_regex: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('eventBreakerRegex'), 'exclude': lambda f: f is None }})
-    fields_: Optional[list[shared_eventbreakerrulefields.EventBreakerRuleFields]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is None }})
+    fields: Optional[List[shared_eventbreakerrulefields.EventBreakerRuleFields]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is None }})
     fields_line_regex: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fieldsLineRegex'), 'exclude': lambda f: f is None }})
     header_line_regex: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('headerLineRegex'), 'exclude': lambda f: f is None }})
     json_array_field: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('jsonArrayField'), 'exclude': lambda f: f is None }})

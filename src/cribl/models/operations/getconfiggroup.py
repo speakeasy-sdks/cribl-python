@@ -7,24 +7,25 @@ from ..shared import configgroup as shared_configgroup
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetConfigGroupRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Unique ID"""
-    fields_: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'fields', 'style': 'form', 'explode': True }})
+    fields: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'fields', 'style': 'form', 'explode': True }})
     r"""query string additional fields to add to results: git.commit, git.localChanges, git.log"""
     
-
 
 
 
 @dataclasses.dataclass
 class GetConfigGroupResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     config_group: Optional[shared_configgroup.ConfigGroup] = dataclasses.field(default=None)
     r"""a list of ConfigGroup objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

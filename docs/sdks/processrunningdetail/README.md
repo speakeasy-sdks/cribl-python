@@ -1,4 +1,5 @@
-# process_running_detail
+# ProcessRunningDetail
+(*process_running_detail*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.process_running_detail.get('necessitatibus')
+res = s.process_running_detail.get(pid='string')
 
 if res.processes is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

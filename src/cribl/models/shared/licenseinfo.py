@@ -6,7 +6,7 @@ from ..shared import licensetype as shared_licensetype
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Any, Optional
+from typing import Any, Dict, Optional
 
 class LicenseInfoType(str, Enum):
     PROD = 'prod'
@@ -15,7 +15,6 @@ class LicenseInfoType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class LicenseInfo:
     effective_class: shared_licensetype.LicenseType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('effectiveClass') }})
@@ -23,7 +22,7 @@ class LicenseInfo:
     guid: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('guid') }})
     is_running_in_saa_s: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isRunningInSaaS') }})
     license_enforce_reason: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('licenseEnforceReason') }})
-    limits: dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limits') }})
+    limits: Dict[str, Any] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limits') }})
     phone_home: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phoneHome') }})
     phone_home_grace: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('phoneHomeGrace') }})
     quota: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('quota') }})

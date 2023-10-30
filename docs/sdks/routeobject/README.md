@@ -1,4 +1,5 @@
-# route_object
+# RouteObject
+(*route_object*)
 
 ### Available Operations
 
@@ -15,65 +16,37 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.route_object.update('aspernatur', shared.Routes(
+res = s.route_object.update(id='string', routes_input=shared.RoutesInput(
     comments=[
-        {
-            "dicta": 'inventore',
-            "ullam": 'iusto',
-            "inventore": 'voluptate',
-            "sed": 'dolorem',
-        },
-        {
-            "exercitationem": 'amet',
-        },
-        {
-            "voluptate": 'pariatur',
-            "minus": 'a',
-        },
-        {
-            "totam": 'cupiditate',
-            "at": 'doloribus',
-            "omnis": 'quam',
-        },
+        shared.RoutesComments(
+            additional_properties={
+                "key": 'string',
+            },
+        ),
     ],
     groups={
-        "voluptates": shared.RoutesGroups(
-            description='sequi',
-            disabled=False,
-            name='Gertrude Kautzer',
-        ),
-        "aperiam": shared.RoutesGroups(
-            description='perspiciatis',
-            disabled=False,
-            name='Kellie Miller',
+        "key": shared.RoutesGroups(
+            name='string',
         ),
     },
-    id='ddc5f111-dea1-4026-9541-a4d190feb217',
     routes=[
-        {
-            "distinctio": 'placeat',
-        },
-        {
-            "eligendi": 'sit',
-            "possimus": 'distinctio',
-            "distinctio": 'assumenda',
-            "illum": 'soluta',
-        },
-        {
-            "laudantium": 'tempora',
-            "esse": 'doloremque',
-        },
+        shared.RoutesRouteInput(
+            additional_properties={
+                "key": 'string',
+            },
+            name='string',
+            pipeline='string',
+        ),
     ],
 ))
 
 if res.routes is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -81,7 +54,7 @@ if res.routes is not None:
 | Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | `id`                                                                       | *str*                                                                      | :heavy_check_mark:                                                         | There is only one route entity and it should be accessed with id: default. |
-| `routes`                                                                   | [Optional[shared.Routes]](../../models/shared/routes.md)                   | :heavy_minus_sign:                                                         | Routes object                                                              |
+| `routes_input`                                                             | [Optional[shared.RoutesInput]](../../models/shared/routesinput.md)         | :heavy_minus_sign:                                                         | Routes object                                                              |
 
 
 ### Response

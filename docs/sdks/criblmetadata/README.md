@@ -1,4 +1,5 @@
-# cribl_metadata
+# CriblMetadata
+(*cribl_metadata*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.cribl_metadata.get()
 
 if res.get_cribl_metadata_200_text_xml_string is not None:
     # handle response
+    pass
 ```
 
 

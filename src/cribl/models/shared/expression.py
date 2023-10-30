@@ -6,14 +6,14 @@ from ..shared import expressionoptions as shared_expressionoptions
 from ..shared import map as shared_map
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
+from typing import List
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Expression:
     cache: shared_map.Map = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cache') }})
-    declared_variables: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('declaredVariables') }})
+    declared_variables: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('declaredVariables') }})
     is_safe: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('isSafe') }})
     max_cache: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('MAX_CACHE') }})
     modified_expression: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('modifiedExpression') }})

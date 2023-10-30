@@ -1,4 +1,5 @@
-# job
+# Job
+(*job*)
 
 ### Available Operations
 
@@ -21,16 +22,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.job.cancel('voluptatibus')
+res = s.job.cancel(id='string')
 
 if res.job_cancel is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -56,16 +56,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.job.delete('molestias')
+res = s.job.delete(id='string')
 
 if res.job_delete is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -91,16 +90,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.job.get('officia')
+res = s.job.get(id='string')
 
 if res.job_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -126,16 +124,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.job.pause_job('libero')
+res = s.job.pause_job(id='string')
 
 if res.job_pause is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -161,16 +158,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.job.prevent('totam')
+res = s.job.prevent(id='string')
 
 if res.job_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -196,16 +192,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.job.resume('sequi')
+res = s.job.resume(id='string')
 
 if res.job_resume is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -231,68 +226,35 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.SavedJobExecutor(
-    environment='ea',
-    executor=shared.SavedJobExecutorExecutor(
-        conf=shared.SavedJobExecutorExecutorExecutorSpecificSettings(),
-        store_task_results=False,
-        type='impedit',
-    ),
-    id='723ffda9-e06b-4ee4-825c-1fc0e115c80b',
+req = shared.SavedJobScheduledSearch(
     remove_fields=[
-        'a',
-        'iste',
-        'dicta',
-        'quos',
+        'string',
     ],
-    resume_on_boot=False,
-    schedule=shared.SavedJobExecutorSchedule(
-        cron_schedule='ullam',
-        enabled=False,
-        max_concurrent_runs=295950,
-        resume_missed='modi',
-        run=shared.SavedJobExecutorScheduleRunSettings(
-            earliest=929292,
-            expression='maxime',
-            job_timeout='modi',
-            latest=163558,
-            log_level=shared.SavedJobExecutorScheduleRunSettingsLogLevel.SILLY,
-            max_task_reschedule=876840,
-            max_task_size='doloribus',
-            min_task_size='impedit',
-            mode='porro',
-            reschedule_dropped_tasks=False,
-            time_range_type='accusamus',
-            timestamp_timezone='totam',
-        ),
-        skippable=False,
+    saved_query_id='string',
+    schedule=shared.SavedJobScheduledSearchSchedule(
+        run=shared.SavedJobScheduledSearchScheduleRunSettings(),
     ),
     streamtags=[
-        'ab',
-        'sint',
-        'nihil',
-        'esse',
+        'string',
     ],
-    ttl='iure',
-    type=shared.SavedJobExecutorJobType.EXECUTOR,
+    type=shared.SavedJobScheduledSearchJobType.SCHEDULED_SEARCH,
 )
 
 res = s.job.run_job(req)
 
 if res.job_run is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [Any](../../models//.md)                   | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                                                                                    | Type                                                                                                                         | Required                                                                                                                     | Description                                                                                                                  |
+| ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------------- |
+| `request`                                                                                                                    | [Union[shared.SavedJobCollection, shared.SavedJobExecutor, shared.SavedJobScheduledSearch]](../../models/shared/savedjob.md) | :heavy_check_mark:                                                                                                           | The request object to use for the request.                                                                                   |
 
 
 ### Response
