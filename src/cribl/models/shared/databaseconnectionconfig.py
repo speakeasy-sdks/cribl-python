@@ -9,10 +9,8 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DatabaseConnectionConfig:
-    r"""New DatabaseConnectionConfig object"""
     auth_type: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('authType') }})
     description: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})

@@ -1,4 +1,5 @@
-# idp_user_auth
+# IDPUserAuth
+(*idp_user_auth*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.idp_user_auth.logout('officia', 'sed')
+res = s.idp_user_auth.logout(relay_state='string', saml_response='string')
 
 if res.success is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

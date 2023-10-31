@@ -8,10 +8,8 @@ from typing import Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class FilesystemEntries:
-    r"""a list of FilesystemEntry objects"""
     count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
     r"""number of items present in the items array"""
     

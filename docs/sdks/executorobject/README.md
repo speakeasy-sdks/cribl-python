@@ -1,4 +1,5 @@
-# executor_object
+# ExecutorObject
+(*executor_object*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.executor_object.get()
 
 if res.executors is not None:
     # handle response
+    pass
 ```
 
 

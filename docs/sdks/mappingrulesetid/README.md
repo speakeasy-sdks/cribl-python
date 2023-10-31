@@ -1,4 +1,5 @@
-# mapping_ruleset_id
+# MappingRulesetID
+(*mapping_ruleset_id*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.mapping_ruleset_id.get('doloribus')
+res = s.mapping_ruleset_id.get(id='string')
 
 if res.mapping_rulesets is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

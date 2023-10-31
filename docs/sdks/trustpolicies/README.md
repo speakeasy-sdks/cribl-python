@@ -1,4 +1,5 @@
-# trust_policies
+# TrustPolicies
+(*trust_policies*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.trust_policies.get()
 
 if res.trust_policies is not None:
     # handle response
+    pass
 ```
 
 

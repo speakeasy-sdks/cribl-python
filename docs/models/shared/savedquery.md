@@ -1,7 +1,5 @@
 # SavedQuery
 
-New SavedQuery object
-
 
 ## Fields
 

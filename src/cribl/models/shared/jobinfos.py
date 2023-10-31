@@ -5,15 +5,13 @@ import dataclasses
 from ..shared import jobinfo as shared_jobinfo
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class JobInfos:
-    r"""a list of JobInfo objects"""
-    items: Optional[list[shared_jobinfo.JobInfo]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})
+    items: Optional[List[shared_jobinfo.JobInfo]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})
     r"""the pre-limited items in the list of results"""
     limit: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('limit'), 'exclude': lambda f: f is None }})
     r"""number of items present in the items array"""

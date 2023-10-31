@@ -1,7 +1,5 @@
 # IKMSProviderConfig
 
-IKMSProviderConfig object
-
 
 ## Fields
 

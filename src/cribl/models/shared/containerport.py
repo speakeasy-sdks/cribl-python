@@ -7,7 +7,6 @@ from dataclasses_json import Undefined, dataclass_json
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ContainerPort:
     private_port: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('privatePort') }})
