@@ -5,32 +5,30 @@ import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Optional
+from typing import List, Optional
 
 class EventBreakerRulesetLibrary(str, Enum):
     CUSTOM = 'custom'
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EventBreakerRulesetRulesDefinitions:
     dst_field: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dstField'), 'exclude': lambda f: f is None }})
     r"""Name of the field to add fields to. Extract mode only."""
     field_filter_expr: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fieldFilterExpr'), 'exclude': lambda f: f is None }})
     r"""Expression evaluated against {index, name, value} context. Return truthy to keep a field, or falsy to remove it."""
-    fields_: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is None }})
+    fields: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is None }})
     r"""Fields expected to be extracted, in order. If not specified, Parser will auto-generate."""
-    keep: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('keep'), 'exclude': lambda f: f is None }})
+    keep: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('keep'), 'exclude': lambda f: f is None }})
     r"""List of fields to keep. Supports wildcards (*). Takes precedence over 'Fields to Remove'."""
-    remove: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remove'), 'exclude': lambda f: f is None }})
+    remove: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('remove'), 'exclude': lambda f: f is None }})
     r"""List of fields to remove. Supports wildcards (*). Cannot remove fields that match 'Fields to Keep'."""
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EventBreakerRulesetRulesFields:
     value: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('value') }})
@@ -47,13 +45,12 @@ class EventBreakerRulesetRulesTimestampFormatTimestampType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EventBreakerRulesetRulesTimestampFormat:
     r"""Auto, manual format (strptime) or current time."""
-    type: EventBreakerRulesetRulesTimestampFormatTimestampType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     format: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('format'), 'exclude': lambda f: f is None }})
-    length: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('length'), 'exclude': lambda f: f is None }})
+    length: Optional[int] = dataclasses.field(default=150, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('length'), 'exclude': lambda f: f is None }})
+    type: Optional[EventBreakerRulesetRulesTimestampFormatTimestampType] = dataclasses.field(default=EventBreakerRulesetRulesTimestampFormatTimestampType.AUTO, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
     
 
 
@@ -68,49 +65,46 @@ class EventBreakerRulesetRulesEventBreakerType(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EventBreakerRulesetRules:
-    condition: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition') }})
-    r"""Filter expression (JS) that matches data to apply rule to. To test your sample, use the maximize icon on the right."""
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
     timestamp: EventBreakerRulesetRulesTimestampFormat = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestamp') }})
     r"""Auto, manual format (strptime) or current time."""
-    timestamp_anchor_regex: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestampAnchorRegex') }})
-    r"""Regex to match before attempting timestamp extraction. Use $ (end of string anchor) to not perform extraction."""
-    type: EventBreakerRulesetRulesEventBreakerType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
-    r"""Event Breaker Type"""
+    condition: Optional[str] = dataclasses.field(default='true', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('condition'), 'exclude': lambda f: f is None }})
+    r"""Filter expression (JS) that matches data to apply rule to. To test your sample, use the maximize icon on the right."""
     definitions: Optional[EventBreakerRulesetRulesDefinitions] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('definitions'), 'exclude': lambda f: f is None }})
-    disabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
+    disabled: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disabled'), 'exclude': lambda f: f is None }})
     r"""Allows breaker rule to be enabled or disabled, default is enabled."""
-    fields_: Optional[list[EventBreakerRulesetRulesFields]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is None }})
+    fields: Optional[List[EventBreakerRulesetRulesFields]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('fields'), 'exclude': lambda f: f is None }})
     r"""Key value pairs to be added to each event."""
-    max_event_bytes: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxEventBytes'), 'exclude': lambda f: f is None }})
+    max_event_bytes: Optional[int] = dataclasses.field(default=51200, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('maxEventBytes'), 'exclude': lambda f: f is None }})
     r"""The maximum number of bytes that an event can be before being flushed to the pipelines"""
-    parser_enabled: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parserEnabled'), 'exclude': lambda f: f is None }})
+    parser_enabled: Optional[bool] = dataclasses.field(default=False, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('parserEnabled'), 'exclude': lambda f: f is None }})
     r"""Parser."""
-    timestamp_earliest: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestampEarliest'), 'exclude': lambda f: f is None }})
+    timestamp_anchor_regex: Optional[str] = dataclasses.field(default='/^/', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestampAnchorRegex'), 'exclude': lambda f: f is None }})
+    r"""Regex to match before attempting timestamp extraction. Use $ (end of string anchor) to not perform extraction."""
+    timestamp_earliest: Optional[str] = dataclasses.field(default='-420weeks', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestampEarliest'), 'exclude': lambda f: f is None }})
     r"""The earliest timestamp value allowed relative to now. E.g., -42years. Parsed values prior to this date will be set to current time."""
-    timestamp_latest: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestampLatest'), 'exclude': lambda f: f is None }})
+    timestamp_latest: Optional[str] = dataclasses.field(default='+1week', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestampLatest'), 'exclude': lambda f: f is None }})
     r"""The latest timestamp value allowed relative to now. E.g., +42days. Parsed values after this date will be set to current time."""
-    timestamp_timezone: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestampTimezone'), 'exclude': lambda f: f is None }})
+    timestamp_timezone: Optional[str] = dataclasses.field(default='local', metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('timestampTimezone'), 'exclude': lambda f: f is None }})
     r"""Timezone to assign to timestamps without timezone info."""
+    type: Optional[EventBreakerRulesetRulesEventBreakerType] = dataclasses.field(default=EventBreakerRulesetRulesEventBreakerType.REGEX, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type'), 'exclude': lambda f: f is None }})
+    r"""Event Breaker Type"""
     
 
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class EventBreakerRuleset:
-    r"""New Event Breaker Ruleset object"""
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
     description: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('description'), 'exclude': lambda f: f is None }})
     r"""Brief description of this ruleset. Optional."""
-    lib: Optional[EventBreakerRulesetLibrary] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lib'), 'exclude': lambda f: f is None }})
-    min_raw_length: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('minRawLength'), 'exclude': lambda f: f is None }})
+    lib: Optional[EventBreakerRulesetLibrary] = dataclasses.field(default=EventBreakerRulesetLibrary.CUSTOM, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('lib'), 'exclude': lambda f: f is None }})
+    min_raw_length: Optional[int] = dataclasses.field(default=256, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('minRawLength'), 'exclude': lambda f: f is None }})
     r"""Threshold number of characters in _raw to determine which rule to use."""
-    rules: Optional[list[EventBreakerRulesetRules]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules'), 'exclude': lambda f: f is None }})
+    rules: Optional[List[EventBreakerRulesetRules]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('rules'), 'exclude': lambda f: f is None }})
     r"""List of rules. Evaluated in order, top down."""
     tags: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('tags'), 'exclude': lambda f: f is None }})
     r"""One or more tags related to this ruleset. Optional."""

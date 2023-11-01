@@ -5,7 +5,7 @@ import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
 from enum import Enum
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 class PreviewDataParamsMode(str, Enum):
     PIPE = 'pipe'
@@ -14,16 +14,14 @@ class PreviewDataParamsMode(str, Enum):
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class PreviewDataParams:
-    r"""PreviewDataParams object"""
     mode: PreviewDataParamsMode = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mode') }})
     pipeline_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('pipelineId') }})
     sample_id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('sampleId') }})
     cpu_profile: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('cpuProfile'), 'exclude': lambda f: f is None }})
     dropped: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('dropped'), 'exclude': lambda f: f is None }})
-    events: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events'), 'exclude': lambda f: f is None }})
+    events: Optional[List[Dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('events'), 'exclude': lambda f: f is None }})
     input_id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('inputId'), 'exclude': lambda f: f is None }})
     level: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('level'), 'exclude': lambda f: f is None }})
     memory: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('memory'), 'exclude': lambda f: f is None }})

@@ -1,11 +1,9 @@
 # Executors
 
-a list of Executor objects
-
 
 ## Fields
 
 | Field                                             | Type                                              | Required                                          | Description                                       |
 | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- | ------------------------------------------------- |
 | `count`                                           | *Optional[int]*                                   | :heavy_minus_sign:                                | number of items present in the items array        |
-| `items`                                           | list[[Executor](../../models/shared/executor.md)] | :heavy_minus_sign:                                | N/A                                               |
+| `items`                                           | List[[Executor](../../models/shared/executor.md)] | :heavy_minus_sign:                                | N/A                                               |

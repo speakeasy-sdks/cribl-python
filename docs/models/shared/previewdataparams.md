@@ -1,7 +1,5 @@
 # PreviewDataParams
 
-PreviewDataParams object
-
 
 ## Fields
 
@@ -9,7 +7,7 @@ PreviewDataParams object
 | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- | --------------------------------------------------------------------- |
 | `cpu_profile`                                                         | *Optional[bool]*                                                      | :heavy_minus_sign:                                                    | N/A                                                                   |
 | `dropped`                                                             | *Optional[bool]*                                                      | :heavy_minus_sign:                                                    | N/A                                                                   |
-| `events`                                                              | list[dict[str, *Any*]]                                                | :heavy_minus_sign:                                                    | N/A                                                                   |
+| `events`                                                              | List[Dict[str, *Any*]]                                                | :heavy_minus_sign:                                                    | N/A                                                                   |
 | `input_id`                                                            | *Optional[str]*                                                       | :heavy_minus_sign:                                                    | N/A                                                                   |
 | `level`                                                               | *Optional[int]*                                                       | :heavy_minus_sign:                                                    | N/A                                                                   |
 | `memory`                                                              | *Optional[int]*                                                       | :heavy_minus_sign:                                                    | N/A                                                                   |

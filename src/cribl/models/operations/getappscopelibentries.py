@@ -7,13 +7,15 @@ from ..shared import appscopelibentries as shared_appscopelibentries
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetAppscopeLibEntriesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     app_scope_lib_entries: Optional[shared_appscopelibentries.AppScopeLibEntries] = dataclasses.field(default=None)
     r"""a list of AppscopeLibEntry objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

@@ -6,7 +6,6 @@ import requests as requests_http
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetJobResultsRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -15,13 +14,15 @@ class GetJobResultsRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetJobResultsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    get_job_results_200_application_x_ndjson_binary_string: Optional[bytes] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    get_job_results_200_application_x_ndjson_binary_string: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Get results for a discover job by instance id"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
