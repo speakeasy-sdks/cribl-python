@@ -7,13 +7,15 @@ from ..shared import processes as shared_processes
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetListProcessRunningDetailResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     processes: Optional[shared_processes.Processes] = dataclasses.field(default=None)
     r"""a list of Process objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

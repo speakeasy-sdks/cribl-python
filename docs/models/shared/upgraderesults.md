@@ -1,7 +1,5 @@
 # UpgradeResults
 
-a list of UpgradeResult objects
-
 
 ## Fields
 

@@ -5,16 +5,15 @@ import dataclasses
 from ..shared import upgradepackageurls as shared_upgradepackageurls
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class UpgradeSettings:
     disable_automatic_upgrade: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disableAutomaticUpgrade') }})
     upgrade_source: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('upgradeSource') }})
     automatic_upgrade_check_period: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('automaticUpgradeCheckPeriod'), 'exclude': lambda f: f is None }})
-    package_urls: Optional[list[shared_upgradepackageurls.UpgradePackageUrls]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packageUrls'), 'exclude': lambda f: f is None }})
+    package_urls: Optional[List[shared_upgradepackageurls.UpgradePackageUrls]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('packageUrls'), 'exclude': lambda f: f is None }})
     
 

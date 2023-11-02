@@ -1,4 +1,5 @@
-# health_info
+# HealthInfo
+(*health_info*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.health_info.get()
 
 if res.health_status is not None:
     # handle response
+    pass
 ```
 
 

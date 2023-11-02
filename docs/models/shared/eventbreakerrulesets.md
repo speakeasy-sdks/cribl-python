@@ -1,7 +1,5 @@
 # EventBreakerRulesets
 
-a list of Event Breaker Ruleset objects
-
 
 ## Fields
 
