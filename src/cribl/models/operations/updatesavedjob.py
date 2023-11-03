@@ -3,27 +3,31 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ..shared import savedjobcollection as shared_savedjobcollection
+from ..shared import savedjobexecutor as shared_savedjobexecutor
 from ..shared import savedjobs as shared_savedjobs
-from typing import Any, Optional
-
+from ..shared import savedjobscheduledsearch as shared_savedjobscheduledsearch
+from typing import Optional, Union
 
 
 @dataclasses.dataclass
 class UpdateSavedJobRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Unique ID"""
-    request_body: Optional[Any] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    saved_job: Optional[Union[shared_savedjobcollection.SavedJobCollection, shared_savedjobexecutor.SavedJobExecutor, shared_savedjobscheduledsearch.SavedJobScheduledSearch]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""SavedJob object to be updated"""
     
-
 
 
 
 @dataclasses.dataclass
 class UpdateSavedJobResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     saved_jobs: Optional[shared_savedjobs.SavedJobs] = dataclasses.field(default=None)
     r"""a list of SavedJob objects"""
     

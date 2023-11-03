@@ -1,4 +1,5 @@
-# data_sample
+# DataSample
+(*data_sample*)
 
 ### Available Operations
 
@@ -15,28 +16,29 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = {
-    "nemo": 'voluptate',
-    "blanditiis": 'officia',
-    "voluptas": 'numquam',
-}
+req = shared.DataSample(
+    additional_properties={
+        "key": 'string',
+    },
+    id='<ID>',
+    sample_name='string',
+)
 
 res = s.data_sample.post(req)
 
 if res.data_samples is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [dict[str, Any]](../../models//.md)        | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                              | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `request`                                              | [shared.DataSample](../../models/shared/datasample.md) | :heavy_check_mark:                                     | The request object to use for the request.             |
 
 
 ### Response

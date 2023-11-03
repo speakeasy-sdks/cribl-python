@@ -1,4 +1,5 @@
-# packs
+# Packs
+(*packs*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.packs.get()
 
 if res.pack_infos is not None:
     # handle response
+    pass
 ```
 
 
