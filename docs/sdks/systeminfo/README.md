@@ -1,4 +1,5 @@
-# system_info
+# SystemInfo
+(*system_info*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.system_info.get()
 
 if res.system_info_objects is not None:
     # handle response
+    pass
 ```
 
 

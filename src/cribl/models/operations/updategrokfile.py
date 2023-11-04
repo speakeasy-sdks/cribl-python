@@ -7,7 +7,6 @@ from ..shared import grokfile as shared_grokfile
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class UpdateGrokFileRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
@@ -18,13 +17,15 @@ class UpdateGrokFileRequest:
 
 
 
-
 @dataclasses.dataclass
 class UpdateGrokFileResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     grok_file: Optional[shared_grokfile.GrokFile] = dataclasses.field(default=None)
     r"""a list of GrokFile objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

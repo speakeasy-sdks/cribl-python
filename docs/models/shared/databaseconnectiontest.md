@@ -1,7 +1,5 @@
 # DatabaseConnectionTest
 
-DatabaseConnectionTest object
-
 
 ## Fields
 

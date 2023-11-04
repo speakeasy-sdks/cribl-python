@@ -2,13 +2,23 @@
 
 from __future__ import annotations
 import dataclasses
+from ..shared import routesroute as shared_routesroute
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Any, Optional
+from typing import Any, Dict, List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class RoutesComments:
+    additional_properties: Optional[Dict[str, Any]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'exclude': lambda f: f is None }})
+    comment: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('comment'), 'exclude': lambda f: f is None }})
+    r"""Optional, short description of this Route's purpose"""
+    
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class RoutesGroups:
     name: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name') }})
@@ -21,15 +31,27 @@ class RoutesGroups:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
+@dataclasses.dataclass
+class RoutesInput:
+    routes: List[shared_routesroute.RoutesRouteInput] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('routes') }})
+    r"""Pipeline routing rules"""
+    comments: Optional[List[RoutesComments]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('comments'), 'exclude': lambda f: f is None }})
+    r"""Comments"""
+    groups: Optional[Dict[str, RoutesGroups]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('groups'), 'exclude': lambda f: f is None }})
+    id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
+    r"""Routes ID"""
+    
 
+
+
+@dataclass_json(undefined=Undefined.EXCLUDE)
 @dataclasses.dataclass
 class Routes:
-    r"""a list of Routes objects"""
-    routes: list[dict[str, Any]] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('routes') }})
+    routes: List[shared_routesroute.RoutesRoute] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('routes') }})
     r"""Pipeline routing rules"""
-    comments: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('comments'), 'exclude': lambda f: f is None }})
+    comments: Optional[List[RoutesComments]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('comments'), 'exclude': lambda f: f is None }})
     r"""Comments"""
-    groups: Optional[dict[str, RoutesGroups]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('groups'), 'exclude': lambda f: f is None }})
+    groups: Optional[Dict[str, RoutesGroups]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('groups'), 'exclude': lambda f: f is None }})
     id: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id'), 'exclude': lambda f: f is None }})
     r"""Routes ID"""
     

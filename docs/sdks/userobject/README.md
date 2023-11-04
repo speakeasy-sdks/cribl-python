@@ -1,4 +1,5 @@
-# user_object
+# UserObject
+(*user_object*)
 
 ### Available Operations
 
@@ -16,9 +17,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -26,6 +25,7 @@ res = s.user_object.get()
 
 if res.users is not None:
     # handle response
+    pass
 ```
 
 
@@ -45,31 +45,25 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.user_object.update('amet', shared.User(
-    current_password='quis',
+res = s.user_object.update(id='string', user=shared.User(
     disabled=False,
-    email='Belle.Kulas@hotmail.com',
-    first='quos',
-    id='f1edb783-59ec-4c5c-b860-f8cd580ba738',
-    last='sunt',
-    password='aperiam',
+    email='Alberto34@hotmail.com',
+    first='string',
+    id='<ID>',
+    last='string',
     roles=[
-        'quaerat',
-        'repellat',
-        'necessitatibus',
-        'tempora',
+        'string',
     ],
-    username='Eloy.Gutkowski',
+    username='Mellie62',
 ))
 
 if res.users is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

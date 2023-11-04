@@ -1,4 +1,5 @@
-# changelogs
+# Changelogs
+(*changelogs*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.changelogs.get()
 
 if res.changelog_states is not None:
     # handle response
+    pass
 ```
 
 

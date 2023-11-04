@@ -1,4 +1,5 @@
-# route_list_id
+# RouteListID
+(*route_list_id*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.route_list_id.get('laudantium')
+res = s.route_list_id.get(id='string')
 
 if res.routes is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
