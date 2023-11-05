@@ -1,4 +1,5 @@
-# existing_diag_bundles
+# ExistingDiagBundles
+(*existing_diag_bundles*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.existing_diag_bundles.get()
 
 if res.existing_diag is not None:
     # handle response
+    pass
 ```
 
 

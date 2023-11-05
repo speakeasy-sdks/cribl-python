@@ -7,12 +7,14 @@ from ..shared import systeminfoobjects as shared_systeminfoobjects
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetSystemInfoResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     system_info_objects: Optional[shared_systeminfoobjects.SystemInfoObjects] = dataclasses.field(default=None)
     r"""a list of SystemInfo objects"""
     

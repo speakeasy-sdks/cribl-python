@@ -7,7 +7,6 @@ from ..shared import samplefiles as shared_samplefiles
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetBytesRequest:
     path: str = dataclasses.field(metadata={'query_param': { 'field_name': 'path', 'style': 'form', 'explode': True }})
@@ -18,12 +17,14 @@ class GetBytesRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetBytesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     sample_files: Optional[shared_samplefiles.SampleFiles] = dataclasses.field(default=None)
     r"""a list of SampleFile objects"""
     

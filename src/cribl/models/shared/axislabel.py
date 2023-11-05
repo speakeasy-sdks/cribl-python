@@ -4,8 +4,7 @@ from __future__ import annotations
 import dataclasses
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -14,10 +13,9 @@ class AxisLabelFormatter:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class AxisLabel:
     formatter: Optional[AxisLabelFormatter] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('formatter'), 'exclude': lambda f: f is None }})
-    formatter_data: Optional[list[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('formatterData'), 'exclude': lambda f: f is None }})
+    formatter_data: Optional[List[int]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('formatterData'), 'exclude': lambda f: f is None }})
     
 

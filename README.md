@@ -14,25 +14,19 @@ Please fetch a Bearer token for the Cribl Cloud free tier [here](https://docs.cr
 <!-- Start SDK Installation -->
 ## SDK Installation
 
-This is SDK is not yet published to PYPI so please clone repo and then run
-
 ```bash
-pip install -e /path/to/clone/cribl-python
+pip install cribl
 ```
 <!-- End SDK Installation -->
 
 ## SDK Example Usage
 <!-- Start SDK Example Usage -->
-
-
 ```python
 import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -40,6 +34,7 @@ res = s.appscope_lib_entries.get()
 
 if res.app_scope_lib_entries is not None:
     # handle response
+    pass
 ```
 <!-- End SDK Example Usage -->
 
@@ -916,6 +911,134 @@ if res.app_scope_lib_entries is not None:
 
 * [get](docs/sdks/workingtree/README.md#get) - get the the working tree status
 <!-- End SDK Available Operations -->
+
+
+
+<!-- Start Dev Containers -->
+
+
+
+<!-- End Dev Containers -->
+
+
+
+<!-- Start Error Handling -->
+# Error Handling
+
+Handling errors in your SDK should largely match your expectations.  All operations return a response object or raise an error.  If Error objects are specified in your OpenAPI Spec, the SDK will raise the appropriate Error type.
+
+
+## Example
+
+```python
+import cribl
+from cribl.models import shared
+
+s = cribl.Cribl(
+    bearer_auth="",
+)
+
+
+res = None
+try:
+    res = s.appscope_lib_entries.get()
+
+
+except (Error) as e:
+    print(e) # handle exception
+
+if res.app_scope_lib_entries is not None:
+    # handle response
+    pass
+```
+<!-- End Error Handling -->
+
+
+
+<!-- Start Server Selection -->
+# Server Selection
+
+## Select Server by Index
+
+You can override the default server globally by passing a server index to the `server_idx: int` optional parameter when initializing the SDK client instance. The selected server will then be used as the default on the operations that use it. This table lists the indexes associated with the available servers:
+
+| # | Server | Variables |
+| - | ------ | --------- |
+| 0 | `https://logstream.{organizationID}.cribl.cloud/` | `organizationID` (default is `api`) |
+
+
+Some of the server options above contain variables. If you want to set the values of those variables, the following options are provided for doing so:
+ * `organization_id: str`
+
+For example:
+
+
+```python
+import cribl
+from cribl.models import shared
+
+s = cribl.Cribl(
+    bearer_auth="",
+    server_idx=0
+)
+
+
+res = s.appscope_lib_entries.get()
+
+if res.app_scope_lib_entries is not None:
+    # handle response
+    pass
+```
+
+
+## Override Server URL Per-Client
+
+The default server can also be overridden globally by passing a URL to the `server_url: str` optional parameter when initializing the SDK client instance. For example:
+
+
+```python
+import cribl
+from cribl.models import shared
+
+s = cribl.Cribl(
+    bearer_auth="",
+    server_url="https://logstream.{organizationID}.cribl.cloud/"
+)
+
+
+res = s.appscope_lib_entries.get()
+
+if res.app_scope_lib_entries is not None:
+    # handle response
+    pass
+```
+<!-- End Server Selection -->
+
+
+
+<!-- Start Custom HTTP Client -->
+# Custom HTTP Client
+
+The Python SDK makes API calls using the (requests)[https://pypi.org/project/requests/] HTTP library.  In order to provide a convenient way to configure timeouts, cookies, proxies, custom headers, and other low-level configuration, you can initialize the SDK client with a custom `requests.Session` object.
+
+
+For example, you could specify a header for every request that your sdk makes as follows:
+
+```python
+import cribl
+import requests
+
+http_client = requests.Session()
+http_client.headers.update({'x-custom-header': 'someValue'})
+s = cribl.Cribl(client: http_client)
+```
+
+
+<!-- End Custom HTTP Client -->
+
+<!-- Placeholder for Future Speakeasy SDK Sections -->
+
+
 
 ### Maturity
 

@@ -1,4 +1,5 @@
-# search_jobs
+# SearchJobs
+(*search_jobs*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.search_jobs.get()
 
 if res.search_jobs is not None:
     # handle response
+    pass
 ```
 
 

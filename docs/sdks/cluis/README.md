@@ -1,4 +1,5 @@
-# cluis
+# Cluis
+(*cluis*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.cluis.get('nam', 'earum')
+res = s.cluis.get(query='string', context='string')
 
 if res.clui_items is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

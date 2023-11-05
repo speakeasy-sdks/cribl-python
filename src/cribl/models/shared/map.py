@@ -6,14 +6,12 @@ from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
 
 
-
 @dataclasses.dataclass
 class MapOp:
     pass
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Map:
     op: MapOp = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('op') }})

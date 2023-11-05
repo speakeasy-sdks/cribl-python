@@ -1,4 +1,5 @@
-# object_function
+# ObjectFunction
+(*object_function*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.object_function.get()
 
 if res.functions is not None:
     # handle response
+    pass
 ```
 
 

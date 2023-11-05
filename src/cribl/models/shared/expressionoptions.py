@@ -6,15 +6,14 @@ from ..shared import partialevalrewrite as shared_partialevalrewrite
 from ..shared import traversecallback as shared_traversecallback
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class ExpressionOptions:
     allow_internal: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('allowInternal'), 'exclude': lambda f: f is None }})
-    args: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('args'), 'exclude': lambda f: f is None }})
+    args: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('args'), 'exclude': lambda f: f is None }})
     ast_traverse_callback: Optional[shared_traversecallback.TraverseCallback] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('astTraverseCallback'), 'exclude': lambda f: f is None }})
     context: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('context'), 'exclude': lambda f: f is None }})
     disallow_assign: Optional[bool] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disallowAssign'), 'exclude': lambda f: f is None }})

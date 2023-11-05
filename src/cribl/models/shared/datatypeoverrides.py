@@ -5,14 +5,13 @@ import dataclasses
 from ..shared import eventbreakerruleset as shared_eventbreakerruleset
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class DatatypeOverrides:
     disable_breakers: bool = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('disableBreakers') }})
-    breaker_rulesets: Optional[list[shared_eventbreakerruleset.EventBreakerRuleset]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('breakerRulesets'), 'exclude': lambda f: f is None }})
+    breaker_rulesets: Optional[List[shared_eventbreakerruleset.EventBreakerRuleset]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('breakerRulesets'), 'exclude': lambda f: f is None }})
     
 
