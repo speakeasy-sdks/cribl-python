@@ -1,4 +1,5 @@
-# search_logs
+# SearchLogs
+(*search_logs*)
 
 ### Available Operations
 
@@ -15,16 +16,15 @@ import cribl
 from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.search_logs.get('minima')
+res = s.search_logs.get(id='string')
 
 if res.search_logs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

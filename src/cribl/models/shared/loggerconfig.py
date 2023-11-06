@@ -5,18 +5,16 @@ import dataclasses
 from ..shared import loggerentry as shared_loggerentry
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class LoggerConfig:
-    r"""a list of LoggerConfig objects"""
-    channels: list[shared_loggerentry.LoggerEntry] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('channels') }})
+    channels: List[shared_loggerentry.LoggerEntry] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('channels') }})
     id: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('id') }})
-    redact_fields: list[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('redactFields') }})
+    redact_fields: List[str] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('redactFields') }})
     redact_label: str = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('redactLabel') }})
-    default_redact_fields: Optional[list[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultRedactFields'), 'exclude': lambda f: f is None }})
+    default_redact_fields: Optional[List[str]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('defaultRedactFields'), 'exclude': lambda f: f is None }})
     
 

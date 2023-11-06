@@ -4,4 +4,4 @@ from .error import *
 from .healthstatus import *
 from .success import *
 from .sdkerror import SDKError
-__all__ = ["Error","HealthStatus","Success","SDKError"]
+__all__ = ["Error","HealthStatus","HealthStatusStatus","Success","SDKError"]

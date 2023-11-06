@@ -1,4 +1,5 @@
-# client_roles
+# ClientRoles
+(*client_roles*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.client_roles.get()
 
 if res.client_role_entries is not None:
     # handle response
+    pass
 ```
 
 

@@ -7,7 +7,6 @@ from ..shared import events as shared_events
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetEventsRequest:
     et: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'et', 'style': 'form', 'explode': True }})
@@ -26,13 +25,15 @@ class GetEventsRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetEventsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     events: Optional[shared_events.Events] = dataclasses.field(default=None)
     r"""a list of any objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

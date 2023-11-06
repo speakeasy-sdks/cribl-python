@@ -1,4 +1,5 @@
-# output_status
+# OutputStatus
+(*output_status*)
 
 ### Available Operations
 
@@ -15,9 +16,7 @@ import cribl
 from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +24,7 @@ res = s.output_status.get()
 
 if res.output_statuses is not None:
     # handle response
+    pass
 ```
 
 

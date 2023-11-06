@@ -1,7 +1,5 @@
 # RedirectInfo
 
-Redirect info
-
 
 ## Fields
 

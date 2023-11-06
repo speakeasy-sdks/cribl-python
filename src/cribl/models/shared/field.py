@@ -7,19 +7,18 @@ from ..shared import fieldtype as shared_fieldtype
 from ..shared import topvalue as shared_topvalue
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
+from typing import List, Optional
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
 class Field:
-    buckets: list[shared_bucket.Bucket] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('buckets') }})
+    buckets: List[shared_bucket.Bucket] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('buckets') }})
     count: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count') }})
     count_distinct: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('countDistinct') }})
     count_null: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('countNull') }})
     size: int = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('size') }})
-    top_values: list[shared_topvalue.TopValue] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('topValues') }})
+    top_values: List[shared_topvalue.TopValue] = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('topValues') }})
     type: shared_fieldtype.FieldType = dataclasses.field(metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('type') }})
     mean: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('mean'), 'exclude': lambda f: f is None }})
     name: Optional[str] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('name'), 'exclude': lambda f: f is None }})

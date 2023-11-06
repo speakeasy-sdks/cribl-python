@@ -1,7 +1,5 @@
 # DatabaseConnectionConfigs
 
-a list of DatabaseConnectionConfig objects
-
 
 ## Fields
 
