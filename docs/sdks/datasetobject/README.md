@@ -1,4 +1,5 @@
-# dataset_object
+# DatasetObject
+(*.dataset_object*)
 
 ### Available Operations
 
@@ -15,20 +16,18 @@ Create Dataset
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = 'quibusdam'
+req = 'string'
 
 res = s.dataset_object.create(req)
 
 if res.dataset is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -51,19 +50,18 @@ Delete Dataset
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.dataset_object.delete('iure')
+res = s.dataset_object.delete(id='string')
 
 if res.dataset is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -86,19 +84,18 @@ Get Dataset by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.dataset_object.get('odit')
+res = s.dataset_object.get(id='string')
 
 if res.dataset is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -121,19 +118,18 @@ Update Dataset
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.dataset_object.update('voluptatibus', 'vel')
+res = s.dataset_object.update(id='string', request_body='string')
 
 if res.dataset is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

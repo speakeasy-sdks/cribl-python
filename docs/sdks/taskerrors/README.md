@@ -1,4 +1,5 @@
-# task_errors
+# TaskErrors
+(*.task_errors*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get Task errors for a job by id
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.task_errors.get('sunt', 'asperiores')
+res = s.task_errors.get(group='string', id='string')
 
 if res.task_errors is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

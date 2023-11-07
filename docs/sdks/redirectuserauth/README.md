@@ -1,4 +1,5 @@
-# redirect_user_auth
+# RedirectUserAuth
+(*.redirect_user_auth*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Redirect user to IDP with logout request
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.redirect_user_auth.logout()
 
 if res.success is not None:
     # handle response
+    pass
 ```
 
 

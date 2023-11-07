@@ -1,4 +1,5 @@
-# cribl_metadata
+# CriblMetadata
+(*.cribl_metadata*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ Obtain metadata which Cribl Stream/Edge uses when acting as a Service Provider
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
 res = s.cribl_metadata.get()
 
-if res.get_cribl_metadata_200_text_xml_string is not None:
+if res.res is not None:
     # handle response
+    pass
 ```
 
 

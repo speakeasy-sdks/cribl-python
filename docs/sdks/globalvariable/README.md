@@ -1,4 +1,5 @@
-# global_variable
+# GlobalVariable
+(*.global_variable*)
 
 ### Available Operations
 
@@ -12,34 +13,29 @@ Create Global Variable
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.GlobalVar(
-    description='illum',
-    id='8bb31180-f739-4ae9-a057-eb809e281033',
-    lib='sunt',
-    tags='a',
-    type=shared.GlobalVarType.NUMBER,
-    value='occaecati',
+req = components.GlobalVar(
+    id='<ID>',
+    value='string',
 )
 
 res = s.global_variable.post(req)
 
 if res.global_vars is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                            | Type                                                 | Required                                             | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| `request`                                            | [shared.GlobalVar](../../models/shared/globalvar.md) | :heavy_check_mark:                                   | The request object to use for the request.           |
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `request`                                                | [components.GlobalVar](../../models/shared/globalvar.md) | :heavy_check_mark:                                       | The request object to use for the request.               |
 
 
 ### Response

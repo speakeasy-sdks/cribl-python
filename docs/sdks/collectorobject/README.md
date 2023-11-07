@@ -1,4 +1,5 @@
-# collector_object
+# CollectorObject
+(*.collector_object*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of Collector objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.collector_object.get()
 
 if res.collectors is not None:
     # handle response
+    pass
 ```
 
 

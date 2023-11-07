@@ -1,4 +1,5 @@
-# pack
+# Pack
+(*.pack*)
 
 ### Available Operations
 
@@ -17,42 +18,34 @@ Clone Pack
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.PackClone(
-    dest='amet',
+req = components.PackClone(
     dst_groups=[
-        'corporis',
-        'est',
-        'iure',
-        'quisquam',
+        'string',
     ],
-    force=False,
     packs=[
-        'laudantium',
-        'nam',
-        'nemo',
+        'string',
     ],
-    src_group='enim',
+    src_group='string',
 )
 
 res = s.pack.clone(req)
 
 if res.pack_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                            | Type                                                 | Required                                             | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| `request`                                            | [shared.PackClone](../../models/shared/packclone.md) | :heavy_check_mark:                                   | The request object to use for the request.           |
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `request`                                                | [components.PackClone](../../models/shared/packclone.md) | :heavy_check_mark:                                       | The request object to use for the request.               |
 
 
 ### Response
@@ -68,19 +61,18 @@ Export Pack
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pack.export('ipsam', 'minima', 'tempora')
+res = s.pack.export(id='string', mode='string', filename='string')
 
 if res.pack_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -105,29 +97,28 @@ Install Pack
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.CrudEntityBase(
-    id='080d40bc-acc6-4cbd-ab5f-3ec909304f92',
+req = components.CrudEntityBase(
+    id='<ID>',
 )
 
 res = s.pack.install(req)
 
 if res.pack_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `request`                                                      | [shared.CrudEntityBase](../../models/shared/crudentitybase.md) | :heavy_check_mark:                                             | The request object to use for the request.                     |
+| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `request`                                                          | [components.CrudEntityBase](../../models/shared/crudentitybase.md) | :heavy_check_mark:                                                 | The request object to use for the request.                         |
 
 
 ### Response
@@ -143,19 +134,18 @@ Uninstall Pack from the system
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pack.uninstall('vel')
+res = s.pack.uninstall(id='string')
 
 if res.pack_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -178,19 +168,18 @@ Upgrade Pack
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pack.upgrade('cum', 'id', 'possimus', 'fugit')
+res = s.pack.upgrade(id='string', minor='string', source='string', spec='string')
 
 if res.pack_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -216,19 +205,18 @@ Upload Pack
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.pack.upload('ipsam')
+res = s.pack.upload(filename='string')
 
 if res.pack_infos is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

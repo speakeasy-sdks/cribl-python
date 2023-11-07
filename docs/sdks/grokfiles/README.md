@@ -1,4 +1,5 @@
-# grok_files
+# GrokFiles
+(*.grok_files*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of GrokFile objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.grok_files.get()
 
 if res.grok_files is not None:
     # handle response
+    pass
 ```
 
 

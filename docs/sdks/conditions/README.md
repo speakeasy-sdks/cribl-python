@@ -1,4 +1,5 @@
-# conditions
+# Conditions
+(*.conditions*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of Condition objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.conditions.get()
 
 if res.conditions is not None:
     # handle response
+    pass
 ```
 
 

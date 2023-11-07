@@ -1,4 +1,5 @@
-# log_files
+# LogFiles
+(*.log_files*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of log files
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.log_files.get()
 
 if res.log_files_info is not None:
     # handle response
+    pass
 ```
 
 

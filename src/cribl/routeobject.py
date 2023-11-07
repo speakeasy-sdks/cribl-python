@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
-from cribl.models import errors, operations, shared
+from cribl.models import components, errors, operations
 from typing import Optional
 
 class RouteObject:
@@ -12,7 +12,7 @@ class RouteObject:
         self.sdk_configuration = sdk_config
         
     
-    def update(self, id: str, routes: Optional[shared.Routes] = None) -> operations.UpdateRouteObjectResponse:
+    def update(self, id: str, routes: Optional[components.RoutesInput] = None) -> operations.UpdateRouteObjectResponse:
         r"""Add, delete or update the routes with the required content.
         Add, delete or update the routes with the required content.
         """
@@ -25,11 +25,11 @@ class RouteObject:
         
         url = utils.generate_url(operations.UpdateRouteObjectRequest, base_url, '/routes/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "routes", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "routes", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -40,7 +40,7 @@ class RouteObject:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.Routes])
+                out = utils.unmarshal_json(http_res.text, Optional[components.Routes])
                 res.routes = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

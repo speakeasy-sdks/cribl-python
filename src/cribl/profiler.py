@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
-from cribl.models import errors, operations, shared
+from cribl.models import components, errors, operations
 from typing import Optional
 
 class Profiler:
@@ -12,7 +12,7 @@ class Profiler:
         self.sdk_configuration = sdk_config
         
     
-    def create(self, request: shared.ProfilerItem) -> operations.CreateProfilerResponse:
+    def create(self, request: components.ProfilerItem) -> operations.CreateProfilerResponse:
         r"""Create ProfilerItem
         Create ProfilerItem
         """
@@ -20,11 +20,11 @@ class Profiler:
         
         url = base_url + '/system/profiler'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -35,7 +35,7 @@ class Profiler:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.ProfilerItem])
+                out = utils.unmarshal_json(http_res.text, Optional[components.ProfilerItem])
                 res.profiler_item = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -64,8 +64,8 @@ class Profiler:
         
         url = utils.generate_url(operations.DeleteProfilerRequest, base_url, '/system/profiler/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -76,7 +76,7 @@ class Profiler:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.ProfilerItem])
+                out = utils.unmarshal_json(http_res.text, Optional[components.ProfilerItem])
                 res.profiler_item = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -105,8 +105,8 @@ class Profiler:
         
         url = utils.generate_url(operations.GetProfilerRequest, base_url, '/system/profiler/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -117,7 +117,7 @@ class Profiler:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.ProfilerItem])
+                out = utils.unmarshal_json(http_res.text, Optional[components.ProfilerItem])
                 res.profiler_item = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -134,7 +134,7 @@ class Profiler:
         return res
 
     
-    def update(self, id: str, profiler_item: Optional[shared.ProfilerItem] = None) -> operations.UpdateProfilerResponse:
+    def update(self, id: str, profiler_item: Optional[components.ProfilerItem] = None) -> operations.UpdateProfilerResponse:
         r"""Update ProfilerItem
         Update ProfilerItem
         """
@@ -147,11 +147,11 @@ class Profiler:
         
         url = utils.generate_url(operations.UpdateProfilerRequest, base_url, '/system/profiler/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "profiler_item", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "profiler_item", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -162,7 +162,7 @@ class Profiler:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.ProfilerItem])
+                out = utils.unmarshal_json(http_res.text, Optional[components.ProfilerItem])
                 res.profiler_item = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

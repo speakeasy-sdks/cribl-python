@@ -1,4 +1,5 @@
-# current_config
+# CurrentConfig
+(*.current_config*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ push the current configs to the remote repository.
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.current_config.push()
 
 if res.push_config is not None:
     # handle response
+    pass
 ```
 
 

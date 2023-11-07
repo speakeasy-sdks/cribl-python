@@ -1,4 +1,5 @@
-# list_event_breaker
+# ListEventBreaker
+(*.list_event_breaker*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of Event Breaker Ruleset objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.list_event_breaker.get()
 
 if res.event_breaker_rulesets is not None:
     # handle response
+    pass
 ```
 
 

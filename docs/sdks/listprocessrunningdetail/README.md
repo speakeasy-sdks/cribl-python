@@ -1,4 +1,5 @@
-# list_process_running_detail
+# ListProcessRunningDetail
+(*.list_process_running_detail*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a detailed list of processes running on the edge host
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.list_process_running_detail.get()
 
 if res.processes is not None:
     # handle response
+    pass
 ```
 
 

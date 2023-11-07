@@ -1,4 +1,5 @@
-# mapping_ruleset
+# MappingRuleset
+(*.mapping_ruleset*)
 
 ### Available Operations
 
@@ -15,48 +16,35 @@ Create MappingRuleset
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.MappingRuleset(
-    active=False,
-    conf=shared.MappingRulesetConf(
+req = components.MappingRuleset(
+    conf=components.Conf(
         functions=[
             {
-                "rerum": 'veritatis',
-            },
-            {
-                "autem": 'quidem',
-                "totam": 'porro',
-                "deserunt": 'magni',
-                "nihil": 'voluptas',
-            },
-            {
-                "commodi": 'alias',
-                "fuga": 'aut',
-                "dolore": 'maxime',
+                "key": 'string',
             },
         ],
     ),
-    id='495cc699-171b-451c-9bdb-1cf4b888ebdf',
+    id='<ID>',
 )
 
 res = s.mapping_ruleset.create(req)
 
 if res.mapping_rulesets is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `request`                                                      | [shared.MappingRuleset](../../models/shared/mappingruleset.md) | :heavy_check_mark:                                             | The request object to use for the request.                     |
+| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `request`                                                          | [components.MappingRuleset](../../models/shared/mappingruleset.md) | :heavy_check_mark:                                                 | The request object to use for the request.                         |
 
 
 ### Response
@@ -72,19 +60,18 @@ Delete MappingRuleset
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.mapping_ruleset.delete('quo')
+res = s.mapping_ruleset.delete(id='string')
 
 if res.mapping_rulesets is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -107,19 +94,18 @@ Get MappingRuleset by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.mapping_ruleset.get('incidunt')
+res = s.mapping_ruleset.get(id='string')
 
 if res.mapping_rulesets is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -142,53 +128,35 @@ Update MappingRuleset
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.mapping_ruleset.update('quod', shared.MappingRuleset(
-    active=False,
-    conf=shared.MappingRulesetConf(
+res = s.mapping_ruleset.update(id='string', mapping_ruleset=components.MappingRuleset(
+    conf=components.Conf(
         functions=[
             {
-                "id": 'excepturi',
-                "occaecati": 'libero',
-                "quo": 'esse',
-                "hic": 'maxime',
-            },
-            {
-                "soluta": 'fugit',
-            },
-            {
-                "eligendi": 'recusandae',
-                "veritatis": 'aut',
-                "laudantium": 'iusto',
-                "dolor": 'voluptates',
-            },
-            {
-                "magni": 'rerum',
-                "doloremque": 'voluptatem',
+                "key": 'string',
             },
         ],
     ),
-    id='6d678878-ba85-481a-9820-8c54fefa9c95',
+    id='<ID>',
 ))
 
 if res.mapping_rulesets is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `id`                                                                     | *str*                                                                    | :heavy_check_mark:                                                       | Unique ID                                                                |
-| `mapping_ruleset`                                                        | [Optional[shared.MappingRuleset]](../../models/shared/mappingruleset.md) | :heavy_minus_sign:                                                       | MappingRuleset object to be updated                                      |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `id`                                                                         | *str*                                                                        | :heavy_check_mark:                                                           | Unique ID                                                                    |
+| `mapping_ruleset`                                                            | [Optional[components.MappingRuleset]](../../models/shared/mappingruleset.md) | :heavy_minus_sign:                                                           | MappingRuleset object to be updated                                          |
 
 
 ### Response

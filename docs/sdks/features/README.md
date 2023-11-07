@@ -1,4 +1,5 @@
-# features
+# Features
+(*.features*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ List all features
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.features.get()
 
 if res.features_entries is not None:
     # handle response
+    pass
 ```
 
 

@@ -1,4 +1,5 @@
-# javascript_expression
+# JavascriptExpression
+(*.javascript_expression*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Evaluate JavaScript expression
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.javascript_expression.post()
 
 if res.expr_lib_entries is not None:
     # handle response
+    pass
 ```
 
 

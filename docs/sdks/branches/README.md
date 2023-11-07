@@ -1,4 +1,5 @@
-# branches
+# Branches
+(*.branches*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ get the list of branches
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.branches.get()
 
 if res.branches is not None:
     # handle response
+    pass
 ```
 
 

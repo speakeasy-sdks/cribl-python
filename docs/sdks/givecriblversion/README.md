@@ -1,4 +1,5 @@
-# give_cribl_version
+# GiveCriblVersion
+(*.give_cribl_version*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Upgrade Cribl to a given version
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.give_cribl_version.post('amet')
+res = s.give_cribl_version.post(version='string')
 
 if res.cribl is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

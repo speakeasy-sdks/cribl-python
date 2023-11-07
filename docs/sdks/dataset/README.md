@@ -1,4 +1,5 @@
-# dataset
+# Dataset
+(*.dataset*)
 
 ### Available Operations
 
@@ -15,20 +16,16 @@ Create DatasetProviderType
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.DatasetProviderType(
-    description='nam',
-    id=shared.ProviderType.QUICKSORT,
-    locality=shared.OriginConfig(
-        filter_expression='iusto',
-        origin=shared.DatasetOrigin(),
+req = components.DatasetProviderType(
+    id=components.ProviderType.QUICKSORT,
+    locality=components.OriginConfig(
+        origin=components.DatasetOrigin(),
     ),
 )
 
@@ -36,13 +33,14 @@ res = s.dataset.create(req)
 
 if res.dataset_provider_type is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
-| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
-| `request`                                                                | [shared.DatasetProviderType](../../models/shared/datasetprovidertype.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [components.DatasetProviderType](../../models/shared/datasetprovidertype.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 
 
 ### Response
@@ -58,19 +56,18 @@ Delete DatasetProviderType
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.dataset.delete('voluptate')
+res = s.dataset.delete(id='string')
 
 if res.dataset_provider_type is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -93,19 +90,18 @@ Get DatasetProviderType by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.dataset.get('sequi')
+res = s.dataset.get(id='string')
 
 if res.dataset_provider_type is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -128,34 +124,31 @@ Update DatasetProviderType
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.dataset.update('dignissimos', shared.DatasetProviderType(
-    description='neque',
-    id=shared.ProviderType.INVALID,
-    locality=shared.OriginConfig(
-        filter_expression='deleniti',
-        origin=shared.DatasetOrigin(),
+res = s.dataset.update(id='string', dataset_provider_type=components.DatasetProviderType(
+    id=components.ProviderType.INVALID,
+    locality=components.OriginConfig(
+        origin=components.DatasetOrigin(),
     ),
 ))
 
 if res.dataset_provider_type is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `id`                                                                               | *str*                                                                              | :heavy_check_mark:                                                                 | Unique ID                                                                          |
-| `dataset_provider_type`                                                            | [Optional[shared.DatasetProviderType]](../../models/shared/datasetprovidertype.md) | :heavy_minus_sign:                                                                 | DatasetProviderType object to be updated                                           |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `id`                                                                                   | *str*                                                                                  | :heavy_check_mark:                                                                     | Unique ID                                                                              |
+| `dataset_provider_type`                                                                | [Optional[components.DatasetProviderType]](../../models/shared/datasetprovidertype.md) | :heavy_minus_sign:                                                                     | DatasetProviderType object to be updated                                               |
 
 
 ### Response

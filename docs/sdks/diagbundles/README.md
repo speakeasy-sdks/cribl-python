@@ -1,4 +1,5 @@
-# diag_bundles
+# DiagBundles
+(*.diag_bundles*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ Get list of existing diag bundles
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
 res = s.diag_bundles.get()
 
-if res.get_diag_bundles_200_application_tar_plus_gzip_binary_string is not None:
+if res.stream is not None:
     # handle response
+    pass
 ```
 
 

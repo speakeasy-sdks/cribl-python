@@ -1,11 +1,9 @@
 # GitCommit
 
-a list of GitCommitSummary objects
-
 
 ## Fields
 
-| Field                                                             | Type                                                              | Required                                                          | Description                                                       |
-| ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- | ----------------------------------------------------------------- |
-| `count`                                                           | *Optional[int]*                                                   | :heavy_minus_sign:                                                | number of items present in the items array                        |
-| `items`                                                           | list[[GitCommitSummary](../../models/shared/gitcommitsummary.md)] | :heavy_minus_sign:                                                | N/A                                                               |
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `count`                                                                      | *Optional[int]*                                                              | :heavy_minus_sign:                                                           | number of items present in the items array                                   |
+| `items`                                                                      | List[[components.GitCommitSummary](../../models/shared/gitcommitsummary.md)] | :heavy_minus_sign:                                                           | N/A                                                                          |

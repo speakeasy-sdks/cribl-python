@@ -1,4 +1,5 @@
-# grok_file
+# GrokFile
+(*.grok_file*)
 
 ### Available Operations
 
@@ -15,32 +16,30 @@ Create GrokFile
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.GrokFile(
-    content='nihil',
-    id='411faf4b-7544-4e47-ae80-2857a5b40463',
-    size=652125,
-    tags='dignissimos',
+req = components.GrokFile(
+    content='string',
+    id='<ID>',
+    size=486589,
 )
 
 res = s.grok_file.create(req)
 
 if res.grok_file is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                          | Type                                               | Required                                           | Description                                        |
-| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| `request`                                          | [shared.GrokFile](../../models/shared/grokfile.md) | :heavy_check_mark:                                 | The request object to use for the request.         |
+| Parameter                                              | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `request`                                              | [components.GrokFile](../../models/shared/grokfile.md) | :heavy_check_mark:                                     | The request object to use for the request.             |
 
 
 ### Response
@@ -56,19 +55,18 @@ Delete GrokFile
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.grok_file.delete('fugiat')
+res = s.grok_file.delete(id='string')
 
 if res.grok_file is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -91,19 +89,18 @@ Get GrokFile by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.grok_file.get('nostrum')
+res = s.grok_file.get(id='string')
 
 if res.grok_file is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -126,32 +123,30 @@ Update GrokFile
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.grok_file.update('molestiae', shared.GrokFile(
-    content='veniam',
-    id='f1400e76-4ad7-4334-ac1b-781b36a08088',
-    size=832239,
-    tags='veritatis',
+res = s.grok_file.update(id='string', grok_file=components.GrokFile(
+    content='string',
+    id='<ID>',
+    size=857478,
 ))
 
 if res.grok_file is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `id`                                                         | *str*                                                        | :heavy_check_mark:                                           | Unique ID                                                    |
-| `grok_file`                                                  | [Optional[shared.GrokFile]](../../models/shared/grokfile.md) | :heavy_minus_sign:                                           | GrokFile object to be updated                                |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `id`                                                             | *str*                                                            | :heavy_check_mark:                                               | Unique ID                                                        |
+| `grok_file`                                                      | [Optional[components.GrokFile]](../../models/shared/grokfile.md) | :heavy_minus_sign:                                               | GrokFile object to be updated                                    |
 
 
 ### Response

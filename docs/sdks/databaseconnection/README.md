@@ -1,4 +1,5 @@
-# database_connection
+# DatabaseConnection
+(*.database_connection*)
 
 ### Available Operations
 
@@ -12,37 +13,31 @@ Create DatabaseConnectionConfig
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.DatabaseConnectionConfig(
-    auth_type='fuga',
-    config_obj='laudantium',
-    connection_string='incidunt',
-    connection_timeout=97493,
-    database_type=shared.DatabaseConnectionType(),
-    description='rem',
-    id='d162309f-b092-4992-9aef-b9f58c4d86e6',
-    request_timeout=520761,
-    tags='earum',
+req = components.DatabaseConnectionConfig(
+    auth_type='string',
+    database_type=components.DatabaseConnectionType(),
+    description='Monitored needs-based parallelism',
+    id='<ID>',
 )
 
 res = s.database_connection.post(req)
 
 if res.database_connection_configs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                                          | Type                                                                               | Required                                                                           | Description                                                                        |
-| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
-| `request`                                                                          | [shared.DatabaseConnectionConfig](../../models/shared/databaseconnectionconfig.md) | :heavy_check_mark:                                                                 | The request object to use for the request.                                         |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [components.DatabaseConnectionConfig](../../models/shared/databaseconnectionconfig.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response

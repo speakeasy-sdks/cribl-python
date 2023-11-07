@@ -1,4 +1,5 @@
-# field_summaries
+# FieldSummaries
+(*.field_summaries*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ List field summaries
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.field_summaries.get('enim')
+res = s.field_summaries.get(id='string')
 
 if res.field_summaries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

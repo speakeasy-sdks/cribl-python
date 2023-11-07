@@ -1,0 +1,18 @@
+# API
+
+
+## Fields
+
+| Field                                                          | Type                                                           | Required                                                       | Description                                                    |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `base_url`                                                     | *Optional[str]*                                                | :heavy_minus_sign:                                             | N/A                                                            |
+| `disable_api_cache`                                            | *Optional[bool]*                                               | :heavy_minus_sign:                                             | N/A                                                            |
+| `disabled`                                                     | *bool*                                                         | :heavy_check_mark:                                             | N/A                                                            |
+| `headers`                                                      | [Optional[components.Headers]](../../models/shared/headers.md) | :heavy_minus_sign:                                             | N/A                                                            |
+| `host`                                                         | *str*                                                          | :heavy_check_mark:                                             | N/A                                                            |
+| `idle_session_ttl`                                             | *Optional[str]*                                                | :heavy_minus_sign:                                             | N/A                                                            |
+| `login_rate_limit`                                             | *Optional[int]*                                                | :heavy_minus_sign:                                             | N/A                                                            |
+| `port`                                                         | *int*                                                          | :heavy_check_mark:                                             | N/A                                                            |
+| `ssl`                                                          | [components.Ssl](../../models/shared/ssl.md)                   | :heavy_check_mark:                                             | N/A                                                            |
+| `sso_rate_limit`                                               | *Optional[str]*                                                | :heavy_minus_sign:                                             | N/A                                                            |
+| `worker_remote_access`                                         | *bool*                                                         | :heavy_check_mark:                                             | N/A                                                            |

@@ -1,4 +1,5 @@
-# authorizations
+# Authorizations
+(*.authorizations*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ get the client's authorization policy
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.authorizations.get()
 
 if res.auth_policy_entries is not None:
     # handle response
+    pass
 ```
 
 

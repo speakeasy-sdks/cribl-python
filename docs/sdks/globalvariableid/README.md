@@ -1,4 +1,5 @@
-# global_variable_id
+# GlobalVariableID
+(*.global_variable_id*)
 
 ### Available Operations
 
@@ -14,19 +15,18 @@ Delete Global Variable
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.global_variable_id.delete('atque')
+res = s.global_variable_id.delete(id='string')
 
 if res.global_vars is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -49,19 +49,18 @@ Get Global Variable by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.global_variable_id.get('beatae')
+res = s.global_variable_id.get(id='string')
 
 if res.global_vars is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -84,34 +83,29 @@ Update Global Variable
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.global_variable_id.update('at', shared.GlobalVar(
-    description='labore',
-    id='c700b607-f3c9-43c7-bb9d-a3f2ceda7e23',
-    lib='repellat',
-    tags='explicabo',
-    type=shared.GlobalVarType.STRING,
-    value='exercitationem',
+res = s.global_variable_id.update(id='string', global_var=components.GlobalVar(
+    id='<ID>',
+    value='string',
 ))
 
 if res.global_vars is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `id`                                                           | *str*                                                          | :heavy_check_mark:                                             | Unique ID                                                      |
-| `global_var`                                                   | [Optional[shared.GlobalVar]](../../models/shared/globalvar.md) | :heavy_minus_sign:                                             | Global Variable object to be updated                           |
+| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `id`                                                               | *str*                                                              | :heavy_check_mark:                                                 | Unique ID                                                          |
+| `global_var`                                                       | [Optional[components.GlobalVar]](../../models/shared/globalvar.md) | :heavy_minus_sign:                                                 | Global Variable object to be updated                               |
 
 
 ### Response

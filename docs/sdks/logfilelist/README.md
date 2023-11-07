@@ -1,4 +1,5 @@
-# log_file_list
+# LogFileList
+(*.log_file_list*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ list log files
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.log_file_list.get('maxime', 9375, 'eaque', 'architecto')
+res = s.log_file_list.get(allow='string', depth=700347, mode='string', path='string')
 
 if res.edge_files is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

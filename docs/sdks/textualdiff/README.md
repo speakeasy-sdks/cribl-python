@@ -1,4 +1,5 @@
-# textual_diff
+# TextualDiff
+(*.textual_diff*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ get the textual diff for given commit
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.textual_diff.get('culpa', 'nihil')
+res = s.textual_diff.get(commit='string', group='string')
 
 if res.textual_diff is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

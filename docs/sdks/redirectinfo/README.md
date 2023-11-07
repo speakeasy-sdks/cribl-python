@@ -1,4 +1,5 @@
-# redirect_info
+# RedirectInfo
+(*.redirect_info*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Obtain information needed to redirect users to the configured SSO IDP for authen
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.redirect_info.get()
 
 if res.redirect_info is not None:
     # handle response
+    pass
 ```
 
 

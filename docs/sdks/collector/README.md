@@ -1,4 +1,5 @@
-# collector
+# Collector
+(*.collector*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get Collector by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.collector.get('officia')
+res = s.collector.get(id='string')
 
 if res.collectors is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

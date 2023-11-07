@@ -1,4 +1,5 @@
-# cribl_system_settings
+# CriblSystemSettings
+(*.cribl_system_settings*)
 
 ### Available Operations
 
@@ -13,12 +14,9 @@ Get Cribl system settings
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -26,6 +24,7 @@ res = s.cribl_system_settings.get()
 
 if res.system_settings is not None:
     # handle response
+    pass
 ```
 
 
@@ -42,12 +41,9 @@ Update Cribl system settings
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -55,6 +51,7 @@ res = s.cribl_system_settings.update()
 
 if res.system_settingses is not None:
     # handle response
+    pass
 ```
 
 

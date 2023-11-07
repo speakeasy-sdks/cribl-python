@@ -1,4 +1,5 @@
-# bulletin_messages
+# BulletinMessages
+(*.bulletin_messages*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of BulletinMessage objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.bulletin_messages.get()
 
 if res.bulletin_messages is not None:
     # handle response
+    pass
 ```
 
 

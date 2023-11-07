@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import events as shared_events
+from ...models.components import events as components_events
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -26,13 +25,15 @@ class GetEventsRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetEventsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    events: Optional[shared_events.Events] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    events: Optional[components_events.Events] = dataclasses.field(default=None)
     r"""a list of any objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

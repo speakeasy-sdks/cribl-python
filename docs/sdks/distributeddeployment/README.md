@@ -1,4 +1,5 @@
-# distributed_deployment
+# DistributedDeployment
+(*.distributed_deployment*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get summary of Distributed deployment
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.distributed_deployment.get('libero')
+res = s.distributed_deployment.get(mode='string')
 
 if res.distributed_summaries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

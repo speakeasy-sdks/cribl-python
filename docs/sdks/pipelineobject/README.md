@@ -1,4 +1,5 @@
-# pipeline_object
+# PipelineObject
+(*.pipeline_object*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of Pipeline objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.pipeline_object.get()
 
 if res.pipelines is not None:
     # handle response
+    pass
 ```
 
 

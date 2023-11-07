@@ -1,4 +1,5 @@
-# datasets
+# Datasets
+(*.datasets*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of DatasetProviderType objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.datasets.get()
 
 if res.dataset_provider_types is not None:
     # handle response
+    pass
 ```
 
 

@@ -1,4 +1,5 @@
-# container
+# Container
+(*.container*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get details for a single container on the edge host. Add stream=true to get a st
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.container.get('culpa')
+res = s.container.get(id='string')
 
 if res.containers is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

@@ -1,4 +1,5 @@
-# job_status
+# JobStatus
+(*.job_status*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get job status
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.job_status.get('alias')
+res = s.job_status.get(id='string')
 
 if res.search_job_status is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

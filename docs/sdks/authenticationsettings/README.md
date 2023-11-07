@@ -1,4 +1,5 @@
-# authentication_settings
+# AuthenticationSettings
+(*.authentication_settings*)
 
 ### Available Operations
 
@@ -13,12 +14,9 @@ Get authentication settings
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -26,6 +24,7 @@ res = s.authentication_settings.get()
 
 if res.auth_configs is not None:
     # handle response
+    pass
 ```
 
 
@@ -42,12 +41,9 @@ Update authentication settings
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -55,6 +51,7 @@ res = s.authentication_settings.update()
 
 if res.auth_configs is not None:
     # handle response
+    pass
 ```
 
 

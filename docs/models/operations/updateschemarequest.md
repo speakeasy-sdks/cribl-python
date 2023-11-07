@@ -3,7 +3,7 @@
 
 ## Fields
 
-| Field                       | Type                        | Required                    | Description                 |
-| --------------------------- | --------------------------- | --------------------------- | --------------------------- |
-| `id`                        | *str*                       | :heavy_check_mark:          | Unique ID                   |
-| `request_body`              | dict[str, *Any*]            | :heavy_minus_sign:          | Schema object to be updated |
+| Field                                                                        | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `id`                                                                         | *str*                                                                        | :heavy_check_mark:                                                           | Unique ID                                                                    |
+| `schema_lib_entry`                                                           | [Optional[components.SchemaLibEntry]](../../models/shared/schemalibentry.md) | :heavy_minus_sign:                                                           | Schema object to be updated                                                  |

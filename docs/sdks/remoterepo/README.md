@@ -1,4 +1,5 @@
-# remote_repo
+# RemoteRepo
+(*.remote_repo*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ syncs with remote repo via POST requests
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.remote_repo.sync()
 
 if res.git_status_results is not None:
     # handle response
+    pass
 ```
 
 

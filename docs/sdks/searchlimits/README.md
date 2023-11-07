@@ -1,4 +1,5 @@
-# search_limits
+# SearchLimits
+(*.search_limits*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get search limits
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.search_limits.get()
 
 if res.search_settingses is not None:
     # handle response
+    pass
 ```
 
 

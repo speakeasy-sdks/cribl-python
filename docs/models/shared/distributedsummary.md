@@ -3,7 +3,7 @@
 
 ## Fields
 
-| Field                                                                         | Type                                                                          | Required                                                                      | Description                                                                   |
-| ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- | ----------------------------------------------------------------------------- |
-| `groups`                                                                      | [DistributedSummaryGroups](../../models/shared/distributedsummarygroups.md)   | :heavy_check_mark:                                                            | N/A                                                                           |
-| `workers`                                                                     | [DistributedSummaryWorkers](../../models/shared/distributedsummaryworkers.md) | :heavy_check_mark:                                                            | N/A                                                                           |
+| Field                                                | Type                                                 | Required                                             | Description                                          |
+| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
+| `groups`                                             | [components.Groups](../../models/shared/groups.md)   | :heavy_check_mark:                                   | N/A                                                  |
+| `workers`                                            | [components.Workers](../../models/shared/workers.md) | :heavy_check_mark:                                   | N/A                                                  |

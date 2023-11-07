@@ -1,4 +1,5 @@
-# parser_id
+# ParserID
+(*.parser_id*)
 
 ### Available Operations
 
@@ -14,19 +15,18 @@ Delete Parser
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.parser_id.delete('nostrum')
+res = s.parser_id.delete(id='string')
 
 if res.parser_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -49,19 +49,18 @@ Get Parser by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.parser_id.get('sequi')
+res = s.parser_id.get(id='string')
 
 if res.parser_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -84,29 +83,31 @@ Update Parser
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.parser_id.update('voluptatum', {
-    "error": 'nobis',
-})
+res = s.parser_id.update(id='string', parser_lib_entry=components.ParserLibEntry(
+    additional_properties={
+        "key": 'string',
+    },
+    id='<ID>',
+))
 
 if res.parser_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                   | Type                        | Required                    | Description                 |
-| --------------------------- | --------------------------- | --------------------------- | --------------------------- |
-| `id`                        | *str*                       | :heavy_check_mark:          | Unique ID                   |
-| `request_body`              | dict[str, *Any*]            | :heavy_minus_sign:          | Parser object to be updated |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `id`                                                                         | *str*                                                                        | :heavy_check_mark:                                                           | Unique ID                                                                    |
+| `parser_lib_entry`                                                           | [Optional[components.ParserLibEntry]](../../models/shared/parserlibentry.md) | :heavy_minus_sign:                                                           | Parser object to be updated                                                  |
 
 
 ### Response

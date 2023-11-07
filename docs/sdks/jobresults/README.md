@@ -1,4 +1,5 @@
-# job_results
+# JobResults
+(*.job_results*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get results for a discover job by instance id
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.job_results.get('optio')
+res = s.job_results.get(id='string')
 
-if res.get_job_results_200_application_x_ndjson_binary_string is not None:
+if res.stream is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

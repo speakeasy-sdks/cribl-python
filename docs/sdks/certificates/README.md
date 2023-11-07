@@ -1,4 +1,5 @@
-# certificates
+# Certificates
+(*.certificates*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of Certificate objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.certificates.get()
 
 if res.certificates is not None:
     # handle response
+    pass
 ```
 
 

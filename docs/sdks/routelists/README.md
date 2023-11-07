@@ -1,4 +1,5 @@
-# route_lists
+# RouteLists
+(*.route_lists*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ List all routes
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.route_lists.get()
 
 if res.routes is not None:
     # handle response
+    pass
 ```
 
 

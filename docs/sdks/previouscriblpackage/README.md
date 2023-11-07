@@ -1,4 +1,5 @@
-# previous_cribl_package
+# PreviousCriblPackage
+(*.previous_cribl_package*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get the previously downloaded Cribl package
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.previous_cribl_package.get('molestias')
+res = s.previous_cribl_package.get(file='string')
 
 if res.cribl_package is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

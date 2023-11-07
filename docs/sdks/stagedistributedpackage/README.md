@@ -1,4 +1,5 @@
-# stage_distributed_package
+# StageDistributedPackage
+(*.stage_distributed_package*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Stage distributed group upgrade
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.stage_distributed_package.post('quos', 'atque')
+res = s.stage_distributed_package.post(group='string', upgrade_percentage='string')
 
 if res.cribl_package is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

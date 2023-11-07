@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import searchtimeline as shared_searchtimeline
+from ...models.components import searchtimeline as components_searchtimeline
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,15 @@ class GetSearchTimelineRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetSearchTimelineResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    search_timeline: Optional[shared_searchtimeline.SearchTimeline] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    search_timeline: Optional[components_searchtimeline.SearchTimeline] = dataclasses.field(default=None)
     r"""SearchTimeline object"""
     
 

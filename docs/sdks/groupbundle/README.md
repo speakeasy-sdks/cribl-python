@@ -1,4 +1,5 @@
-# group_bundle
+# GroupBundle
+(*.group_bundle*)
 
 ### Available Operations
 
@@ -12,29 +13,28 @@ Get effective bundle version for given Group
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.group_bundle.get('quae', shared.DeployRequest(
-    version='eaque',
+res = s.group_bundle.get(id='string', deploy_request=components.DeployRequest(
+    version='string',
 ))
 
 if res.group_bundle is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `id`                                                                   | *str*                                                                  | :heavy_check_mark:                                                     | Group ID                                                               |
-| `deploy_request`                                                       | [Optional[shared.DeployRequest]](../../models/shared/deployrequest.md) | :heavy_minus_sign:                                                     | DeployRequest object                                                   |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `id`                                                                       | *str*                                                                      | :heavy_check_mark:                                                         | Group ID                                                                   |
+| `deploy_request`                                                           | [Optional[components.DeployRequest]](../../models/shared/deployrequest.md) | :heavy_minus_sign:                                                         | DeployRequest object                                                       |
 
 
 ### Response

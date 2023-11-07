@@ -1,4 +1,5 @@
-# notification_targets
+# NotificationTargets
+(*.notification_targets*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of NotificationTarget objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.notification_targets.get()
 
 if res.notification_targets is not None:
     # handle response
+    pass
 ```
 
 

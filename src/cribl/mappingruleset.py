@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
-from cribl.models import errors, operations, shared
+from cribl.models import components, errors, operations
 from typing import Optional
 
 class MappingRuleset:
@@ -12,7 +12,7 @@ class MappingRuleset:
         self.sdk_configuration = sdk_config
         
     
-    def create(self, request: shared.MappingRuleset) -> operations.CreateMappingRulesetResponse:
+    def create(self, request: components.MappingRuleset) -> operations.CreateMappingRulesetResponse:
         r"""Create MappingRuleset
         Create MappingRuleset
         """
@@ -20,11 +20,11 @@ class MappingRuleset:
         
         url = base_url + '/mappings'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -35,7 +35,7 @@ class MappingRuleset:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.MappingRulesets])
+                out = utils.unmarshal_json(http_res.text, Optional[components.MappingRulesets])
                 res.mapping_rulesets = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -64,8 +64,8 @@ class MappingRuleset:
         
         url = utils.generate_url(operations.DeleteMappingRulesetRequest, base_url, '/fleet-mappings/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -76,7 +76,7 @@ class MappingRuleset:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.MappingRulesets])
+                out = utils.unmarshal_json(http_res.text, Optional[components.MappingRulesets])
                 res.mapping_rulesets = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -105,8 +105,8 @@ class MappingRuleset:
         
         url = utils.generate_url(operations.GetMappingRulesetRequest, base_url, '/fleet-mappings/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -117,7 +117,7 @@ class MappingRuleset:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.MappingRulesets])
+                out = utils.unmarshal_json(http_res.text, Optional[components.MappingRulesets])
                 res.mapping_rulesets = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -134,7 +134,7 @@ class MappingRuleset:
         return res
 
     
-    def update(self, id: str, mapping_ruleset: Optional[shared.MappingRuleset] = None) -> operations.UpdateMappingRulesetResponse:
+    def update(self, id: str, mapping_ruleset: Optional[components.MappingRuleset] = None) -> operations.UpdateMappingRulesetResponse:
         r"""Update MappingRuleset
         Update MappingRuleset
         """
@@ -147,11 +147,11 @@ class MappingRuleset:
         
         url = utils.generate_url(operations.UpdateMappingRulesetRequest, base_url, '/mappings/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "mapping_ruleset", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "mapping_ruleset", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -162,7 +162,7 @@ class MappingRuleset:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.MappingRulesets])
+                out = utils.unmarshal_json(http_res.text, Optional[components.MappingRulesets])
                 res.mapping_rulesets = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

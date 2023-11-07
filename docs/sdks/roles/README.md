@@ -1,4 +1,5 @@
-# roles
+# Roles
+(*.roles*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of Role objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.roles.get()
 
 if res.roles is not None:
     # handle response
+    pass
 ```
 
 

@@ -1,4 +1,5 @@
-# schemas
+# Schemas
+(*.schemas*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of Schema objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.schemas.get()
 
 if res.schema_lib_entries is not None:
     # handle response
+    pass
 ```
 
 

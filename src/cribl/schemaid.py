@@ -2,8 +2,8 @@
 
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
-from cribl.models import errors, operations, shared
-from typing import Any, Optional
+from cribl.models import components, errors, operations
+from typing import Optional
 
 class SchemaID:
     sdk_configuration: SDKConfiguration
@@ -24,8 +24,8 @@ class SchemaID:
         
         url = utils.generate_url(operations.DeleteSchemaIDRequest, base_url, '/lib/parquet-schemas/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -36,7 +36,7 @@ class SchemaID:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.SchemaLibEntries])
+                out = utils.unmarshal_json(http_res.text, Optional[components.SchemaLibEntries])
                 res.schema_lib_entries = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -65,8 +65,8 @@ class SchemaID:
         
         url = utils.generate_url(operations.GetSchemaIDRequest, base_url, '/lib/parquet-schemas/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -77,7 +77,7 @@ class SchemaID:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.SchemaLibEntries])
+                out = utils.unmarshal_json(http_res.text, Optional[components.SchemaLibEntries])
                 res.schema_lib_entries = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -94,24 +94,24 @@ class SchemaID:
         return res
 
     
-    def update(self, id: str, request_body: Optional[dict[str, Any]] = None) -> operations.UpdateSchemaIDResponse:
+    def update(self, id: str, schema_lib_entry: Optional[components.SchemaLibEntry] = None) -> operations.UpdateSchemaIDResponse:
         r"""Update Schema
         Update Schema
         """
         request = operations.UpdateSchemaIDRequest(
             id=id,
-            request_body=request_body,
+            schema_lib_entry=schema_lib_entry,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdateSchemaIDRequest, base_url, '/lib/parquet-schemas/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "schema_lib_entry", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -122,7 +122,7 @@ class SchemaID:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.SchemaLibEntries])
+                out = utils.unmarshal_json(http_res.text, Optional[components.SchemaLibEntries])
                 res.schema_lib_entries = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

@@ -1,4 +1,5 @@
-# key_metadata_entities
+# KeyMetadataEntities
+(*.key_metadata_entities*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of KeyMetadataEntity objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,6 +23,7 @@ res = s.key_metadata_entities.get()
 
 if res.key_metadata_entities is not None:
     # handle response
+    pass
 ```
 
 

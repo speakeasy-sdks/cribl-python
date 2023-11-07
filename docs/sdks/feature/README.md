@@ -1,4 +1,5 @@
-# feature
+# Feature
+(*.feature*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get feature by id (i.e. 'type/name`)
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.feature.get('aspernatur')
+res = s.feature.get(id='string')
 
 if res.features_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters

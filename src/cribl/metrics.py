@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
-from cribl.models import errors, operations, shared
+from cribl.models import components, errors, operations
 from typing import Optional
 
 class Metrics:
@@ -12,7 +12,7 @@ class Metrics:
         self.sdk_configuration = sdk_config
         
     
-    def post(self, request: shared.GetNamesOpts) -> operations.PostMetricsResponse:
+    def post(self, request: components.GetNamesOpts) -> operations.PostMetricsResponse:
         r"""Enumerate all internal system metrics
         Enumerate all internal system metrics
         """
@@ -20,11 +20,11 @@ class Metrics:
         
         url = base_url + '/system/metrics/enum'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -35,7 +35,7 @@ class Metrics:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.MetricsInfo])
+                out = utils.unmarshal_json(http_res.text, Optional[components.MetricsInfo])
                 res.metrics_info = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -61,8 +61,8 @@ class Metrics:
         url = base_url + '/system/metrics'
         headers = {}
         query_params = utils.get_query_params(operations.QueryMetricsRequest, request)
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -73,7 +73,7 @@ class Metrics:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.MetricsInfo])
+                out = utils.unmarshal_json(http_res.text, Optional[components.MetricsInfo])
                 res.metrics_info = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
