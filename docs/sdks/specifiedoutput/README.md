@@ -1,4 +1,5 @@
-# specified_output
+# SpecifiedOutput
+(*.specified_output*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get samples data for the specified output. Used to get sample data for the test 
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.specified_output.get('vitae')
+res = s.specified_output.get(id='string')
 
-if res.get_specified_output_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.get_specified_output_200_application_json_object is not None:
 ### Response
 
 **[operations.GetSpecifiedOutputResponse](../../models/operations/getspecifiedoutputresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 500              | application/json |
+| errors.SDKError  | 400-600          | */*              |

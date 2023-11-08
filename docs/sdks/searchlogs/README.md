@@ -1,4 +1,5 @@
-# search_logs
+# SearchLogs
+(*.search_logs*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get search logs
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.search_logs.get('minima')
+res = s.search_logs.get(id='string')
 
 if res.search_logs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.search_logs is not None:
 ### Response
 
 **[operations.GetSearchLogsResponse](../../models/operations/getsearchlogsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |

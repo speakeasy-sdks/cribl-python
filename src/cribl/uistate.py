@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
-from cribl.models import errors, operations, shared
+from cribl.models import components, errors, operations
 from typing import Optional
 
 class UIState:
@@ -24,8 +24,8 @@ class UIState:
         
         url = utils.generate_url(operations.GetUIStateRequest, base_url, '/ui/{key}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -36,7 +36,7 @@ class UIState:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.UIStates])
+                out = utils.unmarshal_json(http_res.text, Optional[components.UIStates])
                 res.ui_states = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -53,7 +53,7 @@ class UIState:
         return res
 
     
-    def update(self, key: str, ui_state_patch: Optional[shared.UIStatePatch] = None) -> operations.UpdateUIStateResponse:
+    def update(self, key: str, ui_state_patch: Optional[components.UIStatePatch] = None) -> operations.UpdateUIStateResponse:
         r"""Update UI state by key
         Update UI state by key
         """
@@ -66,11 +66,11 @@ class UIState:
         
         url = utils.generate_url(operations.UpdateUIStateRequest, base_url, '/ui/{key}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "ui_state_patch", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "ui_state_patch", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -81,7 +81,7 @@ class UIState:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.UIStates])
+                out = utils.unmarshal_json(http_res.text, Optional[components.UIStates])
                 res.ui_states = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

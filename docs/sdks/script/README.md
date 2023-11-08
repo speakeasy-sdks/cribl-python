@@ -1,4 +1,5 @@
-# script
+# Script
+(*.script*)
 
 ### Available Operations
 
@@ -15,37 +16,49 @@ Create Script
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = {
-    "consectetur": 'labore',
-    "laudantium": 'cumque',
-    "adipisci": 'veritatis',
-}
+req = components.ScriptLibEntry(
+    additional_properties={
+        "key": 'string',
+    },
+    args=[
+        'string',
+    ],
+    command='string',
+    env={
+        "key": 'string',
+    },
+    id='<ID>',
+)
 
 res = s.script.create(req)
 
 if res.script_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [dict[str, Any]](../../models//.md)        | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `request`                                                          | [components.ScriptLibEntry](../../models/shared/scriptlibentry.md) | :heavy_check_mark:                                                 | The request object to use for the request.                         |
 
 
 ### Response
 
 **[operations.CreateScriptResponse](../../models/operations/createscriptresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## delete
 
@@ -55,19 +68,18 @@ Delete Script
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.script.delete('nam')
+res = s.script.delete(id='string')
 
 if res.script_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -80,7 +92,12 @@ if res.script_lib_entry is not None:
 ### Response
 
 **[operations.DeleteScriptResponse](../../models/operations/deletescriptresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get
 
@@ -90,19 +107,18 @@ Get Script by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.script.get('voluptatibus')
+res = s.script.get(id='string')
 
 if res.script_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -115,7 +131,12 @@ if res.script_lib_entry is not None:
 ### Response
 
 **[operations.GetScriptResponse](../../models/operations/getscriptresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## update
 
@@ -125,32 +146,46 @@ Update Script
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.script.update('magnam', {
-    "ducimus": 'itaque',
-})
+res = s.script.update(id='string', script_lib_entry=components.ScriptLibEntry(
+    additional_properties={
+        "key": 'string',
+    },
+    args=[
+        'string',
+    ],
+    command='string',
+    env={
+        "key": 'string',
+    },
+    id='<ID>',
+))
 
 if res.script_lib_entry is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                   | Type                        | Required                    | Description                 |
-| --------------------------- | --------------------------- | --------------------------- | --------------------------- |
-| `id`                        | *str*                       | :heavy_check_mark:          | Unique ID                   |
-| `request_body`              | dict[str, *Any*]            | :heavy_minus_sign:          | Script object to be updated |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `id`                                                                         | *str*                                                                        | :heavy_check_mark:                                                           | Unique ID                                                                    |
+| `script_lib_entry`                                                           | [Optional[components.ScriptLibEntry]](../../models/shared/scriptlibentry.md) | :heavy_minus_sign:                                                           | Script object to be updated                                                  |
 
 
 ### Response
 
 **[operations.UpdateScriptResponse](../../models/operations/updatescriptresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |

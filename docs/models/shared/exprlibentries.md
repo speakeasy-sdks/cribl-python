@@ -1,7 +1,5 @@
 # ExprLibEntries
 
-a list of ExprLibEntry objects
-
 
 ## Fields
 

@@ -1,0 +1,12 @@
+# Event
+
+
+## Fields
+
+| Field                                                                          | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `enable`                                                                       | *bool*                                                                         | :heavy_check_mark:                                                             | N/A                                                                            |
+| `format`                                                                       | [components.AppscopeConfigFormat](../../models/shared/appscopeconfigformat.md) | :heavy_check_mark:                                                             | N/A                                                                            |
+| `transport`                                                                    | [components.AppscopeTransport](../../models/shared/appscopetransport.md)       | :heavy_check_mark:                                                             | N/A                                                                            |
+| `type`                                                                         | [components.AppscopeConfigType](../../models/shared/appscopeconfigtype.md)     | :heavy_check_mark:                                                             | N/A                                                                            |
+| `watch`                                                                        | List[[components.Watch](../../models/shared/watch.md)]                         | :heavy_check_mark:                                                             | N/A                                                                            |

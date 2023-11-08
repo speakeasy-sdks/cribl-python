@@ -1,0 +1,11 @@
+# Libscope
+
+
+## Fields
+
+| Field                                                  | Type                                                   | Required                                               | Description                                            |
+| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
+| `commanddir`                                           | *Optional[str]*                                        | :heavy_minus_sign:                                     | N/A                                                    |
+| `configevent`                                          | *Optional[bool]*                                       | :heavy_minus_sign:                                     | N/A                                                    |
+| `log`                                                  | [Optional[components.Log]](../../models/shared/log.md) | :heavy_minus_sign:                                     | N/A                                                    |
+| `summaryperiod`                                        | *Optional[int]*                                        | :heavy_minus_sign:                                     | N/A                                                    |

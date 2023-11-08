@@ -1,0 +1,11 @@
+# Statement
+
+
+## Fields
+
+| Field                                                                                          | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `action`                                                                                       | List[*str*]                                                                                    | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `condition`                                                                                    | [Optional[components.IAMTrustPolicyCondition]](../../models/shared/iamtrustpolicycondition.md) | :heavy_minus_sign:                                                                             | N/A                                                                                            |
+| `effect`                                                                                       | *str*                                                                                          | :heavy_check_mark:                                                                             | N/A                                                                                            |
+| `principal`                                                                                    | [components.Principal](../../models/shared/principal.md)                                       | :heavy_check_mark:                                                                             | N/A                                                                                            |

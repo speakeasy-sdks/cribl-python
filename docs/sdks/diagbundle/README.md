@@ -1,4 +1,5 @@
-# diag_bundle
+# DiagBundle
+(*.diag_bundle*)
 
 ### Available Operations
 
@@ -14,19 +15,18 @@ Remove diag bundle
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.diag_bundle.delete('quibusdam')
+res = s.diag_bundle.delete(path='string')
 
 if res.remove_diag_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -39,7 +39,12 @@ if res.remove_diag_response is not None:
 ### Response
 
 **[operations.DeleteDiagBundleResponse](../../models/operations/deletediagbundleresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get
 
@@ -49,26 +54,29 @@ Returns a diag bundle as a tar.gz archive
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
 res = s.diag_bundle.get()
 
-if res.get_diag_bundle_200_application_tar_plus_gzip_binary_string is not None:
+if res.stream is not None:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.GetDiagBundleResponse](../../models/operations/getdiagbundleresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401              | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## send
 
@@ -78,36 +86,34 @@ Send a diag bundle (tar.gz archive) to Cribl
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.SendDiagBundle(
-    include_metrics=False,
-    max_include_jobs=78969,
-    path='facere',
-    rename_js=False,
-    send_to_cribl=False,
-)
+req = components.SendDiagBundle()
 
 res = s.diag_bundle.send(req)
 
 if res.remove_diag_response is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
-| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
-| `request`                                                      | [shared.SendDiagBundle](../../models/shared/senddiagbundle.md) | :heavy_check_mark:                                             | The request object to use for the request.                     |
+| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `request`                                                          | [components.SendDiagBundle](../../models/shared/senddiagbundle.md) | :heavy_check_mark:                                                 | The request object to use for the request.                         |
 
 
 ### Response
 
 **[operations.SendDiagBundleResponse](../../models/operations/senddiagbundleresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |

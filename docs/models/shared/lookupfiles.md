@@ -1,11 +1,9 @@
 # LookupFiles
 
-a list of LookupFile objects
-
 
 ## Fields
 
-| Field                                      | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `count`                                    | *Optional[int]*                            | :heavy_minus_sign:                         | number of items present in the items array |
-| `items`                                    | list[*Any*]                                | :heavy_minus_sign:                         | N/A                                        |
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `count`                                                                          | *Optional[int]*                                                                  | :heavy_minus_sign:                                                               | number of items present in the items array                                       |
+| `items`                                                                          | List[[Union[components.One, components.Two]](../../models/shared/lookupfile.md)] | :heavy_minus_sign:                                                               | N/A                                                                              |

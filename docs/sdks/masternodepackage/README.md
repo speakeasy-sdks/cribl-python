@@ -1,4 +1,5 @@
-# master_node_package
+# MasterNodePackage
+(*.master_node_package*)
 
 ### Available Operations
 
@@ -12,27 +13,16 @@ Upgrade master node with the provided package
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.UpgradeMasterRequest(
+req = components.UpgradeMasterRequest(
     packages=[
-        shared.UpgradeMasterRequestPackages(
-            package_hash_url='expedita',
-            package_url='hic',
-        ),
-        shared.UpgradeMasterRequestPackages(
-            package_hash_url='excepturi',
-            package_url='aliquid',
-        ),
-        shared.UpgradeMasterRequestPackages(
-            package_hash_url='sed',
-            package_url='beatae',
+        components.Packages(
+            package_url='string',
         ),
     ],
 )
@@ -41,16 +31,22 @@ res = s.master_node_package.post(req)
 
 if res.cribl is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
-| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
-| `request`                                                                  | [shared.UpgradeMasterRequest](../../models/shared/upgrademasterrequest.md) | :heavy_check_mark:                                                         | The request object to use for the request.                                 |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [components.UpgradeMasterRequest](../../models/shared/upgrademasterrequest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
 
 **[operations.PostMasterNodePackageResponse](../../models/operations/postmasternodepackageresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |

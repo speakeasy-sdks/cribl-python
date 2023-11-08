@@ -1,0 +1,11 @@
+# Metric
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `enable`                                                                                     | *bool*                                                                                       | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `format`                                                                                     | [components.AppscopeConfigSchemasFormat](../../models/shared/appscopeconfigschemasformat.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `transport`                                                                                  | [components.AppscopeTransport](../../models/shared/appscopetransport.md)                     | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `watch`                                                                                      | List[*str*]                                                                                  | :heavy_check_mark:                                                                           | N/A                                                                                          |

@@ -1,4 +1,5 @@
-# count_file
+# CountFile
+(*.count_file*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ get the count of files of changed
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.count_file.get('voluptatem')
+res = s.count_file.get(group='string')
 
 if res.count_file is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.count_file is not None:
 ### Response
 
 **[operations.GetCountFileResponse](../../models/operations/getcountfileresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |

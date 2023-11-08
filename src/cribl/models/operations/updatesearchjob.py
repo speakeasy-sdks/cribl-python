@@ -3,28 +3,29 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import searchjob as shared_searchjob
+from ...models.components import searchjob as components_searchjob
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class UpdateSearchJobRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Unique ID"""
-    search_job: Optional[shared_searchjob.SearchJob] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    search_job: Optional[components_searchjob.SearchJob] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""SearchJob object to be updated"""
     
-
 
 
 
 @dataclasses.dataclass
 class UpdateSearchJobResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    search_job: Optional[shared_searchjob.SearchJob] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    search_job: Optional[components_searchjob.SearchJob] = dataclasses.field(default=None)
     r"""a list of SearchJob objects"""
     
 

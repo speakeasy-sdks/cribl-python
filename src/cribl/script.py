@@ -2,8 +2,8 @@
 
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
-from cribl.models import errors, operations
-from typing import Any, Optional
+from cribl.models import components, errors, operations
+from typing import Optional
 
 class Script:
     sdk_configuration: SDKConfiguration
@@ -12,7 +12,7 @@ class Script:
         self.sdk_configuration = sdk_config
         
     
-    def create(self, request: dict[str, Any]) -> operations.CreateScriptResponse:
+    def create(self, request: components.ScriptLibEntry) -> operations.CreateScriptResponse:
         r"""Create Script
         Create Script
         """
@@ -20,11 +20,11 @@ class Script:
         
         url = base_url + '/system/scripts'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -35,7 +35,7 @@ class Script:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[components.ScriptLibEntry])
                 res.script_lib_entry = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -64,8 +64,8 @@ class Script:
         
         url = utils.generate_url(operations.DeleteScriptRequest, base_url, '/system/scripts/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -76,7 +76,7 @@ class Script:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[components.ScriptLibEntry])
                 res.script_lib_entry = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -105,8 +105,8 @@ class Script:
         
         url = utils.generate_url(operations.GetScriptRequest, base_url, '/system/scripts/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -117,7 +117,7 @@ class Script:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[components.ScriptLibEntry])
                 res.script_lib_entry = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -134,24 +134,24 @@ class Script:
         return res
 
     
-    def update(self, id: str, request_body: Optional[dict[str, Any]] = None) -> operations.UpdateScriptResponse:
+    def update(self, id: str, script_lib_entry: Optional[components.ScriptLibEntry] = None) -> operations.UpdateScriptResponse:
         r"""Update Script
         Update Script
         """
         request = operations.UpdateScriptRequest(
             id=id,
-            request_body=request_body,
+            script_lib_entry=script_lib_entry,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdateScriptRequest, base_url, '/system/scripts/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "script_lib_entry", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
         client = self.sdk_configuration.security_client
         
@@ -162,7 +162,7 @@ class Script:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[dict[str, Any]])
+                out = utils.unmarshal_json(http_res.text, Optional[components.ScriptLibEntry])
                 res.script_lib_entry = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

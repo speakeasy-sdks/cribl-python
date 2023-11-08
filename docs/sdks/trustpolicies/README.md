@@ -1,4 +1,5 @@
-# trust_policies
+# TrustPolicies
+(*.trust_policies*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of TrustPolicy objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,10 +23,16 @@ res = s.trust_policies.get()
 
 if res.trust_policies is not None:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.GetTrustPoliciesResponse](../../models/operations/gettrustpoliciesresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |

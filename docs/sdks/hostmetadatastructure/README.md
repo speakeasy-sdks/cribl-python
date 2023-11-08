@@ -1,4 +1,5 @@
-# host_metadata_structure
+# HostMetadataStructure
+(*.host_metadata_structure*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get the host's metadata structure
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,10 +23,16 @@ res = s.host_metadata_structure.get()
 
 if res.edge_metadatas is not None:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.GetHostMetadataStructureResponse](../../models/operations/gethostmetadatastructureresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
