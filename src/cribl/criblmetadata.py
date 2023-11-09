@@ -3,7 +3,11 @@
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
 from cribl.models import errors, operations
-from typing import Optional
+from enum import Enum
+
+class GetAcceptEnum(str, Enum):
+    APPLICATION_JSON = "application/json"
+    TEXT_XML = "text/xml"
 
 class CriblMetadata:
     sdk_configuration: SDKConfiguration
@@ -12,16 +16,23 @@ class CriblMetadata:
         self.sdk_configuration = sdk_config
         
     
-    def get(self) -> operations.GetCriblMetadataResponse:
+    
+    def get(self, accept_header_override: Optional[GetAcceptEnum] = None) -> operations.GetCriblMetadataResponse:
         r"""Obtain metadata which Cribl Stream/Edge uses when acting as a Service Provider"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = base_url + '/auth/metadata'
         headers = {}
-        headers['Accept'] = 'application/json;q=1, text/xml;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        if accept_header_override is not None:
+            headers['Accept'] = accept_header_override.value
+        else:
+            headers['Accept'] = 'application/json;q=1, text/xml;q=0'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -30,7 +41,7 @@ class CriblMetadata:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'text/xml'):
-                res.get_cribl_metadata_200_text_xml_string = http_res.content
+                res.res = http_res.content
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401:

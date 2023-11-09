@@ -2,8 +2,8 @@
 
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
-from cribl.models import errors, operations, shared
-from typing import Any, Optional
+from cribl.models import components, errors, operations
+from typing import Optional, Union
 
 class OutputObject:
     sdk_configuration: SDKConfiguration
@@ -12,7 +12,8 @@ class OutputObject:
         self.sdk_configuration = sdk_config
         
     
-    def create(self, request: Any) -> operations.CreateOutputObjectResponse:
+    
+    def create(self, request: Union[components.OutputDefault, components.OutputWebhook, components.OutputDevnull, components.OutputSyslog, components.OutputSplunk, components.OutputSplunkLb, components.OutputSplunkHec, components.OutputTcpjson, components.OutputWavefront, components.OutputSignalfx, components.OutputFilesystem, components.OutputS3, components.OutputAzureBlob, components.OutputAzureLogs, components.OutputKinesis, components.OutputHoneycomb, components.OutputAzureEventhub, components.OutputGoogleChronicle, components.OutputGoogleCloudStorage, components.OutputGoogleCloudLogging, components.OutputGooglePubsub, components.OutputKafka, components.OutputConfluentCloud, components.OutputMsk, components.OutputElastic, components.OutputNewrelic, components.OutputNewrelicEvents, components.OutputInfluxdb, components.OutputCloudwatch, components.OutputMinio, components.OutputStatsd, components.OutputStatsdExt, components.OutputGraphite, components.OutputRouter, components.OutputSns, components.OutputSqs, components.OutputSnmp, components.OutputSumoLogic, components.OutputDatadog, Union[components.OutputGrafanaCloud1, components.OutputGrafanaCloud2], components.OutputLoki, components.OutputPrometheus, components.OutputRing, components.OutputOpenTelemetry, components.OutputDataset, components.OutputCriblTCP, components.OutputCriblHTTP, components.OutputHumioHec, components.OutputDlS3, components.OutputSecurityLake]) -> operations.CreateOutputObjectResponse:
         r"""Create Output
         Create Output
         """
@@ -20,13 +21,16 @@ class OutputObject:
         
         url = base_url + '/system/outputs'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -35,7 +39,7 @@ class OutputObject:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.Outputs])
+                out = utils.unmarshal_json(http_res.text, Optional[components.Outputs])
                 res.outputs = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

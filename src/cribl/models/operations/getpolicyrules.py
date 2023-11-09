@@ -3,17 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import policyrules as shared_policyrules
+from ...models.components import policyrules as components_policyrules
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetPolicyRulesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    policy_rules: Optional[shared_policyrules.PolicyRules] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    policy_rules: Optional[components_policyrules.PolicyRules] = dataclasses.field(default=None)
     r"""a list of PolicyRule objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

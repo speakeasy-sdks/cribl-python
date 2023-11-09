@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import users as shared_users
+from ...models.components import users as components_users
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,15 @@ class GetUserIDRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetUserIDResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    users: Optional[shared_users.Users] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    users: Optional[components_users.Users] = dataclasses.field(default=None)
     r"""a list of User objects"""
     
 

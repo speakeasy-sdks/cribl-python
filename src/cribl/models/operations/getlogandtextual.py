@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import textualdiff as shared_textualdiff
+from ...models.components import textualdiff as components_textualdiff
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -18,13 +17,15 @@ class GetLogandTextualRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetLogandTextualResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    textual_diff: Optional[shared_textualdiff.TextualDiff] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    textual_diff: Optional[components_textualdiff.TextualDiff] = dataclasses.field(default=None)
     r"""a list of any objects"""
     
 

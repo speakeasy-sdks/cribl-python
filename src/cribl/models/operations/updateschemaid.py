@@ -3,28 +3,30 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import schemalibentries as shared_schemalibentries
-from typing import Any, Optional
-
+from ...models.components import schemalibentries as components_schemalibentries
+from ...models.components import schemalibentry as components_schemalibentry
+from typing import Optional
 
 
 @dataclasses.dataclass
 class UpdateSchemaIDRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Unique ID"""
-    request_body: Optional[dict[str, Any]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    schema_lib_entry: Optional[components_schemalibentry.SchemaLibEntry] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""Schema object to be updated"""
     
-
 
 
 
 @dataclasses.dataclass
 class UpdateSchemaIDResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    schema_lib_entries: Optional[shared_schemalibentries.SchemaLibEntries] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    schema_lib_entries: Optional[components_schemalibentries.SchemaLibEntries] = dataclasses.field(default=None)
     r"""a list of Schema objects"""
     
 
