@@ -3,17 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import jobrun as shared_jobrun
+from ...models.components import jobrun as components_jobrun
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class RunJobResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    job_run: Optional[shared_jobrun.JobRun] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    job_run: Optional[components_jobrun.JobRun] = dataclasses.field(default=None)
     r"""a list of string objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

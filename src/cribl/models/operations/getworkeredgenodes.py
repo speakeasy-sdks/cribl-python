@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import masterworkerentries as shared_masterworkerentries
+from ...models.components import masterworkerentries as components_masterworkerentries
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -22,13 +21,15 @@ class GetWorkerEdgeNodesRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetWorkerEdgeNodesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    master_worker_entries: Optional[shared_masterworkerentries.MasterWorkerEntries] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    master_worker_entries: Optional[components_masterworkerentries.MasterWorkerEntries] = dataclasses.field(default=None)
     r"""a list of MasterWorkerEntry objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

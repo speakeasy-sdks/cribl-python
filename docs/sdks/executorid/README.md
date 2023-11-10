@@ -1,4 +1,5 @@
-# executor_id
+# ExecutorID
+(*executor_id*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get Executor by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.executor_id.get('ad')
+res = s.executor_id.get(id='string')
 
 if res.executors is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.executors is not None:
 ### Response
 
 **[operations.GetExecutorIDResponse](../../models/operations/getexecutoridresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
