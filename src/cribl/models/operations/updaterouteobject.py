@@ -3,28 +3,29 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import routes as shared_routes
+from ...models.components import routes as components_routes
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class UpdateRouteObjectRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""There is only one route entity and it should be accessed with id: default."""
-    routes: Optional[shared_routes.Routes] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    routes: Optional[components_routes_input.RoutesInput] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""Routes object"""
     
-
 
 
 
 @dataclasses.dataclass
 class UpdateRouteObjectResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    routes: Optional[shared_routes.Routes] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    routes: Optional[components_routes.Routes] = dataclasses.field(default=None)
     r"""a list of Routes objects"""
     
 

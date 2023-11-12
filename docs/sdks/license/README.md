@@ -1,4 +1,5 @@
-# license
+# License
+(*license*)
 
 ### Available Operations
 
@@ -14,50 +15,53 @@ Create License
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.License(
-    cls=shared.LicenseCls.TRIAL,
-    email='Dovie.Fisher@gmail.com',
-    exp=349898,
-    f_ph=709701,
-    f_phg=706411,
-    guid='impedit',
-    iat=24577,
-    id='5a23a45c-efc5-4fde-90a0-ce2169e51001',
-    iss='provident',
-    license='cumque',
+req = components.License(
+    cls=components.Cls.TRIAL,
+    email='Loyal.Stokes@yahoo.com',
+    exp=134365,
+    f_ph=786546,
+    f_phg=69025,
+    guid='string',
+    iat=996706,
+    id='<ID>',
+    iss='string',
+    license='string',
     limits={
-        "quibusdam": 'quod',
-        "nemo": 'recusandae',
+        "key": 'string',
     },
-    quota=246772,
-    title='Mrs.',
+    quota=796474,
+    title='string',
 )
 
 res = s.license.create(req)
 
 if res.license is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                        | Type                                             | Required                                         | Description                                      |
-| ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ | ------------------------------------------------ |
-| `request`                                        | [shared.License](../../models/shared/license.md) | :heavy_check_mark:                               | The request object to use for the request.       |
+| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
+| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
+| `request`                                                | [components.License](../../models/components/license.md) | :heavy_check_mark:                                       | The request object to use for the request.               |
 
 
 ### Response
 
 **[operations.CreateLicenseResponse](../../models/operations/createlicenseresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## delete
 
@@ -67,19 +71,18 @@ Delete License
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.license.delete('dignissimos')
+res = s.license.delete(id='string')
 
 if res.license is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -92,7 +95,12 @@ if res.license is not None:
 ### Response
 
 **[operations.DeleteLicenseResponse](../../models/operations/deletelicenseresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get
 
@@ -102,19 +110,18 @@ Get License by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.license.get('laboriosam')
+res = s.license.get(id='string')
 
 if res.license is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -127,4 +134,9 @@ if res.license is not None:
 ### Response
 
 **[operations.GetLicenseResponse](../../models/operations/getlicenseresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
