@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import appscopelibentry as shared_appscopelibentry
+from ...models.components import appscopelibentry as components_appscopelibentry
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,15 @@ class DeleteAppscopeLibEntryRequest:
 
 
 
-
 @dataclasses.dataclass
 class DeleteAppscopeLibEntryResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    appscope_lib_entry: Optional[shared_appscopelibentry.AppscopeLibEntry] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    appscope_lib_entry: Optional[components_appscopelibentry.AppscopeLibEntry] = dataclasses.field(default=None)
     r"""a list of AppscopeLibEntry objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
