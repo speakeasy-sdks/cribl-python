@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
-from cribl.models import errors, operations, shared
+from cribl.models import components, errors, operations
 from typing import Optional
 
 class KeyMetadataEntity:
@@ -12,7 +12,8 @@ class KeyMetadataEntity:
         self.sdk_configuration = sdk_config
         
     
-    def create(self, request: shared.KeyMetadataEntity) -> operations.CreateKeyMetadataEntityResponse:
+    
+    def create(self, request: components.KeyMetadataEntity) -> operations.CreateKeyMetadataEntityResponse:
         r"""Create KeyMetadataEntity
         Create KeyMetadataEntity
         """
@@ -20,13 +21,16 @@ class KeyMetadataEntity:
         
         url = base_url + '/system/keys'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -35,7 +39,7 @@ class KeyMetadataEntity:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.KeyMetadataEntities])
+                out = utils.unmarshal_json(http_res.text, Optional[components.KeyMetadataEntities])
                 res.key_metadata_entities = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -51,6 +55,7 @@ class KeyMetadataEntity:
 
         return res
 
+    
     
     def delete(self, id: str) -> operations.DeleteKeyMetadataEntityResponse:
         r"""Delete KeyMetadataEntity
@@ -64,10 +69,13 @@ class KeyMetadataEntity:
         
         url = utils.generate_url(operations.DeleteKeyMetadataEntityRequest, base_url, '/system/keys/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -76,7 +84,7 @@ class KeyMetadataEntity:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.KeyMetadataEntities])
+                out = utils.unmarshal_json(http_res.text, Optional[components.KeyMetadataEntities])
                 res.key_metadata_entities = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -92,6 +100,7 @@ class KeyMetadataEntity:
 
         return res
 
+    
     
     def get(self, id: str) -> operations.GetKeyMetadataEntityResponse:
         r"""Get KeyMetadataEntity by ID
@@ -105,10 +114,13 @@ class KeyMetadataEntity:
         
         url = utils.generate_url(operations.GetKeyMetadataEntityRequest, base_url, '/system/keys/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -117,7 +129,7 @@ class KeyMetadataEntity:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.KeyMetadataEntities])
+                out = utils.unmarshal_json(http_res.text, Optional[components.KeyMetadataEntities])
                 res.key_metadata_entities = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -134,7 +146,8 @@ class KeyMetadataEntity:
         return res
 
     
-    def update(self, id: str, key_metadata_entity: Optional[shared.KeyMetadataEntity] = None) -> operations.UpdateKeyMetadataEntityResponse:
+    
+    def update(self, id: str, key_metadata_entity: Optional[components.KeyMetadataEntity] = None) -> operations.UpdateKeyMetadataEntityResponse:
         r"""Update KeyMetadataEntity
         Update KeyMetadataEntity
         """
@@ -147,13 +160,16 @@ class KeyMetadataEntity:
         
         url = utils.generate_url(operations.UpdateKeyMetadataEntityRequest, base_url, '/system/keys/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "key_metadata_entity", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, "key_metadata_entity", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -162,7 +178,7 @@ class KeyMetadataEntity:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.KeyMetadataEntities])
+                out = utils.unmarshal_json(http_res.text, Optional[components.KeyMetadataEntities])
                 res.key_metadata_entities = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

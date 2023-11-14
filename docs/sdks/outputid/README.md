@@ -1,4 +1,5 @@
-# output_id
+# OutputID
+(*output_id*)
 
 ### Available Operations
 
@@ -14,19 +15,18 @@ Delete Output
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.output_id.delete('voluptatum')
+res = s.output_id.delete(id='string')
 
 if res.outputs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -39,7 +39,12 @@ if res.outputs is not None:
 ### Response
 
 **[operations.DeleteOutputIDResponse](../../models/operations/deleteoutputidresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get
 
@@ -49,19 +54,18 @@ Get Output by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.output_id.get('iusto')
+res = s.output_id.get(id='string')
 
 if res.outputs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -74,7 +78,12 @@ if res.outputs is not None:
 ### Response
 
 **[operations.GetOutputIDResponse](../../models/operations/getoutputidresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## update
 
@@ -84,85 +93,43 @@ Update Output
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.output_id.update('quod', shared.OutputDlS3(
-    add_id_to_stage_path=False,
-    assume_role_arn='voluptas',
-    assume_role_external_id='non',
-    aws_api_key='ullam',
-    aws_authentication_method=shared.OutputDlS3AuthenticationMethod.MANUAL,
-    aws_secret='voluptas',
-    aws_secret_key='doloribus',
-    base_file_name='animi',
-    bucket='recusandae',
-    compress=shared.OutputDlS3Compress.NONE,
-    dest_path='non',
-    empty_dir_cleanup_sec=900368,
-    enable_assume_role=False,
-    endpoint='distinctio',
-    environment='maiores',
-    file_name_suffix='laboriosam',
-    format=shared.OutputDlS3DataFormat.PARQUET,
-    id='c321f023-b75d-4236-bfe1-a0cc8df79f0a',
-    kms_key_id='nesciunt',
-    max_concurrent_file_parts=590998,
-    max_file_idle_time_sec=404774,
-    max_file_open_time_sec=832944,
-    max_file_size_mb=601277,
-    max_open_files=1116,
-    object_acl=shared.OutputDlS3ObjectACL.BUCKET_OWNER_READ,
-    on_backpressure=shared.OutputDlS3BackpressureBehavior.BLOCK,
-    parquet_data_page_version=shared.OutputDlS3DataPageVersion.DATA_PAGE_V1,
-    parquet_page_size='labore',
-    parquet_row_group_size='expedita',
-    parquet_version=shared.OutputDlS3ParquetVersion.PARQUET_2_4,
-    partition_expr='quisquam',
-    partitioning_fields=[
-        'enim',
-    ],
-    pipeline='nulla',
-    region=shared.OutputDlS3Region.US_GOV_WEST_1,
-    reject_unauthorized=False,
-    remove_empty_dirs=False,
-    reuse_connections=False,
-    server_side_encryption=shared.OutputDlS3ServerSideEncryption.AWS_KMS,
-    should_log_invalid_rows=False,
-    signature_version=shared.OutputDlS3SignatureVersion.V4,
-    spacer='mollitia',
-    stage_path='impedit',
-    storage_class=shared.OutputDlS3StorageClass.DEEP_ARCHIVE,
+res = s.output_id.update(id='string', output=components.OutputRing(
+    id='<ID>',
     streamtags=[
-        'quas',
+        'string',
     ],
     system_fields=[
-        'cum',
-        'dicta',
-        'impedit',
+        'string',
     ],
-    type=shared.OutputDlS3Type.DL_S3,
+    type=components.OutputRingType.RING,
 ))
 
 if res.outputs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                   | Type                        | Required                    | Description                 |
-| --------------------------- | --------------------------- | --------------------------- | --------------------------- |
-| `id`                        | *str*                       | :heavy_check_mark:          | Unique ID                   |
-| `request_body`              | *Optional[Any]*             | :heavy_minus_sign:          | Output object to be updated |
+| Parameter                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          | Type                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | Required                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | Description                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
+| ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------ |
+| `id`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                               | *str*                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                              | :heavy_check_mark:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Unique ID                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                          |
+| `output`                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                           | [Optional[Union[components.OutputDefault, components.OutputWebhook, components.OutputDevnull, components.OutputSyslog, components.OutputSplunk, components.OutputSplunkLb, components.OutputSplunkHec, components.OutputTcpjson, components.OutputWavefront, components.OutputSignalfx, components.OutputFilesystem, components.OutputS3, components.OutputAzureBlob, components.OutputAzureLogs, components.OutputKinesis, components.OutputHoneycomb, components.OutputAzureEventhub, components.OutputGoogleChronicle, components.OutputGoogleCloudStorage, components.OutputGoogleCloudLogging, components.OutputGooglePubsub, components.OutputKafka, components.OutputConfluentCloud, components.OutputMsk, components.OutputElastic, components.OutputNewrelic, components.OutputNewrelicEvents, components.OutputInfluxdb, components.OutputCloudwatch, components.OutputMinio, components.OutputStatsd, components.OutputStatsdExt, components.OutputGraphite, components.OutputRouter, components.OutputSns, components.OutputSqs, components.OutputSnmp, components.OutputSumoLogic, components.OutputDatadog, Union[components.OutputGrafanaCloud1, components.OutputGrafanaCloud2], components.OutputLoki, components.OutputPrometheus, components.OutputRing, components.OutputOpenTelemetry, components.OutputDataset, components.OutputCriblTCP, components.OutputCriblHTTP, components.OutputHumioHec, components.OutputDlS3, components.OutputSecurityLake]]](../../models/components/output.md) | :heavy_minus_sign:                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                 | Output object to be updated                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                        |
 
 
 ### Response
 
 **[operations.UpdateOutputIDResponse](../../models/operations/updateoutputidresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |

@@ -12,6 +12,7 @@ class DestinationQueue:
         self.sdk_configuration = sdk_config
         
     
+    
     def delete(self, id: str) -> operations.DeleteDestinationQueueResponse:
         r"""Delete destination persistent queue
         Delete destination persistent queue
@@ -24,10 +25,13 @@ class DestinationQueue:
         
         url = utils.generate_url(operations.DeleteDestinationQueueRequest, base_url, '/system/outputs/{id}/pq', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
@@ -36,8 +40,8 @@ class DestinationQueue:
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteDestinationQueue200ApplicationJSON])
-                res.delete_destination_queue_200_application_json_object = out
+                out = utils.unmarshal_json(http_res.text, Optional[operations.DeleteDestinationQueueResponseBody])
+                res.object = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
         elif http_res.status_code == 401 or http_res.status_code >= 400 and http_res.status_code < 500 or http_res.status_code >= 500 and http_res.status_code < 600:
