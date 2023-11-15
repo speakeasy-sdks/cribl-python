@@ -3,29 +3,30 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import userprofile as shared_userprofile
-from ..shared import userprofiles as shared_userprofiles
+from ...models.components import userprofile as components_userprofile
+from ...models.components import userprofiles as components_userprofiles
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class UpdateUserPropertiesRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Unique ID"""
-    user_profile: Optional[shared_userprofile.UserProfile] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    user_profile: Optional[components_userprofile.UserProfile] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""UserProfile object"""
     
-
 
 
 
 @dataclasses.dataclass
 class UpdateUserPropertiesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
+    r"""HTTP response status code for this operation"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    user_profiles: Optional[shared_userprofiles.UserProfiles] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    user_profiles: Optional[components_userprofiles.UserProfiles] = dataclasses.field(default=None)
     r"""a list of UserProfile objects"""
     
 

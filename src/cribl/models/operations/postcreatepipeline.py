@@ -3,17 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import pipelines as shared_pipelines
+from ...models.components import pipelines as components_pipelines
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class PostCreatePipelineResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    pipelines: Optional[shared_pipelines.Pipelines] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    pipelines: Optional[components_pipelines.Pipelines] = dataclasses.field(default=None)
     r"""a list of Pipeline objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 

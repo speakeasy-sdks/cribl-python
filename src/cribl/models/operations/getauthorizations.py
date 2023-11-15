@@ -3,17 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import authpolicyentries as shared_authpolicyentries
+from ...models.components import authpolicyentries as components_authpolicyentries
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetAuthorizationsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    auth_policy_entries: Optional[shared_authpolicyentries.AuthPolicyEntries] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    auth_policy_entries: Optional[components_authpolicyentries.AuthPolicyEntries] = dataclasses.field(default=None)
     r"""a list of AuthPolicyEntry objects"""
     raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
+    r"""Raw HTTP response; suitable for custom response parsing"""
     
 
