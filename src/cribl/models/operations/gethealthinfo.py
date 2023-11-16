@@ -3,17 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import healthstatus as shared_healthstatus
+from ...models.components import healthstatus as components_healthstatus
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetHealthInfoResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    health_status: Optional[shared_healthstatus.HealthStatus] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    health_status: Optional[components_healthstatus.HealthStatus] = dataclasses.field(default=None)
     r"""Healthy"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

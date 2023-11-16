@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import success as shared_success
+from ...models.components import success as components_success
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -17,13 +16,15 @@ class GetRequestAuthRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetRequestAuthResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    success: Optional[shared_success.Success] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    success: Optional[components_success.Success] = dataclasses.field(default=None)
     r"""Authentication success"""
     
 
