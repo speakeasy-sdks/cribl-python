@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import logfilecontents as shared_logfilecontents
+from ...models.components import logfilecontents as components_logfilecontents
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -30,13 +29,15 @@ class GetLogFileContentsRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetLogFileContentsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    log_file_contents: Optional[shared_logfilecontents.LogFileContents] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    log_file_contents: Optional[components_logfilecontents.LogFileContents] = dataclasses.field(default=None)
     r"""a list of any objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
