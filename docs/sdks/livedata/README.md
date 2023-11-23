@@ -1,4 +1,5 @@
-# live_data
+# LiveData
+(*live_data*)
 
 ### Available Operations
 
@@ -12,37 +13,38 @@ Capture live incoming data
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.CaptureParams(
-    filter='odio',
-    level=616941,
-    max_events=588152,
-    step_duration=739508,
-    worker_id='doloribus',
-    worker_threshold=703966,
+req = components.CaptureParams(
+    filter='string',
+    level=449035,
+    max_events=690234,
 )
 
 res = s.live_data.post(req)
 
 if res.live_data is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `request`                                                    | [shared.CaptureParams](../../models/shared/captureparams.md) | :heavy_check_mark:                                           | The request object to use for the request.                   |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `request`                                                            | [components.CaptureParams](../../models/components/captureparams.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
 
 
 ### Response
 
 **[operations.PostLiveDataResponse](../../models/operations/postlivedataresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
