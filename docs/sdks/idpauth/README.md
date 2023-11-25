@@ -1,4 +1,5 @@
-# idp_auth
+# IDPAuth
+(*idp_auth*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get IDP used for an authorization code callback
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.idp_auth.get('mollitia', 'nulla')
+res = s.idp_auth.get(code='string', state='string')
 
 if res.success is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -38,4 +38,9 @@ if res.success is not None:
 ### Response
 
 **[operations.GetIDPAuthResponse](../../models/operations/getidpauthresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401              | application/json |
+| errors.SDKError  | 400-600          | */*              |
