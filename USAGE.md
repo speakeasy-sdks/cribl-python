@@ -1,20 +1,17 @@
-<!-- Start SDK Example Usage -->
-
-
+<!-- Start SDK Example Usage [usage] -->
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.appscope_lib_entries.get()
+res = s.idp_auth.get(code='string', state='string')
 
-if res.app_scope_lib_entries is not None:
+if res.success is not None:
     # handle response
+    pass
 ```
-<!-- End SDK Example Usage -->
+<!-- End SDK Example Usage [usage] -->
