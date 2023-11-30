@@ -1,4 +1,5 @@
-# executor_object
+# ExecutorObject
+(*executor_object*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of Executor objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,10 +23,16 @@ res = s.executor_object.get()
 
 if res.executors is not None:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.GetExecutorObjectResponse](../../models/operations/getexecutorobjectresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |

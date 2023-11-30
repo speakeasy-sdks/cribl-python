@@ -1,4 +1,5 @@
-# processes
+# Processes
+(*processes*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of processes under management
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,10 +23,16 @@ res = s.processes.get()
 
 if res.process_entries is not None:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.GetProcessesResponse](../../models/operations/getprocessesresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
