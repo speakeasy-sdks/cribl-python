@@ -1,4 +1,5 @@
-# query_snippet
+# QuerySnippet
+(*query_snippet*)
 
 ### Available Operations
 
@@ -12,37 +13,40 @@ Applies a query snippet on a set of input events for preview
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
-req = shared.PreviewRequestBody(
+req = components.PreviewRequestBody(
     events=[
-        'doloremque',
-        'assumenda',
+        'string',
     ],
-    options=shared.PreviewOptions(),
-    query='provident',
+    options=components.PreviewOptions(),
+    query='string',
 )
 
 res = s.query_snippet.apply(req)
 
 if res.preview_responses is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `request`                                                              | [shared.PreviewRequestBody](../../models/shared/previewrequestbody.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [components.PreviewRequestBody](../../models/components/previewrequestbody.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
 
 **[operations.ApplyQuerySnippetResponse](../../models/operations/applyquerysnippetresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |

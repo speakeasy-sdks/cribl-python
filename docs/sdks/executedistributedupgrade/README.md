@@ -1,4 +1,5 @@
-# execute_distributed_upgrade
+# ExecuteDistributedUpgrade
+(*execute_distributed_upgrade*)
 
 ### Available Operations
 
@@ -12,49 +13,40 @@ Execute distributed group upgrade
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
-res = s.execute_distributed_upgrade.post('fugiat', shared.DistributedUpgradeRequest(
+res = s.execute_distributed_upgrade.post(group='string', distributed_upgrade_request=components.DistributedUpgradeRequest(
     package_urls=[
-        shared.DistributedUpgradeRequestPackageUrls(
-            package_hash_url='officiis',
-            package_url='ducimus',
-        ),
-        shared.DistributedUpgradeRequestPackageUrls(
-            package_hash_url='dolor',
-            package_url='dicta',
-        ),
-        shared.DistributedUpgradeRequestPackageUrls(
-            package_hash_url='error',
-            package_url='porro',
+        components.PackageUrls(
+            package_url='string',
         ),
     ],
-    upgrade_mode=shared.DistributedUpgradeRequestUpgradeMode.ROLLING,
-    upgrade_percentage=491591,
-    worker_retries=458970,
-    worker_retry_delay=854115,
 ))
 
 if res.cribl_package is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
-| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
-| `group`                                                                                        | *str*                                                                                          | :heavy_check_mark:                                                                             | Group to upgrade                                                                               |
-| `distributed_upgrade_request`                                                                  | [Optional[shared.DistributedUpgradeRequest]](../../models/shared/distributedupgraderequest.md) | :heavy_minus_sign:                                                                             | distributedUpgrade object                                                                      |
+| Parameter                                                                                              | Type                                                                                                   | Required                                                                                               | Description                                                                                            |
+| ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------------ |
+| `group`                                                                                                | *str*                                                                                                  | :heavy_check_mark:                                                                                     | Group to upgrade                                                                                       |
+| `distributed_upgrade_request`                                                                          | [Optional[components.DistributedUpgradeRequest]](../../models/components/distributedupgraderequest.md) | :heavy_minus_sign:                                                                                     | distributedUpgrade object                                                                              |
 
 
 ### Response
 
 **[operations.PostExecuteDistributedUpgradeResponse](../../models/operations/postexecutedistributedupgraderesponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
