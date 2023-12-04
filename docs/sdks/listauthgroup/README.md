@@ -1,4 +1,5 @@
-# list_auth_group
+# ListAuthGroup
+(*list_auth_group*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ List the external authentication system's groups
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,10 +23,16 @@ res = s.list_auth_group.get()
 
 if res.crud_entity_bases is not None:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.GetListAuthGroupResponse](../../models/operations/getlistauthgroupresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
