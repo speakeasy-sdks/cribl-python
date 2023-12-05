@@ -1,4 +1,5 @@
-# output_status
+# OutputStatus
+(*output_status*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of OutputStatus objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -25,10 +23,16 @@ res = s.output_status.get()
 
 if res.output_statuses is not None:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.GetOutputStatusResponse](../../models/operations/getoutputstatusresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
