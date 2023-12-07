@@ -1,4 +1,5 @@
-# git_settings
+# GitSettings
+(*git_settings*)
 
 ### Available Operations
 
@@ -13,12 +14,9 @@ Get git settings
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -26,13 +24,19 @@ res = s.git_settings.get()
 
 if res.git_settings_response is not None:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.GetGitSettingsResponse](../../models/operations/getgitsettingsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## update
 
@@ -42,12 +46,9 @@ Update git settings
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="",
 )
 
 
@@ -55,10 +56,16 @@ res = s.git_settings.update()
 
 if res.git_settings is not None:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.UpdateGitSettingsResponse](../../models/operations/updategitsettingsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
