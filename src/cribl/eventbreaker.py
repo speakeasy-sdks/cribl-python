@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
-from cribl.models import errors, operations, shared
+from cribl.models import components, errors, operations
 from typing import Optional
 
 class EventBreaker:
@@ -11,6 +11,7 @@ class EventBreaker:
     def __init__(self, sdk_config: SDKConfiguration) -> None:
         self.sdk_configuration = sdk_config
         
+    
     
     def delete(self, id: str) -> operations.DeleteEventBreakerResponse:
         r"""Delete Event Breaker Ruleset
@@ -24,19 +25,22 @@ class EventBreaker:
         
         url = utils.generate_url(operations.DeleteEventBreakerRequest, base_url, '/lib/breakers/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.DeleteEventBreakerResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.EventBreakerRulesets])
+                out = utils.unmarshal_json(http_res.text, Optional[components.EventBreakerRulesets])
                 res.event_breaker_rulesets = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -53,7 +57,8 @@ class EventBreaker:
         return res
 
     
-    def post(self, request: shared.EventBreakerRuleset) -> operations.PostEventBreakerResponse:
+    
+    def post(self, request: Optional[components.EventBreakerRuleset]) -> operations.PostEventBreakerResponse:
         r"""Create Event Breaker Ruleset
         Create Event Breaker Ruleset
         """
@@ -61,22 +66,25 @@ class EventBreaker:
         
         url = base_url + '/lib/breakers'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[components.EventBreakerRuleset], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PostEventBreakerResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.EventBreakerRulesets])
+                out = utils.unmarshal_json(http_res.text, Optional[components.EventBreakerRulesets])
                 res.event_breaker_rulesets = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -93,7 +101,8 @@ class EventBreaker:
         return res
 
     
-    def update(self, id: str, event_breaker_ruleset: Optional[shared.EventBreakerRuleset] = None) -> operations.UpdateEventBreakerResponse:
+    
+    def update(self, id: str, event_breaker_ruleset: Optional[components.EventBreakerRuleset] = None) -> operations.UpdateEventBreakerResponse:
         r"""Update Event Breaker Ruleset
         Update Event Breaker Ruleset
         """
@@ -106,22 +115,25 @@ class EventBreaker:
         
         url = utils.generate_url(operations.UpdateEventBreakerRequest, base_url, '/lib/breakers/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "event_breaker_ruleset", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdateEventBreakerRequest, "event_breaker_ruleset", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.UpdateEventBreakerResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.EventBreakerRulesets])
+                out = utils.unmarshal_json(http_res.text, Optional[components.EventBreakerRulesets])
                 res.event_breaker_rulesets = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)

@@ -1,4 +1,5 @@
-# config_group
+# ConfigGroup
+(*config_group*)
 
 ### Available Operations
 
@@ -15,62 +16,50 @@ Create ConfigGroup
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.ConfigGroup(
-    config_version='voluptatibus',
-    description='molestias',
-    estimated_ingest_rate=889794,
-    git=shared.ConfigGroupGit(
-        commit='sapiente',
-        local_changes=764562,
+req = components.ConfigGroup(
+    config_version='string',
+    git=components.Git(
         log=[
-            shared.Commit(
-                author_email='rerum',
-                author_name='tempora',
-                date_='quis',
-                hash='inventore',
-                message='fugit',
-                short='cumque',
+            components.Commit(
+                date_='string',
+                hash='string',
+                message='string',
+                short='string',
             ),
         ],
     ),
-    id='1032648d-c2f6-4151-99eb-fd0e9fe6c632',
-    inherits='cumque',
-    is_fleet=False,
-    is_search=False,
-    name='Philip O'Kon',
-    on_prem=False,
-    provisioned=False,
-    source_group_id='consequatur',
-    tags='quasi',
-    worker_count=90233,
-    worker_remote_access=False,
+    id='<ID>',
 )
 
 res = s.config_group.create(req)
 
 if res.config_group is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `request`                                                | [shared.ConfigGroup](../../models/shared/configgroup.md) | :heavy_check_mark:                                       | The request object to use for the request.               |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `request`                                                        | [components.ConfigGroup](../../models/components/configgroup.md) | :heavy_check_mark:                                               | The request object to use for the request.                       |
 
 
 ### Response
 
 **[operations.CreateConfigGroupResponse](../../models/operations/createconfiggroupresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## delete
 
@@ -80,19 +69,18 @@ Delete ConfigGroup
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.config_group.delete('ducimus')
+res = s.config_group.delete(id='string')
 
 if res.config_group is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -105,7 +93,12 @@ if res.config_group is not None:
 ### Response
 
 **[operations.DeleteConfigGroupResponse](../../models/operations/deleteconfiggroupresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get
 
@@ -115,19 +108,18 @@ Get a specific ConfigGroup object
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.config_group.get('natus', 'occaecati')
+res = s.config_group.get(id='string', fields='string')
 
 if res.config_group is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -135,13 +127,18 @@ if res.config_group is not None:
 | Parameter                                                                               | Type                                                                                    | Required                                                                                | Description                                                                             |
 | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------- |
 | `id`                                                                                    | *str*                                                                                   | :heavy_check_mark:                                                                      | Unique ID                                                                               |
-| `fields_`                                                                               | *Optional[str]*                                                                         | :heavy_minus_sign:                                                                      | query string additional fields to add to results: git.commit, git.localChanges, git.log |
+| `fields`                                                                                | *Optional[str]*                                                                         | :heavy_minus_sign:                                                                      | query string additional fields to add to results: git.commit, git.localChanges, git.log |
 
 
 ### Response
 
 **[operations.GetConfigGroupResponse](../../models/operations/getconfiggroupresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## update
 
@@ -151,83 +148,47 @@ Update ConfigGroup
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.config_group.update('suscipit', shared.ConfigGroup(
-    config_version='adipisci',
-    description='quasi',
-    estimated_ingest_rate=169025,
-    git=shared.ConfigGroupGit(
-        commit='doloribus',
-        local_changes=859581,
+res = s.config_group.update(id='string', config_group=components.ConfigGroup(
+    config_version='string',
+    git=components.Git(
         log=[
-            shared.Commit(
-                author_email='ipsa',
-                author_name='tempora',
-                date_='nihil',
-                hash='molestiae',
-                message='dicta',
-                short='iusto',
-            ),
-            shared.Commit(
-                author_email='esse',
-                author_name='praesentium',
-                date_='maiores',
-                hash='reiciendis',
-                message='vel',
-                short='architecto',
-            ),
-            shared.Commit(
-                author_email='fugiat',
-                author_name='doloremque',
-                date_='dicta',
-                hash='odio',
-                message='tempora',
-                short='esse',
-            ),
-            shared.Commit(
-                author_email='ex',
-                author_name='consectetur',
-                date_='aliquid',
-                hash='ipsa',
-                message='laborum',
-                short='sunt',
+            components.Commit(
+                date_='string',
+                hash='string',
+                message='string',
+                short='string',
             ),
         ],
     ),
-    id='5db6a660-659a-41ad-aaab-5851d6c645b0',
-    inherits='molestias',
-    is_fleet=False,
-    is_search=False,
-    name='Gene Brekke',
-    on_prem=False,
-    provisioned=False,
-    source_group_id='veritatis',
-    tags='rerum',
-    worker_count=665678,
-    worker_remote_access=False,
+    id='<ID>',
 ))
 
 if res.config_group is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `id`                                                               | *str*                                                              | :heavy_check_mark:                                                 | Unique ID                                                          |
-| `config_group`                                                     | [Optional[shared.ConfigGroup]](../../models/shared/configgroup.md) | :heavy_minus_sign:                                                 | ConfigGroup object to be updated                                   |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `id`                                                                       | *str*                                                                      | :heavy_check_mark:                                                         | Unique ID                                                                  |
+| `config_group`                                                             | [Optional[components.ConfigGroup]](../../models/components/configgroup.md) | :heavy_minus_sign:                                                         | ConfigGroup object to be updated                                           |
 
 
 ### Response
 
 **[operations.UpdateConfigGroupResponse](../../models/operations/updateconfiggroupresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
