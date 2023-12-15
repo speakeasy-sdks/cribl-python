@@ -1,4 +1,5 @@
-# list_database_connection
+# ListDatabaseConnection
+(*list_database_connection*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get a list of DatabaseConnection objects
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.list_database_connection.get('sed')
+res = s.list_database_connection.get(database_type='string')
 
 if res.database_connection_configs is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.database_connection_configs is not None:
 ### Response
 
 **[operations.GetListDatabaseConnectionResponse](../../models/operations/getlistdatabaseconnectionresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |

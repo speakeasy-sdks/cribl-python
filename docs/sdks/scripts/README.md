@@ -1,4 +1,5 @@
-# scripts
+# Scripts
+(*scripts*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of Script objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -25,10 +23,16 @@ res = s.scripts.get()
 
 if res.script_lib_entries is not None:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.GetScriptsResponse](../../models/operations/getscriptsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |

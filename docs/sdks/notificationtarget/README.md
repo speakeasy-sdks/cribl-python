@@ -1,4 +1,5 @@
-# notification_target
+# NotificationTarget
+(*notification_target*)
 
 ### Available Operations
 
@@ -15,45 +16,43 @@ Create NotificationTarget
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.NotificationTargetPagerDuty(
-    class_='dolor',
-    component='expedita',
-    group='libero',
-    id='91c8d975-e0e8-4419-98f8-4f144f3e07ed',
-    routing_key='quisquam',
-    severity=shared.NotificationTargetPagerDutySeverity.CRITICAL,
+req = components.NotificationTargetBulletinMessageSchemas(
+    id='<ID>',
     system_fields=[
-        'dolorum',
-        'deserunt',
+        'string',
     ],
-    type=shared.NotificationTargetPagerDutyType.PAGER_DUTY,
+    type=components.Type.BULLETIN_MESSAGE,
 )
 
 res = s.notification_target.create(req)
 
 if res.notification_targets is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [Any](../../models//.md)                   | :heavy_check_mark:                         | The request object to use for the request. |
+| `request`                                  | [Any](../../models/.md)                    | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
 
 **[operations.CreateNotificationTargetResponse](../../models/operations/createnotificationtargetresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## delete
 
@@ -63,19 +62,18 @@ Delete NotificationTarget
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.notification_target.delete('ad')
+res = s.notification_target.delete(id='string')
 
 if res.notification_targets is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -88,7 +86,12 @@ if res.notification_targets is not None:
 ### Response
 
 **[operations.DeletetNotificationTargetResponse](../../models/operations/deletetnotificationtargetresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## get
 
@@ -98,19 +101,18 @@ Get NotificationTarget by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.notification_target.get('reiciendis')
+res = s.notification_target.get(id='string')
 
 if res.notification_targets is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -123,7 +125,12 @@ if res.notification_targets is not None:
 ### Response
 
 **[operations.GetNotificationTargetResponse](../../models/operations/getnotificationtargetresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
 
 ## update
 
@@ -133,28 +140,25 @@ Update NotificationTarget
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.notification_target.update('sequi', shared.NotificationTargetNotificationsLog(
-    id='abd905a9-72e0-4567-a822-7b2d309470bf',
-    logs_dir='quam',
+res = s.notification_target.update(id='string', request_body=components.NotificationTargetPagerDutySchemas(
+    id='<ID>',
+    routing_key='string',
     system_fields=[
-        'aliquam',
-        'delectus',
-        'culpa',
+        'string',
     ],
-    type=shared.NotificationTargetNotificationsLogType.NOTIFICATIONS_LOG,
+    type=components.SchemasNotificationTargetPagerDutyType.PAGER_DUTY,
 ))
 
 if res.notification_targets is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -168,4 +172,9 @@ if res.notification_targets is not None:
 ### Response
 
 **[operations.UpdatetNotificationTargetResponse](../../models/operations/updatetnotificationtargetresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
