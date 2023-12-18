@@ -1,4 +1,5 @@
-# bytes
+# Bytes
+(*bytes*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get some number of bytes from the file at the given path
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.bytes.get('perspiciatis', 446394)
+res = s.bytes.get(path='string', bytes_requested=700347)
 
 if res.sample_files is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -38,4 +38,9 @@ if res.sample_files is not None:
 ### Response
 
 **[operations.GetBytesResponse](../../models/operations/getbytesresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 400-600          | */*              |
