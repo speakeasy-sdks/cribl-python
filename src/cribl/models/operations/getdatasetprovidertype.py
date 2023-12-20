@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import datasetprovidertype as shared_datasetprovidertype
+from ...models.components import datasetprovidertype as components_datasetprovidertype
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,15 @@ class GetDatasetProviderTypeRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetDatasetProviderTypeResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    dataset_provider_type: Optional[shared_datasetprovidertype.DatasetProviderType] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    dataset_provider_type: Optional[components_datasetprovidertype.DatasetProviderType] = dataclasses.field(default=None)
     r"""a list of DatasetProviderType objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
