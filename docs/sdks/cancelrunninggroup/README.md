@@ -1,4 +1,5 @@
-# cancel_running_group
+# CancelRunningGroup
+(*cancel_running_group*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Cancel a running group upgrade
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.cancel_running_group.post('adipisci')
+res = s.cancel_running_group.post(group='string')
 
 if res.cancel_running_group is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.cancel_running_group is not None:
 ### Response
 
 **[operations.PostCancelRunningGroupResponse](../../models/operations/postcancelrunninggroupresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
