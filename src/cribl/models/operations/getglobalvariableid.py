@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import globalvars as shared_globalvars
+from ...models.components import globalvars as components_globalvars
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,15 @@ class GetGlobalVariableIDRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetGlobalVariableIDResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    global_vars: Optional[shared_globalvars.GlobalVars] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    global_vars: Optional[components_globalvars.GlobalVars] = dataclasses.field(default=None)
     r"""a list of Global Variable objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
