@@ -11,6 +11,7 @@ class ReloadCriblSettings:
         self.sdk_configuration = sdk_config
         
     
+    
     def post(self) -> operations.PostReloadCriblSettingsResponse:
         r"""Reload Cribl settings from the filesystem"""
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
@@ -18,13 +19,16 @@ class ReloadCriblSettings:
         url = base_url + '/system/settings/reload'
         headers = {}
         headers['Accept'] = '*/*'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.PostReloadCriblSettingsResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
