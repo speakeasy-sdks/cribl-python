@@ -3,17 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import restartresponses as shared_restartresponses
+from ...models.components import restartresponses as components_restartresponses
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class RestartsWorkerEdgeNodesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    restart_responses: Optional[shared_restartresponses.RestartResponses] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    restart_responses: Optional[components_restartresponses.RestartResponses] = dataclasses.field(default=None)
     r"""a list of RestartResponse objects"""
     
 
