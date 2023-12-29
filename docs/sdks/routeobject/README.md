@@ -1,4 +1,5 @@
-# route_object
+# RouteObject
+(*route_object*)
 
 ### Available Operations
 
@@ -12,68 +13,40 @@ Add, delete or update the routes with the required content.
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.route_object.update('aspernatur', shared.Routes(
+res = s.route_object.update(id='string', routes=components.RoutesInput(
     comments=[
-        {
-            "dicta": 'inventore',
-            "ullam": 'iusto',
-            "inventore": 'voluptate',
-            "sed": 'dolorem',
-        },
-        {
-            "exercitationem": 'amet',
-        },
-        {
-            "voluptate": 'pariatur',
-            "minus": 'a',
-        },
-        {
-            "totam": 'cupiditate',
-            "at": 'doloribus',
-            "omnis": 'quam',
-        },
+        components.Comments(
+            additional_properties={
+                'key': 'string',
+            },
+        ),
     ],
     groups={
-        "voluptates": shared.RoutesGroups(
-            description='sequi',
-            disabled=False,
-            name='Gertrude Kautzer',
-        ),
-        "aperiam": shared.RoutesGroups(
-            description='perspiciatis',
-            disabled=False,
-            name='Kellie Miller',
+        'key': components.RoutesGroups(
+            name='string',
         ),
     },
-    id='ddc5f111-dea1-4026-9541-a4d190feb217',
     routes=[
-        {
-            "distinctio": 'placeat',
-        },
-        {
-            "eligendi": 'sit',
-            "possimus": 'distinctio',
-            "distinctio": 'assumenda',
-            "illum": 'soluta',
-        },
-        {
-            "laudantium": 'tempora',
-            "esse": 'doloremque',
-        },
+        components.RoutesRouteInput(
+            additional_properties={
+                'key': 'string',
+            },
+            name='string',
+            pipeline='string',
+        ),
     ],
 ))
 
 if res.routes is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -81,10 +54,15 @@ if res.routes is not None:
 | Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
 | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
 | `id`                                                                       | *str*                                                                      | :heavy_check_mark:                                                         | There is only one route entity and it should be accessed with id: default. |
-| `routes`                                                                   | [Optional[shared.Routes]](../../models/shared/routes.md)                   | :heavy_minus_sign:                                                         | Routes object                                                              |
+| `routes`                                                                   | [Optional[components.RoutesInput]](../../models/components/routesinput.md) | :heavy_minus_sign:                                                         | Routes object                                                              |
 
 
 ### Response
 
 **[operations.UpdateRouteObjectResponse](../../models/operations/updaterouteobjectresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
