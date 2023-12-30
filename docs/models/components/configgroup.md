@@ -1,0 +1,22 @@
+# ConfigGroup
+
+
+## Fields
+
+| Field                                                      | Type                                                       | Required                                                   | Description                                                |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `config_version`                                           | *str*                                                      | :heavy_check_mark:                                         | N/A                                                        |
+| `description`                                              | *Optional[str]*                                            | :heavy_minus_sign:                                         | N/A                                                        |
+| `estimated_ingest_rate`                                    | *Optional[int]*                                            | :heavy_minus_sign:                                         | N/A                                                        |
+| `git`                                                      | [Optional[components.Git]](../../models/components/git.md) | :heavy_minus_sign:                                         | N/A                                                        |
+| `id`                                                       | *str*                                                      | :heavy_check_mark:                                         | N/A                                                        |
+| `inherits`                                                 | *Optional[str]*                                            | :heavy_minus_sign:                                         | N/A                                                        |
+| `is_fleet`                                                 | *Optional[bool]*                                           | :heavy_minus_sign:                                         | N/A                                                        |
+| `is_search`                                                | *Optional[bool]*                                           | :heavy_minus_sign:                                         | N/A                                                        |
+| `name`                                                     | *Optional[str]*                                            | :heavy_minus_sign:                                         | N/A                                                        |
+| `on_prem`                                                  | *Optional[bool]*                                           | :heavy_minus_sign:                                         | N/A                                                        |
+| `provisioned`                                              | *Optional[bool]*                                           | :heavy_minus_sign:                                         | N/A                                                        |
+| `source_group_id`                                          | *Optional[str]*                                            | :heavy_minus_sign:                                         | N/A                                                        |
+| `tags`                                                     | *Optional[str]*                                            | :heavy_minus_sign:                                         | N/A                                                        |
+| `worker_count`                                             | *Optional[int]*                                            | :heavy_minus_sign:                                         | N/A                                                        |
+| `worker_remote_access`                                     | *Optional[bool]*                                           | :heavy_minus_sign:                                         | N/A                                                        |
