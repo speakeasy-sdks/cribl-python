@@ -5,8 +5,7 @@ import dataclasses
 import requests as requests_http
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Any, Optional
-
+from typing import Any, Dict, List, Optional
 
 
 @dataclasses.dataclass
@@ -18,24 +17,25 @@ class DeleteDestinationQueueRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class DeleteDestinationQueue200ApplicationJSON:
+class DeleteDestinationQueueResponseBody:
     r"""a list of any objects"""
     count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
     r"""number of items present in the items array"""
-    items: Optional[list[dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})
+    items: Optional[List[Dict[str, Any]]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})
     
-
 
 
 
 @dataclasses.dataclass
 class DeleteDestinationQueueResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    delete_destination_queue_200_application_json_object: Optional[DeleteDestinationQueue200ApplicationJSON] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    object: Optional[DeleteDestinationQueueResponseBody] = dataclasses.field(default=None)
     r"""a list of any objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
