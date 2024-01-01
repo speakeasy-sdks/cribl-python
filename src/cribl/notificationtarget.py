@@ -2,8 +2,8 @@
 
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
-from cribl.models import errors, operations, shared
-from typing import Any, Optional
+from cribl.models import components, errors, operations
+from typing import Optional, Union
 
 class NotificationTarget:
     sdk_configuration: SDKConfiguration
@@ -12,7 +12,8 @@ class NotificationTarget:
         self.sdk_configuration = sdk_config
         
     
-    def create(self, request: Any) -> operations.CreateNotificationTargetResponse:
+    
+    def create(self, request: Optional[Union[components.Schemas, components.NotificationTargetDefaultSchemas, components.NotificationTargetWebhookSchemas, components.NotificationTargetBulletinMessageSchemas, components.NotificationTargetRouterSchemas, components.NotificationTargetNotificationsLogSchemas, components.NotificationTargetPagerDutySchemas]]) -> operations.CreateNotificationTargetResponse:
         r"""Create NotificationTarget
         Create NotificationTarget
         """
@@ -20,22 +21,25 @@ class NotificationTarget:
         
         url = base_url + '/notification-targets'
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, Optional[Union[components.Schemas, components.NotificationTargetDefaultSchemas, components.NotificationTargetWebhookSchemas, components.NotificationTargetBulletinMessageSchemas, components.NotificationTargetRouterSchemas, components.NotificationTargetNotificationsLogSchemas, components.NotificationTargetPagerDutySchemas]], "request", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('POST', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.CreateNotificationTargetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.NotificationTargets])
+                out = utils.unmarshal_json(http_res.text, Optional[components.NotificationTargets])
                 res.notification_targets = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -51,6 +55,7 @@ class NotificationTarget:
 
         return res
 
+    
     
     def delete(self, id: str) -> operations.DeletetNotificationTargetResponse:
         r"""Delete NotificationTarget
@@ -64,19 +69,22 @@ class NotificationTarget:
         
         url = utils.generate_url(operations.DeletetNotificationTargetRequest, base_url, '/notification-targets/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('DELETE', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.DeletetNotificationTargetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.NotificationTargets])
+                out = utils.unmarshal_json(http_res.text, Optional[components.NotificationTargets])
                 res.notification_targets = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -92,6 +100,7 @@ class NotificationTarget:
 
         return res
 
+    
     
     def get(self, id: str) -> operations.GetNotificationTargetResponse:
         r"""Get NotificationTarget by ID
@@ -105,19 +114,22 @@ class NotificationTarget:
         
         url = utils.generate_url(operations.GetNotificationTargetRequest, base_url, '/notification-targets/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.GetNotificationTargetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.NotificationTargets])
+                out = utils.unmarshal_json(http_res.text, Optional[components.NotificationTargets])
                 res.notification_targets = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
@@ -134,35 +146,39 @@ class NotificationTarget:
         return res
 
     
-    def update(self, id: str, request_body: Optional[Any] = None) -> operations.UpdatetNotificationTargetResponse:
+    
+    def update(self, id: str, notification_target: Optional[Union[components.Schemas, components.NotificationTargetDefaultSchemas, components.NotificationTargetWebhookSchemas, components.NotificationTargetBulletinMessageSchemas, components.NotificationTargetRouterSchemas, components.NotificationTargetNotificationsLogSchemas, components.NotificationTargetPagerDutySchemas]] = None) -> operations.UpdatetNotificationTargetResponse:
         r"""Update NotificationTarget
         Update NotificationTarget
         """
         request = operations.UpdatetNotificationTargetRequest(
             id=id,
-            request_body=request_body,
+            notification_target=notification_target,
         )
         
         base_url = utils.template_url(*self.sdk_configuration.get_server_details())
         
         url = utils.generate_url(operations.UpdatetNotificationTargetRequest, base_url, '/notification-targets/{id}', request)
         headers = {}
-        req_content_type, data, form = utils.serialize_request_body(request, "request_body", 'json')
+        req_content_type, data, form = utils.serialize_request_body(request, operations.UpdatetNotificationTargetRequest, "notification_target", False, True, 'json')
         if req_content_type not in ('multipart/form-data', 'multipart/mixed'):
             headers['content-type'] = req_content_type
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('PATCH', url, data=data, files=form, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.UpdatetNotificationTargetResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.NotificationTargets])
+                out = utils.unmarshal_json(http_res.text, Optional[components.NotificationTargets])
                 res.notification_targets = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
