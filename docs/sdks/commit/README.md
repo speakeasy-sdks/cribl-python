@@ -1,4 +1,5 @@
-# commit
+# Commit
+(*commit*)
 
 ### Available Operations
 
@@ -12,34 +13,36 @@ create a new commit containing the current configs the given log message describ
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.GitCommitParams(
-    effective=False,
-    group='laborum',
-    message='placeat',
+req = components.GitCommitParams(
+    message='string',
 )
 
 res = s.commit.create(req)
 
 if res.git_commit is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `request`                                                        | [shared.GitCommitParams](../../models/shared/gitcommitparams.md) | :heavy_check_mark:                                               | The request object to use for the request.                       |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `request`                                                                | [components.GitCommitParams](../../models/components/gitcommitparams.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
 
 
 ### Response
 
 **[operations.CreateCommitResponse](../../models/operations/createcommitresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
