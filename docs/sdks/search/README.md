@@ -1,4 +1,5 @@
-# search
+# Search
+(*search*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Dispatch search *id* to worker nodes filtered by worker node filter using RPC
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.search.dispatch_search('necessitatibus')
+res = s.search.dispatch_search(id='string')
 
 if res.search_id is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.search_id is not None:
 ### Response
 
 **[operations.DispatchSearchResponse](../../models/operations/dispatchsearchresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
