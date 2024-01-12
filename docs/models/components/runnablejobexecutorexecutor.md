@@ -1,0 +1,10 @@
+# RunnableJobExecutorExecutor
+
+
+## Fields
+
+| Field                                                                                                | Type                                                                                                 | Required                                                                                             | Description                                                                                          |
+| ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------- |
+| `conf`                                                                                               | [Optional[components.ExecutorSpecificSettings]](../../models/components/executorspecificsettings.md) | :heavy_minus_sign:                                                                                   | N/A                                                                                                  |
+| `store_task_results`                                                                                 | *Optional[bool]*                                                                                     | :heavy_minus_sign:                                                                                   | Determines whether or not to write task results to disk.                                             |
+| `type`                                                                                               | *str*                                                                                                | :heavy_check_mark:                                                                                   | The type of executor to run.                                                                         |
