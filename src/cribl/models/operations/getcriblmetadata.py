@@ -6,13 +6,15 @@ import requests as requests_http
 from typing import Optional
 
 
-
 @dataclasses.dataclass
 class GetCriblMetadataResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    get_cribl_metadata_200_text_xml_string: Optional[str] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    res: Optional[str] = dataclasses.field(default=None)
     r"""Service Provider metadata"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
