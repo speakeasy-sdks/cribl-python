@@ -1,4 +1,5 @@
-# datasets
+# Datasets
+(*datasets*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of DatasetProviderType objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -25,10 +23,16 @@ res = s.datasets.get()
 
 if res.dataset_provider_types is not None:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.GetDatasetProviderTypesResponse](../../models/operations/getdatasetprovidertypesresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
