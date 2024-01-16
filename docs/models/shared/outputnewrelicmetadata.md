@@ -1,9 +1,0 @@
-# OutputNewrelicMetadata
-
-
-## Fields
-
-| Field                                                                                                          | Type                                                                                                           | Required                                                                                                       | Description                                                                                                    |
-| -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------------------------- |
-| `name`                                                                                                         | [OutputNewrelicMetadataName](../../models/shared/outputnewrelicmetadataname.md)                                | :heavy_check_mark:                                                                                             | Field name                                                                                                     |
-| `value`                                                                                                        | *str*                                                                                                          | :heavy_check_mark:                                                                                             | JavaScript expression to compute field's value, enclosed in quotes or backticks. (Can evaluate to a constant.) |
