@@ -2,6 +2,10 @@
 
 import requests
 from dataclasses import dataclass, field
+from typing import Dict, List, Tuple, Callable, Union
+from .utils.retries import RetryConfig
+from .utils import utils
+from cribl.models import components
 
 
 SERVERS = [
@@ -14,18 +18,20 @@ SERVERS = [
 @dataclass
 class SDKConfiguration:
     client: requests.Session
-    security_client: requests.Session
+    security: Union[components.Security,Callable[[], components.Security]] = None
     server_url: str = ''
     server_idx: int = 0
-    server_defaults: list[dict[str, str]] = field(default_factory=list)
+    server_defaults: List[Dict[str, str]] = field(default_factory=List)
     language: str = 'python'
     openapi_doc_version: str = '1.0.0'
-    sdk_version: str = '1.0.0'
-    gen_version: str = '2.73.0'
+    sdk_version: str = '2.0.0'
+    gen_version: str = '2.234.3'
+    user_agent: str = 'speakeasy-sdk/python 2.0.0 2.234.3 1.0.0 cribl'
+    retry_config: RetryConfig = None
 
-    def get_server_details(self) -> tuple[str, dict[str, str]]:
+    def get_server_details(self) -> Tuple[str, Dict[str, str]]:
         if self.server_url:
-            return self.server_url.removesuffix('/'), {}
+            return utils.remove_suffix(self.server_url, '/'), {}
         if self.server_idx is None:
             self.server_idx = 0
 
