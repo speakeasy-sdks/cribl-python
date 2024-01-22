@@ -1,0 +1,9 @@
+# Auth
+
+
+## Fields
+
+| Field                                                                                                                  | Type                                                                                                                   | Required                                                                                                               | Description                                                                                                            |
+| ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------------------------------- |
+| `auth_type`                                                                                                            | [Optional[components.OutputElasticAuthenticationMethod]](../../models/components/outputelasticauthenticationmethod.md) | :heavy_minus_sign:                                                                                                     | Enter credentials directly, or select a stored secret                                                                  |
+| `disabled`                                                                                                             | *Optional[bool]*                                                                                                       | :heavy_minus_sign:                                                                                                     | N/A                                                                                                                    |
