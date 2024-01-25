@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import cribl as shared_cribl
+from ...models.components import cribl as components_cribl
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,15 @@ class PostGiveCriblVersionRequest:
 
 
 
-
 @dataclasses.dataclass
 class PostGiveCriblVersionResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    cribl: Optional[shared_cribl.Cribl] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    cribl: Optional[components_cribl.Cribl] = dataclasses.field(default=None)
     r"""a list of string objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
