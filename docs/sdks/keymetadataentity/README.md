@@ -1,4 +1,5 @@
-# key_metadata_entity
+# KeyMetadataEntity
+(*key_metadata_entity*)
 
 ### Available Operations
 
@@ -15,44 +16,39 @@ Create KeyMetadataEntity
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.KeyMetadataEntity(
-    algorithm=shared.KeyMetadataEntityEncryptionAlgorithm.AES_256_CBC,
-    cipher_key='numquam',
-    created=947822,
-    description='adipisci',
-    expires=728559,
-    key_id='in',
-    keyclass=329651,
-    kms=shared.KeyMetadataEntityKMSForThisKey.LOCAL,
-    plain_key='ex',
-    use_iv=False,
+req = components.KeyMetadataEntity(
+    key_id='string',
 )
 
 res = s.key_metadata_entity.create(req)
 
 if res.key_metadata_entities is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `request`                                                            | [shared.KeyMetadataEntity](../../models/shared/keymetadataentity.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `request`                                                                    | [components.KeyMetadataEntity](../../models/components/keymetadataentity.md) | :heavy_check_mark:                                                           | The request object to use for the request.                                   |
 
 
 ### Response
 
 **[operations.CreateKeyMetadataEntityResponse](../../models/operations/createkeymetadataentityresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## delete
 
@@ -62,19 +58,18 @@ Delete KeyMetadataEntity
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.key_metadata_entity.delete('minus')
+res = s.key_metadata_entity.delete(id='string')
 
 if res.key_metadata_entities is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -87,7 +82,12 @@ if res.key_metadata_entities is not None:
 ### Response
 
 **[operations.DeleteKeyMetadataEntityResponse](../../models/operations/deletekeymetadataentityresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get
 
@@ -97,19 +97,18 @@ Get KeyMetadataEntity by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.key_metadata_entity.get('ab')
+res = s.key_metadata_entity.get(id='string')
 
 if res.key_metadata_entities is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -122,7 +121,12 @@ if res.key_metadata_entities is not None:
 ### Response
 
 **[operations.GetKeyMetadataEntityResponse](../../models/operations/getkeymetadataentityresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## update
 
@@ -132,41 +136,36 @@ Update KeyMetadataEntity
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.key_metadata_entity.update('beatae', shared.KeyMetadataEntity(
-    algorithm=shared.KeyMetadataEntityEncryptionAlgorithm.AES_256_GCM,
-    cipher_key='nisi',
-    created=786954,
-    description='dolor',
-    expires=496548,
-    key_id='fuga',
-    keyclass=326903,
-    kms=shared.KeyMetadataEntityKMSForThisKey.LOCAL,
-    plain_key='architecto',
-    use_iv=False,
+res = s.key_metadata_entity.update(id='string', key_metadata_entity=components.KeyMetadataEntity(
+    key_id='string',
 ))
 
 if res.key_metadata_entities is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `id`                                                                           | *str*                                                                          | :heavy_check_mark:                                                             | Unique ID                                                                      |
-| `key_metadata_entity`                                                          | [Optional[shared.KeyMetadataEntity]](../../models/shared/keymetadataentity.md) | :heavy_minus_sign:                                                             | KeyMetadataEntity object to be updated                                         |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `id`                                                                                   | *str*                                                                                  | :heavy_check_mark:                                                                     | Unique ID                                                                              |
+| `key_metadata_entity`                                                                  | [Optional[components.KeyMetadataEntity]](../../models/components/keymetadataentity.md) | :heavy_minus_sign:                                                                     | KeyMetadataEntity object to be updated                                                 |
 
 
 ### Response
 
 **[operations.UpdateKeyMetadataEntityResponse](../../models/operations/updatekeymetadataentityresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
