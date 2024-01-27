@@ -3,17 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import scriptlibentries as shared_scriptlibentries
+from ...models.components import scriptlibentries as components_scriptlibentries
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetScriptsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    script_lib_entries: Optional[shared_scriptlibentries.ScriptLibEntries] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    script_lib_entries: Optional[components_scriptlibentries.ScriptLibEntries] = dataclasses.field(default=None)
     r"""a list of Script objects"""
     
 

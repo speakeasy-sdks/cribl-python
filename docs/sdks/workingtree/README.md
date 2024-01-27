@@ -1,4 +1,5 @@
-# working_tree
+# WorkingTree
+(*working_tree*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ get the the working tree status
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.working_tree.get('tempora')
+res = s.working_tree.get(group='string')
 
 if res.git_status_results is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.git_status_results is not None:
 ### Response
 
 **[operations.GetWorkingTreeResponse](../../models/operations/getworkingtreeresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

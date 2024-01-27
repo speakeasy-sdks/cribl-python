@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import searchlogs as shared_searchlogs
+from ...models.components import searchlogs as components_searchlogs
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,15 @@ class GetSearchLogsRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetSearchLogsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    search_logs: Optional[shared_searchlogs.SearchLogs] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    search_logs: Optional[components_searchlogs.SearchLogs] = dataclasses.field(default=None)
     r"""a list of string objects"""
     
 
