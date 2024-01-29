@@ -3,29 +3,30 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import eventbreakerruleset as shared_eventbreakerruleset
-from ..shared import eventbreakerrulesets as shared_eventbreakerrulesets
+from ...models.components import eventbreakerruleset as components_eventbreakerruleset
+from ...models.components import eventbreakerrulesets as components_eventbreakerrulesets
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class UpdateEventBreakerRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Unique ID"""
-    event_breaker_ruleset: Optional[shared_eventbreakerruleset.EventBreakerRuleset] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    event_breaker_ruleset: Optional[components_eventbreakerruleset.EventBreakerRuleset] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""Event Breaker Ruleset object to be updated"""
     
-
 
 
 
 @dataclasses.dataclass
 class UpdateEventBreakerResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    event_breaker_rulesets: Optional[shared_eventbreakerrulesets.EventBreakerRulesets] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    event_breaker_rulesets: Optional[components_eventbreakerrulesets.EventBreakerRulesets] = dataclasses.field(default=None)
     r"""a list of Event Breaker Ruleset objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

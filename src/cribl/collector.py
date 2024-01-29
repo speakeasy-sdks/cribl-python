@@ -2,7 +2,7 @@
 
 from .sdkconfiguration import SDKConfiguration
 from cribl import utils
-from cribl.models import errors, operations, shared
+from cribl.models import components, errors, operations
 from typing import Optional
 
 class Collector:
@@ -11,6 +11,7 @@ class Collector:
     def __init__(self, sdk_config: SDKConfiguration) -> None:
         self.sdk_configuration = sdk_config
         
+    
     
     def get(self, id: str) -> operations.GetCollectorResponse:
         r"""Get Collector by ID
@@ -24,19 +25,22 @@ class Collector:
         
         url = utils.generate_url(operations.GetCollectorRequest, base_url, '/collectors/{id}', request)
         headers = {}
-        headers['Accept'] = 'application/json;q=1, application/json;q=0'
-        headers['user-agent'] = f'speakeasy-sdk/{self.sdk_configuration.language} {self.sdk_configuration.sdk_version} {self.sdk_configuration.gen_version} {self.sdk_configuration.openapi_doc_version}'
+        headers['Accept'] = 'application/json'
+        headers['user-agent'] = self.sdk_configuration.user_agent
         
-        client = self.sdk_configuration.security_client
+        if callable(self.sdk_configuration.security):
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security())
+        else:
+            client = utils.configure_security_client(self.sdk_configuration.client, self.sdk_configuration.security)
         
         http_res = client.request('GET', url, headers=headers)
         content_type = http_res.headers.get('Content-Type')
-
+        
         res = operations.GetCollectorResponse(status_code=http_res.status_code, content_type=content_type, raw_response=http_res)
         
         if http_res.status_code == 200:
             if utils.match_content_type(content_type, 'application/json'):
-                out = utils.unmarshal_json(http_res.text, Optional[shared.Collectors])
+                out = utils.unmarshal_json(http_res.text, Optional[components.Collectors])
                 res.collectors = out
             else:
                 raise errors.SDKError(f'unknown content-type received: {content_type}', http_res.status_code, http_res.text, http_res)
