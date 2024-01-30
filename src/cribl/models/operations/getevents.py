@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import events as shared_events
+from ...models.components import events as components_events
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -14,7 +13,7 @@ class GetEventsRequest:
     r"""Epoch timestamp of the earliest event (includes rolled files present on disk)"""
     files: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'Files', 'style': 'form', 'explode': True }})
     r"""Optional parameter, when provided the files and provided offsets are used to look for events."""
-    filter: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'filter', 'style': 'form', 'explode': True }})
+    filter_: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'filter', 'style': 'form', 'explode': True }})
     r"""Filter"""
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     r"""Maximum number of log lines to retrieve starting from offset."""
@@ -26,13 +25,15 @@ class GetEventsRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetEventsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    events: Optional[shared_events.Events] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    events: Optional[components_events.Events] = dataclasses.field(default=None)
     r"""a list of any objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

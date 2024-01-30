@@ -3,17 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import functions as shared_functions
+from ...models.components import functions as components_functions
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetObjectFunctionResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    functions: Optional[shared_functions.Functions] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    functions: Optional[components_functions.Functions] = dataclasses.field(default=None)
     r"""a list of Function objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
