@@ -3,17 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import upgraderesults as shared_upgraderesults
+from ...models.components import upgraderesults as components_upgraderesults
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetListCriblVersionResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
     status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    upgrade_results: Optional[shared_upgraderesults.UpgradeResults] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    upgrade_results: Optional[components_upgraderesults.UpgradeResults] = dataclasses.field(default=None)
     r"""a list of UpgradeResult objects"""
     
 

@@ -1,0 +1,10 @@
+# Timestamp
+
+
+## Fields
+
+| Field                                                                                            | Type                                                                                             | Required                                                                                         | Description                                                                                      |
+| ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------------ |
+| `format`                                                                                         | *Optional[str]*                                                                                  | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `length`                                                                                         | *Optional[int]*                                                                                  | :heavy_minus_sign:                                                                               | N/A                                                                                              |
+| `type`                                                                                           | [components.EventBreakerRuleSchemasType](../../models/components/eventbreakerruleschemastype.md) | :heavy_check_mark:                                                                               | N/A                                                                                              |
