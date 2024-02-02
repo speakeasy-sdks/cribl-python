@@ -1,4 +1,5 @@
-# regex_lib_entry
+# RegexLibEntry
+(*regex_lib_entry*)
 
 ### Available Operations
 
@@ -14,19 +15,18 @@ Delete RegexLibEntry
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.regex_lib_entry.delete('facere')
+res = s.regex_lib_entry.delete(id='string')
 
 if res.regex_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -39,7 +39,12 @@ if res.regex_lib_entries is not None:
 ### Response
 
 **[operations.DeleteRegexLibEntryResponse](../../models/operations/deleteregexlibentryresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## post
 
@@ -49,40 +54,40 @@ Create RegexLibEntry
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.RegexLibEntry(
-    description='sed',
-    id='1f9ad030-c4ec-4c11-a083-6429068b8502',
-    lib='officia',
-    regex='quaerat',
-    sample_data='corporis',
-    tags='accusamus',
+req = components.RegexLibEntry(
+    id='<ID>',
+    regex='string',
 )
 
 res = s.regex_lib_entry.post(req)
 
 if res.regex_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
-| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
-| `request`                                                    | [shared.RegexLibEntry](../../models/shared/regexlibentry.md) | :heavy_check_mark:                                           | The request object to use for the request.                   |
+| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
+| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
+| `request`                                                            | [components.RegexLibEntry](../../models/components/regexlibentry.md) | :heavy_check_mark:                                                   | The request object to use for the request.                           |
 
 
 ### Response
 
 **[operations.PostRegexLibEntryResponse](../../models/operations/postregexlibentryresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## update
 
@@ -92,37 +97,37 @@ Update RegexLibEntry
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components, operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.regex_lib_entry.update('iusto', shared.RegexLibEntry(
-    description='sapiente',
-    id='73bc845e-320a-4319-b4ba-df947c9a867b',
-    lib='optio',
-    regex='incidunt',
-    sample_data='eos',
-    tags='magnam',
+res = s.regex_lib_entry.update(id='string', regex_lib_entry=components.RegexLibEntry(
+    id='<ID>',
+    regex='string',
 ))
 
 if res.regex_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
-| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
-| `id`                                                                   | *str*                                                                  | :heavy_check_mark:                                                     | Unique ID                                                              |
-| `regex_lib_entry`                                                      | [Optional[shared.RegexLibEntry]](../../models/shared/regexlibentry.md) | :heavy_minus_sign:                                                     | RegexLibEntry object to be updated                                     |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `id`                                                                           | *str*                                                                          | :heavy_check_mark:                                                             | Unique ID                                                                      |
+| `regex_lib_entry`                                                              | [Optional[components.RegexLibEntry]](../../models/components/regexlibentry.md) | :heavy_minus_sign:                                                             | RegexLibEntry object to be updated                                             |
 
 
 ### Response
 
 **[operations.UpdateRegexLibEntryResponse](../../models/operations/updateregexlibentryresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
