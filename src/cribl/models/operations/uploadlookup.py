@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import lookupfileinforesponse as shared_lookupfileinforesponse
+from ...models.components import lookupfileinforesponse as components_lookupfileinforesponse
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,15 @@ class UploadLookupRequest:
 
 
 
-
 @dataclasses.dataclass
 class UploadLookupResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    lookup_file_info_response: Optional[shared_lookupfileinforesponse.LookupFileInfoResponse] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    lookup_file_info_response: Optional[components_lookupfileinforesponse.LookupFileInfoResponse] = dataclasses.field(default=None)
     r"""LookupFileInfoResponse object"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

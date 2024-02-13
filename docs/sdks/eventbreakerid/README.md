@@ -1,4 +1,5 @@
-# event_breaker_id
+# EventBreakerID
+(*event_breaker_id*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ Get Event Breaker Ruleset by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.event_breaker_id.get('deserunt')
+res = s.event_breaker_id.get(id='string')
 
 if res.event_breaker_rulesets is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +36,9 @@ if res.event_breaker_rulesets is not None:
 ### Response
 
 **[operations.GetEventBreakerIDResponse](../../models/operations/geteventbreakeridresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

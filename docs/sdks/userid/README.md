@@ -1,4 +1,5 @@
-# user_id
+# UserID
+(*user_id*)
 
 ### Available Operations
 
@@ -13,19 +14,17 @@ Delete User
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.user_id.delete('impedit')
+res = s.user_id.delete(id='string')
 
 if res.users is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -38,7 +37,12 @@ if res.users is not None:
 ### Response
 
 **[operations.DeleteUserIDResponse](../../models/operations/deleteuseridresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get
 
@@ -48,19 +52,17 @@ Get User by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.user_id.get('facilis')
+res = s.user_id.get(id='string')
 
 if res.users is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -73,4 +75,9 @@ if res.users is not None:
 ### Response
 
 **[operations.GetUserIDResponse](../../models/operations/getuseridresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

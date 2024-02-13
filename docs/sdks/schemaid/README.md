@@ -1,4 +1,5 @@
-# schema_id
+# SchemaID
+(*schema_id*)
 
 ### Available Operations
 
@@ -14,19 +15,17 @@ Delete Schema
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.schema_id.delete('unde')
+res = s.schema_id.delete(id='string')
 
 if res.schema_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -39,7 +38,12 @@ if res.schema_lib_entries is not None:
 ### Response
 
 **[operations.DeleteSchemaIDResponse](../../models/operations/deleteschemaidresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get
 
@@ -49,19 +53,17 @@ Get Schema by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.schema_id.get('corrupti')
+res = s.schema_id.get(id='string')
 
 if res.schema_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -74,7 +76,12 @@ if res.schema_lib_entries is not None:
 ### Response
 
 **[operations.GetSchemaIDResponse](../../models/operations/getschemaidresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## update
 
@@ -84,35 +91,37 @@ Update Schema
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.schema_id.update('quae', {
-    "ea": 'libero',
-    "nam": 'amet',
-    "adipisci": 'minus',
-    "hic": 'similique',
-})
+res = s.schema_id.update(id='string', schema_lib_entry=components.SchemaLibEntry(
+    id='<ID>',
+    schema='string',
+))
 
 if res.schema_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                   | Type                        | Required                    | Description                 |
-| --------------------------- | --------------------------- | --------------------------- | --------------------------- |
-| `id`                        | *str*                       | :heavy_check_mark:          | Unique ID                   |
-| `request_body`              | dict[str, *Any*]            | :heavy_minus_sign:          | Schema object to be updated |
+| Parameter                                                                        | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `id`                                                                             | *str*                                                                            | :heavy_check_mark:                                                               | Unique ID                                                                        |
+| `schema_lib_entry`                                                               | [Optional[components.SchemaLibEntry]](../../models/components/schemalibentry.md) | :heavy_minus_sign:                                                               | Schema object to be updated                                                      |
 
 
 ### Response
 
 **[operations.UpdateSchemaIDResponse](../../models/operations/updateschemaidresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

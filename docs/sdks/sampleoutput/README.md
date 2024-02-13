@@ -1,4 +1,5 @@
-# sample_output
+# SampleOutput
+(*sample_output*)
 
 ### Available Operations
 
@@ -12,42 +13,40 @@ Send sample data to an output to validate configuration or test connectivity
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.sample_output.post('sint', shared.OutputTestRequest(
+res = s.sample_output.post(id='string', output_test_request=components.OutputTestRequest(
     events=[
-        shared.CriblEvent(
-            raw='qui',
-        ),
-        shared.CriblEvent(
-            raw='accusantium',
-        ),
-        shared.CriblEvent(
-            raw='consequatur',
+        components.CriblEvent(
+            raw='string',
         ),
     ],
 ))
 
 if res.output_test_responses is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `id`                                                                           | *str*                                                                          | :heavy_check_mark:                                                             | Output Id                                                                      |
-| `output_test_request`                                                          | [Optional[shared.OutputTestRequest]](../../models/shared/outputtestrequest.md) | :heavy_minus_sign:                                                             | OutputTestRequest object                                                       |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `id`                                                                                   | *str*                                                                                  | :heavy_check_mark:                                                                     | Output Id                                                                              |
+| `output_test_request`                                                                  | [Optional[components.OutputTestRequest]](../../models/components/outputtestrequest.md) | :heavy_minus_sign:                                                                     | OutputTestRequest object                                                               |
 
 
 ### Response
 
 **[operations.PostSampleOutputResponse](../../models/operations/postsampleoutputresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

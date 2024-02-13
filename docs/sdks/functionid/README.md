@@ -1,4 +1,5 @@
-# function_id
+# FunctionID
+(*function_id*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ Get Function by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.function_id.get('quae')
+res = s.function_id.get(id='string')
 
 if res.functions is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +36,9 @@ if res.functions is not None:
 ### Response
 
 **[operations.GetFunctionIDResponse](../../models/operations/getfunctionidresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

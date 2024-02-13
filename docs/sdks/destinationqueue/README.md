@@ -1,4 +1,5 @@
-# destination_queue
+# DestinationQueue
+(*destination_queue*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ Delete destination persistent queue
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.destination_queue.delete('magnam')
+res = s.destination_queue.delete(id='string')
 
-if res.delete_destination_queue_200_application_json_object is not None:
+if res.object is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +36,9 @@ if res.delete_destination_queue_200_application_json_object is not None:
 ### Response
 
 **[operations.DeleteDestinationQueueResponse](../../models/operations/deletedestinationqueueresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 500              | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
