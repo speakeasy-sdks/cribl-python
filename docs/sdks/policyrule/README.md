@@ -1,4 +1,5 @@
-# policy_rule
+# PolicyRule
+(*policy_rule*)
 
 ### Available Operations
 
@@ -15,23 +16,16 @@ Create PolicyRule
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.PolicyRule(
-    args=[
-        'esse',
-        'laborum',
-    ],
-    description='perspiciatis',
-    id='e61876c6-ab21-4d29-9fc9-4d6fecd79939',
+req = components.PolicyRule(
+    id='<ID>',
     template=[
-        'eaque',
+        'string',
     ],
 )
 
@@ -39,19 +33,25 @@ res = s.policy_rule.create(req)
 
 if res.policy_rules is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                              | Type                                                   | Required                                               | Description                                            |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| `request`                                              | [shared.PolicyRule](../../models/shared/policyrule.md) | :heavy_check_mark:                                     | The request object to use for the request.             |
+| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `request`                                                      | [components.PolicyRule](../../models/components/policyrule.md) | :heavy_check_mark:                                             | The request object to use for the request.                     |
 
 
 ### Response
 
 **[operations.CreatePolicyRuleResponse](../../models/operations/createpolicyruleresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## delete
 
@@ -61,19 +61,17 @@ Delete PolicyRule
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.policy_rule.delete('eum')
+res = s.policy_rule.delete(id='string')
 
 if res.policy_rules is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -86,7 +84,12 @@ if res.policy_rules is not None:
 ### Response
 
 **[operations.DeletePolicyRuleResponse](../../models/operations/deletepolicyruleresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get
 
@@ -96,19 +99,17 @@ Get PolicyRule by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.policy_rule.get('laboriosam')
+res = s.policy_rule.get(id='string')
 
 if res.policy_rules is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -121,7 +122,12 @@ if res.policy_rules is not None:
 ### Response
 
 **[operations.GetPolicyRuleResponse](../../models/operations/getpolicyruleresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## update
 
@@ -131,41 +137,39 @@ Update PolicyRule
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.policy_rule.update('laborum', shared.PolicyRule(
-    args=[
-        'assumenda',
-        'explicabo',
-    ],
-    description='fugiat',
-    id='00035533-8cec-4086-ba21-e9152cb31191',
+res = s.policy_rule.update(id='string', policy_rule=components.PolicyRule(
+    id='<ID>',
     template=[
-        'ducimus',
-        'libero',
+        'string',
     ],
 ))
 
 if res.policy_rules is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `id`                                                             | *str*                                                            | :heavy_check_mark:                                               | Unique ID                                                        |
-| `policy_rule`                                                    | [Optional[shared.PolicyRule]](../../models/shared/policyrule.md) | :heavy_minus_sign:                                               | PolicyRule object to be updated                                  |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `id`                                                                     | *str*                                                                    | :heavy_check_mark:                                                       | Unique ID                                                                |
+| `policy_rule`                                                            | [Optional[components.PolicyRule]](../../models/components/policyrule.md) | :heavy_minus_sign:                                                       | PolicyRule object to be updated                                          |
 
 
 ### Response
 
 **[operations.UpdatePolicyRuleResponse](../../models/operations/updatepolicyruleresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

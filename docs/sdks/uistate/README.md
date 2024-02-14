@@ -1,4 +1,5 @@
-# ui_state
+# UIState
+(*ui_state*)
 
 ### Available Operations
 
@@ -13,19 +14,17 @@ Get UI state by key
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.ui_state.get('laudantium')
+res = s.ui_state.get(key='string')
 
 if res.ui_states is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -38,7 +37,12 @@ if res.ui_states is not None:
 ### Response
 
 **[operations.GetUIStateResponse](../../models/operations/getuistateresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## update
 
@@ -48,36 +52,37 @@ Update UI state by key
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.ui_state.update('dolorem', shared.UIStatePatch(
-    args={
-        "officiis": 'mollitia',
-    },
-    op=shared.UIStatePatchOp.PUSH_RECENT,
-    value='fugiat',
+res = s.ui_state.update(key='string', ui_state_patch=components.UIStatePatch(
+    op=components.UIStatePatchOp.PUSH_RECENT,
+    value='string',
 ))
 
 if res.ui_states is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `key`                                                                | *str*                                                                | :heavy_check_mark:                                                   | UI state key                                                         |
-| `ui_state_patch`                                                     | [Optional[shared.UIStatePatch]](../../models/shared/uistatepatch.md) | :heavy_minus_sign:                                                   | UI State Patch object                                                |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `key`                                                                        | *str*                                                                        | :heavy_check_mark:                                                           | UI state key                                                                 |
+| `ui_state_patch`                                                             | [Optional[components.UIStatePatch]](../../models/components/uistatepatch.md) | :heavy_minus_sign:                                                           | UI State Patch object                                                        |
 
 
 ### Response
 
 **[operations.UpdateUIStateResponse](../../models/operations/updateuistateresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

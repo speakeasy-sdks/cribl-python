@@ -1,4 +1,5 @@
-# user
+# User
+(*user*)
 
 ### Available Operations
 
@@ -12,45 +13,41 @@ Create User
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.User(
-    current_password='voluptas',
+req = components.User(
     disabled=False,
-    email='Jeff69@gmail.com',
-    first='aperiam',
-    id='d51a44bf-01ba-4d87-86d4-6082bfbdc41f',
-    last='delectus',
-    password='nemo',
-    roles=[
-        'magnam',
-        'officiis',
-        'sed',
-        'mollitia',
-    ],
-    username='Stephen_Green32',
+    email='Richie.Kuhic95@yahoo.com',
+    first='string',
+    id='<ID>',
+    last='string',
+    username='Sean.Brown40',
 )
 
 res = s.user.create_user(req)
 
 if res.users is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [shared.User](../../models/shared/user.md) | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                          | Type                                               | Required                                           | Description                                        |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| `request`                                          | [components.User](../../models/components/user.md) | :heavy_check_mark:                                 | The request object to use for the request.         |
 
 
 ### Response
 
 **[operations.CreateUserResponse](../../models/operations/createuserresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
