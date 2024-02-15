@@ -1,0 +1,10 @@
+# VaultKMSEngineConfig
+
+
+## Fields
+
+| Field                                                                                      | Type                                                                                       | Required                                                                                   | Description                                                                                |
+| ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------------ |
+| `type`                                                                                     | [components.VaultKMSEngineConfigType](../../models/components/vaultkmsengineconfigtype.md) | :heavy_check_mark:                                                                         | N/A                                                                                        |
+| `mount`                                                                                    | *Optional[str]*                                                                            | :heavy_minus_sign:                                                                         | N/A                                                                                        |
+| `secret_path`                                                                              | *Optional[str]*                                                                            | :heavy_minus_sign:                                                                         | N/A                                                                                        |

@@ -1,4 +1,5 @@
-# request_auth
+# RequestAuth
+(*request_auth*)
 
 ### Available Operations
 
@@ -13,19 +14,17 @@ Accepts an authentication request from an IDP and authenticates the user
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.request_auth.get('aliquid', 'eum')
+res = s.request_auth.get(relay_state='<value>', saml_response='<value>')
 
 if res.success is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -39,7 +38,12 @@ if res.success is not None:
 ### Response
 
 **[operations.GetRequestAuthResponse](../../models/operations/getrequestauthresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 400,401,429      | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## post
 
@@ -49,23 +53,19 @@ API call that the IDP should use for an authentication request
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.PostRequestAuthRequestBody(
-    relay_state='vel',
-    saml_response='ad',
-)
+req = operations.PostRequestAuthRequestBody()
 
 res = s.request_auth.post(req)
 
 if res.success is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -78,4 +78,9 @@ if res.success is not None:
 ### Response
 
 **[operations.PostRequestAuthResponse](../../models/operations/postrequestauthresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 400,401,429      | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

@@ -3,17 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import conditions as shared_conditions
+from ...models.components import conditions as components_conditions
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetConditionsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    conditions: Optional[shared_conditions.Conditions] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    conditions: Optional[components_conditions.Conditions] = dataclasses.field(default=None)
     r"""a list of Condition objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
