@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import keymetadataentities as shared_keymetadataentities
+from ...models.components import keymetadataentities as components_keymetadataentities
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,15 @@ class DeleteKeyMetadataEntityRequest:
 
 
 
-
 @dataclasses.dataclass
 class DeleteKeyMetadataEntityResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    key_metadata_entities: Optional[shared_keymetadataentities.KeyMetadataEntities] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    key_metadata_entities: Optional[components_keymetadataentities.KeyMetadataEntities] = dataclasses.field(default=None)
     r"""a list of KeyMetadataEntity objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
