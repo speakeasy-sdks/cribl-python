@@ -1,4 +1,5 @@
-# user_auth
+# UserAuth
+(*user_auth*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Log current user out
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -25,10 +23,16 @@ res = s.user_auth.logout()
 
 if res.success is not None:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.LogoutUserAuthResponse](../../models/operations/logoutuserauthresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401              | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
