@@ -3,17 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import processentries as shared_processentries
+from ...models.components import processentries as components_processentries
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetProcessesResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    process_entries: Optional[shared_processentries.ProcessEntries] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    process_entries: Optional[components_processentries.ProcessEntries] = dataclasses.field(default=None)
     r"""a list of ProcessEntry objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -1,4 +1,5 @@
-# route_list_id
+# RouteListID
+(*route_list_id*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ List all routes by id
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.route_list_id.get('laudantium')
+res = s.route_list_id.get(id='<value>')
 
 if res.routes is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +36,9 @@ if res.routes is not None:
 ### Response
 
 **[operations.GetRouteListIDResponse](../../models/operations/getroutelistidresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
