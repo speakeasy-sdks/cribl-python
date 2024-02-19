@@ -1,4 +1,5 @@
-# job_result
+# JobResult
+(*job_result*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ Get results for a discover job by instance id
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.job_result.get('explicabo', 'ipsam', 583193)
+res = s.job_result.get(group='<value>', id='<value>', max_files=700347)
 
 if res.job_result is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -39,4 +38,9 @@ if res.job_result is not None:
 ### Response
 
 **[operations.GetJobResultResponse](../../models/operations/getjobresultresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
