@@ -1,4 +1,5 @@
-# parser_object
+# ParserObject
+(*parser_object*)
 
 ### Available Operations
 
@@ -12,33 +13,36 @@ Create Parser
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = {
-    "voluptate": 'eius',
-    "expedita": 'aperiam',
-}
+req = components.ParserLibEntry(
+    id='<id>',
+)
 
 res = s.parser_object.post(req)
 
 if res.parser_lib_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [dict[str, Any]](../../models//.md)        | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                              | Type                                                                   | Required                                                               | Description                                                            |
+| ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- | ---------------------------------------------------------------------- |
+| `request`                                                              | [components.ParserLibEntry](../../models/components/parserlibentry.md) | :heavy_check_mark:                                                     | The request object to use for the request.                             |
 
 
 ### Response
 
 **[operations.PostParserObjectResponse](../../models/operations/postparserobjectresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
