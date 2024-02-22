@@ -1,4 +1,5 @@
-# test_database_connection
+# TestDatabaseConnection
+(*test_database_connection*)
 
 ### Available Operations
 
@@ -12,37 +13,37 @@ Test a database connection given a type and connectionString
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.DatabaseConnectionTest(
-    auth_type='corporis',
-    config_obj='vel',
-    connection_string='accusamus',
-    connection_timeout=521782,
-    database_type='ipsam',
-    text_secret='at',
+req = components.DatabaseConnectionTest(
+    auth_type='<value>',
+    database_type='<value>',
 )
 
 res = s.test_database_connection.post(req)
 
 if res.database_connection_test_results is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
-| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
-| `request`                                                                      | [shared.DatabaseConnectionTest](../../models/shared/databaseconnectiontest.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
+| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
+| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
+| `request`                                                                              | [components.DatabaseConnectionTest](../../models/components/databaseconnectiontest.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
 
 
 ### Response
 
 **[operations.PostTestDatabaseConnectionResponse](../../models/operations/posttestdatabaseconnectionresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

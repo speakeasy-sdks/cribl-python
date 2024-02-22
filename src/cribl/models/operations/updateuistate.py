@@ -3,29 +3,30 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import uistatepatch as shared_uistatepatch
-from ..shared import uistates as shared_uistates
+from ...models.components import uistatepatch as components_uistatepatch
+from ...models.components import uistates as components_uistates
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class UpdateUIStateRequest:
     key: str = dataclasses.field(metadata={'path_param': { 'field_name': 'key', 'style': 'simple', 'explode': False }})
     r"""UI state key"""
-    ui_state_patch: Optional[shared_uistatepatch.UIStatePatch] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    ui_state_patch: Optional[components_uistatepatch.UIStatePatch] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""UI State Patch object"""
     
-
 
 
 
 @dataclasses.dataclass
 class UpdateUIStateResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    ui_states: Optional[shared_uistates.UIStates] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    ui_states: Optional[components_uistates.UIStates] = dataclasses.field(default=None)
     r"""a list of any objects"""
     
 
