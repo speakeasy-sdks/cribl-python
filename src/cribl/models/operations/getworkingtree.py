@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import gitstatusresults as shared_gitstatusresults
+from ...models.components import gitstatusresults as components_gitstatusresults
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,15 @@ class GetWorkingTreeRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetWorkingTreeResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    git_status_results: Optional[shared_gitstatusresults.GitStatusResults] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    git_status_results: Optional[components_gitstatusresults.GitStatusResults] = dataclasses.field(default=None)
     r"""a list of GitStatusResult objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
