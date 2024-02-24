@@ -1,4 +1,5 @@
-# textual_diff
+# TextualDiff
+(*textual_diff*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ get the textual diff for given commit
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.textual_diff.get('culpa', 'nihil')
+res = s.textual_diff.get(commit='<value>', group='<value>')
 
 if res.textual_diff is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -38,4 +37,9 @@ if res.textual_diff is not None:
 ### Response
 
 **[operations.GetTextualDiffResponse](../../models/operations/gettextualdiffresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

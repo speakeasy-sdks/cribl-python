@@ -3,9 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import searchjob as shared_searchjob
+from ...models.components import searchjob as components_searchjob
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,15 @@ class GetSearchJobRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetSearchJobResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    search_job: Optional[shared_searchjob.SearchJob] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    search_job: Optional[components_searchjob.SearchJob] = dataclasses.field(default=None)
     r"""a list of SearchJob objects"""
     
 
