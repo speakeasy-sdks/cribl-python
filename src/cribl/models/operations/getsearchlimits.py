@@ -3,17 +3,19 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import searchsettingses as shared_searchsettingses
+from ...models.components import searchsettingses as components_searchsettingses
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetSearchLimitsResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    search_settingses: Optional[shared_searchsettingses.SearchSettingses] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    search_settingses: Optional[components_searchsettingses.SearchSettingses] = dataclasses.field(default=None)
     r"""a list of SearchSettings objects"""
     
 
