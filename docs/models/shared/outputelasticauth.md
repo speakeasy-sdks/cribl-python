@@ -1,9 +1,0 @@
-# OutputElasticAuth
-
-
-## Fields
-
-| Field                                                                                                           | Type                                                                                                            | Required                                                                                                        | Description                                                                                                     |
-| --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- | --------------------------------------------------------------------------------------------------------------- |
-| `auth_type`                                                                                                     | [Optional[OutputElasticAuthAuthenticationMethod]](../../models/shared/outputelasticauthauthenticationmethod.md) | :heavy_minus_sign:                                                                                              | Enter credentials directly, or select a stored secret                                                           |
-| `disabled`                                                                                                      | *bool*                                                                                                          | :heavy_check_mark:                                                                                              | N/A                                                                                                             |
