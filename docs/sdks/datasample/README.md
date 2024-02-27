@@ -1,4 +1,5 @@
-# data_sample
+# DataSample
+(*data_sample*)
 
 ### Available Operations
 
@@ -12,34 +13,37 @@ Create DataSample
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = {
-    "nemo": 'voluptate',
-    "blanditiis": 'officia',
-    "voluptas": 'numquam',
-}
+req = components.DataSample(
+    id='<id>',
+    sample_name='<value>',
+)
 
 res = s.data_sample.post(req)
 
 if res.data_samples is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [dict[str, Any]](../../models//.md)        | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `request`                                                      | [components.DataSample](../../models/components/datasample.md) | :heavy_check_mark:                                             | The request object to use for the request.                     |
 
 
 ### Response
 
 **[operations.PostDataSampleResponse](../../models/operations/postdatasampleresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
