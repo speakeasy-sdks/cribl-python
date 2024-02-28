@@ -1,4 +1,5 @@
-# search_job_metrics
+# SearchJobMetrics
+(*search_job_metrics*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ Get search job metrics
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.search_job_metrics.get('architecto')
+res = s.search_job_metrics.get(id='<value>')
 
-if res.geth_search_job_metrics_200_application_json_string is not None:
+if res.res is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +36,9 @@ if res.geth_search_job_metrics_200_application_json_string is not None:
 ### Response
 
 **[operations.GethSearchJobMetricsResponse](../../models/operations/gethsearchjobmetricsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
