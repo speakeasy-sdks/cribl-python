@@ -3,28 +3,30 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
-from ..shared import notificationtargets as shared_notificationtargets
-from typing import Any, Optional
-
+from ...models.components import notificationtarget as components_notificationtarget
+from ...models.components import notificationtargets as components_notificationtargets
+from typing import Optional, Union
 
 
 @dataclasses.dataclass
 class UpdatetNotificationTargetRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Unique ID"""
-    request_body: Optional[Any] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    notification_target: Optional[Union[components_notificationtarget.Schemas, components_notificationtarget.NotificationTargetDefaultSchemas, components_notificationtarget.NotificationTargetWebhookSchemas, components_notificationtarget.NotificationTargetBulletinMessageSchemas, components_notificationtarget.NotificationTargetRouterSchemas, components_notificationtarget.NotificationTargetNotificationsLogSchemas, components_notificationtarget.NotificationTargetPagerDutySchemas]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""NotificationTarget object to be updated"""
     
-
 
 
 
 @dataclasses.dataclass
 class UpdatetNotificationTargetResponse:
     content_type: str = dataclasses.field()
+    r"""HTTP response content type for this operation"""
     status_code: int = dataclasses.field()
-    notification_targets: Optional[shared_notificationtargets.NotificationTargets] = dataclasses.field(default=None)
+    r"""HTTP response status code for this operation"""
+    raw_response: requests_http.Response = dataclasses.field()
+    r"""Raw HTTP response; suitable for custom response parsing"""
+    notification_targets: Optional[components_notificationtargets.NotificationTargets] = dataclasses.field(default=None)
     r"""a list of NotificationTarget objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
