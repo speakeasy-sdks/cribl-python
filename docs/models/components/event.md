@@ -1,0 +1,12 @@
+# Event
+
+
+## Fields
+
+| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `enable`                                                                           | *bool*                                                                             | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `format`                                                                           | [components.AppscopeConfigFormat](../../models/components/appscopeconfigformat.md) | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `transport`                                                                        | [components.AppscopeTransport](../../models/components/appscopetransport.md)       | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `type`                                                                             | [components.AppscopeConfigType](../../models/components/appscopeconfigtype.md)     | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `watch`                                                                            | List[[components.Watch](../../models/components/watch.md)]                         | :heavy_check_mark:                                                                 | N/A                                                                                |

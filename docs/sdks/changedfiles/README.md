@@ -1,4 +1,5 @@
-# changed_files
+# ChangedFiles
+(*changed_files*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ get the files changed
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.changed_files.get('ullam', 'in')
+res = s.changed_files.get(id='<value>', group='<value>')
 
 if res.changed_files is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -38,4 +37,9 @@ if res.changed_files is not None:
 ### Response
 
 **[operations.GetChangedFilesResponse](../../models/operations/getchangedfilesresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

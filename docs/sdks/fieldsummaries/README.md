@@ -1,4 +1,5 @@
-# field_summaries
+# FieldSummaries
+(*field_summaries*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ List field summaries
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.field_summaries.get('enim')
+res = s.field_summaries.get(id='<value>')
 
 if res.field_summaries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +36,9 @@ if res.field_summaries is not None:
 ### Response
 
 **[operations.GetFieldSummariesResponse](../../models/operations/getfieldsummariesresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
