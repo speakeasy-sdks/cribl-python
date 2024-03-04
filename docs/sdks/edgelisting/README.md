@@ -1,4 +1,5 @@
-# edge_listing
+# EdgeListing
+(*edge_listing*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ Get a directory listing of the given path
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.edge_listing.get('architecto')
+res = s.edge_listing.get(path='<value>')
 
 if res.filesystem_entries is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +36,9 @@ if res.filesystem_entries is not None:
 ### Response
 
 **[operations.GetEdgeListingResponse](../../models/operations/getedgelistingresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

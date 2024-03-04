@@ -1,4 +1,5 @@
-# profiler
+# Profiler
+(*profiler*)
 
 ### Available Operations
 
@@ -15,38 +16,39 @@ Create ProfilerItem
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.ProfilerItem(
-    create_time=218783,
-    id='c8db0340-8d6d-4364-bfd4-55906d1263d4',
-    size=523109,
-    worker_id='officiis',
+req = components.ProfilerItem(
+    id='<id>',
 )
 
 res = s.profiler.create(req)
 
 if res.profiler_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                  | Type                                                       | Required                                                   | Description                                                |
-| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
-| `request`                                                  | [shared.ProfilerItem](../../models/shared/profileritem.md) | :heavy_check_mark:                                         | The request object to use for the request.                 |
+| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
+| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
+| `request`                                                          | [components.ProfilerItem](../../models/components/profileritem.md) | :heavy_check_mark:                                                 | The request object to use for the request.                         |
 
 
 ### Response
 
 **[operations.CreateProfilerResponse](../../models/operations/createprofilerresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## delete
 
@@ -56,19 +58,17 @@ Delete ProfilerItem
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.profiler.delete('omnis')
+res = s.profiler.delete(id='<value>')
 
 if res.profiler_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -81,7 +81,12 @@ if res.profiler_item is not None:
 ### Response
 
 **[operations.DeleteProfilerResponse](../../models/operations/deleteprofilerresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get
 
@@ -91,19 +96,17 @@ Get ProfilerItem by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.profiler.get('neque')
+res = s.profiler.get(id='<value>')
 
 if res.profiler_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -116,7 +119,12 @@ if res.profiler_item is not None:
 ### Response
 
 **[operations.GetProfilerResponse](../../models/operations/getprofilerresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## update
 
@@ -126,35 +134,36 @@ Update ProfilerItem
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.profiler.update('corporis', shared.ProfilerItem(
-    create_time=797527,
-    id='2c9e81f3-0be3-4e43-a02d-721657650664',
-    size=94122,
-    worker_id='rem',
+res = s.profiler.update(id='<value>', profiler_item=components.ProfilerItem(
+    id='<id>',
 ))
 
 if res.profiler_item is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
 
-| Parameter                                                            | Type                                                                 | Required                                                             | Description                                                          |
-| -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- | -------------------------------------------------------------------- |
-| `id`                                                                 | *str*                                                                | :heavy_check_mark:                                                   | Unique ID                                                            |
-| `profiler_item`                                                      | [Optional[shared.ProfilerItem]](../../models/shared/profileritem.md) | :heavy_minus_sign:                                                   | ProfilerItem object to be updated                                    |
+| Parameter                                                                    | Type                                                                         | Required                                                                     | Description                                                                  |
+| ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- | ---------------------------------------------------------------------------- |
+| `id`                                                                         | *str*                                                                        | :heavy_check_mark:                                                           | Unique ID                                                                    |
+| `profiler_item`                                                              | [Optional[components.ProfilerItem]](../../models/components/profileritem.md) | :heavy_minus_sign:                                                           | ProfilerItem object to be updated                                            |
 
 
 ### Response
 
 **[operations.UpdateProfilerResponse](../../models/operations/updateprofilerresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

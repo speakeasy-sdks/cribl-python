@@ -1,4 +1,5 @@
-# log_files
+# LogFiles
+(*log_files*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of log files
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -25,10 +23,16 @@ res = s.log_files.get()
 
 if res.log_files_info is not None:
     # handle response
+    pass
 ```
 
 
 ### Response
 
 **[operations.GetLogFilesResponse](../../models/operations/getlogfilesresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
