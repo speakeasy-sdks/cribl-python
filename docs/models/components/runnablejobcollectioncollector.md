@@ -1,0 +1,10 @@
+# RunnableJobCollectionCollector
+
+
+## Fields
+
+| Field                                                                                        | Type                                                                                         | Required                                                                                     | Description                                                                                  |
+| -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------------- |
+| `conf`                                                                                       | [components.CollectorSpecificSettings](../../models/components/collectorspecificsettings.md) | :heavy_check_mark:                                                                           | N/A                                                                                          |
+| `type`                                                                                       | *str*                                                                                        | :heavy_check_mark:                                                                           | The type of collector to run.                                                                |
+| `destructive`                                                                                | *Optional[bool]*                                                                             | :heavy_minus_sign:                                                                           | If set to Yes, the collector will delete any files that it collects (where applicable).      |

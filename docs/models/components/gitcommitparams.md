@@ -1,0 +1,10 @@
+# GitCommitParams
+
+
+## Fields
+
+| Field              | Type               | Required           | Description        |
+| ------------------ | ------------------ | ------------------ | ------------------ |
+| `message`          | *str*              | :heavy_check_mark: | N/A                |
+| `effective`        | *Optional[bool]*   | :heavy_minus_sign: | N/A                |
+| `group`            | *Optional[str]*    | :heavy_minus_sign: | N/A                |
