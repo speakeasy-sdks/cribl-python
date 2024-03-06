@@ -1,4 +1,5 @@
-# idp_user_auth
+# IDPUserAuth
+(*idp_user_auth*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ Accepts a logout request from an IDP and logs out the user
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.idp_user_auth.logout('officia', 'sed')
+res = s.idp_user_auth.logout(relay_state='<value>', saml_response='<value>')
 
 if res.success is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -38,4 +37,9 @@ if res.success is not None:
 ### Response
 
 **[operations.LogoutIDPUserAuthResponse](../../models/operations/logoutidpuserauthresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 400,401,429      | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
