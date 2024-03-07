@@ -1,4 +1,5 @@
-# condition
+# Condition
+(*condition*)
 
 ### Available Operations
 
@@ -12,19 +13,17 @@ Get Condition by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.condition.get('modi')
+res = s.condition.get(id='<value>')
 
 if res.conditions is not None:
     # handle response
+    pass
 ```
 
 ### Parameters
@@ -37,4 +36,9 @@ if res.conditions is not None:
 ### Response
 
 **[operations.GetConditionResponse](../../models/operations/getconditionresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
