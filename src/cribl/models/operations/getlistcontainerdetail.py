@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import containers as shared_containers
+from ...models.components import containers as components_containers
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetListContainerDetailResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    containers: Optional[shared_containers.Containers] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    containers: Optional[components_containers.Containers] = dataclasses.field(default=None)
     r"""a list of Container objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

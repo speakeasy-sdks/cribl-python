@@ -1,4 +1,5 @@
-# output_status_id
+# OutputStatusID
+(*output_status_id*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get OutputStatus by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.output_status_id.get('quaerat')
+res = s.output_status_id.get(id='<value>')
 
 if res.output_statuses is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.output_statuses is not None:
 ### Response
 
 **[operations.GetOutputStatusIDResponse](../../models/operations/getoutputstatusidresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

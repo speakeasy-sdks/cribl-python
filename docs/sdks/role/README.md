@@ -1,4 +1,5 @@
-# role
+# Role
+(*role*)
 
 ### Available Operations
 
@@ -15,21 +16,16 @@ Create Role
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.Role(
-    id='4cdb0f4d-2811-487d-9684-4eded85a9065',
+req = components.Role(
+    id='<id>',
     policy=[
-        'laboriosam',
-        'ratione',
-        'blanditiis',
-        'quidem',
+        '<value>',
     ],
 )
 
@@ -37,19 +33,26 @@ res = s.role.create(req)
 
 if res.roles is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [shared.Role](../../models/shared/role.md) | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                          | Type                                               | Required                                           | Description                                        |
+| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
+| `request`                                          | [components.Role](../../models/components/role.md) | :heavy_check_mark:                                 | The request object to use for the request.         |
 
 
 ### Response
 
 **[operations.CreateRoleResponse](../../models/operations/createroleresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## delete
 
@@ -59,19 +62,18 @@ Delete Role
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.role.delete('illum')
+res = s.role.delete(id='<value>')
 
 if res.roles is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -84,7 +86,12 @@ if res.roles is not None:
 ### Response
 
 **[operations.DeleteRoleResponse](../../models/operations/deleteroleresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get
 
@@ -94,19 +101,18 @@ Get Role by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.role.get('reiciendis')
+res = s.role.get(id='<value>')
 
 if res.roles is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -119,7 +125,12 @@ if res.roles is not None:
 ### Response
 
 **[operations.GetRoleResponse](../../models/operations/getroleresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## update
 
@@ -129,35 +140,40 @@ Update Role
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.role.update('placeat', shared.Role(
-    id='2032b6c8-7992-43b7-a135-84f7ae12c689',
+res = s.role.update(id='<value>', role=components.Role(
+    id='<id>',
     policy=[
-        'tenetur',
+        '<value>',
     ],
 ))
 
 if res.roles is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                            | Type                                                 | Required                                             | Description                                          |
-| ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- | ---------------------------------------------------- |
-| `id`                                                 | *str*                                                | :heavy_check_mark:                                   | Unique ID                                            |
-| `role`                                               | [Optional[shared.Role]](../../models/shared/role.md) | :heavy_minus_sign:                                   | Role object to be updated                            |
+| Parameter                                                    | Type                                                         | Required                                                     | Description                                                  |
+| ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ | ------------------------------------------------------------ |
+| `id`                                                         | *str*                                                        | :heavy_check_mark:                                           | Unique ID                                                    |
+| `role`                                                       | [Optional[components.Role]](../../models/components/role.md) | :heavy_minus_sign:                                           | Role object to be updated                                    |
 
 
 ### Response
 
 **[operations.UpdateRoleResponse](../../models/operations/updateroleresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

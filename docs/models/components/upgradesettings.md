@@ -1,0 +1,11 @@
+# UpgradeSettings
+
+
+## Fields
+
+| Field                                                                                | Type                                                                                 | Required                                                                             | Description                                                                          |
+| ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ | ------------------------------------------------------------------------------------ |
+| `disable_automatic_upgrade`                                                          | *bool*                                                                               | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `upgrade_source`                                                                     | *str*                                                                                | :heavy_check_mark:                                                                   | N/A                                                                                  |
+| `automatic_upgrade_check_period`                                                     | *Optional[str]*                                                                      | :heavy_minus_sign:                                                                   | N/A                                                                                  |
+| `package_urls`                                                                       | List[[components.UpgradePackageUrls](../../models/components/upgradepackageurls.md)] | :heavy_minus_sign:                                                                   | N/A                                                                                  |
