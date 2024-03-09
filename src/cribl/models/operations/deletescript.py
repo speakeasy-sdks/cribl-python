@@ -2,9 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from typing import Any, Optional
-
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import scriptlibentry as components_scriptlibentry
+from typing import Optional
 
 
 @dataclasses.dataclass
@@ -15,13 +15,10 @@ class DeleteScriptRequest:
 
 
 
-
 @dataclasses.dataclass
 class DeleteScriptResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    script_lib_entry: Optional[dict[str, Any]] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    script_lib_entry: Optional[components_scriptlibentry.ScriptLibEntry] = dataclasses.field(default=None)
     r"""a list of Script objects"""
     
 

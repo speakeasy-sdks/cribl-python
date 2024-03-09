@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import grokfiles as shared_grokfiles
+from ...models.components import grokfiles as components_grokfiles
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetGrokFilesResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    grok_files: Optional[shared_grokfiles.GrokFiles] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    grok_files: Optional[components_grokfiles.GrokFiles] = dataclasses.field(default=None)
     r"""a list of GrokFile objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

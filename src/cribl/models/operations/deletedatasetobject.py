@@ -2,9 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Any, Optional
-
 
 
 @dataclasses.dataclass
@@ -15,13 +14,10 @@ class DeleteDatasetObjectRequest:
 
 
 
-
 @dataclasses.dataclass
 class DeleteDatasetObjectResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
     dataset: Optional[Any] = dataclasses.field(default=None)
     r"""a list of Dataset objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
