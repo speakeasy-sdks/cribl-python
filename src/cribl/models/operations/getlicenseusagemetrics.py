@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import dailymetrics as shared_dailymetrics
+from ...models.components import dailymetrics as components_dailymetrics
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetLicenseUsageMetricsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    daily_metrics: Optional[shared_dailymetrics.DailyMetrics] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    daily_metrics: Optional[components_dailymetrics.DailyMetrics] = dataclasses.field(default=None)
     r"""a list of DailyUsageMetrics objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

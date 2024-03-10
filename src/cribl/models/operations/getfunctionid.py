@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import functions as shared_functions
+from ...models.components import functions as components_functions
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetFunctionIDRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetFunctionIDResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    functions: Optional[shared_functions.Functions] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    functions: Optional[components_functions.Functions] = dataclasses.field(default=None)
     r"""a list of Function objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

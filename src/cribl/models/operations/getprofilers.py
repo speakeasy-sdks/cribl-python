@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import profileritems as shared_profileritems
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import profileritems as components_profileritems
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetProfilersResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    profiler_items: Optional[shared_profileritems.ProfilerItems] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    profiler_items: Optional[components_profileritems.ProfilerItems] = dataclasses.field(default=None)
     r"""a list of ProfilerItem objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

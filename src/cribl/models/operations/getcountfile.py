@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import countfile as shared_countfile
+from ...models.components import countfile as components_countfile
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetCountFileRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetCountFileResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    count_file: Optional[shared_countfile.CountFile] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    count_file: Optional[components_countfile.CountFile] = dataclasses.field(default=None)
     r"""a list of any objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
