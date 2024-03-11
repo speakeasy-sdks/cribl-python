@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import trustpolicies as shared_trustpolicies
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import trustpolicies as components_trustpolicies
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetTrustPoliciesResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    trust_policies: Optional[shared_trustpolicies.TrustPolicies] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    trust_policies: Optional[components_trustpolicies.TrustPolicies] = dataclasses.field(default=None)
     r"""a list of TrustPolicy objects"""
     
 

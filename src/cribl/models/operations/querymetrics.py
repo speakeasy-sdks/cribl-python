@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import metricsinfo as shared_metricsinfo
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import metricsinfo as components_metricsinfo
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -24,13 +23,10 @@ class QueryMetricsRequest:
 
 
 
-
 @dataclasses.dataclass
 class QueryMetricsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    metrics_info: Optional[shared_metricsinfo.MetricsInfo] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    metrics_info: Optional[components_metricsinfo.MetricsInfo] = dataclasses.field(default=None)
     r"""a list of MetricNameInfo objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

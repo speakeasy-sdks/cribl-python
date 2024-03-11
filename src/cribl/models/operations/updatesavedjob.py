@@ -2,29 +2,28 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import savedjobs as shared_savedjobs
-from typing import Any, Optional
-
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import savedjobcollection as components_savedjobcollection
+from ...models.components import savedjobexecutor as components_savedjobexecutor
+from ...models.components import savedjobs as components_savedjobs
+from ...models.components import savedjobscheduledsearch as components_savedjobscheduledsearch
+from typing import Optional, Union
 
 
 @dataclasses.dataclass
 class UpdateSavedJobRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Unique ID"""
-    request_body: Optional[Any] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    saved_job: Optional[Union[components_savedjobcollection.SavedJobCollection, components_savedjobexecutor.SavedJobExecutor, components_savedjobscheduledsearch.SavedJobScheduledSearch]] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""SavedJob object to be updated"""
     
 
 
 
-
 @dataclasses.dataclass
 class UpdateSavedJobResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    saved_jobs: Optional[shared_savedjobs.SavedJobs] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    saved_jobs: Optional[components_savedjobs.SavedJobs] = dataclasses.field(default=None)
     r"""a list of SavedJob objects"""
     
 

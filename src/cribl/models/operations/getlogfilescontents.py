@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import logfilecontents as shared_logfilecontents
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import logfilecontents as components_logfilecontents
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,7 +15,7 @@ class GetLogFilesContentsRequest:
     r"""Epoch timestamp of the earliest event (includes rolled files present on disk)"""
     files: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'files', 'style': 'form', 'explode': True }})
     r"""query string[] optional file or files to query"""
-    filter: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'filter', 'style': 'form', 'explode': True }})
+    filter_: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'filter', 'style': 'form', 'explode': True }})
     r"""Filter"""
     group_id: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'groupId', 'style': 'form', 'explode': True }})
     r"""id of the group to query"""
@@ -28,13 +27,10 @@ class GetLogFilesContentsRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetLogFilesContentsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    log_file_contents: Optional[shared_logfilecontents.LogFileContents] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    log_file_contents: Optional[components_logfilecontents.LogFileContents] = dataclasses.field(default=None)
     r"""a list of any objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

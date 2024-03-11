@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import authtoken as shared_authtoken
+from ...models.components import authtoken as components_authtoken
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class LoginAuthTokenResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    auth_token: Optional[shared_authtoken.AuthToken] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    auth_token: Optional[components_authtoken.AuthToken] = dataclasses.field(default=None)
     r"""Authentication token"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

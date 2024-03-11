@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import jobinfos as shared_jobinfos
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import jobinfos as components_jobinfos
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -26,13 +25,10 @@ class GetJobInfosRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetJobInfosResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    job_infos: Optional[shared_jobinfos.JobInfos] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    job_infos: Optional[components_jobinfos.JobInfos] = dataclasses.field(default=None)
     r"""a list of JobInfo objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
