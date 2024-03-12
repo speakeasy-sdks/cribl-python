@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import grokfile as shared_grokfile
+from ...models.components import grokfile as components_grokfile
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class DeleteGrokFileRequest:
 
 
 
-
 @dataclasses.dataclass
 class DeleteGrokFileResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    grok_file: Optional[shared_grokfile.GrokFile] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    grok_file: Optional[components_grokfile.GrokFile] = dataclasses.field(default=None)
     r"""a list of GrokFile objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
