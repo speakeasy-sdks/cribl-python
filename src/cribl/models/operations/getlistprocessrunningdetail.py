@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import processes as shared_processes
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import processes as components_processes
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetListProcessRunningDetailResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    processes: Optional[shared_processes.Processes] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    processes: Optional[components_processes.Processes] = dataclasses.field(default=None)
     r"""a list of Process objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

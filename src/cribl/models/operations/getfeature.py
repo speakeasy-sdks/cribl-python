@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import featuresentry as shared_featuresentry
+from ...models.components import featuresentry as components_featuresentry
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetFeatureRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetFeatureResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    features_entry: Optional[shared_featuresentry.FeaturesEntry] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    features_entry: Optional[components_featuresentry.FeaturesEntry] = dataclasses.field(default=None)
     r"""a list of FeaturesEntry objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
