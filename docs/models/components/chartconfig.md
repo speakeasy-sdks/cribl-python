@@ -1,0 +1,13 @@
+# ChartConfig
+
+
+## Fields
+
+| Field                                                                              | Type                                                                               | Required                                                                           | Description                                                                        |
+| ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------- |
+| `single_value`                                                                     | [components.SingleValue](../../models/components/singlevalue.md)                   | :heavy_check_mark:                                                                 | N/A                                                                                |
+| `axis`                                                                             | [Optional[components.ChartConfigAxis]](../../models/components/chartconfigaxis.md) | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `legend`                                                                           | [Optional[components.Legend]](../../models/components/legend.md)                   | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `series`                                                                           | List[[components.ChartSeries](../../models/components/chartseries.md)]             | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `settings`                                                                         | [Optional[components.Settings]](../../models/components/settings.md)               | :heavy_minus_sign:                                                                 | N/A                                                                                |
+| `x_axis`                                                                           | [Optional[components.Axis]](../../models/components/axis.md)                       | :heavy_minus_sign:                                                                 | N/A                                                                                |
