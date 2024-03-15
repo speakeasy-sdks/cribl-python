@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import success as shared_success
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.errors import success as errors_success
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -18,13 +17,10 @@ class PostRequestAuthRequestBody:
 
 
 
-
 @dataclasses.dataclass
 class PostRequestAuthResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    success: Optional[shared_success.Success] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    success: Optional[errors_success.Success] = dataclasses.field(default=None)
     r"""Authentication success"""
     
 
