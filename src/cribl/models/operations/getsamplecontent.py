@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import samplecontents as shared_samplecontents
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import samplecontents as components_samplecontents
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetSampleContentRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetSampleContentResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    sample_contents: Optional[shared_samplecontents.SampleContents] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    sample_contents: Optional[components_samplecontents.SampleContents] = dataclasses.field(default=None)
     r"""a list of SampleContent objects"""
     
 

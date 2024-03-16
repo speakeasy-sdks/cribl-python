@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import searchjobstatus as shared_searchjobstatus
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import searchjobstatus as components_searchjobstatus
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetJobStatusRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetJobStatusResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    search_job_status: Optional[shared_searchjobstatus.SearchJobStatus] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    search_job_status: Optional[components_searchjobstatus.SearchJobStatus] = dataclasses.field(default=None)
     r"""SearchJobStatus object"""
     
 

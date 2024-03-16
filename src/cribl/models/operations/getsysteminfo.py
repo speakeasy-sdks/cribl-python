@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import systeminfoobjects as shared_systeminfoobjects
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import systeminfoobjects as components_systeminfoobjects
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetSystemInfoResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    system_info_objects: Optional[shared_systeminfoobjects.SystemInfoObjects] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    system_info_objects: Optional[components_systeminfoobjects.SystemInfoObjects] = dataclasses.field(default=None)
     r"""a list of SystemInfo objects"""
     
 
