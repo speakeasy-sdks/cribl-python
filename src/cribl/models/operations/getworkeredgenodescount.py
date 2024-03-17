@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import workeredgenodes as shared_workeredgenodes
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import workeredgenodes as components_workeredgenodes
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetWorkerEdgeNodesCountRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetWorkerEdgeNodesCountResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    worker_edge_nodes: Optional[shared_workeredgenodes.WorkerEdgeNodes] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    worker_edge_nodes: Optional[components_workeredgenodes.WorkerEdgeNodes] = dataclasses.field(default=None)
     r"""a list of number objects"""
     
 

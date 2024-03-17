@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import appscopelibentry as shared_appscopelibentry
+from ...models.components import appscopelibentry as components_appscopelibentry
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetAppscopeLibEntryRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetAppscopeLibEntryResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    appscope_lib_entry: Optional[shared_appscopelibentry.AppscopeLibEntry] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    appscope_lib_entry: Optional[components_appscopelibentry.AppscopeLibEntry] = dataclasses.field(default=None)
     r"""a list of AppscopeLibEntry objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

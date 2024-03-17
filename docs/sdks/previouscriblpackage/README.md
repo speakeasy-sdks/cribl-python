@@ -1,4 +1,5 @@
-# previous_cribl_package
+# PreviousCriblPackage
+(*previous_cribl_package*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get the previously downloaded Cribl package
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.previous_cribl_package.get('molestias')
+res = s.previous_cribl_package.get(file='<value>')
 
 if res.cribl_package is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.cribl_package is not None:
 ### Response
 
 **[operations.GetPreviousCriblPackageResponse](../../models/operations/getpreviouscriblpackageresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

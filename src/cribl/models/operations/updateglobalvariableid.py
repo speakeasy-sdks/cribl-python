@@ -2,30 +2,26 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import globalvar as shared_globalvar
-from ..shared import globalvars as shared_globalvars
+from ...models.components import globalvar as components_globalvar
+from ...models.components import globalvars as components_globalvars
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class UpdateGlobalVariableIDRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Unique ID"""
-    global_var: Optional[shared_globalvar.GlobalVar] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    global_var: Optional[components_globalvar.GlobalVar] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""Global Variable object to be updated"""
     
 
 
 
-
 @dataclasses.dataclass
 class UpdateGlobalVariableIDResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    global_vars: Optional[shared_globalvars.GlobalVars] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    global_vars: Optional[components_globalvars.GlobalVars] = dataclasses.field(default=None)
     r"""a list of Global Variable objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

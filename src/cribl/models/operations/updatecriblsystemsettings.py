@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import systemsettingses as shared_systemsettingses
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import systemsettingses as components_systemsettingses
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class UpdateCriblSystemSettingsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    system_settingses: Optional[shared_systemsettingses.SystemSettingses] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    system_settingses: Optional[components_systemsettingses.SystemSettingses] = dataclasses.field(default=None)
     r"""a list of SystemSettings objects"""
     
 

@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import parserlibentries as shared_parserlibentries
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import parserlibentries as components_parserlibentries
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetParserIDRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetParserIDResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    parser_lib_entries: Optional[shared_parserlibentries.ParserLibEntries] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    parser_lib_entries: Optional[components_parserlibentries.ParserLibEntries] = dataclasses.field(default=None)
     r"""a list of Parser objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -3,16 +3,14 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetDiagBundleResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    get_diag_bundle_200_application_tar_plus_gzip_binary_string: Optional[bytes] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    stream: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""A tar.gz file consisting all configuration files and recent logs"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
