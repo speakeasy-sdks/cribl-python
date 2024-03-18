@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import mappingrulesets as shared_mappingrulesets
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import mappingrulesets as components_mappingrulesets
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class DeleteMappingRulesetRequest:
 
 
 
-
 @dataclasses.dataclass
 class DeleteMappingRulesetResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    mapping_rulesets: Optional[shared_mappingrulesets.MappingRulesets] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    mapping_rulesets: Optional[components_mappingrulesets.MappingRulesets] = dataclasses.field(default=None)
     r"""a list of MappingRuleset objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

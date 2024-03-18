@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import configuredcollectors as shared_configuredcollectors
+from ...models.components import configuredcollectors as components_configuredcollectors
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetConfiguredCollectorsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    configured_collectors: Optional[shared_configuredcollectors.ConfiguredCollectors] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    configured_collectors: Optional[components_configuredcollectors.ConfiguredCollectors] = dataclasses.field(default=None)
     r"""a list of any objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

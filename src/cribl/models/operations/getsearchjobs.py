@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import searchjobs as shared_searchjobs
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import searchjobs as components_searchjobs
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetSearchJobsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    search_jobs: Optional[shared_searchjobs.SearchJobs] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    search_jobs: Optional[components_searchjobs.SearchJobs] = dataclasses.field(default=None)
     r"""a list of SearchJob objects"""
     
 

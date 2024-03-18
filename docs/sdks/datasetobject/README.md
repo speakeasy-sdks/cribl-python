@@ -1,4 +1,5 @@
-# dataset_object
+# DatasetObject
+(*dataset_object*)
 
 ### Available Operations
 
@@ -15,33 +16,37 @@ Create Dataset
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = 'quibusdam'
+req = '<value>'
 
 res = s.dataset_object.create(req)
 
 if res.dataset is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
 | Parameter                                  | Type                                       | Required                                   | Description                                |
 | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [Any](../../models//.md)                   | :heavy_check_mark:                         | The request object to use for the request. |
+| `request`                                  | [Any](../../models/.md)                    | :heavy_check_mark:                         | The request object to use for the request. |
 
 
 ### Response
 
 **[operations.CreateDatasetObjectResponse](../../models/operations/createdatasetobjectresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## delete
 
@@ -51,19 +56,18 @@ Delete Dataset
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.dataset_object.delete('iure')
+res = s.dataset_object.delete(id='<value>')
 
 if res.dataset is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -76,7 +80,12 @@ if res.dataset is not None:
 ### Response
 
 **[operations.DeleteDatasetObjectResponse](../../models/operations/deletedatasetobjectresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get
 
@@ -86,19 +95,18 @@ Get Dataset by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.dataset_object.get('odit')
+res = s.dataset_object.get(id='<value>')
 
 if res.dataset is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -111,7 +119,12 @@ if res.dataset is not None:
 ### Response
 
 **[operations.GetDatasetObjectResponse](../../models/operations/getdatasetobjectresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## update
 
@@ -121,19 +134,18 @@ Update Dataset
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.dataset_object.update('voluptatibus', 'vel')
+res = s.dataset_object.update(id='<value>', request_body='<value>')
 
 if res.dataset is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -147,4 +159,9 @@ if res.dataset is not None:
 ### Response
 
 **[operations.UpdateDatasetObjectResponse](../../models/operations/updatedatasetobjectresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

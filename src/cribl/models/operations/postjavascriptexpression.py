@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import exprlibentries as shared_exprlibentries
+from ...models.components import exprlibentries as components_exprlibentries
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class PostJavascriptExpressionResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    expr_lib_entries: Optional[shared_exprlibentries.ExprLibEntries] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    expr_lib_entries: Optional[components_exprlibentries.ExprLibEntries] = dataclasses.field(default=None)
     r"""a list of ExprLibEntry objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
