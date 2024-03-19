@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import collectors as shared_collectors
+from ...models.components import collectors as components_collectors
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetCollectorRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetCollectorResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    collectors: Optional[shared_collectors.Collectors] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    collectors: Optional[components_collectors.Collectors] = dataclasses.field(default=None)
     r"""a list of Collector objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

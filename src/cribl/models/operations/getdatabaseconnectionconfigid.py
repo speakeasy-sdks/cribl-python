@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import databaseconnectionconfigs as shared_databaseconnectionconfigs
+from ...models.components import databaseconnectionconfigs as components_databaseconnectionconfigs
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetDatabaseConnectionConfigIDRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetDatabaseConnectionConfigIDResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    database_connection_configs: Optional[shared_databaseconnectionconfigs.DatabaseConnectionConfigs] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    database_connection_configs: Optional[components_databaseconnectionconfigs.DatabaseConnectionConfigs] = dataclasses.field(default=None)
     r"""a list of DatabaseConnectionConfig objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

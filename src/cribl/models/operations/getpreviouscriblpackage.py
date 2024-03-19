@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import criblpackage as shared_criblpackage
+from ...models.components import criblpackage as components_criblpackage
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetPreviousCriblPackageRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetPreviousCriblPackageResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    cribl_package: Optional[shared_criblpackage.CriblPackage] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    cribl_package: Optional[components_criblpackage.CriblPackage] = dataclasses.field(default=None)
     r"""a list of any objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import eventbreakerrulesets as shared_eventbreakerrulesets
+from ...models.components import eventbreakerrulesets as components_eventbreakerrulesets
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetEventBreakerIDRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetEventBreakerIDResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    event_breaker_rulesets: Optional[shared_eventbreakerrulesets.EventBreakerRulesets] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    event_breaker_rulesets: Optional[components_eventbreakerrulesets.EventBreakerRulesets] = dataclasses.field(default=None)
     r"""a list of Event Breaker Ruleset objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
