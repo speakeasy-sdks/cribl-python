@@ -2,19 +2,18 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import events as shared_events
+from ...models.components import events as components_events
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetEventsRequest:
-    et: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'et', 'style': 'form', 'explode': True }})
-    r"""Epoch timestamp of the earliest event (includes rolled files present on disk)"""
     files: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'Files', 'style': 'form', 'explode': True }})
     r"""Optional parameter, when provided the files and provided offsets are used to look for events."""
-    filter: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'filter', 'style': 'form', 'explode': True }})
+    et: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'et', 'style': 'form', 'explode': True }})
+    r"""Epoch timestamp of the earliest event (includes rolled files present on disk)"""
+    filter_: Optional[str] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'filter', 'style': 'form', 'explode': True }})
     r"""Filter"""
     limit: Optional[int] = dataclasses.field(default=None, metadata={'query_param': { 'field_name': 'limit', 'style': 'form', 'explode': True }})
     r"""Maximum number of log lines to retrieve starting from offset."""
@@ -26,13 +25,10 @@ class GetEventsRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetEventsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    events: Optional[shared_events.Events] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    events: Optional[components_events.Events] = dataclasses.field(default=None)
     r"""a list of any objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

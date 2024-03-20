@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import changelogstates as shared_changelogstates
+from ...models.components import changelogstates as components_changelogstates
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetChangelogsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    changelog_states: Optional[shared_changelogstates.ChangelogStates] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    changelog_states: Optional[components_changelogstates.ChangelogStates] = dataclasses.field(default=None)
     r"""a list of ChangelogState objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import loggerconfigs as shared_loggerconfigs
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import loggerconfigs as components_loggerconfigs
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetLoggerConfigsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    logger_configs: Optional[shared_loggerconfigs.LoggerConfigs] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    logger_configs: Optional[components_loggerconfigs.LoggerConfigs] = dataclasses.field(default=None)
     r"""a list of LoggerConfig objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
