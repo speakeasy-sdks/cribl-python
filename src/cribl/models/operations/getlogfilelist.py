@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import edgefiles as shared_edgefiles
+from ...models.components import edgefiles as components_edgefiles
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -22,13 +21,10 @@ class GetLogFileListRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetLogFileListResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    edge_files: Optional[shared_edgefiles.EdgeFiles] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    edge_files: Optional[components_edgefiles.EdgeFiles] = dataclasses.field(default=None)
     r"""a list of EdgeFile objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
