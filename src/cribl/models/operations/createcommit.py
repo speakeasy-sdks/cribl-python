@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import gitcommit as shared_gitcommit
+from ...models.components import gitcommit as components_gitcommit
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class CreateCommitResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    git_commit: Optional[shared_gitcommit.GitCommit] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    git_commit: Optional[components_gitcommit.GitCommit] = dataclasses.field(default=None)
     r"""a list of GitCommitSummary objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

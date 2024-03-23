@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import gitsettingsresponse as shared_gitsettingsresponse
+from ...models.components import gitsettingsresponse as components_gitsettingsresponse
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetGitSettingsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    git_settings_response: Optional[shared_gitsettingsresponse.GitSettingsResponse] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    git_settings_response: Optional[components_gitsettingsresponse.GitSettingsResponse] = dataclasses.field(default=None)
     r"""a list of GitSettings objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
