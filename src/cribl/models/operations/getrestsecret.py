@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import restsecret as shared_restsecret
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import restsecret as components_restsecret
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetRestSecretRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetRestSecretResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    rest_secret: Optional[shared_restsecret.RestSecret] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    rest_secret: Optional[components_restsecret.RestSecret] = dataclasses.field(default=None)
     r"""a list of RestSecret objects"""
     
 

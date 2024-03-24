@@ -1,4 +1,5 @@
-# certificate
+# Certificate
+(*certificate*)
 
 ### Available Operations
 
@@ -15,44 +16,42 @@ Create Certificate
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.Certificate(
-    ca='eveniet',
-    cert='occaecati',
-    description='consequuntur',
-    id='2a57a15b-e3e0-4608-87e2-b6e3ab8845f0',
-    in_use=[
-        'perspiciatis',
-        'nihil',
-    ],
-    passphrase='mollitia',
-    priv_key='voluptas',
+req = components.Certificate(
+    cert='<value>',
+    id='<id>',
+    priv_key='<value>',
 )
 
 res = s.certificate.create(req)
 
 if res.certificate is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                | Type                                                     | Required                                                 | Description                                              |
-| -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- | -------------------------------------------------------- |
-| `request`                                                | [shared.Certificate](../../models/shared/certificate.md) | :heavy_check_mark:                                       | The request object to use for the request.               |
+| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `request`                                                        | [components.Certificate](../../models/components/certificate.md) | :heavy_check_mark:                                               | The request object to use for the request.                       |
 
 
 ### Response
 
 **[operations.CreateCertificateResponse](../../models/operations/createcertificateresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## delete
 
@@ -62,19 +61,18 @@ Delete Certificate
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.certificate.delete('alias')
+res = s.certificate.delete(id='<value>')
 
 if res.certificate is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -87,7 +85,12 @@ if res.certificate is not None:
 ### Response
 
 **[operations.DeleteCertificateResponse](../../models/operations/deletecertificateresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## get
 
@@ -97,19 +100,18 @@ Get Certificate by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.certificate.get('maiores')
+res = s.certificate.get(id='<value>')
 
 if res.certificate is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -122,7 +124,12 @@ if res.certificate is not None:
 ### Response
 
 **[operations.GetCertificateResponse](../../models/operations/getcertificateresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## update
 
@@ -132,42 +139,39 @@ Update Certificate
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.certificate.update('reiciendis', shared.Certificate(
-    ca='dolores',
-    cert='id',
-    description='minima',
-    id='4a31e947-64a3-4e86-9e79-56f9251a5a9d',
-    in_use=[
-        'ex',
-        'aliquid',
-        'accusantium',
-    ],
-    passphrase='repellat',
-    priv_key='doloribus',
+res = s.certificate.update(id='<value>', certificate=components.Certificate(
+    cert='<value>',
+    id='<id>',
+    priv_key='<value>',
 ))
 
 if res.certificate is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                          | Type                                                               | Required                                                           | Description                                                        |
-| ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ | ------------------------------------------------------------------ |
-| `id`                                                               | *str*                                                              | :heavy_check_mark:                                                 | Unique ID                                                          |
-| `certificate`                                                      | [Optional[shared.Certificate]](../../models/shared/certificate.md) | :heavy_minus_sign:                                                 | Certificate object to be updated                                   |
+| Parameter                                                                  | Type                                                                       | Required                                                                   | Description                                                                |
+| -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- | -------------------------------------------------------------------------- |
+| `id`                                                                       | *str*                                                                      | :heavy_check_mark:                                                         | Unique ID                                                                  |
+| `certificate`                                                              | [Optional[components.Certificate]](../../models/components/certificate.md) | :heavy_minus_sign:                                                         | Certificate object to be updated                                           |
 
 
 ### Response
 
 **[operations.UpdateCertificateResponse](../../models/operations/updatecertificateresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import profileritem as shared_profileritem
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import profileritem as components_profileritem
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetProfilerRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetProfilerResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    profiler_item: Optional[shared_profileritem.ProfilerItem] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    profiler_item: Optional[components_profileritem.ProfilerItem] = dataclasses.field(default=None)
     r"""a list of ProfilerItem objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
