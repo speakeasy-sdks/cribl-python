@@ -1,0 +1,11 @@
+# RoutesInput
+
+
+## Fields
+
+| Field                                                                            | Type                                                                             | Required                                                                         | Description                                                                      |
+| -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- | -------------------------------------------------------------------------------- |
+| `routes`                                                                         | List[[components.RoutesRouteInput](../../models/components/routesrouteinput.md)] | :heavy_check_mark:                                                               | Pipeline routing rules                                                           |
+| `comments`                                                                       | List[[components.Comments](../../models/components/comments.md)]                 | :heavy_minus_sign:                                                               | Comments                                                                         |
+| `groups`                                                                         | Dict[str, [components.RoutesGroups](../../models/components/routesgroups.md)]    | :heavy_minus_sign:                                                               | N/A                                                                              |
+| `id`                                                                             | *Optional[str]*                                                                  | :heavy_minus_sign:                                                               | Routes ID                                                                        |
