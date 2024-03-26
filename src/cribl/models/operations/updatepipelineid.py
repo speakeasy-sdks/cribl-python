@@ -2,30 +2,26 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import pipeline as shared_pipeline
-from ..shared import pipelines as shared_pipelines
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import pipeline as components_pipeline
+from ...models.components import pipelines as components_pipelines
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class UpdatePipelineIDRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Unique ID"""
-    pipeline: Optional[shared_pipeline.Pipeline] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    pipeline: Optional[components_pipeline.Pipeline] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""Pipeline object to be updated"""
     
 
 
 
-
 @dataclasses.dataclass
 class UpdatePipelineIDResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    pipelines: Optional[shared_pipelines.Pipelines] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    pipelines: Optional[components_pipelines.Pipelines] = dataclasses.field(default=None)
     r"""a list of Pipeline objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

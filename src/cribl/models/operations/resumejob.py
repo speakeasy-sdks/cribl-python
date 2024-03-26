@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import jobresume as shared_jobresume
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import jobresume as components_jobresume
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class ResumeJobRequest:
 
 
 
-
 @dataclasses.dataclass
 class ResumeJobResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    job_resume: Optional[shared_jobresume.JobResume] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    job_resume: Optional[components_jobresume.JobResume] = dataclasses.field(default=None)
     r"""a list of any objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -1,4 +1,5 @@
-# authentication_settings
+# AuthenticationSettings
+(*authentication_settings*)
 
 ### Available Operations
 
@@ -13,12 +14,9 @@ Get authentication settings
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -26,13 +24,20 @@ res = s.authentication_settings.get()
 
 if res.auth_configs is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.GetAuthenticationSettingsResponse](../../models/operations/getauthenticationsettingsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
 
 ## update
 
@@ -42,12 +47,9 @@ Update authentication settings
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -55,10 +57,17 @@ res = s.authentication_settings.update()
 
 if res.auth_configs is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.UpdateAuthenticationSettingsResponse](../../models/operations/updateauthenticationsettingsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

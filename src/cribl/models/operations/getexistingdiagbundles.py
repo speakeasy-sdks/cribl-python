@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import existingdiag as shared_existingdiag
+from ...models.components import existingdiag as components_existingdiag
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetExistingDiagBundlesResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    existing_diag: Optional[shared_existingdiag.ExistingDiag] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    existing_diag: Optional[components_existingdiag.ExistingDiag] = dataclasses.field(default=None)
     r"""a list of Diag objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

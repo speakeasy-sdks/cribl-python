@@ -1,0 +1,17 @@
+# Field
+
+
+## Fields
+
+| Field                                                            | Type                                                             | Required                                                         | Description                                                      |
+| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
+| `buckets`                                                        | List[[components.Bucket](../../models/components/bucket.md)]     | :heavy_check_mark:                                               | N/A                                                              |
+| `count`                                                          | *int*                                                            | :heavy_check_mark:                                               | N/A                                                              |
+| `count_distinct`                                                 | *int*                                                            | :heavy_check_mark:                                               | N/A                                                              |
+| `count_null`                                                     | *int*                                                            | :heavy_check_mark:                                               | N/A                                                              |
+| `size`                                                           | *int*                                                            | :heavy_check_mark:                                               | N/A                                                              |
+| `top_values`                                                     | List[[components.TopValue](../../models/components/topvalue.md)] | :heavy_check_mark:                                               | N/A                                                              |
+| `type`                                                           | [components.FieldType](../../models/components/fieldtype.md)     | :heavy_check_mark:                                               | N/A                                                              |
+| `mean`                                                           | *Optional[int]*                                                  | :heavy_minus_sign:                                               | N/A                                                              |
+| `name`                                                           | *Optional[str]*                                                  | :heavy_minus_sign:                                               | N/A                                                              |
+| `stdev`                                                          | *Optional[int]*                                                  | :heavy_minus_sign:                                               | N/A                                                              |

@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import edgemetadatas as shared_edgemetadatas
+from ...models.components import edgemetadatas as components_edgemetadatas
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetHostMetadataStructureResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    edge_metadatas: Optional[shared_edgemetadatas.EdgeMetadatas] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    edge_metadatas: Optional[components_edgemetadatas.EdgeMetadatas] = dataclasses.field(default=None)
     r"""a list of EdgeMetadata objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
