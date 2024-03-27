@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import branches as shared_branches
+from ...models.components import branches as components_branches
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetBranchesResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    branches: Optional[shared_branches.Branches] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    branches: Optional[components_branches.Branches] = dataclasses.field(default=None)
     r"""a list of any objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

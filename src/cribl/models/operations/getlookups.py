@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import lookupfiles as shared_lookupfiles
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import lookupfiles as components_lookupfiles
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetLookupsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    lookup_files: Optional[shared_lookupfiles.LookupFiles] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    lookup_files: Optional[components_lookupfiles.LookupFiles] = dataclasses.field(default=None)
     r"""a list of LookupFile objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

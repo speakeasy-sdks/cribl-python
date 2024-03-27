@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import clientroleentries as shared_clientroleentries
+from ...models.components import clientroleentries as components_clientroleentries
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetClientRolesResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    client_role_entries: Optional[shared_clientroleentries.ClientRoleEntries] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    client_role_entries: Optional[components_clientroleentries.ClientRoleEntries] = dataclasses.field(default=None)
     r"""a list of string objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

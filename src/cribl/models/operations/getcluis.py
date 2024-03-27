@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import cluiitems as shared_cluiitems
+from ...models.components import cluiitems as components_cluiitems
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -18,13 +17,10 @@ class GetCluisRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetCluisResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    clui_items: Optional[shared_cluiitems.CluiItems] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    clui_items: Optional[components_cluiitems.CluiItems] = dataclasses.field(default=None)
     r"""a list of CluiItem objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

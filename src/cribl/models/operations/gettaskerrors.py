@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import taskerrors as shared_taskerrors
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import taskerrors as components_taskerrors
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -18,13 +17,10 @@ class GetTaskErrorsRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetTaskErrorsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    task_errors: Optional[shared_taskerrors.TaskErrors] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    task_errors: Optional[components_taskerrors.TaskErrors] = dataclasses.field(default=None)
     r"""a list of any objects"""
     
 
