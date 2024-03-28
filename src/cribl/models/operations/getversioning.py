@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import gitinfos as shared_gitinfos
+from ...models.components import gitinfos as components_gitinfos
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetVersioningResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    git_infos: Optional[shared_gitinfos.GitInfos] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    git_infos: Optional[components_gitinfos.GitInfos] = dataclasses.field(default=None)
     r"""a list of GitInfo objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

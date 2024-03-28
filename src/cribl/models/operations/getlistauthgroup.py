@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import crudentitybases as shared_crudentitybases
+from ...models.components import crudentitybases as components_crudentitybases
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetListAuthGroupResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    crud_entity_bases: Optional[shared_crudentitybases.CrudEntityBases] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    crud_entity_bases: Optional[components_crudentitybases.CrudEntityBases] = dataclasses.field(default=None)
     r"""a list of CrudEntityBase objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

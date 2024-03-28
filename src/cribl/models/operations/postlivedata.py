@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import livedata as shared_livedata
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import livedata as components_livedata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class PostLiveDataResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    live_data: Optional[shared_livedata.LiveData] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    live_data: Optional[components_livedata.LiveData] = dataclasses.field(default=None)
     r"""a list of any objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

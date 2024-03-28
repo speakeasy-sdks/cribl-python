@@ -1,4 +1,5 @@
-# create_pipeline
+# CreatePipeline
+(*create_pipeline*)
 
 ### Available Operations
 
@@ -12,60 +13,38 @@ Create Pipeline
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.Pipeline(
-    conf=shared.PipelineConf(
-        async_func_timeout=959143,
-        description='officiis',
-        functions=[
-            shared.PipelineFunctionConf(
-                conf=shared.PipelineFunctionConfFunctionSpecificConfigs(),
-                description='fuga',
-                disabled=False,
-                filter='pariatur',
-                final=False,
-                group_id='debitis',
-                id='008e6f8c-5f35-40d8-8db5-a34181430104',
-            ),
-        ],
-        groups={
-            "ab": shared.PipelineConfGroups(
-                description='laudantium',
-                disabled=False,
-                name='Rosa Stiedemann',
-            ),
-        },
-        output='ipsa',
-        streamtags=[
-            'eveniet',
-            'impedit',
-            'officiis',
-        ],
-    ),
-    id='7e253b66-8451-4c6c-ae20-5e16deab3fec',
+req = components.Pipeline(
+    conf=components.PipelineConf(),
+    id='<id>',
 )
 
 res = s.create_pipeline.post(req)
 
 if res.pipelines is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                          | Type                                               | Required                                           | Description                                        |
-| -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- | -------------------------------------------------- |
-| `request`                                          | [shared.Pipeline](../../models/shared/pipeline.md) | :heavy_check_mark:                                 | The request object to use for the request.         |
+| Parameter                                                  | Type                                                       | Required                                                   | Description                                                |
+| ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- | ---------------------------------------------------------- |
+| `request`                                                  | [components.Pipeline](../../models/components/pipeline.md) | :heavy_check_mark:                                         | The request object to use for the request.                 |
 
 
 ### Response
 
 **[operations.PostCreatePipelineResponse](../../models/operations/postcreatepipelineresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

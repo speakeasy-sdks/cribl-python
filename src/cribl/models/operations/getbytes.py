@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import samplefiles as shared_samplefiles
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import samplefiles as components_samplefiles
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -18,13 +17,10 @@ class GetBytesRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetBytesResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    sample_files: Optional[shared_samplefiles.SampleFiles] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    sample_files: Optional[components_samplefiles.SampleFiles] = dataclasses.field(default=None)
     r"""a list of SampleFile objects"""
     
 
