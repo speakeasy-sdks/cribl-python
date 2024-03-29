@@ -2,29 +2,25 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import configgroup as shared_configgroup
+from ...models.components import configgroup as components_configgroup
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class UpdateConfigGroupRequest:
     id: str = dataclasses.field(metadata={'path_param': { 'field_name': 'id', 'style': 'simple', 'explode': False }})
     r"""Unique ID"""
-    config_group: Optional[shared_configgroup.ConfigGroup] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
+    config_group: Optional[components_configgroup.ConfigGroup] = dataclasses.field(default=None, metadata={'request': { 'media_type': 'application/json' }})
     r"""ConfigGroup object to be updated"""
     
 
 
 
-
 @dataclasses.dataclass
 class UpdateConfigGroupResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    config_group: Optional[shared_configgroup.ConfigGroup] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    config_group: Optional[components_configgroup.ConfigGroup] = dataclasses.field(default=None)
     r"""a list of ConfigGroup objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

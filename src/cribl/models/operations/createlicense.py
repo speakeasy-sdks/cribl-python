@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import license as shared_license
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import license as components_license
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class CreateLicenseResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    license: Optional[shared_license.License] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    license: Optional[components_license.License] = dataclasses.field(default=None)
     r"""a list of License objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -2,12 +2,11 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import outputsamplesresponse as shared_outputsamplesresponse
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import outputsamplesresponse as components_outputsamplesresponse
 from cribl import utils
 from dataclasses_json import Undefined, dataclass_json
-from typing import Optional
-
+from typing import List, Optional
 
 
 @dataclasses.dataclass
@@ -19,24 +18,20 @@ class GetSpecifiedOutputRequest:
 
 
 @dataclass_json(undefined=Undefined.EXCLUDE)
-
 @dataclasses.dataclass
-class GetSpecifiedOutput200ApplicationJSON:
+class GetSpecifiedOutputResponseBody:
     r"""a list of OutputSamplesResponse objects"""
     count: Optional[int] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('count'), 'exclude': lambda f: f is None }})
     r"""number of items present in the items array"""
-    items: Optional[list[shared_outputsamplesresponse.OutputSamplesResponse]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})
+    items: Optional[List[components_outputsamplesresponse.OutputSamplesResponse]] = dataclasses.field(default=None, metadata={'dataclasses_json': { 'letter_case': utils.get_field_name('items'), 'exclude': lambda f: f is None }})
     
-
 
 
 
 @dataclasses.dataclass
 class GetSpecifiedOutputResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    get_specified_output_200_application_json_object: Optional[GetSpecifiedOutput200ApplicationJSON] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    object: Optional[GetSpecifiedOutputResponseBody] = dataclasses.field(default=None)
     r"""a list of OutputSamplesResponse objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

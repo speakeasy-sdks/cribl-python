@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import authconfigs as shared_authconfigs
+from ...models.components import authconfigs as components_authconfigs
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetAuthenticationSettingsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    auth_configs: Optional[shared_authconfigs.AuthConfigs] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    auth_configs: Optional[components_authconfigs.AuthConfigs] = dataclasses.field(default=None)
     r"""a list of AuthConfig objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
