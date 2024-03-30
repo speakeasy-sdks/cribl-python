@@ -3,8 +3,8 @@
 from __future__ import annotations
 import dataclasses
 import requests as requests_http
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -15,13 +15,10 @@ class GetJobResultsRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetJobResultsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    get_job_results_200_application_x_ndjson_binary_string: Optional[bytes] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    stream: Optional[requests_http.Response] = dataclasses.field(default=None)
     r"""Get results for a discover job by instance id"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import gitsettings as shared_gitsettings
+from ...models.components import gitsettings as components_gitsettings
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetCriblsSettingsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    git_settings: Optional[shared_gitsettings.GitSettings] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    git_settings: Optional[components_gitsettings.GitSettings] = dataclasses.field(default=None)
     r"""a list of string objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 
