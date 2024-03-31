@@ -1,4 +1,5 @@
-# log_file_list
+# LogFileList
+(*log_file_list*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ list log files
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.log_file_list.get('maxime', 9375, 'eaque', 'architecto')
+res = s.log_file_list.get(allow='<value>', depth=700347, mode='<value>', path='<value>')
 
 if res.edge_files is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -40,4 +40,9 @@ if res.edge_files is not None:
 ### Response
 
 **[operations.GetLogFileListResponse](../../models/operations/getlogfilelistresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

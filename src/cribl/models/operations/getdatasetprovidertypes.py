@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import datasetprovidertypes as shared_datasetprovidertypes
+from ...models.components import datasetprovidertypes as components_datasetprovidertypes
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetDatasetProviderTypesResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    dataset_provider_types: Optional[shared_datasetprovidertypes.DatasetProviderTypes] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    dataset_provider_types: Optional[components_datasetprovidertypes.DatasetProviderTypes] = dataclasses.field(default=None)
     r"""a list of DatasetProviderType objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import bulletinmessage as shared_bulletinmessage
+from ...models.components import bulletinmessage as components_bulletinmessage
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class CreateBulletinMessageResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    bulletin_message: Optional[shared_bulletinmessage.BulletinMessage] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    bulletin_message: Optional[components_bulletinmessage.BulletinMessage] = dataclasses.field(default=None)
     r"""a list of BulletinMessage objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import outputs as shared_outputs
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import outputs as components_outputs
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class DeleteOutputIDRequest:
 
 
 
-
 @dataclasses.dataclass
 class DeleteOutputIDResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    outputs: Optional[shared_outputs.Outputs] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    outputs: Optional[components_outputs.Outputs] = dataclasses.field(default=None)
     r"""a list of Output objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

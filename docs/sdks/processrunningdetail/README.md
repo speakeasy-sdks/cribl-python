@@ -1,4 +1,5 @@
-# process_running_detail
+# ProcessRunningDetail
+(*process_running_detail*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get details of a process running on the edge host
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.process_running_detail.get('necessitatibus')
+res = s.process_running_detail.get(pid='<value>')
 
 if res.processes is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.processes is not None:
 ### Response
 
 **[operations.GetProcessRunningDetailResponse](../../models/operations/getprocessrunningdetailresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |
