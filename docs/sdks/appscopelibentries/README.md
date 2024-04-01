@@ -1,4 +1,5 @@
-# appscope_lib_entries
+# AppscopeLibEntries
+(*appscope_lib_entries*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a list of AppscopeLibEntry objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -25,10 +23,17 @@ res = s.appscope_lib_entries.get()
 
 if res.app_scope_lib_entries is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.GetAppscopeLibEntriesResponse](../../models/operations/getappscopelibentriesresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 500              | application/json |
+| errors.SDKError  | 4x-5xx           | */*              |

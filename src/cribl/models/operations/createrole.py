@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import roles as shared_roles
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import roles as components_roles
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class CreateRoleResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    roles: Optional[shared_roles.Roles] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    roles: Optional[components_roles.Roles] = dataclasses.field(default=None)
     r"""a list of Role objects"""
     
 
