@@ -1,4 +1,5 @@
-# remote_repo
+# RemoteRepo
+(*remote_repo*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ syncs with remote repo via POST requests
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -25,10 +23,17 @@ res = s.remote_repo.sync()
 
 if res.git_status_results is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.SyncRemoteRepoResponse](../../models/operations/syncremotereporesponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |

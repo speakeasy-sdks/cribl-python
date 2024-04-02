@@ -1,4 +1,5 @@
-# task_error
+# TaskError
+(*task_error*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get Task errors for a job by id
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.task_error.get('quisquam')
+res = s.task_error.get(id='<value>')
 
 if res.task_errors is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.task_errors is not None:
 ### Response
 
 **[operations.GetTaskErrorResponse](../../models/operations/gettaskerrorresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |

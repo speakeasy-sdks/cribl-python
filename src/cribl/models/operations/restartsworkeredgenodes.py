@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import restartresponses as shared_restartresponses
+from ...models.components import httpmetadata as components_httpmetadata
+from ...models.components import restartresponses as components_restartresponses
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class RestartsWorkerEdgeNodesResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
-    restart_responses: Optional[shared_restartresponses.RestartResponses] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    restart_responses: Optional[components_restartresponses.RestartResponses] = dataclasses.field(default=None)
     r"""a list of RestartResponse objects"""
     
 

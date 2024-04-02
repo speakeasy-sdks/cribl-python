@@ -1,4 +1,5 @@
-# job_infos
+# JobInfos
+(*job_infos*)
 
 ### Available Operations
 
@@ -12,27 +13,20 @@ Get info on jobs
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import operations
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.GetJobInfosRequest(
-    collector_id='nesciunt',
-    id='e63562a7-b408-4f05-a3d4-8fdaf313a1f5',
-    limit=987890,
-    offset=823753,
-    run_type='unde',
-    state='incidunt',
-)
+req = operations.GetJobInfosRequest()
 
 res = s.job_infos.get(req)
 
 if res.job_infos is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -45,4 +39,9 @@ if res.job_infos is not None:
 ### Response
 
 **[operations.GetJobInfosResponse](../../models/operations/getjobinfosresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |

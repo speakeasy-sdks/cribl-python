@@ -1,4 +1,5 @@
-# bulletin_message
+# BulletinMessage
+(*bulletin_message*)
 
 ### Available Operations
 
@@ -14,46 +15,41 @@ Create BulletinMessage
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.BulletinMessage(
-    group='error',
-    id='eee9526f-8d98-46e8-81ea-d4f0e1012563',
-    metadata=[
-        shared.BulletinMessageMetadata(),
-        shared.BulletinMessageMetadata(),
-        shared.BulletinMessageMetadata(),
-        shared.BulletinMessageMetadata(),
-    ],
-    severity=shared.BulletinMessageSeverity.ERROR,
-    text='magnam',
-    time=906355,
-    title='Mr.',
+req = components.BulletinMessage(
+    id='<id>',
+    text='<value>',
 )
 
 res = s.bulletin_message.create(req)
 
 if res.bulletin_message is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `request`                                                        | [shared.BulletinMessage](../../models/shared/bulletinmessage.md) | :heavy_check_mark:                                               | The request object to use for the request.                       |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `request`                                                                | [components.BulletinMessage](../../models/components/bulletinmessage.md) | :heavy_check_mark:                                                       | The request object to use for the request.                               |
 
 
 ### Response
 
 **[operations.CreateBulletinMessageResponse](../../models/operations/createbulletinmessageresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## delete
 
@@ -63,19 +59,18 @@ Delete BulletinMessage
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.bulletin_message.delete('occaecati')
+res = s.bulletin_message.delete(id='<value>')
 
 if res.bulletin_message is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -88,7 +83,12 @@ if res.bulletin_message is not None:
 ### Response
 
 **[operations.DeleteBulletinMessageResponse](../../models/operations/deletebulletinmessageresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## get
 
@@ -98,19 +98,18 @@ Get BulletinMessage by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.bulletin_message.get('officiis')
+res = s.bulletin_message.get(id='<value>')
 
 if res.bulletin_message is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -123,4 +122,9 @@ if res.bulletin_message is not None:
 ### Response
 
 **[operations.GetBulletinMessageResponse](../../models/operations/getbulletinmessageresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |

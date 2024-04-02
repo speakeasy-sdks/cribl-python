@@ -1,4 +1,5 @@
-# mapping_ruleset_id
+# MappingRulesetID
+(*mapping_ruleset_id*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get MappingRuleset by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.mapping_ruleset_id.get('doloribus')
+res = s.mapping_ruleset_id.get(id='<value>')
 
 if res.mapping_rulesets is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.mapping_rulesets is not None:
 ### Response
 
 **[operations.GetMappingRulesetIDResponse](../../models/operations/getmappingrulesetidresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |

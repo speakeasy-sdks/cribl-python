@@ -2,10 +2,9 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import fieldsummaries as shared_fieldsummaries
+from ...models.components import fieldsummaries as components_fieldsummaries
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -16,13 +15,10 @@ class GetFieldSummariesRequest:
 
 
 
-
 @dataclasses.dataclass
 class GetFieldSummariesResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    field_summaries: Optional[shared_fieldsummaries.FieldSummaries] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    field_summaries: Optional[components_fieldsummaries.FieldSummaries] = dataclasses.field(default=None)
     r"""FieldSummaries object"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

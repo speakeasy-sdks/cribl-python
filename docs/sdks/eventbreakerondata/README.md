@@ -1,4 +1,5 @@
-# event_breaker_on_data
+# EventBreakerOnData
+(*event_breaker_on_data*)
 
 ### Available Operations
 
@@ -12,77 +13,37 @@ Runs an event breaker rule on the specified data
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.DatatypePreviewRequestBody(
-    event_breaker_rule=shared.EventBreakerRule(
-        clean_fields=False,
-        condition='doloremque',
-        delimiter='quis',
-        delimiter_regex='veniam',
-        disabled=False,
-        escape_char='libero',
-        event_breaker_regex='architecto',
-        fields_=[
-            shared.EventBreakerRuleFields(
-                name='Sheri Schuppe',
-                value='itaque',
-            ),
-            shared.EventBreakerRuleFields(
-                name='Ollie Harris',
-                value='laudantium',
-            ),
-            shared.EventBreakerRuleFields(
-                name='Freda Farrell I',
-                value='facilis',
-            ),
-        ],
-        fields_line_regex='tempore',
-        header_line_regex='nisi',
-        json_array_field='voluptatibus',
-        json_extract_all=False,
-        json_time_field='quaerat',
-        max_event_bytes=503748,
-        name='Charlie Harvey',
-        null_field_val='minus',
-        parser='facere',
-        parser_enabled=False,
-        quote_char='facilis',
-        time_field='ipsum',
-        timestamp=shared.EventBreakerRuleTimestamp(
-            format='ad',
-            length=973819,
-            type=shared.EventBreakerRuleTimestampType.CURRENT,
-        ),
-        timestamp_anchor_regex='consequuntur',
-        timestamp_earliest='debitis',
-        timestamp_latest='labore',
-        timestamp_timezone='rerum',
-        type=shared.EventBreakerRuleType.JSON,
-    ),
-    input='reprehenderit',
+req = components.DatatypePreviewRequestBody(
+    input='<value>',
 )
 
 res = s.event_breaker_on_data.post(req)
 
 if res.preview_responses is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                                              | Type                                                                                   | Required                                                                               | Description                                                                            |
-| -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- | -------------------------------------------------------------------------------------- |
-| `request`                                                                              | [shared.DatatypePreviewRequestBody](../../models/shared/datatypepreviewrequestbody.md) | :heavy_check_mark:                                                                     | The request object to use for the request.                                             |
+| Parameter                                                                                      | Type                                                                                           | Required                                                                                       | Description                                                                                    |
+| ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------------- |
+| `request`                                                                                      | [components.DatatypePreviewRequestBody](../../models/components/datatypepreviewrequestbody.md) | :heavy_check_mark:                                                                             | The request object to use for the request.                                                     |
 
 
 ### Response
 
 **[operations.PostEventBreakerOnDataResponse](../../models/operations/posteventbreakerondataresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |

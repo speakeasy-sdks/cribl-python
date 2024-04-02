@@ -1,4 +1,5 @@
-# cribl_system_settings
+# CriblSystemSettings
+(*cribl_system_settings*)
 
 ### Available Operations
 
@@ -13,12 +14,9 @@ Get Cribl system settings
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -26,13 +24,20 @@ res = s.cribl_system_settings.get()
 
 if res.system_settings is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.GetCriblSystemSettingsResponse](../../models/operations/getcriblsystemsettingsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## update
 
@@ -42,12 +47,9 @@ Update Cribl system settings
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -55,10 +57,17 @@ res = s.cribl_system_settings.update()
 
 if res.system_settingses is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.UpdateCriblSystemSettingsResponse](../../models/operations/updatecriblsystemsettingsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |

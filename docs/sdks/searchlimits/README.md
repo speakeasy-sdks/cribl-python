@@ -1,4 +1,5 @@
-# search_limits
+# SearchLimits
+(*search_limits*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get search limits
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -25,10 +23,17 @@ res = s.search_limits.get()
 
 if res.search_settingses is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.GetSearchLimitsResponse](../../models/operations/getsearchlimitsresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |
