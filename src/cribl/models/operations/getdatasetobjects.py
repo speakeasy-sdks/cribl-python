@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import datasets as shared_datasets
+from ...models.components import datasets as components_datasets
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetDatasetObjectsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    datasets: Optional[shared_datasets.Datasets] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    datasets: Optional[components_datasets.Datasets] = dataclasses.field(default=None)
     r"""a list of Dataset objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -1,4 +1,5 @@
-# saved_queries
+# SavedQueries
+(*saved_queries*)
 
 ### Available Operations
 
@@ -15,48 +16,42 @@ Create SavedQuery
 
 ```python
 import cribl
-from cribl.models import shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = shared.SavedQuery(
-    description='ab',
-    earliest='magnam',
-    id='db6be5a6-8599-48e2-aae2-0da16fc2b271',
-    latest='deserunt',
-    name='Vickie Marvin',
-    query='molestiae',
-    sample_rate=933840,
-    schedule=shared.SavedQuerySchedule(
-        cron_schedule='rem',
-        enabled=False,
-        keep_last_n=366327,
-        tz='non',
-    ),
-    user='recusandae',
+req = components.SavedQuery(
+    id='<id>',
+    name='<value>',
+    query='<value>',
 )
 
 res = s.saved_queries.create(req)
 
 if res.saved_query is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                              | Type                                                   | Required                                               | Description                                            |
-| ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ | ------------------------------------------------------ |
-| `request`                                              | [shared.SavedQuery](../../models/shared/savedquery.md) | :heavy_check_mark:                                     | The request object to use for the request.             |
+| Parameter                                                      | Type                                                           | Required                                                       | Description                                                    |
+| -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- | -------------------------------------------------------------- |
+| `request`                                                      | [components.SavedQuery](../../models/components/savedquery.md) | :heavy_check_mark:                                             | The request object to use for the request.                     |
 
 
 ### Response
 
 **[operations.CreateSavedQueriesResponse](../../models/operations/createsavedqueriesresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## delete
 
@@ -66,19 +61,18 @@ Delete SavedQuery
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.saved_queries.delete('omnis')
+res = s.saved_queries.delete(id='<value>')
 
 if res.saved_query is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -91,7 +85,12 @@ if res.saved_query is not None:
 ### Response
 
 **[operations.DeleteSavedQueriesResponse](../../models/operations/deletesavedqueriesresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## get
 
@@ -101,12 +100,9 @@ Get a list of SavedQuery objects
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -114,13 +110,20 @@ res = s.saved_queries.get()
 
 if res.saved_queries is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.GetSavedQueriesResponse](../../models/operations/getsavedqueriesresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## update
 
@@ -130,45 +133,39 @@ Update SavedQuery
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.saved_queries.update('ipsa', shared.SavedQuery(
-    description='aliquam',
-    earliest='dolor',
-    id='9d222465-6946-4240-b084-f7ab37cef022',
-    latest='consequuntur',
-    name='Jean Mayert',
-    query='quidem',
-    sample_rate=350202,
-    schedule=shared.SavedQuerySchedule(
-        cron_schedule='veniam',
-        enabled=False,
-        keep_last_n=267988,
-        tz='quasi',
-    ),
-    user='quae',
+res = s.saved_queries.update(id='<value>', saved_query=components.SavedQuery(
+    id='<id>',
+    name='<value>',
+    query='<value>',
 ))
 
 if res.saved_query is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                                        | Type                                                             | Required                                                         | Description                                                      |
-| ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- | ---------------------------------------------------------------- |
-| `id`                                                             | *str*                                                            | :heavy_check_mark:                                               | Unique ID                                                        |
-| `saved_query`                                                    | [Optional[shared.SavedQuery]](../../models/shared/savedquery.md) | :heavy_minus_sign:                                               | SavedQuery object to be updated                                  |
+| Parameter                                                                | Type                                                                     | Required                                                                 | Description                                                              |
+| ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ | ------------------------------------------------------------------------ |
+| `id`                                                                     | *str*                                                                    | :heavy_check_mark:                                                       | Unique ID                                                                |
+| `saved_query`                                                            | [Optional[components.SavedQuery]](../../models/components/savedquery.md) | :heavy_minus_sign:                                                       | SavedQuery object to be updated                                          |
 
 
 ### Response
 
 **[operations.UpdateSavedQueriesResponse](../../models/operations/updatesavedqueriesresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |

@@ -1,4 +1,5 @@
-# lookup
+# Lookup
+(*lookup*)
 
 ### Available Operations
 
@@ -16,39 +17,40 @@ Create LookupFile
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
-req = operations.CreateLookupRequestBody2(
-    content='soluta',
-    description='dolorum',
-    id='3f8941ae-bc0b-480a-a924-d3b2ecfcc8f8',
-    size=614770,
-    tags='corporis',
+req = components.One(
+    id='<id>',
 )
 
 res = s.lookup.create(req)
 
 if res.lookup_files is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                                  | Type                                       | Required                                   | Description                                |
-| ------------------------------------------ | ------------------------------------------ | ------------------------------------------ | ------------------------------------------ |
-| `request`                                  | [Any](../../models//.md)                   | :heavy_check_mark:                         | The request object to use for the request. |
+| Parameter                                                                      | Type                                                                           | Required                                                                       | Description                                                                    |
+| ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ | ------------------------------------------------------------------------------ |
+| `request`                                                                      | [Union[components.One, components.Two]](../../models/components/lookupfile.md) | :heavy_check_mark:                                                             | The request object to use for the request.                                     |
 
 
 ### Response
 
 **[operations.CreateLookupResponse](../../models/operations/createlookupresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## delete
 
@@ -58,19 +60,18 @@ Delete LookupFile
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.lookup.delete('accusantium')
+res = s.lookup.delete(id='<value>')
 
 if res.lookup_file is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -83,7 +84,12 @@ if res.lookup_file is not None:
 ### Response
 
 **[operations.DeleteLookupResponse](../../models/operations/deletelookupresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## get
 
@@ -93,19 +99,18 @@ Get LookupFile by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.lookup.get('illo')
+res = s.lookup.get(id='<value>')
 
 if res.lookup_file is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -118,7 +123,12 @@ if res.lookup_file is not None:
 ### Response
 
 **[operations.GetLookupResponse](../../models/operations/getlookupresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## update
 
@@ -128,39 +138,40 @@ Update LookupFile
 
 ```python
 import cribl
-from cribl.models import operations, shared
+from cribl.models import components
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.lookup.update('aut', operations.UpdateLookupRequestBody2(
-    content='nostrum',
-    description='at',
-    id='d3d6fa18-04e5-44c8-af16-8a363c8873e4',
-    size=503449,
-    tags='numquam',
+res = s.lookup.update(id='<value>', lookup_file=components.Two(
+    id='<id>',
 ))
 
 if res.lookup_file is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
 
-| Parameter                       | Type                            | Required                        | Description                     |
-| ------------------------------- | ------------------------------- | ------------------------------- | ------------------------------- |
-| `id`                            | *str*                           | :heavy_check_mark:              | Unique ID                       |
-| `request_body`                  | *Optional[Any]*                 | :heavy_minus_sign:              | LookupFile object to be updated |
+| Parameter                                                                                | Type                                                                                     | Required                                                                                 | Description                                                                              |
+| ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- | ---------------------------------------------------------------------------------------- |
+| `id`                                                                                     | *str*                                                                                    | :heavy_check_mark:                                                                       | Unique ID                                                                                |
+| `lookup_file`                                                                            | [Optional[Union[components.One, components.Two]]](../../models/components/lookupfile.md) | :heavy_minus_sign:                                                                       | LookupFile object to be updated                                                          |
 
 
 ### Response
 
 **[operations.UpdateLookupResponse](../../models/operations/updatelookupresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |
 
 ## upload
 
@@ -170,19 +181,18 @@ Upload LookupFile
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.lookup.upload('sequi')
+res = s.lookup.upload(filename='<value>')
 
 if res.lookup_file_info_response is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -195,4 +205,9 @@ if res.lookup_file_info_response is not None:
 ### Response
 
 **[operations.UploadLookupResponse](../../models/operations/uploadlookupresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |

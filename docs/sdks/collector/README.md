@@ -1,4 +1,5 @@
-# collector
+# Collector
+(*collector*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Get Collector by ID
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.collector.get('officia')
+res = s.collector.get(id='<value>')
 
 if res.collectors is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -37,4 +37,9 @@ if res.collectors is not None:
 ### Response
 
 **[operations.GetCollectorResponse](../../models/operations/getcollectorresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |

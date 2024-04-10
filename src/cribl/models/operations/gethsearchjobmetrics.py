@@ -2,9 +2,8 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
@@ -15,13 +14,10 @@ class GethSearchJobMetricsRequest:
 
 
 
-
 @dataclasses.dataclass
 class GethSearchJobMetricsResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    geth_search_job_metrics_200_application_json_string: Optional[str] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    string: Optional[str] = dataclasses.field(default=None)
     r"""string object"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

@@ -2,18 +2,15 @@
 
 from __future__ import annotations
 import dataclasses
-import requests as requests_http
-from ..shared import edgehostfiles as shared_edgehostfiles
+from ...models.components import edgehostfiles as components_edgehostfiles
+from ...models.components import httpmetadata as components_httpmetadata
 from typing import Optional
-
 
 
 @dataclasses.dataclass
 class GetEdgeHostFilesResponse:
-    content_type: str = dataclasses.field()
-    status_code: int = dataclasses.field()
-    edge_host_files: Optional[shared_edgehostfiles.EdgeHostFiles] = dataclasses.field(default=None)
+    http_meta: components_httpmetadata.HTTPMetadata = dataclasses.field()
+    edge_host_files: Optional[components_edgehostfiles.EdgeHostFiles] = dataclasses.field(default=None)
     r"""a list of EdgeFileInspectResponse objects"""
-    raw_response: Optional[requests_http.Response] = dataclasses.field(default=None)
     
 

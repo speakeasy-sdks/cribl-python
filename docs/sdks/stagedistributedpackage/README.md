@@ -1,4 +1,5 @@
-# stage_distributed_package
+# StageDistributedPackage
+(*stage_distributed_package*)
 
 ### Available Operations
 
@@ -12,19 +13,18 @@ Stage distributed group upgrade
 
 ```python
 import cribl
-from cribl.models import operations, shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
-res = s.stage_distributed_package.post('quos', 'atque')
+res = s.stage_distributed_package.post(group='<value>', upgrade_percentage='<value>')
 
 if res.cribl_package is not None:
     # handle response
+    pass
+
 ```
 
 ### Parameters
@@ -38,4 +38,9 @@ if res.cribl_package is not None:
 ### Response
 
 **[operations.PostStageDistributedPackageResponse](../../models/operations/poststagedistributedpackageresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |

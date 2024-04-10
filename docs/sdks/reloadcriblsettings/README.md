@@ -1,4 +1,5 @@
-# reload_cribl_settings
+# ReloadCriblSettings
+(*reload_cribl_settings*)
 
 ### Available Operations
 
@@ -12,23 +13,26 @@ Reload Cribl settings from the filesystem
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
 res = s.reload_cribl_settings.post()
 
-if res.status_code == 200:
+if res is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.PostReloadCriblSettingsResponse](../../models/operations/postreloadcriblsettingsresponse.md)**
+### Errors
 
+| Error Object    | Status Code     | Content Type    |
+| --------------- | --------------- | --------------- |
+| errors.SDKError | 4xx-5xx         | */*             |

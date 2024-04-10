@@ -1,4 +1,5 @@
-# list_container_detail
+# ListContainerDetail
+(*list_container_detail*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get a detailed list of containers running on the edge host.
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -25,10 +23,17 @@ res = s.list_container_detail.get()
 
 if res.containers is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.GetListContainerDetailResponse](../../models/operations/getlistcontainerdetailresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |

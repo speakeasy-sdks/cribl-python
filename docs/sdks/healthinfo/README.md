@@ -1,4 +1,5 @@
-# health_info
+# HealthInfo
+(*health_info*)
 
 ### Available Operations
 
@@ -12,23 +13,25 @@ Provides health info for REST server
 
 ```python
 import cribl
-from cribl.models import shared
 
-s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
-)
+s = cribl.Cribl()
 
 
 res = s.health_info.get()
 
 if res.health_status is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.GetHealthInfoResponse](../../models/operations/gethealthinforesponse.md)**
+### Errors
 
+| Error Object        | Status Code         | Content Type        |
+| ------------------- | ------------------- | ------------------- |
+| errors.HealthStatus | 420                 | application/json    |
+| errors.SDKError     | 4xx-5xx             | */*                 |

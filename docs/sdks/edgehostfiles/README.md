@@ -1,4 +1,5 @@
-# edge_host_files
+# EdgeHostFiles
+(*edge_host_files*)
 
 ### Available Operations
 
@@ -12,12 +13,9 @@ Get details about a file on the edge host.
 
 ```python
 import cribl
-from cribl.models import shared
 
 s = cribl.Cribl(
-    security=shared.Security(
-        bearer_auth="",
-    ),
+    bearer_auth="<YOUR_BEARER_TOKEN_HERE>",
 )
 
 
@@ -25,10 +23,17 @@ res = s.edge_host_files.get()
 
 if res.edge_host_files is not None:
     # handle response
+    pass
+
 ```
 
 
 ### Response
 
 **[operations.GetEdgeHostFilesResponse](../../models/operations/getedgehostfilesresponse.md)**
+### Errors
 
+| Error Object     | Status Code      | Content Type     |
+| ---------------- | ---------------- | ---------------- |
+| errors.Error     | 401,500          | application/json |
+| errors.SDKError  | 4xx-5xx          | */*              |
